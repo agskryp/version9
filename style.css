@@ -33,6 +33,7 @@
  # Content
  ## Posts and pages
  ## Comments
+ ## Header
  # Infinite scroll
  # Media
  ## Captions
@@ -323,7 +324,7 @@ template {
  # Typography
  --------------------------------------------------------------*/
 body, button, input, select, optgroup, textarea {
-  color: #404040;
+  color: #e9e9e9;
   font-family: sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -383,7 +384,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  background: #fff;
+  background: #333;
   /* Fallback for when there is no custom background color defined. */
   background: url('images/bkgd.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -472,10 +473,10 @@ textarea {
  ## Links
  --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: cornflowerblue;
 }
 a:visited {
-  color: purple;
+  color: cornflowerblue;
 }
 a:hover, a:focus, a:active {
   color: midnightblue;
@@ -500,33 +501,9 @@ a:hover, a:active {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  text-align: center;
 }
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 100%;
-  left: -999em;
-  z-index: 99999;
-}
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-.main-navigation ul ul a {
-  width: 200px;
-}
-.main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
-  left: auto;
-}
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-.main-navigation a {
+.main-navigation ul a {
   display: block;
   text-decoration: none;
 }
@@ -534,7 +511,7 @@ a:hover, a:active {
 .menu-toggle, .main-navigation.toggled ul {
   display: block;
 }
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 992px) {
   .menu-toggle {
     display: none;
   }
@@ -667,6 +644,22 @@ a:hover, a:active {
 }
 .bypostauthor {
   display: block;
+}
+.site-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media all and (min-width: 992px) {
+  .site-header {
+    position: fixed;
+    height: 100%;
+  }
+}
+.site-content {
+  background: rgba(0, 0, 0, .4);
 }
 /*--------------------------------------------------------------
  # Infinite scroll
