@@ -120,7 +120,8 @@ add_action( 'widgets_init', 'version9_widgets_init' );
  * Enqueue scripts and styles.
  */
 function version9_scripts() {
-	wp_enqueue_style( 'version9-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'bootstrap-v4.1', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.1.0', false );
+  wp_enqueue_style( 'version9-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'version9-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
