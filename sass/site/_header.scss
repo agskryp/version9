@@ -10,3 +10,30 @@
     height: 100%;
   }
 }
+
+.site-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 3em;
+  line-height: 0.5;
+  margin-bottom: 1em;
+  
+  span {
+    display: block;
+    margin-left: .45em;
+  }
+}
+
+.site-description {
+  font-family: 'lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  font-variant: small-caps;
+  line-height: 1;
+  margin-bottom: 1em;
+  
+  .amp {
+    display: block;
+    font-size: .7em;
+    margin-bottom: -6px;
+  }
+}

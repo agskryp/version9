@@ -27,37 +27,20 @@
 
       <header id="masthead" class="site-header col-12 col-lg-3">
         <div class="site-branding">
-		  <?php
-			the_custom_logo();
-			
-            if ( is_front_page() && is_home() ) :
-		  ?>
-            <h1 class="site-title">
-              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <?php bloginfo( 'name' ); ?>
-              </a>
-            </h1>
+          <p class="site-title">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+              Andrew 
+              <span>Skrypnyk</span>
+            </a>
+          </p>
 
-            <?php	else : ?>
-
-            <p class="site-title">
-              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <?php bloginfo( 'name' ); ?>
-              </a>
-            </p>
-
-            <?php
-              endif;
-              $version9_description = get_bloginfo( 'description', 'display' );
-
-              if ( $version9_description || is_customize_preview() ) :
-            ?>
-
-            <p class="site-description">
-              <?php echo $version9_description; /* WPCS: xss ok. */ ?>
-            </p>
-		  <?php endif; ?>
-		</div> <?php // .site-branding // ?>
+          <p class="site-description text-center">
+            Web <br>
+            Designer <br>
+            <span class="amp">&amp;</span>
+            Development
+          </p>
+		</div>
 
 		<nav id="site-navigation" class="main-navigation">
           <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
