@@ -25,7 +25,7 @@
         <?php esc_html_e( 'Skip to content', 'version9' ); ?>
       </a>
 
-      <header id="masthead" class="site-header col-12 col-lg-3" style="position: fixed;">
+      <header id="masthead" class="site-header col-12 col-lg-3">
         <div class="site-branding">
 		  <?php
 			the_custom_logo();

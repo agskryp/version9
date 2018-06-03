@@ -1,0 +1,12 @@
+.site-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  @media all and (min-width: 992px) {
+    position: fixed;
+    height: 100%;
+  }
+}
