@@ -25,7 +25,7 @@
         <?php esc_html_e( 'Skip to content', 'version9' ); ?>
       </a>
 
-      <header id="masthead" class="site-header col-12 col-md-2" style="position: fixed;">
+      <header id="masthead" class="site-header col-12 col-lg-3" style="position: fixed;">
         <div class="site-branding">
 		  <?php
 			the_custom_logo();
@@ -73,4 +73,4 @@
 		</nav> 
       </header> <?php // #masthead // ?>
 
-      <div id="content" class="site-content col-0 col-md-10 offset-md-2">
+      <div id="content" class="site-content col-12 col-lg-9 offset-lg-3">
