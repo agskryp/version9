@@ -25,26 +25,36 @@
         <?php esc_html_e( 'Skip to content', 'version9' ); ?>
       </a>
 
-      <header id="masthead" class="site-header col-12 col-lg-3">
+      <header id="masthead" class="site-header col-12 col-lg-3" style="margin-top: 26px; padding: 0;">
         <div class="site-branding">
-          <p class="site-title">
+          <p class="site-title" style="margin-bottom: 26px;">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               Andrew 
               <span>Skrypnyk</span>
             </a>
           </p>
 
-          <p class="site-description text-center">
-            Web <br>
-            Designer <br>
-            <span class="amp">&amp;</span>
-            Development
-          </p>
+          <div class="site-description" style="display: flex; justify-content: center; margin-bottom: 26px;">
+            <p class="left-text" style="text-align: right; margin-bottom: 0;">
+              Web <br>
+              &amp; &nbsp;
+            </p>
+            
+            <p class="left-right" style="text-align: left; margin-bottom: 0;">
+              Design <br>
+              Development
+            </p>
+          </div>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
+          <button class="menu-toggle">
+            <?php esc_html_e( 'Search', 'version9' ); ?>
+          </button>
+          
+          
           <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-            <?php esc_html_e( 'Primary Menu', 'version9' ); ?>
+            <?php esc_html_e( 'Hamburger Menu', 'version9' ); ?>
           </button>
 		
           <?php

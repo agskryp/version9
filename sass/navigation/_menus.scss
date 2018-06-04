@@ -24,9 +24,23 @@
 
 /* Small menu. */
 
-.menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+  clear: both;
+}
+
+.menu-toggle {
+  display: block;
+  height: 40px;
+  background: rgba(0,0,0,.5);
+  color: white;
+  border: none;
+  float: right;
+  &:active,
+  &:focus {
+    outline: none;
+    border: none;
+  }
 }
 
 @media screen and (min-width: 992px) {
