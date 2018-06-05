@@ -502,10 +502,17 @@ a:hover, a:active {
   margin: 0;
   padding-left: 0;
   text-align: center;
+  border-top: 1px solid white;
+}
+.main-navigation ul li {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  border-bottom: 1px solid white;
 }
 .main-navigation ul a {
   display: block;
   text-decoration: none;
+  padding: 14px 0;
 }
 .main-search-form form {
   display: none;
@@ -680,6 +687,13 @@ a:hover, a:active {
     height: 100%;
   }
 }
+.site-header a {
+  color: aliceblue;
+}
+.site-header a:hover {
+  color: antiquewhite;
+  text-decoration: none;
+}
 .site-branding {
   display: flex;
   align-items: center;
@@ -716,6 +730,24 @@ a:hover, a:active {
   font-variant: small-caps;
   line-height: 1;
   margin-bottom: 1em;
+  animation: description-colour-rotation 10s ease-in-out infinite;
+}
+@keyframes description-colour-rotation {
+  0% {
+    color: #9f8b68;
+  }
+  25% {
+    color: #c3c3c3;
+  }
+  50% {
+    color: #78a58f;
+  }
+  75% {
+    color: cornflowerblue;
+  }
+  100% {
+    color: #9f8b68;
+  }
 }
 .site-description .amp {
   display: block;
