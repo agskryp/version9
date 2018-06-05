@@ -507,8 +507,14 @@ a:hover, a:active {
   display: block;
   text-decoration: none;
 }
+.main-search-form form {
+  display: none;
+  margin: 0;
+  padding-left: 0;
+  text-align: center;
+}
 /* Small menu. */
-.main-navigation.toggled ul {
+.main-navigation.toggled ul, .main-search-form.toggled form {
   display: block;
   clear: both;
 }
@@ -528,7 +534,7 @@ a:hover, a:active {
   .menu-toggle {
     display: none;
   }
-  .main-navigation ul {
+  .main-navigation ul, .main-search-form form {
     display: block;
   }
 }

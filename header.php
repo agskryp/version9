@@ -47,12 +47,7 @@
           </div>
 		</div>
 
-		<nav id="site-navigation" class="main-navigation">
-          <button class="menu-toggle">
-            <?php esc_html_e( 'Search', 'version9' ); ?>
-          </button>
-          
-          
+		<nav id="site-navigation" class="main-navigation"> 
           <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
             <?php esc_html_e( 'Hamburger Menu', 'version9' ); ?>
           </button>
@@ -64,6 +59,16 @@
 			) );
 		  ?>
 		</nav> 
+        
+        <div id="site-search" class="main-search-form">
+          <button class="menu-toggle" aria-controls="search-form" aria-expanded="false">
+             <?php esc_html_e( 'Search', 'version9' ); ?>
+           </button>
+
+          <?php get_search_form( ); ?>
+        </div>
+        
+          
       </header> <?php // #masthead // ?>
 
       <div id="content" class="site-content col-12 col-lg-9 offset-lg-3">
