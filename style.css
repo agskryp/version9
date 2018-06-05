@@ -680,6 +680,25 @@ a:hover, a:active {
     height: 100%;
   }
 }
+.site-branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+@media all and (min-width: 480px) {
+  .site-branding {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+}
+@media all and (min-width: 992px) {
+  .site-branding {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 .site-title {
   font-family: 'Lato', sans-serif;
   font-size: 3em;

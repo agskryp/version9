@@ -12,10 +12,7 @@
     return;
   }
   
-  searchButton = searchContainer.getElementsByTagName('button')[0];
-  if ('undefined' === typeof searchButton) {
-    return;
-  }
+
   
    searchForm = searchContainer.getElementsByTagName('form')[0];
 
@@ -30,9 +27,29 @@
     searchForm.className += ' search-form';
   }
   
+  
+  
+  var container, button, menu, links, i, len;
+  
+
+  container = document.getElementById('site-navigation');
+  if (!container) {
+    return;
+  }
+  
+  
+  
+  
+  
+  
+  
+  searchButton = container.getElementsByTagName('button')[1];
+  if ('undefined' === typeof searchButton) {
+    return;
+  }
+  
+  
   searchButton.onclick = function () {
-    console.log('HELLO!');
-    
     if (-1 !== searchContainer.className.indexOf('toggled')) {
       searchContainer.className = searchContainer.className.replace(' toggled', '');
       searchButton.setAttribute('aria-expanded', 'false');
@@ -44,12 +61,13 @@
     }
   };
   
-  var container, button, menu, links, i, len;
-
-  container = document.getElementById('site-navigation');
-  if (!container) {
-    return;
-  }
+  
+  
+  
+  
+  
+  
+  
 
   button = container.getElementsByTagName('button')[0];
   if ('undefined' === typeof button) {

@@ -51,6 +51,10 @@
           <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
             <?php esc_html_e( 'Hamburger Menu', 'version9' ); ?>
           </button>
+          
+          <button class="menu-toggle" aria-controls="search-form" aria-expanded="false">
+            <?php esc_html_e( 'Search', 'version9' ); ?>
+          </button>
 		
           <?php
 			wp_nav_menu( array(
@@ -61,10 +65,6 @@
 		</nav> 
         
         <div id="site-search" class="main-search-form">
-          <button class="menu-toggle" aria-controls="search-form" aria-expanded="false">
-             <?php esc_html_e( 'Search', 'version9' ); ?>
-           </button>
-
           <?php get_search_form( ); ?>
         </div>
         
