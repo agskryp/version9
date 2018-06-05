@@ -48,6 +48,25 @@
   font-variant: small-caps;
   line-height: 1;
   margin-bottom: 1em;
+  animation: description-colour-rotation 10s ease-in-out infinite;
+  
+  @keyframes description-colour-rotation {
+    0% {
+      color: #9f8b68;
+    }
+    25% {
+      color: #c3c3c3;
+    }
+    50% {
+      color: #78a58f;
+    }
+    75% {
+      color: cornflowerblue;
+    }
+    100% {
+      color: #9f8b68;
+    }
+  }
   
   .amp {
     display: block;
