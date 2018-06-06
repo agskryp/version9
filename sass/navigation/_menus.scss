@@ -1,17 +1,20 @@
-.main-navigation {
-  clear: both;
-  display: block;
-  float: right;
-  width: 100%;
-  margin-top: 0;
+.site-navigation {
   max-width: 320px;
+  width: 100%;
+  float: right;
+  margin-top: 0;
   @media all and (min-width: 576px) {
     margin-top: -44px;
   }
-  
+
   @media all and (min-width: 992px) {
-   margin-top: 0;
+    margin-top: 0;
   }
+}
+
+.main-navigation {
+  clear: both;
+  display: block;
 
   ul {
     display: none;

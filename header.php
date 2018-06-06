@@ -47,16 +47,16 @@
           </div>
 		</div>
 
-		<nav>
-          <div id="site-navigation" class="main-navigation"> 
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+		<nav id="site-navigation" class="site-navigation">
+          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
               <?php esc_html_e( 'Menu', 'version9' ); ?>
             </button>
 
             <button class="menu-toggle" aria-controls="search-form" aria-expanded="false">
               <?php esc_html_e( 'Search', 'version9' ); ?>
             </button>
-
+          
+          <div id="main-navigation" class="main-navigation">
             <?php
               wp_nav_menu( array(
                 'theme_location' => 'menu-1',

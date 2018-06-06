@@ -490,23 +490,25 @@ a:hover, a:active {
 /*--------------------------------------------------------------
  ## Menus
  --------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
-  float: right;
-  width: 100%;
-  margin-top: 0;
+.site-navigation {
   max-width: 320px;
+  width: 100%;
+  float: right;
+  margin-top: 0;
 }
 @media all and (min-width: 576px) {
-  .main-navigation {
+  .site-navigation {
     margin-top: -44px;
   }
 }
 @media all and (min-width: 992px) {
-  .main-navigation {
+  .site-navigation {
     margin-top: 0;
   }
+}
+.main-navigation {
+  clear: both;
+  display: block;
 }
 .main-navigation ul {
   display: none;
