@@ -25,16 +25,16 @@
         <?php esc_html_e( 'Skip to content', 'version9' ); ?>
       </a>
 
-      <header id="masthead" class="site-header col-12 col-lg-3" style="margin-top: 26px; padding: 0;">
+      <header id="masthead" class="site-header col-12 col-lg-3">
         <div class="site-branding">
-          <p class="site-title" style="margin-bottom: 26px;">
+          <p class="site-title" style="margin-bottom: 30px;">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               Andrew 
               <span>Skrypnyk</span>
             </a>
           </p>
 
-          <div class="site-description" style="display: flex; justify-content: center; margin-bottom: 26px;">
+          <div class="site-description" style="display: flex; justify-content: center; margin-bottom: 30px;">
             <p class="left-text" style="text-align: right; margin-bottom: 0;">
               Web <br>
               &amp; &nbsp;

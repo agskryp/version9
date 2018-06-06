@@ -493,9 +493,10 @@ a:hover, a:active {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
+  float: right;
   width: 100%;
   margin-top: 0;
+  max-width: 320px;
 }
 @media all and (min-width: 576px) {
   .main-navigation {
@@ -690,6 +691,8 @@ a:hover, a:active {
 .site-header {
   position: relative;
   display: block;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px 0 0;
 }
 @media all and (min-width: 992px) {
   .site-header {
@@ -698,6 +701,7 @@ a:hover, a:active {
     align-items: center;
     justify-content: center;
     position: fixed;
+    padding: 0;
     height: 100%;
   }
 }
