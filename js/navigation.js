@@ -5,7 +5,7 @@
  * navigation support for dropdown menus.
  */
 (function () {
-  var searchContainer, searchButton, searchForm, navContainer;
+  var searchContainer, searchButton, searchForm, navContainer, contentContainer;
   
   searchContainer = document.getElementById('site-search');
   if (!searchContainer) {
@@ -17,6 +17,10 @@
     return;
   }
 
+  contentContainer = document.getElementById('content');
+  if (!contentContainer) {
+    return;
+  }
   
    searchForm = searchContainer.getElementsByTagName('form')[0];
 
@@ -102,6 +106,19 @@
       menu.setAttribute('aria-expanded', 'true');
     }
   };
+  
+  contentContainer.onclick = function () {
+    if (-1 !== searchContainer.className.indexOf('toggled')) {
+      searchContainer.className = searchContainer.className.replace(' toggled', '');
+      searchButton.setAttribute('aria-expanded', 'false');
+      searchForm.setAttribute('aria-expanded', 'false');
+    }
+    if (-1 !== navContainer.className.indexOf('toggled')) {
+         navContainer.className = navContainer.className.replace(' toggled', '');
+      button.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-expanded', 'false');
+    }   
+  }
 
   // Get all the link elements within the menu.
   links = menu.getElementsByTagName('a');

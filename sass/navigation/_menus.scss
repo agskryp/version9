@@ -1,20 +1,27 @@
 .site-navigation {
   max-width: 320px;
   width: 100%;
-  float: right;
   margin-top: 0;
+  position: absolute;
+  right: 0;
+  z-index: 6;
   @media all and (min-width: 576px) {
     margin-top: -44px;
   }
 
   @media all and (min-width: 992px) {
     margin-top: 0;
+    position: relative;
   }
 }
 
 .main-navigation {
   clear: both;
   display: block;
+  background: rgba( 0, 0, 0, 0.4 );
+  @media all and (min-width: 992px) {
+    background: none; 
+  }
 
   ul {
     display: none;
@@ -43,6 +50,10 @@
   margin: 0;
   padding-left: 0;
   text-align: center;
+  background: rgba( 0, 0, 0, 0.4 );
+  @media all and (min-width: 992px) {
+    background: none; 
+  }
 }
 
 /* Small menu. */
@@ -54,18 +65,24 @@
 }
 
 .menu-toggle {
+  box-sizing: border-box;
   display: block;
   height: 44px;
   background: rgba( 0, 0, 0, 0.4 );
   color: $color__text-main;
-  border: none;
+  border: 1px solid rgba( 0, 0, 0, 0.8 );
+  border-bottom: none;
   border-radius: 8px 8px 0 0;
   float: right;
-  margin-left: 1px;
+  margin: 0 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover,
   &:active,
   &:focus {
+    border-color: rgba( 0, 0, 0, 0.8 );
     outline: none;
-    border: none;
+    background: rgba( 255, 255, 255, 0.01 );
   }
 }
 

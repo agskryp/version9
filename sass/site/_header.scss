@@ -3,7 +3,7 @@
   display: block;
   background: rgba( 0, 0, 0, 0.5 );
   padding: 30px 0 0;
-
+  border-bottom: 1px solid rgba( 0,0,0,0.8 );
   @media all and ( min-width: 992px ) {
     display: flex;
     flex-direction: column;
@@ -46,11 +46,13 @@
   font-family: 'Lato', sans-serif;
   font-size: 3em;
   line-height: 0.5;
-  margin-bottom: 1em;
+  margin-bottom: 30px;
   
   span {
     display: block;
-    margin-left: .45em;
+    &:last-of-type {
+      margin-left: 22px;
+    }
   }
 }
 
@@ -60,8 +62,12 @@
   font-size: 1.5em;
   font-variant: small-caps;
   line-height: 1;
-  margin-bottom: 1em;
+  padding-left: 0;
+  border-left: none;
   margin-left: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
   animation: description-colour-rotation 10s ease-in-out infinite;
   @keyframes description-colour-rotation {
     0%   { color: #9f8b68; }
@@ -73,10 +79,22 @@
   
   @media all and (min-width: 480px) {
     margin-left: 30px;
+    border-left: 2px solid #c3c3c3;
+    padding-left: 30px;
   }
   
   @media all and (min-width: 992px) {
-   margin-left: 0;
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+  
+  span {
+    display: block;
   }
   
   .amp {
