@@ -1,14 +1,10 @@
 .site-navigation {
   max-width: 320px;
   width: 100%;
-  margin-top: 0;
   position: absolute;
   right: 0;
   z-index: 6;
-  @media all and (min-width: 576px) {
-    margin-top: -44px;
-  }
-
+  margin-top: -44px;
   @media all and (min-width: 992px) {
     margin-top: 0;
     position: relative;
@@ -41,6 +37,9 @@
       display: block;
       text-decoration: none;
       padding: 14px 0;
+      &:hover {
+        background: rgba( 200, 200, 200, 0.1 );
+      }
     }
   }
 }
@@ -82,7 +81,7 @@
   &:focus {
     border-color: rgba( 0, 0, 0, 0.8 );
     outline: none;
-    background: rgba( 255, 255, 255, 0.01 );
+    background: rgba( 200, 200, 200, 0.1 );
   }
 }
 

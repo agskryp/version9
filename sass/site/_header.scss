@@ -29,10 +29,15 @@
   justify-content: center;
   flex-direction: column;
   margin-left: 0;
-  @media all and (min-width: 480px) {
+  margin-bottom: 44px;
+  @media all and (min-width: 520px) {
     justify-content: flex-start;
     flex-direction: row;
     margin-left: 30px;
+  }
+  
+  @media all and (min-width: 660px) {
+    margin-bottom: 0;
   }
   
   @media all and (min-width: 992px) {
@@ -77,7 +82,7 @@
     100% { color: #9f8b68; }
   }
   
-  @media all and (min-width: 480px) {
+  @media all and (min-width: 520px) {
     margin-left: 30px;
     border-left: 2px solid #c3c3c3;
     padding-left: 30px;

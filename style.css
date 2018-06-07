@@ -493,15 +493,10 @@ a:hover, a:active {
 .site-navigation {
   max-width: 320px;
   width: 100%;
-  margin-top: 0;
   position: absolute;
   right: 0;
   z-index: 6;
-}
-@media all and (min-width: 576px) {
-  .site-navigation {
-    margin-top: -44px;
-  }
+  margin-top: -44px;
 }
 @media all and (min-width: 992px) {
   .site-navigation {
@@ -537,6 +532,9 @@ a:hover, a:active {
   text-decoration: none;
   padding: 14px 0;
 }
+.main-navigation ul a:hover {
+  background: rgba(200, 200, 200, 0.1);
+}
 .main-search-form form {
   display: none;
   margin: 0;
@@ -571,7 +569,7 @@ a:hover, a:active {
 .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
   border-color: rgba(0, 0, 0, 0.8);
   outline: none;
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(200, 200, 200, 0.1);
 }
 @media screen and (min-width: 992px) {
   .menu-toggle {
@@ -741,12 +739,18 @@ a:hover, a:active {
   justify-content: center;
   flex-direction: column;
   margin-left: 0;
+  margin-bottom: 44px;
 }
-@media all and (min-width: 480px) {
+@media all and (min-width: 520px) {
   .site-branding {
     justify-content: flex-start;
     flex-direction: row;
     margin-left: 30px;
+  }
+}
+@media all and (min-width: 660px) {
+  .site-branding {
+    margin-bottom: 0;
   }
 }
 @media all and (min-width: 992px) {
@@ -799,7 +803,7 @@ a:hover, a:active {
     color: #9f8b68;
   }
 }
-@media all and (min-width: 480px) {
+@media all and (min-width: 520px) {
   .site-description {
     margin-left: 30px;
     border-left: 2px solid #c3c3c3;
