@@ -26,18 +26,16 @@
 .site-branding {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-left: 0;
-  margin-bottom: 44px;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-left: 30px;
+  margin-bottom: 0;
   @media all and (min-width: 520px) {
-    justify-content: flex-start;
-    flex-direction: row;
-    margin-left: 30px;
+
   }
   
   @media all and (min-width: 660px) {
-    margin-bottom: 0;
+    
   }
   
   @media all and (min-width: 992px) {
@@ -70,7 +68,7 @@
   padding-left: 0;
   border-left: none;
   margin-left: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   margin-bottom: 30px;
   animation: description-colour-rotation 10s ease-in-out infinite;
@@ -86,6 +84,10 @@
     margin-left: 30px;
     border-left: 2px solid #c3c3c3;
     padding-left: 30px;
+  }
+  
+  @media all and (min-width: 660px) {
+    display: flex;
   }
   
   @media all and (min-width: 992px) {

@@ -9,6 +9,19 @@
     margin-top: 0;
     position: relative;
   }
+  
+  svg {
+    color: $color__text-main;
+    fill: $color__text-main;
+  }
+  
+  span {
+    display: none;
+    @media all and ( min-width: 768px ) {
+      display: inline-block;
+      margin-right: 7px;
+    }
+  }
 }
 
 .main-navigation {
@@ -65,17 +78,21 @@
 
 .menu-toggle {
   box-sizing: border-box;
-  display: block;
-  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
   background: rgba( 0, 0, 0, 0.4 );
   color: $color__text-main;
   border: 1px solid rgba( 0, 0, 0, 0.8 );
   border-bottom: none;
-  border-radius: 8px 8px 0 0;
+  border-right: none;
+  border-radius: 0;
   float: right;
   margin: 0 2px;
   text-transform: uppercase;
   cursor: pointer;
+  padding: 14px;
   &:hover,
   &:active,
   &:focus {
