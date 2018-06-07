@@ -498,7 +498,7 @@ a:hover, a:active {
   z-index: 6;
   margin-top: -44px;
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 768px) {
   .site-navigation {
     margin-top: 0;
     position: relative;
@@ -511,7 +511,7 @@ a:hover, a:active {
 .site-navigation span {
   display: none;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 615px) {
   .site-navigation span {
     display: inline-block;
     margin-right: 7px;
@@ -522,7 +522,7 @@ a:hover, a:active {
   display: block;
   background: rgba(0, 0, 0, 0.4);
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 768px) {
   .main-navigation {
     background: none;
   }
@@ -555,7 +555,7 @@ a:hover, a:active {
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 768px) {
   .main-search-form form {
     background: none;
   }
@@ -588,7 +588,7 @@ a:hover, a:active {
   outline: none;
   background: rgba(200, 200, 200, 0.1);
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .menu-toggle {
     display: none;
   }
@@ -732,7 +732,7 @@ a:hover, a:active {
   padding: 30px 0 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 768px) {
   .site-header {
     display: flex;
     flex-direction: column;
@@ -758,7 +758,7 @@ a:hover, a:active {
   margin-left: 30px;
   margin-bottom: 0;
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 768px) {
   .site-branding {
     justify-content: center;
     flex-direction: column;
@@ -789,6 +789,7 @@ a:hover, a:active {
   display: none;
   justify-content: center;
   margin-bottom: 30px;
+  word-spacing: 2px;
   animation: description-colour-rotation 10s ease-in-out infinite;
 }
 @keyframes description-colour-rotation {
@@ -815,12 +816,12 @@ a:hover, a:active {
     padding-left: 30px;
   }
 }
-@media all and (min-width: 660px) {
+@media all and (min-width: 560px) {
   .site-description {
     display: flex;
   }
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 768px) {
   .site-description {
     margin-left: 0;
     border-left: none;
