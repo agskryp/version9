@@ -26,7 +26,7 @@
         <?php esc_html_e( 'Skip to content', 'version9' ); ?>
       </a>
 
-      <header id="masthead" class="site-header col-12 col-lg-3">
+      <header id="masthead" class="site-header col-12 col-md-4 col-lg-3">
         <div class="site-branding">
           <p class="site-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -36,14 +36,9 @@
           </p>
 
           <div class="site-description">
-            <p class="text-right">
-              <span>Web</span>
-              <span>&amp; &nbsp;</span>
-            </p>
-
-            <p class="text-left" style="margin-left: 6px;">
-              <span>Design</span>
-              <span>Development</span>
+            <p class="text-center">
+              <span>Web Design</span>
+              <span>&amp; Development</span>
             </p>
           </div>
         </div>
@@ -89,4 +84,4 @@
         </nav>
       </header>
 
-      <div id="content" class="site-content col-12 col-lg-9 offset-lg-3">
+      <div id="content" class="site-content col-12 col-md-8 offset-md-4 col-lg-9 offset-lg-3">
