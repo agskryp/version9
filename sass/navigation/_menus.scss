@@ -98,6 +98,9 @@
   &:focus {
     border-color: rgba( 0, 0, 0, 0.8 );
     outline: none;
+  }
+  
+  &.on {
     background: rgba( 200, 200, 200, 0.1 );
   }
 }

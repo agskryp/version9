@@ -62,10 +62,12 @@
       searchContainer.className = searchContainer.className.replace(' toggled', '');
       searchButton.setAttribute('aria-expanded', 'false');
       searchForm.setAttribute('aria-expanded', 'false');
+      searchButton.classList.remove('on');
     } else {
       searchContainer.className += ' toggled';
       searchButton.setAttribute('aria-expanded', 'true');
       searchForm.setAttribute('aria-expanded', 'true');
+      searchButton.classList.add('on');
     }
   };
   
@@ -100,10 +102,12 @@
       navContainer.className = navContainer.className.replace(' toggled', '');
       button.setAttribute('aria-expanded', 'false');
       menu.setAttribute('aria-expanded', 'false');
+      button.classList.remove('on');
     } else {
       navContainer.className += ' toggled';
       button.setAttribute('aria-expanded', 'true');
       menu.setAttribute('aria-expanded', 'true');
+      button.classList.add('on');
     }
   };
   
@@ -111,11 +115,13 @@
     if (-1 !== searchContainer.className.indexOf('toggled')) {
       searchContainer.className = searchContainer.className.replace(' toggled', '');
       searchButton.setAttribute('aria-expanded', 'false');
+      searchButton.classList.remove('on');
       searchForm.setAttribute('aria-expanded', 'false');
     }
     if (-1 !== navContainer.className.indexOf('toggled')) {
          navContainer.className = navContainer.className.replace(' toggled', '');
       button.setAttribute('aria-expanded', 'false');
+      button.classList.remove('on');
       menu.setAttribute('aria-expanded', 'false');
     }   
   }
