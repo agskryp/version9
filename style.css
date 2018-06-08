@@ -586,6 +586,8 @@ a:hover, a:active {
 .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
   border-color: rgba(0, 0, 0, 0.8);
   outline: none;
+}
+.menu-toggle.on {
   background: rgba(200, 200, 200, 0.1);
 }
 @media screen and (min-width: 768px) {
@@ -728,12 +730,13 @@ a:hover, a:active {
 .site-header {
   position: relative;
   display: block;
-  background: rgba(0, 0, 0, 0.5);
+  background: #132118;
   padding: 30px 0 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
 @media all and (min-width: 768px) {
   .site-header {
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
