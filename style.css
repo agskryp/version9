@@ -502,6 +502,7 @@ a:hover, a:active {
   .site-navigation {
     margin-top: 0;
     position: relative;
+    max-width: none;
   }
 }
 .site-navigation svg {
@@ -520,11 +521,13 @@ a:hover, a:active {
 .main-navigation {
   clear: both;
   display: block;
-  background: rgba(0, 0, 0, 0.4);
+  background: #132118;
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
 }
 @media all and (min-width: 768px) {
   .main-navigation {
     background: none;
+    border-left: none;
   }
 }
 .main-navigation ul {
@@ -553,12 +556,42 @@ a:hover, a:active {
   margin: 0;
   padding-left: 0;
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: #132118;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: none;
 }
 @media all and (min-width: 768px) {
   .main-search-form form {
     background: none;
+    border: none;
   }
+}
+.main-search-form form label {
+  margin: 0.5rem 0;
+  color: #c3c3c3;
+}
+.main-search-form form input {
+  background: rgba(200, 200, 200, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: #c3c3c3;
+  padding: 4px 8px;
+  border-radius: 8px 0 0 8px;
+}
+.main-search-form form input:focus, .main-search-form form input:active {
+  outline: 1px dotted rgba(0, 0, 0, 0.4);
+}
+.main-search-form form input::placeholder {
+  color: #c3c3c3;
+}
+.main-search-form form input[type="submit"] {
+  margin: 0;
+  border: none;
+  padding: 12px 12px;
+  height: 36px;
+  margin-left: -5px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0 8px 8px 0;
 }
 /* Small menu. */
 .main-navigation.toggled ul, .main-search-form.toggled form {
@@ -583,9 +616,13 @@ a:hover, a:active {
   cursor: pointer;
   padding: 14px;
 }
-.menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
+.menu-toggle:hover, .menu-toggle:active {
+  background: rgba(200, 200, 200, 0.1);
   border-color: rgba(0, 0, 0, 0.8);
-  outline: none;
+}
+.menu-toggle:focus {
+  border-color: rgba(0, 0, 0, 0.8);
+  outline: 1px dotted #c3c3c3;
 }
 .menu-toggle.on {
   background: rgba(200, 200, 200, 0.1);
@@ -717,6 +754,12 @@ a:hover, a:active {
 }
 .site-content {
   background: rgba(0, 0, 0, .4);
+  margin-top: 109px;
+}
+@media all and (min-width: 768px) {
+  .site-content {
+    margin-top: 0;
+  }
 }
 /*--------------------------------------------------------------
  ## Comments
@@ -728,7 +771,8 @@ a:hover, a:active {
   display: block;
 }
 .site-header {
-  position: relative;
+  position: fixed;
+  z-index: 6;
   display: block;
   background: #132118;
   padding: 30px 0 0;
@@ -741,7 +785,6 @@ a:hover, a:active {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
     padding: 0;
     height: 100%;
   }

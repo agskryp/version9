@@ -8,6 +8,7 @@
   @media all and (min-width: 768px) {
     margin-top: 0;
     position: relative;
+    max-width: none;
   }
   
   svg {
@@ -27,9 +28,11 @@
 .main-navigation {
   clear: both;
   display: block;
-  background: rgba( 0, 0, 0, 0.4 );
+  background: #132118;
+  border-left: 1px solid rgba( 0, 0, 0, 0.4 );
   @media all and (min-width: 768px) {
     background: none; 
+    border-left: none;
   }
 
   ul {
@@ -62,14 +65,48 @@
   margin: 0;
   padding-left: 0;
   text-align: center;
-  background: rgba( 0, 0, 0, 0.4 );
+  background: #132118;
+  border: 1px solid rgba( 0, 0, 0, 0.4 );
+  border-right: none;
   @media all and (min-width: 768px) {
     background: none; 
+    border: none;
+  }
+  
+  label {
+    margin: .5rem 0;
+    color: $color__text-main;
+  }
+  
+  input {
+    background: rgba( 200, 200, 200, 0.1 );
+    border: 1px solid rgba( 0, 0, 0, 0.8 );
+    color: $color__text-main;
+    padding: 4px 8px;
+    border-radius: 8px 0 0 8px;
+    &:focus,
+    &:active {
+      outline: 1px dotted rgba( 0, 0, 0, 0.4 );      
+    }
+    
+    &::placeholder {
+      color: $color__text-main;
+    }
+  }
+  
+  input[type="submit"] {
+    margin: 0;
+    border: none;
+    padding: 12px 12px;
+    height: 36px;
+    margin-left: -5px;
+    border: 1px solid rgba( 0, 0, 0, 0.8 );
+    background: rgba( 0, 0, 0, 0.8 );
+    border-radius: 0 8px 8px 0;
   }
 }
 
 /* Small menu. */
-
 .main-navigation.toggled ul,
 .main-search-form.toggled form {
   display: block;
@@ -94,10 +131,13 @@
   cursor: pointer;
   padding: 14px;
   &:hover,
-  &:active,
+  &:active {
+    background: rgba( 200, 200, 200, 0.1 );
+    border-color: rgba( 0, 0, 0, 0.8 );
+  }
   &:focus {
     border-color: rgba( 0, 0, 0, 0.8 );
-    outline: none;
+    outline: 1px dotted $color__text-main;
   }
   
   &.on {
@@ -109,6 +149,7 @@
   .menu-toggle {
     display: none;
   }
+  
   .main-navigation ul,
   .main-search-form form {
     display: block;

@@ -23,4 +23,8 @@
 
 .site-content {
   background: rgba(0,0,0,.4);
+  margin-top: 109px;
+  @media all and ( min-width: 768px ) {
+    margin-top: 0;
+  }
 }
