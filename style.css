@@ -518,6 +518,12 @@ a:hover, a:active {
     margin-right: 7px;
   }
 }
+.main-nav-button {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  float: right;
+  margin-top: -64px;
+}
 .main-navigation {
   clear: both;
   display: block;
@@ -817,7 +823,6 @@ a:hover, a:active {
   color: #c3c3c3;
 }
 .site-header a:hover {
-  color: antiquewhite;
   text-decoration: none;
 }
 .site-branding {
@@ -836,7 +841,7 @@ a:hover, a:active {
   }
 }
 .site-title {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', 'Tahoma', 'Geneva', sans-serif;
   font-size: 3em;
   line-height: 0.5;
   margin-bottom: 30px;
@@ -847,8 +852,11 @@ a:hover, a:active {
 .site-title span:last-of-type {
   margin-left: 22px;
 }
+.site-title a:hover {
+  color: rgba(200, 200, 200, .8);
+}
 .site-description {
-  font-family: 'lato', sans-serif;
+  font-family: 'Lato', 'Tahoma', 'Geneva', sans-serif;
   font-weight: 700;
   font-size: 1.5em;
   font-variant: small-caps;
@@ -873,7 +881,7 @@ a:hover, a:active {
     color: #78a58f;
   }
   75% {
-    color: cornflowerblue;
+    color: #9191e5;
   }
   100% {
     color: #9f8b68;

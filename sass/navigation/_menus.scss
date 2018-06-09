@@ -5,7 +5,7 @@
   right: 0;
   z-index: 6;
   margin-top: -44px;
-  @media all and (min-width: 768px) {
+  @media all and ( min-width: 768px ) {
     margin-top: 0;
     position: relative;
     max-width: none;
@@ -25,12 +25,19 @@
   }
 }
 
+.main-nav-button {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  float: right;
+  margin-top: -64px;
+}
+
 .main-navigation {
   clear: both;
   display: block;
   background: #132118;
   border-left: 1px solid rgba( 0, 0, 0, 0.4 );
-  @media all and (min-width: 768px) {
+  @media all and ( min-width: 768px ) {
     background: none; 
     border-left: none;
   }
@@ -68,7 +75,7 @@
   background: #132118;
   border: 1px solid rgba( 0, 0, 0, 0.4 );
   border-right: none;
-  @media all and (min-width: 768px) {
+  @media all and ( min-width: 768px ) {
     background: none; 
     border: none;
   }
@@ -99,7 +106,7 @@
     }
   }
   
-  input[type="submit"] {
+  input[ type="submit" ] {
     margin: 0;
     border: none;
     padding: 12px 12px;
@@ -113,6 +120,7 @@
       outline: 1px dotted $color__text-main;
       background: rgba( 200, 200, 200, 0.1 );
     }
+    
     &:hover {
       background: rgba( 200, 200, 200, 0.1 );
     }
@@ -154,6 +162,7 @@
     background: rgba( 200, 200, 200, 0.1 );
     border-color: rgba( 0, 0, 0, 0.8 );
   }
+  
   &:focus {
     border-color: rgba( 0, 0, 0, 0.8 );
     outline: 1px dotted $color__text-main;
