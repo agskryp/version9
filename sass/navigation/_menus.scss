@@ -5,7 +5,7 @@
   right: 0;
   z-index: 6;
   margin-top: -44px;
-  @media all and ( min-width: 768px ) {
+  @media all and ( min-width: $screen__md ) {
     margin-top: 0;
     position: relative;
     max-width: none;
@@ -20,7 +20,7 @@
     display: none;
     @media all and ( min-width: 615px ) {
       display: inline-block;
-      margin-right: 7px;
+      margin-right: $grid__pixel-7;
     }
   }
 }
@@ -29,15 +29,15 @@
   display: inline-flex;
   flex-direction: column-reverse;
   float: right;
-  margin-top: -64px;
+  margin-top: -60px;
 }
 
 .main-navigation {
   clear: both;
   display: block;
-  background: #132118;
-  border-left: 1px solid rgba( 0, 0, 0, 0.4 );
-  @media all and ( min-width: 768px ) {
+  background: $color__dark-green;
+  border-left: 1px solid $color__dark-50;
+  @media all and ( min-width: $screen__md ) {
     background: none; 
     border-left: none;
   }
@@ -48,20 +48,20 @@
     margin: 0;
     padding-left: 0;
     text-align: center;
-    border-top: 1px solid rgba( 0, 0, 0, 0.4 );
+    border-top: 1px solid $color__dark-50;
     
     li {
       text-transform: uppercase;
       font-size: 12px;
-      border-bottom: 1px solid rgba( 0, 0, 0, 0.4 );
+      border-bottom: 1px solid $color__dark-50;
     }
 
     a {
       display: block;
       text-decoration: none;
-      padding: 14px 0;      
+      padding: ( $grid__pixel-7 * 2 ) 0;      
       &:hover {
-        background: rgba( 200, 200, 200, 0.1 );
+        background: $color__light-10;
       }
     }
   }
@@ -72,57 +72,57 @@
   margin: 0;
   padding-left: 0;
   text-align: center;
-  background: #132118;
-  border: 1px solid rgba( 0, 0, 0, 0.4 );
+  background: $color__dark-green;
+  border: 1px solid $color__dark-50;
   border-right: none;
-  @media all and ( min-width: 768px ) {
+  @media all and ( min-width: $screen__md ) {
     background: none; 
     border: none;
   }
   
   label {
-    margin: .5rem 0;
+    margin: $grid__pixel-8 0;
   }
   
   input {
-    background: rgba( 200, 200, 200, 0.1 );
-    border: 1px solid rgba( 0, 0, 0, 0.8 );
-    padding: 4px 8px;
+    background: $color__light-10;
+    border: 1px solid $color__dark-80;
+    padding: ( $grid__pixel-8 / 2 ) $grid__pixel-8;
     color: $color__text-main;
-    border-radius: 8px 0 0 8px;
+    border-radius: $grid__pixel-8 0 0 $grid__pixel-8;
     &:focus {
       outline: 1px dotted $color__text-main;     
       color: $color__text-main;
-      background: rgba( 200, 200, 200, 0.2 );
+      background: $color__light-20;
     }
     
     &:active {
       color: $color__text-main;
-      background: rgba( 200, 200, 200, 0.2 );
+      background: $color__light-20;
     }
     
     &::placeholder {
-      color: rgba( 200, 200, 200, 0.4 );
+      color: $color__light-40;
     }
   }
   
   input[ type="submit" ] {
     margin: 0;
     border: none;
-    padding: 12px 12px;
+    padding: 0 ( $grid__pixel-7 * 2 );
     height: 34px;
     margin-left: -1px;
-    border: 1px solid rgba( 0, 0, 0, 0.8 );
-    background: rgba( 0, 0, 0, 0.8 );
-    border-radius: 0 8px 8px 0;
+    border: 1px solid $color__dark-80;
+    background: $color__dark-80;
+    border-radius: 0 $grid__pixel-8 $grid__pixel-8 0;
     cursor: pointer;
     &:focus {
       outline: 1px dotted $color__text-main;
-      background: rgba( 200, 200, 200, 0.1 );
+      background: $color__light-10;
     }
     
     &:hover {
-      background: rgba( 200, 200, 200, 0.1 );
+      background: $color__light-10;
     }
   }
 }
@@ -134,21 +134,17 @@
 }
 
 .main-search-form.toggled form {
-  display: flex;    
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   clear: both;
 }
 
 .menu-toggle {
+  @include flex-center;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 54px;
-  background: rgba( 0, 0, 0, 0.4 );
+  height: 52px;
+  background: $color__dark-50;
   color: $color__text-main;
-  border: 1px solid rgba( 0, 0, 0, 0.8 );
+  border: 1px solid $color__dark-80;
   border-bottom: none;
   border-right: none;
   border-radius: 0;
@@ -156,24 +152,24 @@
   margin: 0 2px;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 14px;
+  padding: $grid__pixel-7 * 2;
   &:hover,
   &:active {
-    background: rgba( 200, 200, 200, 0.1 );
-    border-color: rgba( 0, 0, 0, 0.8 );
+    background: $color__light-40;
+    border-color: $color__dark-80;
   }
   
   &:focus {
-    border-color: rgba( 0, 0, 0, 0.8 );
+    border-color: $color__dark-80;
     outline: 1px dotted $color__text-main;
   }
   
   &.on {
-    background: rgba( 200, 200, 200, 0.1 );
+    background: $color__light-10;
   }
 }
 
-@media screen and ( min-width: 768px ) {
+@media screen and ( min-width: $screen__md ) {
   .menu-toggle {
     display: none;
   }
@@ -183,11 +179,11 @@
   }
   
   .main-search-form form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
   }
 }
+
+
 
 .comment-navigation,
 .posts-navigation,

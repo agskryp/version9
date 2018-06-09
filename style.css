@@ -384,7 +384,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  background: #333;
+  background: #132118;
   /* Fallback for when there is no custom background color defined. */
   background: url('images/bkgd.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -473,13 +473,13 @@ textarea {
  ## Links
  --------------------------------------------------------------*/
 a {
-  color: cornflowerblue;
+  color: CORNFLOWERBLUE;
 }
 a:visited {
-  color: cornflowerblue;
+  color: CORNFLOWERBLUE;
 }
 a:hover, a:focus, a:active {
-  color: midnightblue;
+  color: MIDNIGHTBLUE;
 }
 a:focus {
   outline: thin dotted;
@@ -522,13 +522,13 @@ a:hover, a:active {
   display: inline-flex;
   flex-direction: column-reverse;
   float: right;
-  margin-top: -64px;
+  margin-top: -60px;
 }
 .main-navigation {
   clear: both;
   display: block;
   background: #132118;
-  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
 @media all and (min-width: 768px) {
   .main-navigation {
@@ -542,12 +542,12 @@ a:hover, a:active {
   margin: 0;
   padding-left: 0;
   text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
 .main-navigation ul li {
   text-transform: uppercase;
   font-size: 12px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 .main-navigation ul a {
   display: block;
@@ -563,7 +563,7 @@ a:hover, a:active {
   padding-left: 0;
   text-align: center;
   background: #132118;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-right: none;
 }
 @media all and (min-width: 768px) {
@@ -573,7 +573,7 @@ a:hover, a:active {
   }
 }
 .main-search-form form label {
-  margin: 0.5rem 0;
+  margin: 8px 0;
 }
 .main-search-form form input {
   background: rgba(200, 200, 200, 0.1);
@@ -594,10 +594,10 @@ a:hover, a:active {
 .main-search-form form input::placeholder {
   color: rgba(200, 200, 200, 0.4);
 }
-.main-search-form form input[type="submit"] {
+.main-search-form form input[ type="submit"] {
   margin: 0;
   border: none;
-  padding: 12px 12px;
+  padding: 0 14px;
   height: 34px;
   margin-left: -1px;
   border: 1px solid rgba(0, 0, 0, 0.8);
@@ -605,11 +605,11 @@ a:hover, a:active {
   border-radius: 0 8px 8px 0;
   cursor: pointer;
 }
-.main-search-form form input[type="submit"]:focus {
+.main-search-form form input[ type="submit"]:focus {
   outline: 1px dotted #c3c3c3;
   background: rgba(200, 200, 200, 0.1);
 }
-.main-search-form form input[type="submit"]:hover {
+.main-search-form form input[ type="submit"]:hover {
   background: rgba(200, 200, 200, 0.1);
 }
 /* Small menu. */
@@ -624,12 +624,12 @@ a:hover, a:active {
   clear: both;
 }
 .menu-toggle {
-  box-sizing: border-box;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 54px;
-  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  box-sizing: border-box;
+  height: 52px;
+  background: rgba(0, 0, 0, 0.5);
   color: #c3c3c3;
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-bottom: none;
@@ -642,7 +642,7 @@ a:hover, a:active {
   padding: 14px;
 }
 .menu-toggle:hover, .menu-toggle:active {
-  background: rgba(200, 200, 200, 0.1);
+  background: rgba(200, 200, 200, 0.4);
   border-color: rgba(0, 0, 0, 0.8);
 }
 .menu-toggle:focus {
@@ -784,7 +784,7 @@ a:hover, a:active {
 }
 .site-content {
   background: rgba(0, 0, 0, .4);
-  margin-top: 109px;
+  margin-top: 105px;
 }
 @media all and (min-width: 768px) {
   .site-content {
@@ -805,16 +805,16 @@ a:hover, a:active {
   z-index: 6;
   display: block;
   background: #132118;
-  padding: 30px 0 0;
+  padding: 28px 0 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
 @media all and (min-width: 768px) {
   .site-header {
-    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
     padding: 0;
     height: 100%;
   }
@@ -830,7 +830,7 @@ a:hover, a:active {
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  margin-left: 30px;
+  margin-left: 28px;
   margin-bottom: 0;
 }
 @media all and (min-width: 768px) {
@@ -844,7 +844,7 @@ a:hover, a:active {
   font-family: 'Lato', 'Tahoma', 'Geneva', sans-serif;
   font-size: 3em;
   line-height: 0.5;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 .site-title span {
   display: block;
@@ -853,7 +853,7 @@ a:hover, a:active {
   margin-left: 22px;
 }
 .site-title a:hover {
-  color: rgba(200, 200, 200, .8);
+  color: rgba(200, 200, 200, 0.8);
 }
 .site-description {
   font-family: 'Lato', 'Tahoma', 'Geneva', sans-serif;
@@ -866,7 +866,7 @@ a:hover, a:active {
   margin-left: 0;
   display: none;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   word-spacing: 2px;
   animation: description-colour-rotation 10s ease-in-out infinite;
 }
@@ -889,9 +889,9 @@ a:hover, a:active {
 }
 @media all and (min-width: 520px) {
   .site-description {
-    margin-left: 30px;
+    margin-left: 28px;
     border-left: 2px solid #c3c3c3;
-    padding-left: 30px;
+    padding-left: 28px;
   }
 }
 @media all and (min-width: 560px) {
@@ -911,11 +911,6 @@ a:hover, a:active {
 }
 .site-description span {
   display: block;
-}
-.site-description .amp {
-  display: block;
-  font-size: 0.7em;
-  margin-bottom: -6px;
 }
 /*--------------------------------------------------------------
  # Infinite scroll
