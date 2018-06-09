@@ -154,18 +154,15 @@
   cursor: pointer;
   padding: $grid__pixel-7 * 2;
   &:hover,
-  &:active {
-    background: $color__light-40;
+  &:active,
+  &.on {
+    background: $color__light-10;
     border-color: $color__dark-80;
   }
   
   &:focus {
     border-color: $color__dark-80;
     outline: 1px dotted $color__text-main;
-  }
-  
-  &.on {
-    background: $color__light-10;
   }
 }
 

@@ -641,16 +641,13 @@ a:hover, a:active {
   cursor: pointer;
   padding: 14px;
 }
-.menu-toggle:hover, .menu-toggle:active {
-  background: rgba(200, 200, 200, 0.4);
+.menu-toggle:hover, .menu-toggle:active, .menu-toggle.on {
+  background: rgba(200, 200, 200, 0.1);
   border-color: rgba(0, 0, 0, 0.8);
 }
 .menu-toggle:focus {
   border-color: rgba(0, 0, 0, 0.8);
   outline: 1px dotted #c3c3c3;
-}
-.menu-toggle.on {
-  background: rgba(200, 200, 200, 0.1);
 }
 @media screen and (min-width: 768px) {
   .menu-toggle {
