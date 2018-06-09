@@ -568,34 +568,53 @@ a:hover, a:active {
 }
 .main-search-form form label {
   margin: 0.5rem 0;
-  color: #c3c3c3;
 }
 .main-search-form form input {
   background: rgba(200, 200, 200, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.8);
-  color: #c3c3c3;
   padding: 4px 8px;
+  color: #c3c3c3;
   border-radius: 8px 0 0 8px;
 }
-.main-search-form form input:focus, .main-search-form form input:active {
-  outline: 1px dotted rgba(0, 0, 0, 0.4);
+.main-search-form form input:focus {
+  outline: 1px dotted #c3c3c3;
+  color: #c3c3c3;
+  background: rgba(200, 200, 200, 0.2);
+}
+.main-search-form form input:active {
+  color: #c3c3c3;
+  background: rgba(200, 200, 200, 0.2);
 }
 .main-search-form form input::placeholder {
-  color: #c3c3c3;
+  color: rgba(200, 200, 200, 0.4);
 }
 .main-search-form form input[type="submit"] {
   margin: 0;
   border: none;
   padding: 12px 12px;
-  height: 36px;
-  margin-left: -5px;
+  height: 34px;
+  margin-left: -1px;
   border: 1px solid rgba(0, 0, 0, 0.8);
   background: rgba(0, 0, 0, 0.8);
   border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+.main-search-form form input[type="submit"]:focus {
+  outline: 1px dotted #c3c3c3;
+  background: rgba(200, 200, 200, 0.1);
+}
+.main-search-form form input[type="submit"]:hover {
+  background: rgba(200, 200, 200, 0.1);
 }
 /* Small menu. */
-.main-navigation.toggled ul, .main-search-form.toggled form {
+.main-navigation.toggled ul {
   display: block;
+  clear: both;
+}
+.main-search-form.toggled form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   clear: both;
 }
 .menu-toggle {
@@ -631,8 +650,13 @@ a:hover, a:active {
   .menu-toggle {
     display: none;
   }
-  .main-navigation ul, .main-search-form form {
+  .main-navigation ul {
     display: block;
+  }
+  .main-search-form form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {

@@ -52,7 +52,7 @@
     a {
       display: block;
       text-decoration: none;
-      padding: 14px 0;
+      padding: 14px 0;      
       &:hover {
         background: rgba( 200, 200, 200, 0.1 );
       }
@@ -75,22 +75,27 @@
   
   label {
     margin: .5rem 0;
-    color: $color__text-main;
   }
   
   input {
     background: rgba( 200, 200, 200, 0.1 );
     border: 1px solid rgba( 0, 0, 0, 0.8 );
-    color: $color__text-main;
     padding: 4px 8px;
+    color: $color__text-main;
     border-radius: 8px 0 0 8px;
-    &:focus,
+    &:focus {
+      outline: 1px dotted $color__text-main;     
+      color: $color__text-main;
+      background: rgba( 200, 200, 200, 0.2 );
+    }
+    
     &:active {
-      outline: 1px dotted rgba( 0, 0, 0, 0.4 );      
+      color: $color__text-main;
+      background: rgba( 200, 200, 200, 0.2 );
     }
     
     &::placeholder {
-      color: $color__text-main;
+      color: rgba( 200, 200, 200, 0.4 );
     }
   }
   
@@ -98,18 +103,32 @@
     margin: 0;
     border: none;
     padding: 12px 12px;
-    height: 36px;
-    margin-left: -5px;
+    height: 34px;
+    margin-left: -1px;
     border: 1px solid rgba( 0, 0, 0, 0.8 );
     background: rgba( 0, 0, 0, 0.8 );
     border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    &:focus {
+      outline: 1px dotted $color__text-main;
+      background: rgba( 200, 200, 200, 0.1 );
+    }
+    &:hover {
+      background: rgba( 200, 200, 200, 0.1 );
+    }
   }
 }
 
 /* Small menu. */
-.main-navigation.toggled ul,
-.main-search-form.toggled form {
+.main-navigation.toggled ul {
   display: block;
+  clear: both;
+}
+
+.main-search-form.toggled form {
+  display: flex;    
+  align-items: center;
+  justify-content: center;
   clear: both;
 }
 
@@ -150,9 +169,14 @@
     display: none;
   }
   
-  .main-navigation ul,
-  .main-search-form form {
+  .main-navigation ul {
     display: block;
+  }
+  
+  .main-search-form form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
