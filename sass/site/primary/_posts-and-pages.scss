@@ -28,3 +28,32 @@
     margin-top: 0;
   }
 }
+
+.content-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+  .site-main & {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+  }
+
+  .nav-previous {
+    float: left;
+    width: 50%;
+  }
+
+  .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+  }
+}
