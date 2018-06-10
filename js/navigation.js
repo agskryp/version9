@@ -5,151 +5,157 @@
  * navigation support for dropdown menus.
  */
 (function () {
-  var searchContainer, searchButton, searchForm, navContainer, contentContainer;
+  // Declare variables
+  var searchContainer, navContainer, contentContainer, container,
+      searchButton, button, searchForm, menu, links, i, len;
   
-  searchContainer = document.getElementById('site-search');
-  if (!searchContainer) {
+  // Search form container, return if it doesn't exist
+  searchContainer = document.getElementById( 'site-search' );
+  if ( !searchContainer ) {
     return;
   }
   
-    navContainer = document.getElementById('main-navigation');
-  if (!navContainer) {
+  // Navigation menu container, return if it doesn't exist
+  navContainer = document.getElementById( 'main-navigation' );
+  if ( !navContainer ) {
     return;
   }
 
-  contentContainer = document.getElementById('content');
-  if (!contentContainer) {
+  // Content body container, return if it doesn't exist
+  contentContainer = document.getElementById( 'content' );
+  if ( !contentContainer ) {
     return;
   }
   
-   searchForm = searchContainer.getElementsByTagName('form')[0];
-
-  // Hide menu toggle button if menu is empty and return early.
-  if ('undefined' === typeof searchForm) {
+  // Buttons, navigation menu, and search form container, return if it doesn't exist
+  container = document.getElementById( 'site-navigation' );
+  if ( !container ) {
+    return;
+  }
+  
+  // Search button, return if element's undefined
+  searchButton = container.getElementsByTagName( 'button' )[ 1 ];
+  if ( 'undefined' === typeof searchButton ) {
+    return;
+  }
+  
+  // Menu button, return if element's undefined
+  button = container.getElementsByTagName( 'button' )[ 0 ];
+  if ( 'undefined' === typeof button ) {
+    return;
+  }
+  
+  // Search form, return if element's undefined
+  searchForm = searchContainer.getElementsByTagName( 'form' )[ 0 ];
+  if ( 'undefined' === typeof searchForm ) {
     searchButton.style.display = 'none';
     return;
   }
-
-  searchForm.setAttribute('aria-expanded', 'false');
-  if (-1 === searchForm.className.indexOf('search-form')) {
-    searchForm.className += ' search-form';
-  }
   
-  
-  
-  var container, button, menu, links, i, len;
-  
-
-  container = document.getElementById('site-navigation');
-  if (!container) {
-    return;
-  }
-  
-  
-  
-  
-  
-  
-  
-  searchButton = container.getElementsByTagName('button')[1];
-  if ('undefined' === typeof searchButton) {
-    return;
-  }
-  
-  
-  searchButton.onclick = function () {
-    if (-1 !== searchContainer.className.indexOf('toggled')) {
-      searchContainer.className = searchContainer.className.replace(' toggled', '');
-      searchButton.setAttribute('aria-expanded', 'false');
-      searchForm.setAttribute('aria-expanded', 'false');
-      searchButton.classList.remove('on');
-    } else {
-      searchContainer.className += ' toggled';
-      searchButton.setAttribute('aria-expanded', 'true');
-      searchForm.setAttribute('aria-expanded', 'true');
-      searchButton.classList.add('on');
-    }
-  };
-  
-  
-  
-  
-  
-  
-  
-  
-
-  button = container.getElementsByTagName('button')[0];
-  if ('undefined' === typeof button) {
-    return;
-  }
-
-  menu = container.getElementsByTagName('ul')[0];
-
-  // Hide menu toggle button if menu is empty and return early.
-  if ('undefined' === typeof menu) {
+  // Navigation menu list, hide menu button and return if element's undefined
+  menu = container.getElementsByTagName( 'ul' )[ 0 ];
+  if ( 'undefined' === typeof menu ) {
     button.style.display = 'none';
     return;
   }
-
-  menu.setAttribute('aria-expanded', 'false');
-  if (-1 === menu.className.indexOf('nav-menu')) {
-    menu.className += ' nav-menu';
+  
+  // Because the navigation menu is created with wp_nav_menu(), use javascript
+  // to set aria-expanded to false, check if the navigation menu has '.nav-menu'
+  // If it doesn't, add '.nav-menu' (important for the toggleFocus function)
+  menu.setAttribute( 'aria-expanded', 'false' );
+  if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
+    menu.classList.add( 'nav-menu' );
   }
-
-  button.onclick = function () {
-    if (-1 !== navContainer.className.indexOf('toggled')) {
-      navContainer.className = navContainer.className.replace(' toggled', '');
-      button.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-expanded', 'false');
-      button.classList.remove('on');
+  
+  // Navigation menu anchor tags
+  links = menu.getElementsByTagName( 'a' );
+  
+  // Total number of links in navigation menu
+  len = links.length;
+  
+  
+  // When executed, remove '.toggled' from search form container, set aria-expanded on the
+  // search button and search form to false, and remove '.on' from the search button
+  function toggleSearchOff() {
+    searchContainer.classList.remove( 'toggled' );
+    searchButton.setAttribute( 'aria-expanded', 'false' );
+    searchForm.setAttribute( 'aria-expanded', 'false' );
+    searchButton.classList.remove( 'on' );
+  }
+  
+  // When executed, apply '.toggled' to the search form container, set aria-expanded on the
+  // search button and search form to true, and apply '.on' to the search button
+  function toggleSearchOn() {
+    searchContainer.classList.add( 'toggled' );
+    searchButton.setAttribute( 'aria-expanded', 'true' );
+    searchForm.setAttribute( 'aria-expanded', 'true' );
+    searchButton.classList.add( 'on' );
+  }
+  
+  // When executed, remove '.toggled' from navigation menu container, set aria-expanded on the
+  // menu button and navigation menu list to false, and remove '.on' from the menu button
+  function toggleMenuOff() {
+    navContainer.classList.remove( 'toggled' );
+    button.setAttribute( 'aria-expanded', 'false' );
+    menu.setAttribute( 'aria-expanded', 'false' );
+    button.classList.remove( 'on' );
+  }
+  
+  // When executed, apply '.toggled' to navigation menu container, set aria-expanded on the
+  // menu button and navigation menu list to true, and apply '.on' to the menu button
+  function toggleMenuOn() {
+    navContainer.classList.add ( 'toggled' );
+    button.setAttribute( 'aria-expanded', 'true' );
+    menu.setAttribute( 'aria-expanded', 'true' );
+    button.classList.add( 'on' );
+  }
+  
+  // When the search button is clicked, check if the search form container has '.toggled'
+  // If true, execute the toggleSearchOff function.
+  // Else, execute the toggleSearchOn function
+  searchButton.onclick = function () {
+    if ( -1 !== searchContainer.className.indexOf( 'toggled' ) ) {
+      toggleSearchOff();
     } else {
-      navContainer.className += ' toggled';
-      button.setAttribute('aria-expanded', 'true');
-      menu.setAttribute('aria-expanded', 'true');
-      button.classList.add('on');
+      toggleSearchOn();
     }
   };
   
-  contentContainer.onclick = function () {
-    if (-1 !== searchContainer.className.indexOf('toggled')) {
-      searchContainer.className = searchContainer.className.replace(' toggled', '');
-      searchButton.setAttribute('aria-expanded', 'false');
-      searchButton.classList.remove('on');
-      searchForm.setAttribute('aria-expanded', 'false');
+  // When the menu button is clicked, check if the navigation menu container has '.toggled'
+  // If true, execute the toggleMenuOff function.
+  // Else, execute the toggleMenuOn function
+  button.onclick = function () {
+    if ( -1 !== navContainer.className.indexOf( 'toggled' ) ) {
+      toggleMenuOff();
+    } else {
+      toggleMenuOn();
     }
-    if (-1 !== navContainer.className.indexOf('toggled')) {
-         navContainer.className = navContainer.className.replace(' toggled', '');
-      button.setAttribute('aria-expanded', 'false');
-      button.classList.remove('on');
-      menu.setAttribute('aria-expanded', 'false');
-    }   
-  }
-
-  // Get all the link elements within the menu.
-  links = menu.getElementsByTagName('a');
-
-  // Each time a menu link is focused or blurred, toggle focus.
-  for (i = 0, len = links.length; i < len; i++) {
-    links[i].addEventListener('focus', toggleFocus, true);
-    links[i].addEventListener('blur', toggleFocus, true);
-  }
-
-  /**
-   * Sets or removes .focus class on an element.
-   */
+  };
+  
+  // When the body content container is clicked, check if the search form container
+  // or the navigation menu container has '.toggled'.  If true, execute the 
+  // toggleSearchOff or toggleMenuOff function respectively.
+  contentContainer.onclick = function () {
+    if ( -1 !== searchContainer.className.indexOf( 'toggled' ) ) {
+      toggleSearchOff();
+    }
+    if ( -1 !== navContainer.className.indexOf( 'toggled' ) ) {
+      toggleMenuOff();
+    }
+  };
+  
+  // Sets or removes .focus class on an element
   function toggleFocus() {
     var self = this;
 
-    // Move up through the ancestors of the current link until we hit .nav-menu.
-    while (-1 === self.className.indexOf('nav-menu')) {
-
-      // On li elements toggle the class .focus.
-      if ('li' === self.tagName.toLowerCase()) {
-        if (-1 !== self.className.indexOf('focus')) {
-          self.className = self.className.replace(' focus', '');
+    // Move up through the ancestors of the current link until we hit .nav-menu
+    while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+      // On li elements toggle the class .focus
+      if ( 'li' === self.tagName.toLowerCase() ) {
+        if ( -1 !== self.className.indexOf( 'focus' ) ) {
+          self.classList.remove( 'focus' );
         } else {
-          self.className += ' focus';
+          self.classList.add( 'focus' );
         }
       }
 
@@ -157,35 +163,44 @@
     }
   }
 
-  /**
-   * Toggles `focus` class to allow submenu access on tablets.
-   */
-  (function (container) {
-    var touchStartFn, i,
-      parentLink = container.querySelectorAll('.menu-item-has-children > a, .page_item_has_children > a');
+  // Each time a menu link is focused or blurred, toggle focus.
+  for ( i = 0; i < len; i += 1 ) {
+    links[ i ].addEventListener( 'focus', toggleFocus, true );
+    links[ i ].addEventListener( 'blur', toggleFocus, true );
+  }
 
-    if ('ontouchstart' in window) {
-      touchStartFn = function (e) {
-        var menuItem = this.parentNode,
-          i;
+  // Toggles `focus` class to allow submenu access on tablets.
+  (function ( container ) {
+    var touchStartFn, i, parentLink;
+    
+    parentLink = container.querySelectorAll('.menu-item-has-children > a, .page_item_has_children > a');
 
-        if (!menuItem.classList.contains('focus')) {
+    if ( 'ontouchstart' in window ) {
+      touchStartFn = function ( e ) {
+        var i, menuItem;
+            
+        menuItem = this.parentNode;
+
+        if ( !menuItem.classList.contains( 'focus' ) ) {
           e.preventDefault();
-          for (i = 0; i < menuItem.parentNode.children.length; ++i) {
-            if (menuItem === menuItem.parentNode.children[i]) {
+          
+          for ( i = 0; i < menuItem.parentNode.children.length; i += 1) {
+            if ( menuItem === menuItem.parentNode.children[ i ] ) {
               continue;
             }
-            menuItem.parentNode.children[i].classList.remove('focus');
+            
+            menuItem.parentNode.children[ i ].classList.remove( 'focus' );
           }
-          menuItem.classList.add('focus');
+          
+          menuItem.classList.add( 'focus' );
         } else {
-          menuItem.classList.remove('focus');
+          menuItem.classList.remove( 'focus' );
         }
       };
 
-      for (i = 0; i < parentLink.length; ++i) {
-        parentLink[i].addEventListener('touchstart', touchStartFn, false);
+      for ( i = 0; i < parentLink.length; i += 1 ) {
+        parentLink[ i ].addEventListener( 'touchstart', touchStartFn, false );
       }
     }
-  }(container));
-})();
+  } ( container ) );
+} ) ();
