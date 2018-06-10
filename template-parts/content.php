@@ -1,33 +1,34 @@
 <?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package version9
- */
-
+  /**
+   * Template part for displaying posts
+   *
+   * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+   * @package version9
+   */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <div style="   
+    border-bottom: 2px solid WHITE;
+    margin-top: 28px;
+              background: rgba(0,0,0,0.1);">
 	<header class="entry-header">
-		<?php
+      <?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+          the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+          the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				version9_posted_on();
-				version9_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+      ?>
+	
+      <div class="entry-meta">
+        <?php version9_post_header_meta(); ?>
+      </div>
+      
+      <?php endif; ?>
+	</header>
 
 	<?php version9_post_thumbnail(); ?>
 
@@ -54,6 +55,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php version9_entry_footer(); ?>
+		<?php version9_post_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+  </div>
 </article><!-- #post-<?php the_ID(); ?> -->
