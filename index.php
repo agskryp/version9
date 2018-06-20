@@ -14,7 +14,7 @@
   get_header();
 ?>
 
-<div id="primary" class="content-area content-container">
+<div id="primary" class="content-area content-container" style="margin: 28px auto 0;">
   <main id="main" class="site-main">
     <?php
       if ( have_posts() ) :

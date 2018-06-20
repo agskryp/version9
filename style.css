@@ -333,6 +333,10 @@ body, button, input, select, optgroup, textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
+h1 {
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
+}
 p {
   margin-bottom: 1.5em;
 }
@@ -767,7 +771,6 @@ a:hover, a:active {
   margin: 0 0 1.5em;
 }
 .site-content {
-  background: rgba(0, 0, 0, .4);
   margin-top: 105px;
 }
 @media all and (min-width: 768px) {
@@ -791,6 +794,21 @@ a:hover, a:active {
   float: right;
   text-align: right;
   width: 50%;
+}
+.entry-header {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  padding-bottom: 14px;
+}
+.entry-title {
+  font-weight: 700;
+}
+.entry-meta {
+  font-size: 85%;
+}
+.entry-content {
+  font-family: 'Lato', sans-serif;
 }
 /*--------------------------------------------------------------
  ## Comments
@@ -822,6 +840,7 @@ a:hover, a:active {
 }
 .site-header a {
   color: #c3c3c3;
+  font-weight: 100;
 }
 .site-header a:hover {
   text-decoration: none;

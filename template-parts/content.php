@@ -9,9 +9,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div style="   
-    border-bottom: 2px solid WHITE;
-    margin-top: 28px;
-              background: rgba(0,0,0,0.1);">
+              background: rgba(0,0,0,0.3);
+                  padding: 28px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.1);">
 	<header class="entry-header">
       <?php
 		if ( is_singular() ) :
