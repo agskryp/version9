@@ -805,11 +805,14 @@ a:hover, a:active {
   font-weight: 100;
   padding: 1em;
 }
-.entry-header {
+.index-page .entry-header {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   padding-bottom: 14px;
+}
+.index-page .entry-title {
+  font-weight: 700;
 }
 .post-thumbnail {
   display: inline-block;
@@ -820,9 +823,6 @@ a.post-thumbnail:focus, a.post-thumbnail:hover {
 .post-thumbnail img {
   margin-top: 28px;
 }
-.entry-title {
-  font-weight: 700;
-}
 .entry-meta {
   font-size: 85%;
   word-spacing: 1px;
@@ -830,6 +830,25 @@ a.post-thumbnail:focus, a.post-thumbnail:hover {
 .entry-footer {
   display: flex;
   justify-content: space-between;
+}
+.single-page .entry-header {
+  text-align: center;
+  padding: 56px;
+}
+.single-page .entry-meta {
+  font-weight: 700;
+}
+.single-page .entry-title {
+  line-height: 1;
+  font-weight: 100;
+}
+.single-page .entry-content {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 /*--------------------------------------------------------------
  ## Comments

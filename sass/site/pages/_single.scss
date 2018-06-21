@@ -1,0 +1,25 @@
+.single-page {
+  
+  .entry-header {
+    text-align: center;
+    padding: 56px;
+  }
+
+  .entry-meta {
+    font-weight: 700;
+  }
+  
+  .entry-title {
+    line-height: 1;
+    font-weight: 100;
+  }
+  
+    .entry-content {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    background: rgba(0,0,0,0.3);
+    padding: 28px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+} 
