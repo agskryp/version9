@@ -16,6 +16,10 @@
 
 <div id="primary" class="content-area content-container" style="margin: 28px auto 0;">
   <main id="main" class="site-main">
+    <h1 class="text-center font-weight-bold">
+      Articles
+    </h1>
+    
     <?php
       if ( have_posts() ) :
         if ( is_home() && ! is_front_page() ) :
