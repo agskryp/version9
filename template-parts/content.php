@@ -55,8 +55,9 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php version9_post_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<footer class="entry-footer" style="    display: flex;
+    justify-content: space-between;">
+		<?php version9_post_footer_meta(); ?>
+	</footer>
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->
