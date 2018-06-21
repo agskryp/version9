@@ -29,8 +29,10 @@
       
       <?php endif; ?>
 	</header>
-
-	<?php version9_post_thumbnail(); ?>
+    
+    <div class="text-center">
+      <?php version9_post_thumbnail(); ?>
+    </div>
 
 	<div class="entry-content">
 		<?php
