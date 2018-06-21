@@ -780,10 +780,6 @@ a:hover, a:active {
     margin-top: 0;
   }
 }
-.content-area {
-  max-width: 600px;
-  margin: 0 auto;
-}
 .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
@@ -797,13 +793,15 @@ a:hover, a:active {
   text-align: right;
   width: 50%;
 }
-.article-list article {
+.index-page article {
+  max-width: 600px;
+  margin: 0 auto 28px;
   background: rgba(0, 0, 0, 0.3);
   padding: 28px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.article-list .page-title {
+.index-page .page-title {
   font-weight: 100;
   padding: 1em;
 }
@@ -812,6 +810,15 @@ a:hover, a:active {
   font-weight: 700;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   padding-bottom: 14px;
+}
+.post-thumbnail {
+  display: inline-block;
+}
+a.post-thumbnail:focus, a.post-thumbnail:hover {
+  opacity: 0.8;
+}
+.post-thumbnail img {
+  margin-top: 28px;
 }
 .entry-title {
   font-weight: 700;

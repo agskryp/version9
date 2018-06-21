@@ -14,8 +14,8 @@
   get_header();
 ?>
 
-<div id="primary" class="content-area">
-  <main id="main" class="site-main article-list">
+<div id="primary">
+  <main id="main" class="site-main index-page">
     <?php
       if ( have_posts() ) :
         if ( is_home() && !is_front_page() ) :
