@@ -14,39 +14,39 @@
   get_header();
 ?>
 
-<div id="primary" class="content-area content-container" style="margin: 28px auto 0;">
-  <main id="main" class="site-main">
-    <h1 class="text-center font-weight-bold">
-      Articles
-    </h1>
-    
+<div id="primary" class="content-area">
+  <main id="main" class="site-main article-list">
     <?php
       if ( have_posts() ) :
-        if ( is_home() && ! is_front_page() ) :
+        if ( is_home() && !is_front_page() ) :
       ?>
         <header>
-          <h1 class="page-title screen-reader-text">
+          <h1 class="page-title text-center">
             <?php single_post_title(); ?>
           </h1>
         </header>
+    
       <?php
         endif;
-      while ( have_posts() ) :
-        the_post();
 
-        get_template_part( 'template-parts/content', get_post_type() );
-      endwhile;
+        while ( have_posts() ) :
+          the_post();
 
-      the_posts_navigation();
+          get_template_part( 'template-parts/content', get_post_type() );
+        endwhile;
+
+        the_posts_navigation();
 
       else :
         get_template_part( 'template-parts/content', 'none' );
+      
       endif;
     ?>
   </main>
   
   <?php
     get_sidebar();
+  
     get_footer();
   ?>
 </div>

@@ -9,17 +9,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div style="   
-              background: rgba(0,0,0,0.3);
-                  padding: 28px;
-    border-radius: 6px;
-    border: 1px solid rgba(0,0,0,0.1);">
+            ">
 	<header class="entry-header">
       <?php
 		if ( is_singular() ) :
           the_title( '<h1 class="entry-title">', '</h1>' );
+      
 		else :
           the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+		
+        endif;
 
 		if ( 'post' === get_post_type() ) :
       ?>
@@ -53,10 +52,9 @@
 			'after'  => '</div>',
 		) );
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
-	<footer class="entry-footer" style="    display: flex;
-    justify-content: space-between;">
+	<footer class="entry-footer">
 		<?php version9_post_footer_meta(); ?>
 	</footer>
   </div>

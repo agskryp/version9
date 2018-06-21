@@ -395,6 +395,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Lato', sans-serif;
 }
 hr {
   background-color: #ccc;
@@ -557,6 +558,7 @@ a:hover, a:active {
   display: block;
   text-decoration: none;
   padding: 14px 0;
+  font-weight: 700;
 }
 .main-navigation ul a:hover {
   background: rgba(200, 200, 200, 0.1);
@@ -778,7 +780,7 @@ a:hover, a:active {
     margin-top: 0;
   }
 }
-.content-container {
+.content-area {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -795,6 +797,16 @@ a:hover, a:active {
   text-align: right;
   width: 50%;
 }
+.article-list article {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.article-list .page-title {
+  font-weight: 100;
+  padding: 1em;
+}
 .entry-header {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
@@ -806,9 +818,11 @@ a:hover, a:active {
 }
 .entry-meta {
   font-size: 85%;
+  word-spacing: 1px;
 }
-.entry-content {
-  font-family: 'Lato', sans-serif;
+.entry-footer {
+  display: flex;
+  justify-content: space-between;
 }
 /*--------------------------------------------------------------
  ## Comments
