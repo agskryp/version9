@@ -814,14 +814,14 @@ a:hover, a:active {
 .index-page .entry-title {
   font-weight: 700;
 }
-.index-page .post-thumbnail {
-  display: inline-block;
+.index-page .featured-image-container {
+  margin-top: 28px;
 }
-a.index-page .post-thumbnail:focus, a.index-page .post-thumbnail:hover {
+.index-page .featured-image-container a:focus, .index-page .featured-image-container a:hover {
   opacity: 0.8;
 }
-.index-page .post-thumbnail img {
-  margin-top: 28px;
+.index-page .post-thumbnail {
+  display: inline-block;
 }
 .entry-meta {
   font-size: 85%;

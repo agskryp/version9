@@ -25,17 +25,18 @@
   .entry-title {
     font-weight: 700;
   }
+  
+  .featured-image-container {
+    margin-top: 28px;
+    
+    a:focus,
+    a:hover {
+      opacity: .8;
+    }
+  }
 
   .post-thumbnail {
     display: inline-block;
-    a&:focus,
-    a&:hover {
-      opacity: .8;
-    }
-
-    img {
-      margin-top: 28px;
-    }
   }
 }
 
