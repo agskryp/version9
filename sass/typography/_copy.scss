@@ -7,7 +7,13 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 1.5em 1.5em;
+  background: rgba(0,0,0,0.3);
+    border-left: 6px solid black;
+    padding: 14px;
+  p {
+    margin: 0;
+  }
 }
 
 address {

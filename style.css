@@ -344,7 +344,13 @@ dfn, cite, em, i {
   font-style: italic;
 }
 blockquote {
-  margin: 0 1.5em;
+  margin: 0 1.5em 1.5em;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 6px solid black;
+  padding: 14px;
+}
+blockquote p {
+  margin: 0;
 }
 address {
   margin: 0 0 1.5em;
@@ -435,6 +441,10 @@ dd {
 table {
   margin: 0 0 1.5em;
   width: 100%;
+}
+td, th {
+  padding: 14px;
+  border: 1px solid WHITE;
 }
 /*--------------------------------------------------------------
  # Forms
