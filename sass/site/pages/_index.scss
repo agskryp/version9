@@ -25,17 +25,17 @@
   .entry-title {
     font-weight: 700;
   }
-} 
 
-.post-thumbnail {
-  display: inline-block;
-  a&:focus,
-  a&:hover {
-    opacity: .8;
-  }
-  
-  img {
-    margin-top: 28px;
+  .post-thumbnail {
+    display: inline-block;
+    a&:focus,
+    a&:hover {
+      opacity: .8;
+    }
+
+    img {
+      margin-top: 28px;
+    }
   }
 }
 
