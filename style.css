@@ -814,13 +814,13 @@ a:hover, a:active {
 .index-page .entry-title {
   font-weight: 700;
 }
-.post-thumbnail {
+.index-page .post-thumbnail {
   display: inline-block;
 }
-a.post-thumbnail:focus, a.post-thumbnail:hover {
+a.index-page .post-thumbnail:focus, a.index-page .post-thumbnail:hover {
   opacity: 0.8;
 }
-.post-thumbnail img {
+.index-page .post-thumbnail img {
   margin-top: 28px;
 }
 .entry-meta {
@@ -833,7 +833,7 @@ a.post-thumbnail:focus, a.post-thumbnail:hover {
 }
 .single-page .entry-header {
   text-align: center;
-  padding: 56px;
+  padding: 56px 0;
 }
 .single-page .entry-meta {
   font-weight: 700;
@@ -841,6 +841,14 @@ a.post-thumbnail:focus, a.post-thumbnail:hover {
 .single-page .entry-title {
   line-height: 1;
   font-weight: 100;
+}
+.single-page .featured-image-container {
+  max-height: 365px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -15px 28px;
 }
 .single-page .entry-content {
   max-width: 600px;

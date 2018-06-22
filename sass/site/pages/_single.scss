@@ -2,7 +2,7 @@
   
   .entry-header {
     text-align: center;
-    padding: 56px;
+    padding: 56px 0;
   }
 
   .entry-meta {
@@ -12,6 +12,15 @@
   .entry-title {
     line-height: 1;
     font-weight: 100;
+  }
+  
+  .featured-image-container {
+    max-height: 365px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -15px 28px;
   }
   
     .entry-content {
