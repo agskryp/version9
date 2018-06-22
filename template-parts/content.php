@@ -8,8 +8,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <div style="   
-            ">
 	<header class="entry-header">
       <?php
 		if ( is_singular() ) :
@@ -30,7 +28,7 @@
       <?php endif; ?>
 	</header>
     
-    <div class="text-center">
+    <div class="text-center featured-image-container">
       <?php version9_post_thumbnail(); ?>
     </div>
 
@@ -54,10 +52,11 @@
 			'after'  => '</div>',
 		) );
 		?>
-	</div>
-
-	<footer class="entry-footer">
+      
+      <footer class="entry-footer">
 		<?php version9_post_footer_meta(); ?>
 	</footer>
-  </div>
+	</div>
+
+	
 </article><!-- #post-<?php the_ID(); ?> -->
