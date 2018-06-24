@@ -340,23 +340,33 @@ h1 {
 p {
   margin-bottom: 1.5em;
 }
-dfn, cite, em, i {
+dfn, em, i {
   font-style: italic;
+}
+cite {
+  margin-left: 5px;
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: bold;
 }
 blockquote {
   margin: 0 1.5em 1.5em;
   background: rgba(0, 0, 0, 0.3);
-  border-left: 6px solid black;
+  border-left: 6px solid rgba(0, 0, 0, 0.5);
   padding: 14px;
 }
 blockquote p {
   margin: 0;
 }
 address {
-  margin: 0 0 1.5em;
+  margin: 0 0 1.5em 1.5em;
+  font-size: 17.6px;
+  font-size: 1.1rem;
 }
 pre {
-  background: #eee;
+  background: rgba(0, 0, 0, 0.5);
+  color: #78a58f;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -370,17 +380,28 @@ code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
   font-size: 0.9375rem;
+  color: #78a58f;
+}
+kbd {
+  background: rgba(0, 0, 0, .5);
 }
 abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 mark, ins {
-  background: #fff9c0;
+  background: #9f8b68;
   text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
 }
 big {
-  font-size: 125%;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+q::before, q::after {
+  font-weight: bold;
+  font-size: 17.6px;
+  font-size: 1.1rem;
 }
 /*--------------------------------------------------------------
  # Elements
@@ -420,7 +441,7 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 ul, ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em;
 }
 ul {
   list-style: disc;
@@ -430,7 +451,7 @@ ol {
 }
 li > ul, li > ol {
   margin-bottom: 0;
-  margin-left: 1.5em;
+  margin-left: -0.5em;
 }
 dt {
   font-weight: bold;
@@ -444,7 +465,7 @@ table {
 }
 td, th {
   padding: 14px;
-  border: 1px solid WHITE;
+  border: 1px solid #c3c3c3;
 }
 /*--------------------------------------------------------------
  # Forms
@@ -488,13 +509,14 @@ textarea {
  ## Links
  --------------------------------------------------------------*/
 a {
-  color: CORNFLOWERBLUE;
+  color: #9191e5;
 }
 a:visited {
-  color: CORNFLOWERBLUE;
+  color: #9191e5;
 }
 a:hover, a:focus, a:active {
-  color: MIDNIGHTBLUE;
+  color: #9f8b68;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
@@ -784,6 +806,7 @@ a:hover, a:active {
 }
 .site-content {
   margin-top: 105px;
+  background: rgba(0, 0, 0, 0.3);
 }
 @media all and (min-width: 768px) {
   .site-content {
@@ -883,6 +906,7 @@ a:hover, a:active {
   display: block;
   background: #132118;
   padding: 28px 0 0;
+  border-right: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
 @media all and (min-width: 768px) {
@@ -890,6 +914,7 @@ a:hover, a:active {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
     background: rgba(0, 0, 0, 0.5);
     flex-direction: column;
     padding: 0;
