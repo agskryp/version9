@@ -23,13 +23,16 @@
     margin: 0 -15px 28px;
   }
   
-  .entry-content,
-  .comments-area {
+  .entry-content {
     max-width: 600px;
     margin: 0 auto 28px;
     background: $color__dark-30;
     padding: 28px;
     border-radius: 6px;
     border: 1px solid $color__dark-10;
+    font-size: 14px;
+    @media all and ( min-width: $screen__sm ) {
+      font-size: 16px;
+    }
   }
 } 

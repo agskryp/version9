@@ -336,6 +336,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3rem;
   margin: 0 0 0.5rem;
+  line-height: 0.8;
 }
 p {
   margin-bottom: 1.5em;
@@ -351,10 +352,15 @@ cite {
   font-weight: bold;
 }
 blockquote {
-  margin: 0 1.5em 1.5em;
+  margin: 0 7px 28px;
   background: rgba(0, 0, 0, 0.3);
   border-left: 6px solid rgba(0, 0, 0, 0.5);
   padding: 14px;
+}
+@media all and (min-width: 600px) {
+  blockquote {
+    margin: 0 28px 28px;
+  }
 }
 blockquote p {
   margin: 0;
@@ -441,7 +447,7 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 ul, ol {
-  margin: 0 0 1.5em;
+  margin: 0 0 28px;
 }
 ul {
   list-style: disc;
@@ -450,8 +456,14 @@ ol {
   list-style: decimal;
 }
 li > ul, li > ol {
-  margin-bottom: 0;
   margin-left: -0.5em;
+  padding-bottom: 0;
+}
+ol ol, ol ul, ul ol, ul ul {
+  padding-left: 28px;
+}
+ol li {
+  padding-left: 6px;
 }
 dt {
   font-weight: bold;
@@ -464,8 +476,13 @@ table {
   width: 100%;
 }
 td, th {
-  padding: 14px;
+  padding: 7px;
   border: 1px solid #c3c3c3;
+}
+@media all and (min-width: 600px) {
+  td, th {
+    padding: 14px;
+  }
 }
 /*--------------------------------------------------------------
  # Forms
@@ -883,13 +900,19 @@ a:hover, a:active {
   justify-content: center;
   margin: 0 -15px 28px;
 }
-.single-page .entry-content, .single-page .comments-area {
+.single-page .entry-content {
   max-width: 600px;
   margin: 0 auto 28px;
   background: rgba(0, 0, 0, 0.3);
   padding: 28px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+@media all and (min-width: 600px) {
+  .single-page .entry-content {
+    font-size: 16px;
+  }
 }
 /*--------------------------------------------------------------
  ## Comments
@@ -900,18 +923,43 @@ a:hover, a:active {
 .bypostauthor {
   display: block;
 }
+.comments-area {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 28px 0;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+@media all and (min-width: 600px) {
+  .comments-area {
+    font-size: 16px;
+  }
+}
+.comments-area .comments-title {
+  padding: 0 28px;
+}
 .comments-area .comment-list {
   padding: 0;
   list-style: none;
 }
 .comments-area .comment {
-  padding-top: 28px;
-  border-top: 1px solid BLACK;
+  padding: 28px 28px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 28px;
 }
 .comments-area .children {
   list-style: none;
-  padding-left: 28px;
+  background: rgba(0, 0, 0, 0.3);
+  padding-left: 0.5em;
+}
+.comments-area .children .children {
+  background: none;
+}
+.comments-area .children > .comment {
+  padding: 0;
 }
 .comments-area .comment-meta {
   display: flex;
@@ -922,6 +970,18 @@ a:hover, a:active {
 .comments-area .comment-meta .comment-author {
   font-size: 125%;
   flex: 3;
+}
+.comments-area .comment-meta .comment-metadata {
+  font-size: 70%;
+}
+.comments-area .reply {
+  padding-bottom: 28px;
+}
+.comments-area .comment-content ol, .comments-area .comment-content ul {
+  margin-bottom: 28px;
+}
+.comments-area .comment-content ol ol, .comments-area .comment-content ol ul, .comments-area .comment-content ul ol, .comments-area .comment-content ul ul {
+  margin-bottom: 0;
 }
 .site-header {
   position: fixed;

@@ -14,10 +14,14 @@ cite {
 }
 
 blockquote {
-  margin: 0 1.5em 1.5em;
+  margin: 0 7px 28px;
   background: $color__dark-30;
   border-left: 6px solid $color__dark-50;
   padding: 14px;
+  @media all and ( min-width: $screen__sm ) {
+    margin: 0 28px 28px;
+  }
+  
   p {
     margin: 0;
   }
