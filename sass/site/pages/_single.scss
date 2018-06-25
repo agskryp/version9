@@ -23,7 +23,8 @@
     margin: 0 -15px 28px;
   }
   
-  .entry-content {
+  .entry-content,
+  .comments-area {
     max-width: 600px;
     margin: 0 auto 28px;
     background: $color__dark-30;
