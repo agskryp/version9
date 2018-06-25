@@ -883,7 +883,7 @@ a:hover, a:active {
   justify-content: center;
   margin: 0 -15px 28px;
 }
-.single-page .entry-content {
+.single-page .entry-content, .single-page .comments-area {
   max-width: 600px;
   margin: 0 auto 28px;
   background: rgba(0, 0, 0, 0.3);
@@ -899,6 +899,29 @@ a:hover, a:active {
 }
 .bypostauthor {
   display: block;
+}
+.comments-area .comment-list {
+  padding: 0;
+  list-style: none;
+}
+.comments-area .comment {
+  padding-top: 28px;
+  border-top: 1px solid BLACK;
+  margin-top: 28px;
+}
+.comments-area .children {
+  list-style: none;
+  padding-left: 28px;
+}
+.comments-area .comment-meta {
+  display: flex;
+}
+.comments-area .comment-meta .vcard {
+  margin: 0 14px 14px 0;
+}
+.comments-area .comment-meta .comment-author {
+  font-size: 125%;
+  flex: 3;
 }
 .site-header {
   position: fixed;
