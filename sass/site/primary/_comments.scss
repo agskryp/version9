@@ -29,28 +29,33 @@
   
   .comment {
     padding: 28px 28px 0;
-    border-top: 1px solid $color__dark-10;
-    border-bottom: 1px solid $color__dark-10;
-//    border-radius: 6px;
-    margin-top: 28px;
-//    background: $color__dark-30;
+    border-top: 1px solid $color__soft-white;
   }
   
   .children {
     list-style: none;
     background: rgba(0,0,0,0.3);
     padding-left: 0.5em;
+    margin: 0 -14px 28px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    
+    .comment {
+      padding: 28px 14px 0;
+    }
     
     .children {
       background: none;
-    }
-    
-    @media all and ( min-width: $screen__sm ) {
-//      padding-left: 28px;
-    }
-    
-    >.comment {
-      padding: 0;
+      margin: 0 0 0 -0.5em;
+      border: none;
+      
+      .comment {
+        padding: 0;
+      }
+      
+      .comment-body {
+        padding-top: 28px;
+      }
     }
   }
   

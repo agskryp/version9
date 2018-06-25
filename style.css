@@ -946,20 +946,29 @@ a:hover, a:active {
 }
 .comments-area .comment {
   padding: 28px 28px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 28px;
+  border-top: 1px solid #c3c3c3;
 }
 .comments-area .children {
   list-style: none;
   background: rgba(0, 0, 0, 0.3);
   padding-left: 0.5em;
+  margin: 0 -14px 28px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+.comments-area .children .comment {
+  padding: 28px 14px 0;
 }
 .comments-area .children .children {
   background: none;
+  margin: 0 0 0 -0.5em;
+  border: none;
 }
-.comments-area .children > .comment {
+.comments-area .children .children .comment {
   padding: 0;
+}
+.comments-area .children .children .comment-body {
+  padding-top: 28px;
 }
 .comments-area .comment-meta {
   display: flex;
