@@ -182,7 +182,6 @@ class version9_Walker_Comment extends Walker {
   }
 
   /**
-   * /////////////////////////////////////////////////////////////////////////////
    * Ends the element output, if needed.
    *
    * @since 2.7.0
@@ -194,40 +193,40 @@ class version9_Walker_Comment extends Walker {
    * @param array      $args    Optional. An array of arguments. Default empty array.
    */
   public function end_el( &$output, $comment, $depth = 0, $args = array() ) {
-      if ( !empty( $args['end-callback'] ) ) {
-          ob_start();
-          call_user_func( $args['end-callback'], $comment, $args, $depth );
-          $output .= ob_get_clean();
-          return;
-      }
-      if ( 'div' == $args['style'] )
-          $output .= "</div><!-- #comment-## -->\n";
-      else
-          $output .= "</li><!-- #comment-## -->\n";
+    if ( !empty( $args[ 'end-callback' ] ) ) {
+      ob_start();
+      call_user_func( $args[ 'end-callback' ], $comment, $args, $depth );
+      $output .= ob_get_clean();
+      return;
+    }
+    
+    if ( 'div' == $args[ 'style' ] )
+      $output .= "</div><!-- #comment-## -->\n";
+    
+    else
+      $output .= "</li><!-- #comment-## -->\n";
   }
 
   /**
    * Outputs a pingback comment.
    *
    * @since 3.6.0
-   *
    * @see wp_list_comments()
-   *
    * @param WP_Comment $comment The comment object.
    * @param int        $depth   Depth of the current comment.
    * @param array      $args    An array of arguments.
    */
   protected function ping( $comment, $depth, $args ) {
-      $tag = ( 'div' == $args['style'] ) ? 'div' : 'li';
+    $tag = ( 'div' == $args[ 'style' ] ) ? 'div' : 'li';
 ?>
-<<?php echo $tag; ?> id="comment-
-<?php comment_ID(); ?>"
-<?php comment_class( '', $comment ); ?>>
-<div class="comment-body">
-  <?php _e( 'Pingback:' ); ?>
-  <?php comment_author_link( $comment ); ?>
-  <?php edit_comment_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-</div>
+    <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( '', $comment ); ?>>
+      <div class="comment-body">
+        <?php
+          _e( 'Pingback:' ); 
+          comment_author_link( $comment );
+          edit_comment_link( __( 'Edit' ), '<span class="edit-link">', '</span>' );
+        ?>
+      </div>
 <?php
   }
 
@@ -235,142 +234,143 @@ class version9_Walker_Comment extends Walker {
    * Outputs a single comment.
    *
    * @since 3.6.0
-   *
    * @see wp_list_comments()
-   *
    * @param WP_Comment $comment Comment to display.
    * @param int        $depth   Depth of the current comment.
    * @param array      $args    An array of arguments.
    */
   protected function comment( $comment, $depth, $args ) {
-      if ( 'div' == $args['style'] ) {
-          $tag = 'div';
-          $add_below = 'comment';
-      } else {
-          $tag = 'li';
-          $add_below = 'div-comment';
-      }
+    if ( 'div' == $args[ 'style' ] ) {
+      $tag = 'div';
+      $add_below = 'comment';
+    } else {
+      $tag = 'li';
+      $add_below = 'div-comment';
+    }
 ?>
-  <<?php echo $tag; ?>
-    <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?> id="comment-
-    <?php comment_ID(); ?>">
-    <?php if ( 'div' != $args['style'] ) : ?>
-    <div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-      <?php endif; ?>
-      <div class="comment-author vcard">
-        <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-        <?php
-              /* translators: %s: comment author link */
-              printf( __( '%s <span class="says">SCREAMS:</span>' ),
-                  sprintf( '<cite class="fn">%s</cite>', get_comment_author_link( $comment ) )
-              );
-          ?>
-      </div>
-      <?php if ( '0' == $comment->comment_approved ) : ?>
-      <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ) ?></em>
+  <<?php echo $tag; comment_class( $this -> has_children ? 'parent' : '', $comment ); ?> id="comment-<?php comment_ID(); ?>">
+    <?php if ( 'div' != $args[ 'style' ] ) : ?>
+      <div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+    <?php endif; ?>
+    
+    <div class="comment-author vcard">
+      <?php 
+        if ( 0 != $args[ 'avatar_size' ] )
+          echo get_avatar( $comment, $args[ 'avatar_size' ] );
+          
+        /* translators: %s: comment author link */
+        printf( __( '%s <span class="says">SCREAMS:</span>' ),
+          sprintf( '<cite class="fn">%s</cite>', get_comment_author_link( $comment ) )
+        );
+      ?>
+    </div>
+    
+    <?php if ( '0' == $comment -> comment_approved ) : ?>
+      <em class="comment-awaiting-moderation">
+        <?php _e( 'Your comment is awaiting moderation.' ) ?>
+      </em>
+      
       <br />
-      <?php endif; ?>
+    <?php endif; ?>
 
-      <div class="comment-meta commentmetadata">
-        <a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
-          <?php
-              /* translators: 1: comment date, 2: comment time */
-              printf( __( '%1$s at %2$s' ), get_comment_date( '', $comment ),  get_comment_time() ); ?>
-        </a>
-        <?php edit_comment_link( __( '(Edit)' ), '&nbsp;&nbsp;', '' );
-          ?>
-      </div>
+    <div class="comment-meta commentmetadata">
+      <a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
+        <?php
+          /* translators: 1: comment date, 2: comment time */
+          printf( __( '%1$s at %2$s' ), get_comment_date( '', $comment ),  get_comment_time() );
+        ?>
+      </a>
+      
+      <?php edit_comment_link( __( '(Edit)' ), '&nbsp;&nbsp;', '' ); ?>
+    </div>
 
-      <?php comment_text( $comment, array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-
-      <?php
+    <?php 
+      comment_text( $comment, array_merge( $args, array( 
+        'add_below' => $add_below,
+        'depth'     => $depth,
+        'max_depth' => $args[ 'max_depth ']
+      ) ) ); 
+    
       comment_reply_link( array_merge( $args, array(
           'add_below' => $add_below,
           'depth'     => $depth,
-          'max_depth' => $args['max_depth'],
+          'max_depth' => $args[ 'max_depth' ],
           'before'    => '<div class="reply">',
           'after'     => '</div>'
       ) ) );
-      ?>
-
-        <?php if ( 'div' != $args['style'] ) : ?>
-    </div>
-    <?php endif; ?>
-    <?php
+      
+      if ( 'div' != $args[ 'style' ] ) :
+    ?>
+  </div>
+  
+<?php 
+    endif; 
   }
 
   /**
    * Outputs a comment in the HTML5 format.
    *
    * @since 3.6.0
-   *
    * @see wp_list_comments()
-   *
    * @param WP_Comment $comment Comment to display.
    * @param int        $depth   Depth of the current comment.
    * @param array      $args    An array of arguments.
    */
   protected function html5_comment( $comment, $depth, $args ) {
-      $tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+    $tag = ( 'div' === $args[ 'style' ] ) ? 'div' : 'li';
 ?>
-      <<?php echo $tag; ?> id="comment-
-        <?php comment_ID(); ?>"
-        <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
-        <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-          <footer class="comment-meta">
-            <div class="vcard">
-              <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-            </div>
+  <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this -> has_children ? 'parent' : '', $comment ); ?>>
+    <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+      <footer class="comment-meta">
+        <div class="vcard">
+          <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+        </div>
 
-            <div class="comment-author">
-              <?php
-                          /* translators: %s: comment author link */
-                          printf( __( '%s' ),
-                              sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
-                          );
-                      ?>
-                <div class="comment-metadata" style="font-size: 80%;">
-                  <a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
-                          <time datetime="<?php comment_time( 'c' ); ?>">
-                              <?php
-                                  /* translators: 1: comment date, 2: comment time */
-                                  printf( __( '%1$s at %2$s' ), get_comment_date( '', $comment ), get_comment_time() );
-                              ?>
-                          </time>
-                      </a>
-
-                </div>
-                <!-- .comment-metadata -->
-            </div>
-            <!-- .comment-author -->
-            <?php edit_comment_link( __( 'Edit' ), '<span class="edit-link float-right">', '</span>' ); ?>
-
-
-
-            <?php if ( '0' == $comment->comment_approved ) : ?>
-            <p class="comment-awaiting-moderation">
-              <?php _e( 'Your comment is awaiting moderation.' ); ?>
-            </p>
-            <?php endif; ?>
-          </footer>
-          <!-- .comment-meta -->
-
-          <div class="comment-content">
-            <?php comment_text(); ?>
-          </div>
-          <!-- .comment-content -->
-
+        <div class="comment-author">
           <?php
-              comment_reply_link( array_merge( $args, array(
-                  'add_below' => 'div-comment',
-                  'depth'     => $depth,
-                  'max_depth' => $args['max_depth'],
-                  'before'    => '<div class="reply">',
-                  'after'     => '</div>'
-              ) ) );
-              ?>
-        </article>
-        <!-- .comment-body -->
-        <?php
+            /* translators: %s: comment author link */
+            printf( __( '%s' ),
+              sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
+            );
+          ?>
+          
+          <div class="comment-metadata" style="font-size: 80%;">
+            <a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
+              <time datetime="<?php comment_time( 'c' ); ?>">
+                <?php
+                  /* translators: 1: comment date, 2: comment time */
+                  printf( __( '%1$s at %2$s' ), get_comment_date( '', $comment ), get_comment_time() );
+                ?>
+              </time>
+            </a>
+          </div>
+        </div>
+        
+        <?php 
+          edit_comment_link( __( 'Edit' ), '<span class="edit-link float-right">', '</span>' );
+    
+          if ( '0' == $comment -> comment_approved ) :
+        ?>
+          <p class="comment-awaiting-moderation">
+            <?php _e( 'Your comment is awaiting moderation.' ); ?>
+          </p>
+        <?php endif; ?>
+      </footer>
+      
+      <div class="comment-content">
+        <?php comment_text(); ?>
+      </div>
+          
+      <?php
+        comment_reply_link( array_merge( $args, array(
+          'add_below' => 'div-comment',
+          'depth'     => $depth,
+          'max_depth' => $args[ 'max_depth' ],
+          'before'    => '<div class="reply">',
+          'after'     => '</div>'
+        ) ) );
+      ?>
+    </article>
+  <?php
   }
 }
