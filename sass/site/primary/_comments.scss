@@ -1,13 +1,25 @@
 .comment-content a {
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
+
 .bypostauthor {
-	display: block;
+  display: block;
 }
 
 .comments-area {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  background: $color__dark-30;
+  padding: 28px 0;
+  border-radius: 6px;
+  border: 1px solid $color__dark-10;
+  font-size: 14px;
+  @media all and ( min-width: $screen__sm ) {
+    font-size: 16px;
+  }
   
   .comments-title {
+    padding: 0 28px;
   }
   
   .comment-list {
@@ -16,28 +28,64 @@
   }
   
   .comment {
-    padding-top: 28px;
-    border-top: 1px solid BLACK;
+    padding: 28px 28px 0;
+    border-top: 1px solid $color__dark-10;
+    border-bottom: 1px solid $color__dark-10;
+//    border-radius: 6px;
     margin-top: 28px;
+//    background: $color__dark-30;
   }
   
   .children {
     list-style: none;
-    padding-left: 28px;
+    background: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+    
+    .children {
+      background: none;
+    }
+    
+    @media all and ( min-width: $screen__sm ) {
+//      padding-left: 28px;
+    }
+    
+    >.comment {
+      padding: 0;
+    }
   }
   
   .comment-meta {
     display: flex;
   
     .vcard {
-  //    display: inline-block;
       margin: 0 14px 14px 0;
     }
 
     .comment-author {
-  //    display: inline-block;
       font-size: 125%;
       flex: 3;
     }
+    
+    .comment-metadata {
+      font-size: 70%;
+    }
+  }
+  
+  .reply {
+    padding-bottom: 28px;
+  }
+  
+  .comment-content {
+    
+    ol, ul {
+      margin-bottom: 28px;
+    }
+    
+    ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-bottom: 0;
+}
   }
 }
