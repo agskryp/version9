@@ -323,7 +323,7 @@ class version9_Walker_Comment extends Walker {
     <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
       <footer class="comment-meta">
         <div class="vcard">
-          <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+          <?php if ( 0 != $args[ 'avatar_size' ] ) echo get_avatar( $comment, $args[ 'avatar_size' ] ); ?>
         </div>
 
         <div class="comment-author">
@@ -334,7 +334,7 @@ class version9_Walker_Comment extends Walker {
             );
           ?>
           
-          <div class="comment-metadata" style="font-size: 80%;">
+          <div class="comment-metadata">
             <a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
               <time datetime="<?php comment_time( 'c' ); ?>">
                 <?php
