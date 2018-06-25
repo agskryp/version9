@@ -4,6 +4,10 @@ table {
 }
 
 td, th {
-  padding: 14px;
+  padding: 7px;
   border: 1px solid $color__soft-white;
+  
+  @media all and ( min-width: $screen__sm ) {
+    padding: 14px;
+  }
 }
