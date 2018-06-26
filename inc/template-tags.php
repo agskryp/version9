@@ -39,7 +39,6 @@ if ( !function_exists( 'version9_post_header_meta' ) ) :
   }
 endif;
 
-
 /**
  * Prints HTML with meta information for comments & post edit.
  */
@@ -73,81 +72,38 @@ if ( !function_exists( 'version9_post_footer_meta' ) ) :
   }
 endif;
 
+/**
+ * Returns the navigation for next/previous list of posts, when applicable (i.e. index.php).
+ */
+function version9_posts_navigation( $args = array() ) {
+  $navigation = '';
+
+  // Don't print empty markup if there's only one page.
+  if ( $GLOBALS[ 'wp_query' ] -> max_num_pages > 1 ) {
+    $args = wp_parse_args( $args, array(
+      'prev_text'          => esc_html__( 'View older posts', 'moltodestroyed' ),
+      'next_text'          => esc_html__( 'View newer posts', 'moltodestroyed' ),
+      'screen_reader_text' => esc_html__( 'Posts navigation', 'moltodestroyed' ),
+    ) );
+
+    $next_link = get_previous_posts_link( $args[ 'next_text' ] );
+    $prev_link = get_next_posts_link( $args[ 'prev_text' ] );
+
+    if ( $prev_link ) {
+      $navigation .= '<div class="nav-previous">' . $prev_link . '</div>';
+    }
+
+    if ( $next_link ) {
+      $navigation .= '<div class="nav-next">' . $next_link . '</div>';
+    }
+
+    $navigation = _navigation_markup( $navigation, 'posts-navigation', $args[ 'screen_reader_text' ] );
+  }
+
+  echo $navigation;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if ( ! function_exists( 'version9_post_entry_footer' ) ) :
-	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
-	 */
-	function version9_post_entry_footer() {
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'version9' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'version9' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
-		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'version9' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			echo '</span>';
-		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'version9' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
-	}
-endif;
 
 
 
