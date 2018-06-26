@@ -103,7 +103,43 @@ function version9_posts_navigation( $args = array() ) {
   echo $navigation;
 }
 
+/**
+ * Retrieves the navigation for next/previous post, when applicable.
+ */
+function version9_blog_navigation( $args = array() ) {
+  $args = wp_parse_args( $args, array(
+	'post_text'          => '%title',
+	'in_same_term'       => false,
+	'excluded_terms'     => '',
+	'taxonomy'           => 'category',
+	'screen_reader_text' => esc_html__( 'Post navigation', 'moltodestroyed' ),
+  ) );
 
+  $navigation = '';
+
+  $previous = get_previous_post_link(
+	'<div class="nav-previous"><small>View an older post</small><br> %link</div>',
+    $args[ 'post_text' ],
+	$args[ 'in_same_term' ],
+	$args[ 'excluded_terms' ],
+	$args[ 'taxonomy' ]
+  );
+
+  $next = get_next_post_link(
+    '<div class="nav-next"><small>View a newer post</small><br> %link</div>',
+    $args[ 'post_text' ],
+    $args[ 'in_same_term' ],
+    $args[ 'excluded_terms' ],
+    $args[ 'taxonomy' ]
+  );
+
+  // Only add markup if there's somewhere to navigate to.
+  if ( $previous || $next ) {
+    $navigation = _navigation_markup( $previous . $next, 'post-navigation', $args[ 'screen_reader_text' ] );
+  }
+
+  echo $navigation;
+}
 
 
 
