@@ -1159,6 +1159,18 @@ a:hover, a:active {
 .site-description span {
   display: block;
 }
+.site-footer {
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0 -15px;
+  padding: 4em 2em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.site-footer a:hover svg {
+  fill: #9f8b68;
+}
+.site-footer a svg {
+  fill: #9191e5;
+}
 /*--------------------------------------------------------------
  # Infinite scroll
  --------------------------------------------------------------*/

@@ -1,0 +1,18 @@
+.site-footer {
+  background: $color__dark-50;
+  margin: 0 -15px;
+  padding: 4em 2em;
+  border-top: 1px solid $color__dark-10;
+  
+  a {
+    &:hover {
+      svg {
+        fill: $color__link-hover;
+      }
+    }
+    
+    svg {
+      fill: $color__link;
+    }
+  }
+}
