@@ -30,15 +30,25 @@
         <div class="site-branding">
           <p class="site-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <span>Andrew</span>
-              <span>Skrypnyk</span>
+              <span>
+                Andrew
+              </span>
+              
+              <span>
+                Skrypnyk
+              </span>
             </a>
           </p>
 
           <div class="site-description">
             <p class="text-center">
-              <span>Web Design</span>
-              <span>&amp; Development</span>
+              <span>
+                Web Design
+              </span>
+              
+              <span>
+                &amp; Development
+              </span>
             </p>
           </div>
         </div>
