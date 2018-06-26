@@ -846,7 +846,7 @@ a:hover, a:active {
   text-align: right;
   width: 50%;
 }
-.index-page article {
+.index-page article, .archive-page article {
   max-width: 600px;
   margin: 0 auto 28px;
   background: rgba(0, 0, 0, 0.3);
@@ -854,26 +854,28 @@ a:hover, a:active {
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.index-page .page-title {
-  font-weight: 100;
-  padding: 1em;
+.index-page .page-header, .archive-page .page-header {
+  padding: 56px;
 }
-.index-page .entry-header {
+.index-page .page-title, .archive-page .page-title {
+  font-weight: 100;
+}
+.index-page .entry-header, .archive-page .entry-header {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   padding-bottom: 14px;
 }
-.index-page .entry-title {
+.index-page .entry-title, .archive-page .entry-title {
   font-weight: 700;
 }
-.index-page .featured-image-container {
+.index-page .featured-image-container, .archive-page .featured-image-container {
   margin-top: 28px;
 }
-.index-page .featured-image-container a:focus, .index-page .featured-image-container a:hover {
+.index-page .featured-image-container a:focus, .archive-page .featured-image-container a:focus, .index-page .featured-image-container a:hover, .archive-page .featured-image-container a:hover {
   opacity: 0.8;
 }
-.index-page .post-thumbnail {
+.index-page .post-thumbnail, .archive-page .post-thumbnail {
   display: inline-block;
 }
 .entry-meta {
