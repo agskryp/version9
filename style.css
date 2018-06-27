@@ -878,6 +878,10 @@ a:hover, a:active {
 .index-page .post-thumbnail, .archive-page .post-thumbnail {
   display: inline-block;
 }
+.archive-page .archive-description p {
+  margin: 0;
+  font-size: 90%;
+}
 .entry-meta {
   font-size: 85%;
   word-spacing: 1px;
