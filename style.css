@@ -890,18 +890,18 @@ a:hover, a:active {
   display: flex;
   justify-content: space-between;
 }
-.single-page .entry-header {
+.single-page .entry-header, .page-page .entry-header {
   text-align: center;
   padding: 56px 0;
 }
-.single-page .entry-meta {
+.single-page .entry-meta, .page-page .entry-meta {
   font-weight: 700;
 }
-.single-page .entry-title {
+.single-page .entry-title, .page-page .entry-title {
   line-height: 1;
   font-weight: 100;
 }
-.single-page .featured-image-container {
+.single-page .featured-image-container, .page-page .featured-image-container {
   max-height: 365px;
   overflow: hidden;
   display: flex;
@@ -909,7 +909,7 @@ a:hover, a:active {
   justify-content: center;
   margin: 0 -15px 28px;
 }
-.single-page .entry-content {
+.single-page .entry-content, .page-page .entry-content {
   max-width: 600px;
   margin: 0 auto 28px;
   background: rgba(0, 0, 0, 0.3);
@@ -919,7 +919,7 @@ a:hover, a:active {
   font-size: 14px;
 }
 @media all and (min-width: 600px) {
-  .single-page .entry-content {
+  .single-page .entry-content, .page-page .entry-content {
     font-size: 16px;
   }
 }
