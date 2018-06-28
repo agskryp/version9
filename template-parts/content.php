@@ -29,11 +29,9 @@
 	</header>
   
   <?php if ( has_post_thumbnail() ) : ?>
-    
     <div class="text-center featured-image-container">
       <?php version9_post_thumbnail(); ?>
     </div>
-  
   <?php endif; ?>
 
 	<div class="entry-content">
