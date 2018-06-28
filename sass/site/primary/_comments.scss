@@ -26,7 +26,8 @@
   .comment-list {
     padding: 0;
     list-style: none;
-    margin: 0;
+    margin: 0 0 28px;
+    border-bottom: 1px solid $color__soft-white;
   }
   
   .comment {
@@ -113,8 +114,7 @@ ul ul {
     }
   
   .comment-respond {
-        padding: 28px 28px 0;
-    border-top: 1px solid $color__soft-white;
+        padding: 0 28px;
   
     
     .logged-in-as a:last-of-type {

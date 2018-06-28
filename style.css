@@ -953,7 +953,8 @@ a:hover, a:active {
 .comments-area .comment-list {
   padding: 0;
   list-style: none;
-  margin: 0;
+  margin: 0 0 28px;
+  border-bottom: 1px solid #c3c3c3;
 }
 .comments-area .comment {
   padding: 28px 28px 0;
@@ -1017,8 +1018,7 @@ a:hover, a:active {
   margin: 0;
 }
 .comments-area .comment-respond {
-  padding: 28px 28px 0;
-  border-top: 1px solid #c3c3c3;
+  padding: 0 28px;
 }
 .comments-area .comment-respond .logged-in-as a:last-of-type {
   margin-left: 0.5em;
