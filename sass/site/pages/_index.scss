@@ -1,5 +1,6 @@
 .index-page,
-.archive-page {
+.archive-page,
+.search-page {
   
   article {
     max-width: 600px;
@@ -53,6 +54,11 @@
   }
 }
 
+.search-page {
+  .search-result {
+    font-weight: normal;
+  }
+}
 
 
 .entry-meta {
