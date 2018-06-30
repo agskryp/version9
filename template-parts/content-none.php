@@ -9,11 +9,14 @@
 
 <section class="no-results not-found">
   <header class="page-header">
-    <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'version9' ); ?></h1>
+    <h1 class="page-title text-center">
+      <?php esc_html_e( 'Nothing Found', 'version9' ); ?>
+    </h1>
   </header>
 
-  <div class="page-content">
+  <article class="page-content">
     <?php
+      /* Dunno how to view this content, need to check template */
       if ( is_home() && current_user_can( 'publish_posts' ) ) :
         printf( '<p>' . wp_kses(
           /* translators: 1: link to WP admin new post page. */
@@ -28,25 +31,29 @@
     ?>
       
       <p>
-        Sorry, but nothing matched your search terms. Please try again with some different keywords.        
+        Sorry, nothing on this site has ever used your search term.
+      </p>
+    
+      <p>
+        Use the form below to try again, or click one of the links in the site menu.
       </p>
         
-    <div id="site-search" class="main-search-form">
-            <?php require get_template_directory() . '/searchform.php';  ?>
-          </div>
-<?php
+      <div id="site-search" class="main-search-form">
+        <?php require get_template_directory() . '/searchform.php';  ?>
+      </div>
+
+    <?php
+      /* Dunno how to view this content, need to check template */
       else :
     ?>
-
       <p>
         It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.
       </p>
+
+      <div id="site-search" class="main-search-form">
+        <?php require get_template_directory() . '/searchform.php';  ?>
+      </div>
     
-    <div id="site-search" class="main-search-form">
-            <?php require get_template_directory() . '/searchform.php';  ?>
-          </div>
-<?php
-      endif;
-    ?>
-  </div>
+    <?php endif; ?>
+  </article>
 </section>
