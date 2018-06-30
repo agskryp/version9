@@ -1,0 +1,203 @@
+.homepage-bkgd {
+//  background: url(http://agskryp.dev/wp-content/uploads/2016/12/bkgdHome.jpg) no-repeat center center fixed;
+//  background-size: cover;
+}
+
+.homepage-screen {
+  display: block;
+}
+
+.homepage-branding {
+  padding: 1em 0 0;
+}
+
+.homepage-container {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  max-width: 60em;
+}
+
+.homepage-menu-item {
+  width: 100%;
+  padding: 1em 0;
+  margin: 2em 0;
+  text-align: center;
+  position: relative; // For TweenMax animation
+}
+
+.homepage-menu-item i {
+  text-shadow: 2px 2px 2px RED;
+}
+
+.homepage-menu-item p {
+  padding: 0 3em;
+  color: DARKBLUE;
+  text-shadow: 2px 2px 2px RED;
+}
+
+.homepage-menu-item p,
+.homepage-menu-button {
+  font-size: 1.2em;
+}
+
+.homepage-menu-button {
+  background: PINK;
+  border-radius: 5px;
+  border-color: PINK;
+  color: RED;
+  padding: 10px;
+  width: 60%;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 140%;
+  box-shadow: 2px 2px 2px RED;
+}
+
+.homepage-menu-button-hover {
+  // Class added and removed via jQuery
+  background: ORANGE;
+  border: ORANGE;
+  color: RED;
+}
+
+.homepage-menu-item-blog {
+  background: SILVER;
+  box-shadow: 4px 4px 4px SILVER, -4px -4px 4px SILVER;
+}
+
+.homepage-menu-item-portfolio {
+  background: GOLD;
+  box-shadow: 4px 4px 4px GOLD, -4px -4px 4px GOLD;
+}
+
+.homepage-menu-item-about {
+  background: PURPLE;
+  box-shadow: 4px 4px 4px PURPLE, -4px -4px 4px PURPLE;
+}
+
+.homepage-menu-item-contact {
+  background: AQUA;
+  box-shadow: 4px 4px 4px AQUA, -4px -4px 4px AQUA;
+}
+
+.homepage-menu-item-blog,
+.homepage-menu-item-portfolio,
+.homepage-menu-item-about,
+.homepage-menu-item-contact {
+  border-radius: 0%;
+}
+
+@media screen and ( min-width: 480px ) {
+  .homepage-menu-item {
+    height: 150px;
+    margin: 2em 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .homepage-menu-item p {
+    display: inline-block;
+    padding: 0 2em;
+    margin: 0;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  .homepage-menu-button {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+    font-size: 100%;
+  }
+
+  .homepage-menu-item i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15%;
+  }
+}
+
+@media screen and ( min-width: 768px ) {
+  .homepage-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .homepage-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+  }
+
+  .homepage-branding {
+    padding-top: 0;
+    padding-bottom: 2em;
+  }
+
+  .homepage-menu-item {
+    height: 100%;
+    width: 13em;
+    margin: 0.5em;
+  }
+
+  .homepage-menu-item-blog,
+  .homepage-menu-item-portfolio,
+  .homepage-menu-item-about,
+  .homepage-menu-item-contact {
+    border-radius: 15%;
+  }
+
+  .homepage-menu-item p,
+  .homepage-menu-item i,
+  .homepage-menu-button {
+    display: block;
+    width: 100%;
+  }
+
+  .homepage-menu-button {
+    width: 70%;
+  }
+
+  .homepage-menu-button {
+    padding: 5px 10px;
+  }
+
+  .homepage-menu-item p {
+    font-size: 1em;
+    padding: 2em 1em;
+  }
+}
+
+@media screen and ( min-width: 992px) {
+  .homepage-screen {
+    font-size: 1.3rem;
+  }
+
+  .homepage-branding .site-title {
+    max-width: 591px;
+  }
+
+  .site-description {
+    font-size: 1.1em;
+    max-width: 551px;
+    padding-left: 2.5em;
+  }
+}
+
+@media screen and ( min-width: 1200px ) {
+  .homepage-screen {
+    font-size: 1.5rem;
+  }
+
+  .homepage-branding .site-title {
+    max-width: 682px;
+  }
+
+  .site-description {
+    max-width: 637px;
+  }
+}
