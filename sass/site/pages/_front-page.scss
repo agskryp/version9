@@ -1,102 +1,115 @@
 .homepage-screen {
   display: block;
+  background: $color__dark-30;
   
-  .site-title {
-    font-size: 5em;
-    font-weight: 100;
-    
-    a {
-      color: $color__text-main;
-      &:hover {
-        text-decoration: none;
-      }
+  .site-branding {
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 3em 3em 0;
+    @media all and ( min-width: $screen__md ) {
+      flex-direction: row;
     }
   }
   
-  h2 {
-    font-weight: bold;
+  .site-title {
+    font-size: 3.6em;
+    font-weight: 100;
+    @media all and ( min-width: $screen__sm ) {
+      font-size: 5em;
+    }
   }
-}
-
-
-
-
-.homepage-container {
-  padding: 0;
-  margin: 0 auto;
-  list-style: none;
-  max-width: 60em;
-}
-
-.homepage-menu-item {
-  width: 100%;
-  padding: 1em 0;
-  margin: 2em 0;
-  text-align: center;
-  position: relative; // For TweenMax animation
-}
-
-.homepage-menu-item p {
-  padding: 0 3em;
-  color: DARKBLUE;
-  text-shadow: 2px 2px 2px RED;
-}
-
-.homepage-menu-item p,
-.homepage-menu-button {
-  font-size: 1.2em;
-}
-
-.homepage-menu-button {
-  background: PINK;
-  border-radius: 5px;
-  border-color: PINK;
-  color: RED;
-  padding: 10px;
-  width: 60%;
-  margin: 0 auto;
-  font-weight: 400;
-  font-size: 140%;
-  box-shadow: 2px 2px 2px RED;
-}
-
-.homepage-menu-button-hover {
-  // Class added and removed via jQuery
-  background: ORANGE;
-  border: ORANGE;
-  color: RED;
-}
-
-@media screen and ( min-width: 480px ) {
-  .homepage-menu-item {
-    height: 150px;
-    margin: 2em 0.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .homepage-menu-item p {
-    display: inline-block;
-    padding: 0 2em;
+  
+  .site-description {
+    display: block;
     margin: 0;
-    vertical-align: middle;
-    width: 50%;
+    
+    h2 {
+      font-weight: bold;
+      line-height: 1;
+      font-size: 1.2em;
+    }
+  }
+  
+  .homepage-container {
+    padding: 0;
+    margin: 0 28px;
+    list-style: none;
+  //  max-width: 60em;
   }
 
-  .homepage-menu-button {
-    display: inline-block;
-    vertical-align: middle;
-    width: 20%;
-    font-size: 100%;
-  }
+  .homepage-menu-item {
+    background: $color__dark-30;
+    border: 1px solid $color__dark-10;
+    border-radius: 6px;
+    padding: 28px;
+    margin: 28px auto;
+    text-align: center;
+    max-width: 440px;
+    position: relative; // For TweenMax animation
+    @media all and ( min-width: $screen__sm ) {
+      height: 150px;
+      max-width: 600px;
+      margin: 28px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    @media all and ( min-width: $screen__md ) {
+      height: 100%;
+      width: 13em;
+      margin: 28px 14px 0;
+    }
+    
+    &:hover,
+    &:focus {
+      background: $color__light-10;
+    }
+    
+    svg {
+      fill: $color__link;
+    }
+    
+    p {
+      color: $color__text-main;
+      max-width: 320px;
+      margin: 0 auto 28px;
+      @media all and ( min-width: $screen__sm ) {
+        margin: 0 28px;
+//        display: inline-block;
+//        vertical-align: middle;
+//        width: 50%;
+      }
+    }
+    
+    button {
+      color: $color__text-main;
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 10px;
+      width: 60%;
+      margin: 0 auto;
+      font-weight: normal;
+      font-size: 1em;
+      max-width: 160px;
+      &:hover,
+      &:focus {
+        background: $color__dark-50;
+      }
+    }
 
-  .homepage-menu-item i {
-    display: inline-block;
-    vertical-align: middle;
-    width: 15%;
   }
 }
+
+
+
+
+
+
+
 
 @media screen and ( min-width: 768px ) {
   .homepage-container {
@@ -115,12 +128,6 @@
   .homepage-branding {
     padding-top: 0;
     padding-bottom: 2em;
-  }
-
-  .homepage-menu-item {
-    height: 100%;
-    width: 13em;
-    margin: 0.5em;
   }
 
   .homepage-menu-item p,

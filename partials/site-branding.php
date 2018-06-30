@@ -1,15 +1,13 @@
 <div class="site-branding">
   <?php if ( is_front_page() ) { ?>
     <h1 class="site-title">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-        <span>
-          Andrew
-        </span>
+      <span>
+        Andrew
+      </span>
 
-        <span>
-          Skrypnyk
-        </span>
-      </a>
+      <span>
+        Skrypnyk
+      </span>
     </h1>
   
     <div class="site-description">

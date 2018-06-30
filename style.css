@@ -928,84 +928,100 @@ a:hover, a:active {
 }
 .homepage-screen {
   display: block;
+  background: rgba(0, 0, 0, 0.3);
+}
+.homepage-screen .site-branding {
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 3em 3em 0;
+}
+@media all and (min-width: 768px) {
+  .homepage-screen .site-branding {
+    flex-direction: row;
+  }
 }
 .homepage-screen .site-title {
-  font-size: 5em;
+  font-size: 3.6em;
   font-weight: 100;
 }
-.homepage-screen .site-title a {
-  color: #c3c3c3;
+@media all and (min-width: 600px) {
+  .homepage-screen .site-title {
+    font-size: 5em;
+  }
 }
-.homepage-screen .site-title a:hover {
-  text-decoration: none;
+.homepage-screen .site-description {
+  display: block;
+  margin: 0;
 }
-.homepage-screen h2 {
+.homepage-screen .site-description h2 {
   font-weight: bold;
-}
-.homepage-container {
-  padding: 0;
-  margin: 0 auto;
-  list-style: none;
-  max-width: 60em;
-}
-.homepage-menu-item {
-  width: 100%;
-  padding: 1em 0;
-  margin: 2em 0;
-  text-align: center;
-  position: relative;
-}
-.homepage-menu-item p {
-  padding: 0 3em;
-  color: DARKBLUE;
-  text-shadow: 2px 2px 2px RED;
-}
-.homepage-menu-item p, .homepage-menu-button {
+  line-height: 1;
   font-size: 1.2em;
 }
-.homepage-menu-button {
-  background: PINK;
-  border-radius: 5px;
-  border-color: PINK;
-  color: RED;
-  padding: 10px;
-  width: 60%;
-  margin: 0 auto;
-  font-weight: 400;
-  font-size: 140%;
-  box-shadow: 2px 2px 2px RED;
+.homepage-screen .homepage-container {
+  padding: 0;
+  margin: 0 28px;
+  list-style: none;
 }
-.homepage-menu-button-hover {
-  background: ORANGE;
-  border: ORANGE;
-  color: RED;
+.homepage-screen .homepage-menu-item {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 28px;
+  margin: 28px auto;
+  text-align: center;
+  max-width: 440px;
+  position: relative;
 }
-@media screen and (min-width: 480px) {
-  .homepage-menu-item {
+@media all and (min-width: 600px) {
+  .homepage-screen .homepage-menu-item {
     height: 150px;
-    margin: 2em 0.5em;
+    max-width: 600px;
+    margin: 28px auto;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .homepage-menu-item p {
-    display: inline-block;
-    padding: 0 2em;
-    margin: 0;
-    vertical-align: middle;
-    width: 50%;
+}
+@media all and (min-width: 768px) {
+  .homepage-screen .homepage-menu-item {
+    height: 100%;
+    width: 13em;
+    margin: 28px 14px 0;
   }
-  .homepage-menu-button {
-    display: inline-block;
-    vertical-align: middle;
-    width: 20%;
-    font-size: 100%;
+}
+.homepage-screen .homepage-menu-item:hover, .homepage-screen .homepage-menu-item:focus {
+  background: rgba(200, 200, 200, 0.1);
+}
+.homepage-screen .homepage-menu-item svg {
+  fill: #9191e5;
+}
+.homepage-screen .homepage-menu-item p {
+  color: #c3c3c3;
+  max-width: 320px;
+  margin: 0 auto 28px;
+}
+@media all and (min-width: 600px) {
+  .homepage-screen .homepage-menu-item p {
+    margin: 0 28px;
   }
-  .homepage-menu-item i {
-    display: inline-block;
-    vertical-align: middle;
-    width: 15%;
-  }
+}
+.homepage-screen .homepage-menu-item button {
+  color: #c3c3c3;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+  width: 60%;
+  margin: 0 auto;
+  font-weight: normal;
+  font-size: 1em;
+  max-width: 160px;
+}
+.homepage-screen .homepage-menu-item button:hover, .homepage-screen .homepage-menu-item button:focus {
+  background: rgba(0, 0, 0, 0.5);
 }
 @media screen and (min-width: 768px) {
   .homepage-container {
@@ -1022,11 +1038,6 @@ a:hover, a:active {
   .homepage-branding {
     padding-top: 0;
     padding-bottom: 2em;
-  }
-  .homepage-menu-item {
-    height: 100%;
-    width: 13em;
-    margin: 0.5em;
   }
   .homepage-menu-item p, .homepage-menu-item i, .homepage-menu-button {
     display: block;
