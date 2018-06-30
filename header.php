@@ -6,20 +6,10 @@
    * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
    * @package version9
    */
+
+  require get_template_directory() . '/partials/doctype.php';
 ?>
 
-<!doctype html>
-<html <?php language_attributes(); ?>>
-
-<head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="profile" href="https://gmpg.org/xfn/11">
-
-  <?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
   <div id="page" class="site container-fluid">
     <div class="row">
       <a class="skip-link screen-reader-text" href="#content">
@@ -27,31 +17,7 @@
       </a>
 
       <header id="masthead" class="site-header col-12 col-md-4 col-lg-3">
-        <div class="site-branding">
-          <p class="site-title">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <span>
-                Andrew
-              </span>
-              
-              <span>
-                Skrypnyk
-              </span>
-            </a>
-          </p>
-
-          <div class="site-description">
-            <p class="text-center">
-              <span>
-                Web Design
-              </span>
-              
-              <span>
-                &amp; Development
-              </span>
-            </p>
-          </div>
-        </div>
+        <?php require get_template_directory() . '/partials/site-branding.php'; ?>
 
         <nav id="site-navigation" class="site-navigation">
           <div class="main-nav-button">
