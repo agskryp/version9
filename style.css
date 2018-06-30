@@ -929,8 +929,18 @@ a:hover, a:active {
 .homepage-screen {
   display: block;
 }
-.homepage-branding {
-  padding: 1em 0 0;
+.homepage-screen .site-title {
+  font-size: 5em;
+  font-weight: 100;
+}
+.homepage-screen .site-title a {
+  color: #c3c3c3;
+}
+.homepage-screen .site-title a:hover {
+  text-decoration: none;
+}
+.homepage-screen h2 {
+  font-weight: bold;
 }
 .homepage-container {
   padding: 0;
@@ -944,9 +954,6 @@ a:hover, a:active {
   margin: 2em 0;
   text-align: center;
   position: relative;
-}
-.homepage-menu-item i {
-  text-shadow: 2px 2px 2px RED;
 }
 .homepage-menu-item p {
   padding: 0 3em;
@@ -972,25 +979,6 @@ a:hover, a:active {
   background: ORANGE;
   border: ORANGE;
   color: RED;
-}
-.homepage-menu-item-blog {
-  background: SILVER;
-  box-shadow: 4px 4px 4px SILVER, -4px -4px 4px SILVER;
-}
-.homepage-menu-item-portfolio {
-  background: GOLD;
-  box-shadow: 4px 4px 4px GOLD, -4px -4px 4px GOLD;
-}
-.homepage-menu-item-about {
-  background: PURPLE;
-  box-shadow: 4px 4px 4px PURPLE, -4px -4px 4px PURPLE;
-}
-.homepage-menu-item-contact {
-  background: AQUA;
-  box-shadow: 4px 4px 4px AQUA, -4px -4px 4px AQUA;
-}
-.homepage-menu-item-blog, .homepage-menu-item-portfolio, .homepage-menu-item-about, .homepage-menu-item-contact {
-  border-radius: 0%;
 }
 @media screen and (min-width: 480px) {
   .homepage-menu-item {
@@ -1039,9 +1027,6 @@ a:hover, a:active {
     height: 100%;
     width: 13em;
     margin: 0.5em;
-  }
-  .homepage-menu-item-blog, .homepage-menu-item-portfolio, .homepage-menu-item-about, .homepage-menu-item-contact {
-    border-radius: 15%;
   }
   .homepage-menu-item p, .homepage-menu-item i, .homepage-menu-button {
     display: block;
