@@ -55,7 +55,7 @@
     @media all and ( min-width: $screen__md ) {
       padding-left: 28px;
       margin-left: 28px;
-      border-left: 1px solid $color__soft-white;
+      border-left: 2px solid $color__soft-white;
     }
     
     h2 {
@@ -77,7 +77,6 @@
     padding: 0;
     margin: 0 28px;
     list-style: none;
-  //  max-width: 60em;
     @media screen and ( min-width: $screen__lg ) {
       display: flex;
       justify-content: center;
