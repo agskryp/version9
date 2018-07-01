@@ -930,39 +930,94 @@ a:hover, a:active {
   display: block;
   background: rgba(0, 0, 0, 0.3);
 }
+@media screen and (min-width: 768px) {
+  .homepage-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+  }
+}
 .homepage-screen .site-branding {
   justify-content: center;
   flex-direction: column;
   margin: 0;
-  padding: 3em 3em 0;
+  padding: 28px 28px 0;
 }
 @media all and (min-width: 768px) {
   .homepage-screen .site-branding {
     flex-direction: row;
+    padding: 56px 56px 28px;
   }
 }
-.homepage-screen .site-title {
-  font-size: 3.6em;
+@media all and (min-width: 992px) {
+  .homepage-screen .site-branding {
+    padding: 0 56px 28px;
+  }
+}
+.homepage-screen h1 {
+  font-size: 3.2em;
   font-weight: 100;
 }
-@media all and (min-width: 600px) {
-  .homepage-screen .site-title {
-    font-size: 5em;
+@media all and (min-width: 480px) {
+  .homepage-screen h1 {
+    font-size: 4.4em;
+  }
+}
+@media all and (min-width: 992px) {
+  .homepage-screen h1 {
+    font-size: 6.4em;
+    margin-left: 45px;
+  }
+}
+.homepage-screen h1 span:last-of-type {
+  margin-left: 23px;
+}
+@media all and (min-width: 480px) {
+  .homepage-screen h1 span:last-of-type {
+    margin-left: 31px;
   }
 }
 .homepage-screen .site-description {
   display: block;
   margin: 0;
+  border-left: none;
+  padding: 0;
+}
+@media all and (min-width: 768px) {
+  .homepage-screen .site-description {
+    padding-left: 28px;
+    margin-left: 28px;
+    border-left: 1px solid #c3c3c3;
+  }
 }
 .homepage-screen .site-description h2 {
   font-weight: bold;
-  line-height: 1;
-  font-size: 1.2em;
+  line-height: 0.9;
+  font-size: 1.1em;
+  margin: 0;
+}
+@media all and (min-width: 480px) {
+  .homepage-screen .site-description h2 {
+    font-size: 1.4em;
+  }
+}
+@media all and (min-width: 992px) {
+  .homepage-screen .site-description h2 {
+    font-size: 2em;
+  }
 }
 .homepage-screen .homepage-container {
   padding: 0;
   margin: 0 28px;
   list-style: none;
+}
+@media screen and (min-width: 992px) {
+  .homepage-screen .homepage-container {
+    display: flex;
+    justify-content: center;
+  }
 }
 .homepage-screen .homepage-menu-item {
   background: rgba(0, 0, 0, 0.3);
@@ -973,110 +1028,66 @@ a:hover, a:active {
   text-align: center;
   max-width: 440px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 @media all and (min-width: 600px) {
   .homepage-screen .homepage-menu-item {
     height: 150px;
     max-width: 600px;
     margin: 28px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
   }
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 992px) {
   .homepage-screen .homepage-menu-item {
     height: 100%;
-    width: 13em;
+    width: 300px;
     margin: 28px 14px 0;
+    flex-direction: column;
   }
 }
-.homepage-screen .homepage-menu-item:hover, .homepage-screen .homepage-menu-item:focus {
-  background: rgba(200, 200, 200, 0.1);
-}
 .homepage-screen .homepage-menu-item svg {
-  fill: #9191e5;
+  fill: #78a58f;
 }
 .homepage-screen .homepage-menu-item p {
   color: #c3c3c3;
   max-width: 320px;
-  margin: 0 auto 28px;
+  margin: 14px auto 28px;
 }
 @media all and (min-width: 600px) {
   .homepage-screen .homepage-menu-item p {
     margin: 0 28px;
   }
 }
-.homepage-screen .homepage-menu-item button {
+@media all and (min-width: 768px) {
+  .homepage-screen .homepage-menu-item p {
+    margin: 0;
+  }
+}
+@media all and (min-width: 992px) {
+  .homepage-screen .homepage-menu-item p {
+    margin: 14px auto 28px;
+  }
+}
+.homepage-screen .homepage-menu-item a {
   color: #c3c3c3;
   border: 1px solid rgba(0, 0, 0, 0.8);
   background: rgba(0, 0, 0, 0.8);
+  display: block;
   border-radius: 8px;
   cursor: pointer;
-  padding: 10px;
+  padding: 6px;
   width: 60%;
   margin: 0 auto;
   font-weight: normal;
   font-size: 1em;
-  max-width: 160px;
+  max-width: 140px;
 }
-.homepage-screen .homepage-menu-item button:hover, .homepage-screen .homepage-menu-item button:focus {
-  background: rgba(0, 0, 0, 0.5);
-}
-@media screen and (min-width: 768px) {
-  .homepage-container {
-    display: flex;
-    justify-content: center;
-  }
-  .homepage-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-  }
-  .homepage-branding {
-    padding-top: 0;
-    padding-bottom: 2em;
-  }
-  .homepage-menu-item p, .homepage-menu-item i, .homepage-menu-button {
-    display: block;
-    width: 100%;
-  }
-  .homepage-menu-button {
-    width: 70%;
-  }
-  .homepage-menu-button {
-    padding: 5px 10px;
-  }
-  .homepage-menu-item p {
-    font-size: 1em;
-    padding: 2em 1em;
-  }
-}
-@media screen and (min-width: 992px) {
-  .homepage-screen {
-    font-size: 1.3rem;
-  }
-  .homepage-branding .site-title {
-    max-width: 591px;
-  }
-  .site-description {
-    font-size: 1.1em;
-    max-width: 551px;
-    padding-left: 2.5em;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .homepage-screen {
-    font-size: 1.5rem;
-  }
-  .homepage-branding .site-title {
-    max-width: 682px;
-  }
-  .site-description {
-    max-width: 637px;
-  }
+.homepage-screen .homepage-menu-item a:hover, .homepage-screen .homepage-menu-item a:focus {
+  background: rgba(200, 200, 200, 0.1);
 }
 /*--------------------------------------------------------------
  ## Comments
@@ -1271,7 +1282,7 @@ a:hover, a:active {
   font-weight: 700;
   font-size: 1.5em;
   font-variant: small-caps;
-  line-height: 1;
+  line-height: 0.9;
   padding-left: 0;
   border-left: none;
   margin-left: 0;

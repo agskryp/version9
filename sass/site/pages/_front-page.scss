@@ -1,33 +1,72 @@
 .homepage-screen {
   display: block;
   background: $color__dark-30;
+  @media screen and ( min-width: 768px ) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+  }
   
   .site-branding {
     justify-content: center;
     flex-direction: column;
     margin: 0;
-    padding: 3em 3em 0;
+    padding: 28px 28px 0;
     @media all and ( min-width: $screen__md ) {
       flex-direction: row;
+      padding: 56px 56px 28px;
+    }
+    
+    @media all and ( min-width: $screen__lg ) {
+      padding: 0 56px 28px;
     }
   }
   
-  .site-title {
-    font-size: 3.6em;
+  h1 {
+    font-size: 3.2em;
     font-weight: 100;
-    @media all and ( min-width: $screen__sm ) {
-      font-size: 5em;
+    @media all and ( min-width: $screen__xs ) {
+      font-size: 4.4em;
+    }
+    
+    @media all and ( min-width: $screen__lg ) {
+      font-size: 6.4em;
+      margin-left: 45px;
+    }
+    
+    span:last-of-type {
+      margin-left: 23px; 
+      @media all and ( min-width: $screen__xs ) {
+        margin-left: 31px;
+      }
     }
   }
   
   .site-description {
     display: block;
     margin: 0;
+    border-left: none;
+    padding: 0;
+    @media all and ( min-width: $screen__md ) {
+      padding-left: 28px;
+      margin-left: 28px;
+      border-left: 1px solid $color__soft-white;
+    }
     
     h2 {
       font-weight: bold;
-      line-height: 1;
-      font-size: 1.2em;
+      line-height: .9;
+      font-size: 1.1em;
+      margin: 0;
+      @media all and ( min-width: $screen__xs ) {
+        font-size: 1.4em;
+      }
+      
+      @media all and ( min-width: $screen__lg ) {
+        font-size: 2em;
+      }
     }
   }
   
@@ -36,6 +75,10 @@
     margin: 0 28px;
     list-style: none;
   //  max-width: 60em;
+    @media screen and ( min-width: $screen__lg ) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .homepage-menu-item {
@@ -47,136 +90,63 @@
     text-align: center;
     max-width: 440px;
     position: relative; // For TweenMax animation
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     @media all and ( min-width: $screen__sm ) {
       height: 150px;
       max-width: 600px;
       margin: 28px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: row;
     }
     
-    @media all and ( min-width: $screen__md ) {
+    @media all and ( min-width: $screen__lg ) {
       height: 100%;
-      width: 13em;
+      width: 300px;
       margin: 28px 14px 0;
-    }
-    
-    &:hover,
-    &:focus {
-      background: $color__light-10;
+      flex-direction: column;
     }
     
     svg {
-      fill: $color__link;
+      fill: $color__soft-green;
     }
     
     p {
       color: $color__text-main;
       max-width: 320px;
-      margin: 0 auto 28px;
+      margin: 14px auto 28px;
       @media all and ( min-width: $screen__sm ) {
         margin: 0 28px;
-//        display: inline-block;
-//        vertical-align: middle;
-//        width: 50%;
+      }
+      
+      @media all and ( min-width: $screen__md ) {
+        margin: 0;
+      }
+      
+      @media all and ( min-width: $screen__lg ) {
+        margin: 14px auto 28px;
       }
     }
     
-    button {
+    a {
       color: $color__text-main;
       border: 1px solid rgba(0, 0, 0, 0.8);
       background: rgba(0, 0, 0, 0.8);
+      display: block;
       border-radius: 8px;
       cursor: pointer;
-      padding: 10px;
+      padding: 6px;
       width: 60%;
       margin: 0 auto;
       font-weight: normal;
       font-size: 1em;
-      max-width: 160px;
+      max-width: 140px;
       &:hover,
       &:focus {
-        background: $color__dark-50;
+        background: $color__light-10;
       }
     }
 
-  }
-}
-
-
-
-
-
-
-
-
-@media screen and ( min-width: 768px ) {
-  .homepage-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .homepage-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-  }
-
-  .homepage-branding {
-    padding-top: 0;
-    padding-bottom: 2em;
-  }
-
-  .homepage-menu-item p,
-  .homepage-menu-item i,
-  .homepage-menu-button {
-    display: block;
-    width: 100%;
-  }
-
-  .homepage-menu-button {
-    width: 70%;
-  }
-
-  .homepage-menu-button {
-    padding: 5px 10px;
-  }
-
-  .homepage-menu-item p {
-    font-size: 1em;
-    padding: 2em 1em;
-  }
-}
-
-@media screen and ( min-width: 992px) {
-  .homepage-screen {
-    font-size: 1.3rem;
-  }
-
-  .homepage-branding .site-title {
-    max-width: 591px;
-  }
-
-  .site-description {
-    font-size: 1.1em;
-    max-width: 551px;
-    padding-left: 2.5em;
-  }
-}
-
-@media screen and ( min-width: 1200px ) {
-  .homepage-screen {
-    font-size: 1.5rem;
-  }
-
-  .homepage-branding .site-title {
-    max-width: 682px;
-  }
-
-  .site-description {
-    max-width: 637px;
   }
 }
