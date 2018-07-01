@@ -968,7 +968,6 @@ a:hover, a:active {
 @media all and (min-width: 992px) {
   .homepage-screen h1 {
     font-size: 6.4em;
-    margin-left: 45px;
   }
 }
 .homepage-screen h1 span:last-of-type {
@@ -977,6 +976,11 @@ a:hover, a:active {
 @media all and (min-width: 480px) {
   .homepage-screen h1 span:last-of-type {
     margin-left: 31px;
+  }
+}
+@media all and (min-width: 992px) {
+  .homepage-screen h1 span:last-of-type {
+    margin-left: 45px;
   }
 }
 .homepage-screen .site-description {
