@@ -177,3 +177,8 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
  * Custom template for comment section
  */
 require get_template_directory() . '/inc/template-comments.php';
+
+/**
+ * Load custom constants
+ */
+require get_template_directory() . '/inc/constants.php';
