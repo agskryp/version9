@@ -659,6 +659,8 @@ a:hover, a:active {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 0 8px 8px 0;
   cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .main-search-form form input[ type="submit"]:focus {
   outline: 1px dotted #c3c3c3;
@@ -948,7 +950,7 @@ a:hover, a:active {
 @media all and (min-width: 768px) {
   .homepage-screen .site-branding {
     flex-direction: row;
-    padding: 56px 56px 28px;
+    padding: 56px 56px 0;
   }
 }
 @media all and (min-width: 992px) {
@@ -993,7 +995,7 @@ a:hover, a:active {
   .homepage-screen .site-description {
     padding-left: 28px;
     margin-left: 28px;
-    border-left: 1px solid #c3c3c3;
+    border-left: 2px solid #c3c3c3;
   }
 }
 .homepage-screen .site-description h2 {
@@ -1064,16 +1066,19 @@ a:hover, a:active {
 @media all and (min-width: 600px) {
   .homepage-screen .homepage-menu-item p {
     margin: 0 28px;
+    padding: 0;
   }
 }
 @media all and (min-width: 768px) {
   .homepage-screen .homepage-menu-item p {
     margin: 0;
+    padding: 0 30px;
   }
 }
 @media all and (min-width: 992px) {
   .homepage-screen .homepage-menu-item p {
     margin: 14px auto 28px;
+    padding: 0;
   }
 }
 .homepage-screen .homepage-menu-item a {
@@ -1084,11 +1089,11 @@ a:hover, a:active {
   border-radius: 8px;
   cursor: pointer;
   padding: 6px;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
-  font-weight: normal;
-  font-size: 1em;
-  max-width: 140px;
+  max-width: 160px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .homepage-screen .homepage-menu-item a:hover, .homepage-screen .homepage-menu-item a:focus {
   background: rgba(200, 200, 200, 0.1);

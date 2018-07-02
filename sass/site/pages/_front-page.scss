@@ -16,7 +16,7 @@
     padding: 28px 28px 0;
     @media all and ( min-width: $screen__md ) {
       flex-direction: row;
-      padding: 56px 56px 28px;
+      padding: 56px 56px 0;
     }
     
     @media all and ( min-width: $screen__lg ) {
@@ -120,14 +120,17 @@
       margin: 14px auto 28px;
       @media all and ( min-width: $screen__sm ) {
         margin: 0 28px;
+        padding: 0;
       }
       
       @media all and ( min-width: $screen__md ) {
         margin: 0;
+        padding: 0 30px;
       }
       
       @media all and ( min-width: $screen__lg ) {
         margin: 14px auto 28px;
+        padding: 0;
       }
     }
     
@@ -139,11 +142,11 @@
       border-radius: 8px;
       cursor: pointer;
       padding: 6px;
-      width: 60%;
+      width: 80%;
       margin: 0 auto;
-      font-weight: normal;
-      font-size: 1em;
-      max-width: 140px;
+      max-width: 160px;
+      text-transform: uppercase;
+      font-weight: 700;
       &:hover,
       &:focus {
         background: $color__light-10;
