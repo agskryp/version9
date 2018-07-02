@@ -1,11 +1,11 @@
 <div class="site-branding">
   <?php if ( is_front_page() ) { ?>
     <h1 class="site-title">
-      <span>
+      <span class="site-title-top">
         Andrew
       </span>
 
-      <span>
+      <span class="site-title-bottom">
         Skrypnyk
       </span>
     </h1>

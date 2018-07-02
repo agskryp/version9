@@ -998,6 +998,9 @@ a:hover, a:active {
     border-left: 2px solid #c3c3c3;
   }
 }
+.homepage-screen .site-description span {
+  position: relative;
+}
 .homepage-screen .site-description h2 {
   font-weight: bold;
   line-height: 0.9;

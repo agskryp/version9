@@ -58,6 +58,10 @@
       border-left: 2px solid $color__soft-white;
     }
     
+    span {
+      position: relative; // For TweenMax animation
+    }
+    
     h2 {
       font-weight: bold;
       line-height: .9;
