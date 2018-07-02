@@ -3,9 +3,9 @@
  * Requires GSAP and TweenMax to execute
  */
 
-( function ( ) {
+( function () {
   /**
-   * @param TweenMax.method( "target", duration, { settings } );
+   * @param TweenMax.method( "target", speed, { settings }, delay between elements );
    */
   TweenMax.from( ".site-title-top", 2, {
     paddingLeft: "1em",
@@ -23,11 +23,19 @@
     bottom: "1em",
     opacity: 0,
     delay: 1.5
-  }, -0.3 );
+  }, .8 );
+  
+  if ( window.innerWidth >= 768 ) {  
+    TweenMax.from( ".site-description", 3, {
+      borderLeft: "2px solid",
+      opacity: 0,
+      delay: 2
+    } );
+  }
 
   TweenMax.staggerFrom( ".homepage-menu-item", 1, {
     bottom: "1em",
     opacity: 0,
-    delay: 2
+    delay: 2.4
   }, 0.2 );
-} )(  );
+} )();

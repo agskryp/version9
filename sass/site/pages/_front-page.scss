@@ -50,12 +50,12 @@
   .site-description {
     display: block;
     margin: 0;
-    border-left: none;
+    border-left: none !important;  // !important necessary for animation and screen breaks
     padding: 0;
     @media all and ( min-width: $screen__md ) {
       padding-left: 28px;
       margin-left: 28px;
-      border-left: 2px solid $color__soft-white;
+      border-left: 2px solid $color__soft-white !important;  // !important necessary for animation and screen breaks
     }
     
     span {
