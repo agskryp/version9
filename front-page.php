@@ -79,8 +79,6 @@
   </div>    <!-- #primary -->
 </div>  <!-- #page -->
 
-<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-
 <?php wp_footer(); ?>
 
 </body>
