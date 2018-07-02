@@ -117,6 +117,8 @@
     background: $color__dark-80;
     border-radius: 0 $grid__pixel-8 $grid__pixel-8 0;
     cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
     &:focus {
       outline: 1px dotted $color__text-main;
       background: $color__light-10;
