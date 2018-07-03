@@ -26,7 +26,7 @@
 
             else {
               printf( esc_html__( 'There are ' . $number_of_results . ' results for %s', 'version9' ),
-              '<span class="search-result">' . get_search_query() . '</span>' );
+              '<span class="search-result">&#39;' . get_search_query() . '&#39;</span>' );
             }
           ?>
         </h1>
