@@ -39,17 +39,33 @@
   }
 } 
 
+
+
 .portfolio-page {
   
+  .page-header {
+    padding: 56px;
+  }
+  
+  .page-title {
+    font-weight: 100;
+  }
+
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .entry-title {
+    font-weight: 700;
+    text-transform: uppercase
+  }
   
   a {
     margin: 0 14px 28px;
     display: inline-block;
     &:hover,
     &:focus {
-      .entry-content {
-        background: rgba(255,255,255,0.1);
-      }
       
       img {
         opacity: .8;
@@ -59,8 +75,7 @@
   
   .entry-content {
     display: inline-block;
-    max-width: 350px;
+    max-width: 300px;
     margin: 0 auto;
-    background: rgba(0,0,0,0.5);
   }
 }

@@ -928,21 +928,30 @@ a:hover, a:active {
     font-size: 16px;
   }
 }
+.portfolio-page .page-header {
+  padding: 56px;
+}
+.portfolio-page .page-title {
+  font-weight: 100;
+}
+.portfolio-page h1 {
+  margin: 0;
+}
+.portfolio-page .entry-title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
 .portfolio-page a {
   margin: 0 14px 28px;
   display: inline-block;
-}
-.portfolio-page a:hover .entry-content, .portfolio-page a:focus .entry-content {
-  background: rgba(255, 255, 255, 0.1);
 }
 .portfolio-page a:hover img, .portfolio-page a:focus img {
   opacity: 0.8;
 }
 .portfolio-page .entry-content {
   display: inline-block;
-  max-width: 350px;
+  max-width: 300px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.5);
 }
 .homepage-screen {
   display: block;

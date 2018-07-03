@@ -1,45 +1,33 @@
 <?php
   /**
-   * Template part for displaying page content in page-portfolio.php
+   * Template part for displaying page portfolio content
    *
    * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
    * @package version9
    */
 ?>
 
-
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  
-  
-  
   <header class="entry-header">
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
   </header>
+   
+  <div class="text-center featured-image-container">
+    <?php version9_post_thumbnail(); ?>
+  </div>
   
-  <?php $portfolio = get_field( 'portfolio' );
-  
-  var_dump( $portfolio );
-  
-  ?>
+  <div class="entry-content">
+    <?php
+      the_content();
 
- 
-  
-<div id="post-<?php the_ID(); ?>" class="portfolio-archive-project">
-     DESIGN SCREENSHOT + SITE TITLE LAYOUT FOR PORTFOLIO
-   <span style="text-align: center; display: block;">
-                <?php the_title(); ?>
-            </span>
-        <?php if ( has_post_thumbnail() ) { ?>
-    <figure class="portfolio-archive-image">
-        <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
-            <?php the_post_thumbnail(); ?>
-            <span style="text-align: center; display: block;">
-                <?php the_title(); ?>
-            </span>
-        </a>
-    </figure>
-        <?php } ?>    
-    
-</div><!-- #post-## -->
+//      wp_link_pages( array(
+//        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'version9' ),
+//        'after'  => '</div>',
+//      ) );
+    ?>
+
+    <footer class="entry-footer">
+      <?php version9_post_footer_meta(); ?>
+    </footer>
+  </div>
 </article>
