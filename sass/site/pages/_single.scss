@@ -1,5 +1,6 @@
 .single-page,
-.page-page {
+.page-page,
+.portfolio-page {
   
   .entry-header {
     text-align: center;
@@ -37,3 +38,29 @@
     }
   }
 } 
+
+.portfolio-page {
+  
+  
+  a {
+    margin: 0 14px 28px;
+    display: inline-block;
+    &:hover,
+    &:focus {
+      .entry-content {
+        background: rgba(255,255,255,0.1);
+      }
+      
+      img {
+        opacity: .8;
+      }
+    }
+  }
+  
+  .entry-content {
+    display: inline-block;
+    max-width: 350px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.5);
+  }
+}

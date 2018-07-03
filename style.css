@@ -895,18 +895,18 @@ a:hover, a:active {
   display: flex;
   justify-content: space-between;
 }
-.single-page .entry-header, .page-page .entry-header {
+.single-page .entry-header, .page-page .entry-header, .portfolio-page .entry-header {
   text-align: center;
   padding: 56px 0;
 }
-.single-page .entry-meta, .page-page .entry-meta {
+.single-page .entry-meta, .page-page .entry-meta, .portfolio-page .entry-meta {
   font-weight: 700;
 }
-.single-page .entry-title, .page-page .entry-title {
+.single-page .entry-title, .page-page .entry-title, .portfolio-page .entry-title {
   line-height: 1;
   font-weight: 100;
 }
-.single-page .featured-image-container, .page-page .featured-image-container {
+.single-page .featured-image-container, .page-page .featured-image-container, .portfolio-page .featured-image-container {
   max-height: 365px;
   overflow: hidden;
   display: flex;
@@ -914,7 +914,7 @@ a:hover, a:active {
   justify-content: center;
   margin: 0 -15px 28px;
 }
-.single-page .entry-content, .page-page .entry-content {
+.single-page .entry-content, .page-page .entry-content, .portfolio-page .entry-content {
   max-width: 600px;
   margin: 0 auto 28px;
   background: rgba(0, 0, 0, 0.3);
@@ -924,9 +924,25 @@ a:hover, a:active {
   font-size: 14px;
 }
 @media all and (min-width: 600px) {
-  .single-page .entry-content, .page-page .entry-content {
+  .single-page .entry-content, .page-page .entry-content, .portfolio-page .entry-content {
     font-size: 16px;
   }
+}
+.portfolio-page a {
+  margin: 0 14px 28px;
+  display: inline-block;
+}
+.portfolio-page a:hover .entry-content, .portfolio-page a:focus .entry-content {
+  background: rgba(255, 255, 255, 0.1);
+}
+.portfolio-page a:hover img, .portfolio-page a:focus img {
+  opacity: 0.8;
+}
+.portfolio-page .entry-content {
+  display: inline-block;
+  max-width: 350px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5);
 }
 .homepage-screen {
   display: block;
