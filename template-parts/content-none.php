@@ -14,7 +14,7 @@
     </h1>
   </header>
 
-  <article class="page-content">
+  <div class="page-content">
     <?php
       /* Dunno how to view this content, need to check template */
       if ( is_home() && current_user_can( 'publish_posts' ) ) :
