@@ -14,7 +14,7 @@
     <section class="error-404 not-found">
       <header class="page-header text-center">
         <h1 class="page-title">
-          <?php esc_html_e( 'Uh Oh, this page can&rsquo;t be found!', 'version9' ); ?>
+          <?php esc_html_e( 'Uh oh, this page can&rsquo;t be found!', 'version9' ); ?>
         </h1>
       </header>
       
