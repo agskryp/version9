@@ -448,6 +448,8 @@ figure {
 }
 ul, ol {
   margin: 0 0 28px;
+  padding-left: 56px;
+  clear: both;
 }
 ul {
   list-style: disc;
@@ -566,11 +568,44 @@ a:hover, a:active {
 .site-navigation span {
   display: none;
 }
-@media all and (min-width: 615px) {
+@media all and (min-width: 630px) {
   .site-navigation span {
     display: inline-block;
     margin-right: 7px;
   }
+}
+.site-navigation .social-links {
+  display: none;
+  flex-direction: column-reverse;
+  float: right;
+  margin-top: -48px;
+  margin-right: 14px;
+}
+@media all and (min-width: 350px) {
+  .site-navigation .social-links {
+    display: inline-flex;
+  }
+}
+@media all and (min-width: 768px) {
+  .site-navigation .social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    float: none;
+    margin: 0 0 14px;
+  }
+}
+.site-navigation .social-links a {
+  margin: 7px 0;
+}
+@media all and (min-width: 768px) {
+  .site-navigation .social-links a {
+    margin: 0 14px;
+  }
+}
+.site-navigation .social-links a:focus svg, .site-navigation .social-links a:hover svg {
+  fill: #9f8b68;
 }
 .main-nav-button {
   display: inline-flex;
@@ -628,7 +663,7 @@ a:hover, a:active {
   }
 }
 .main-search-form form label {
-  margin: 8px 0;
+  margin: 14px 0;
 }
 .main-search-form form input {
   background: rgba(200, 200, 200, 0.1);
@@ -861,6 +896,7 @@ a:hover, a:active {
 }
 .index-page .page-title, .archive-page .page-title, .search-page .page-title, .page-404 .page-title {
   font-weight: 100;
+  line-height: 1;
 }
 .index-page .entry-header, .archive-page .entry-header, .search-page .entry-header, .page-404 .entry-header {
   font-family: 'Lato', sans-serif;
@@ -921,12 +957,6 @@ a:hover, a:active {
   padding: 28px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 14px;
-}
-@media all and (min-width: 600px) {
-  .single-page .entry-content, .page-page .entry-content, .portfolio-page .entry-content {
-    font-size: 16px;
-  }
 }
 .portfolio-page .page-header {
   padding: 56px;
@@ -952,6 +982,28 @@ a:hover, a:active {
   display: inline-block;
   max-width: 300px;
   margin: 0 auto;
+}
+.portfolio h1 {
+  margin: 0;
+}
+.portfolio img:hover, .portfolio img:focus {
+  opacity: 0.8;
+}
+.portfolio img.alignleft {
+  margin: 28px 28px 28px 0;
+}
+.portfolio img.alignright {
+  margin: 28px 0px 28px 28px;
+}
+.portfolio img.desktop {
+  margin: 0 0 28px;
+}
+.portfolio img.laptop {
+  margin: 28px 0 0;
+}
+.portfolio .screen-shot {
+  font-size: 80%;
+  font-style: italic;
 }
 .homepage-screen {
   display: block;
@@ -1354,7 +1406,7 @@ a:hover, a:active {
     padding-left: 28px;
   }
 }
-@media all and (min-width: 560px) {
+@media all and (min-width: 575px) {
   .site-description {
     display: flex;
   }

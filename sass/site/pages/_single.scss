@@ -32,10 +32,6 @@
     padding: 28px;
     border-radius: 6px;
     border: 1px solid $color__dark-10;
-    font-size: 14px;
-    @media all and ( min-width: $screen__sm ) {
-      font-size: 16px;
-    }
   }
 } 
 
@@ -51,7 +47,6 @@
     font-weight: 100;
   }
 
-  
   h1 {
     margin: 0;
   }
@@ -77,5 +72,38 @@
     display: inline-block;
     max-width: 300px;
     margin: 0 auto;
+  }
+}
+
+.portfolio {
+  
+  h1 {
+    margin: 0;  
+  }
+  
+  img:hover,
+  img:focus {
+    opacity: .8;
+  }
+  
+  img.alignleft {
+    margin: 28px 28px 28px 0;
+  }
+  
+  img.alignright {
+    margin: 28px 0px 28px 28px;
+  }
+  
+  img.desktop {
+    margin: 0 0 28px;
+  }
+  
+  img.laptop {
+    margin: 28px 0 0;
+  }
+  
+  .screen-shot {
+    font-size: 80%;
+    font-style: italic;
   }
 }
