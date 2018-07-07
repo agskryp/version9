@@ -4,15 +4,22 @@
   padding: 4em 2em;
   border-top: 1px solid $color__dark-10;
   
+  .social-links a {
+    margin: 0 7px;
+  }
+  
   a {
+    color: $color__soft-white;
     &:hover {
+      color: $color__link-hover;
+      
       svg {
         fill: $color__link-hover;
       }
     }
     
     svg {
-      fill: $color__link;
+      fill: $color__soft-white;
     }
   }
 }
