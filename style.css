@@ -334,10 +334,16 @@ body, button, input, select, optgroup, textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
-h1 {
-  font-size: 3rem;
+.h1, h1 {
+  font-size: 3em;
   margin: 0 0 0.5rem;
   line-height: 0.8;
+}
+.h2, h2 {
+  font-size: 2em;
+}
+.h3, h3 {
+  font-size: 1.75em;
 }
 p {
   margin-bottom: 1.5em;
@@ -430,6 +436,17 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
+@media all and (min-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 600px) {
+  body {
+    font-size: 20px;
+  }
 }
 hr {
   background-color: #ccc;
@@ -1361,7 +1378,7 @@ a:hover, a:active {
 }
 .site-title {
   font-family: 'Lato', 'Tahoma', 'Geneva', sans-serif;
-  font-size: 3em;
+  font-size: 50px;
   line-height: 0.5;
   margin-bottom: 28px;
 }
@@ -1377,7 +1394,7 @@ a:hover, a:active {
 .site-description {
   font-family: 'Lato', 'Tahoma', 'Geneva', sans-serif;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 25px;
   font-variant: small-caps;
   line-height: 0.9;
   padding-left: 0;

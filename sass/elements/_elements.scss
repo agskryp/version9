@@ -18,6 +18,14 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  @media all and ( min-width: $screen__xs ) {
+    font-size: 18px;
+  }
+  
+  @media all and ( min-width: $screen__sm ) {
+    font-size: 20px;
+  }
 }
 
 hr {
