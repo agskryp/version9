@@ -70,8 +70,8 @@
             Learn more about the man behind the page in front of a computer beyond the internet
           </p>
 
-          <a href="<?php echo esc_url( __( AG_BIO, 'version9' ) ); ?>">
-            View Bio
+          <a href="<?php echo esc_url( __( AG_ABOUT, 'version9' ) ); ?>">
+            About Me
           </a>
         </li>
       </ul>

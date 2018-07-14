@@ -5,4 +5,4 @@
  */
 define( 'AG_BLOG', '/blog' );
 define( 'AG_PORTFOLIO', '/portfolio' );
-define( 'AG_BIO', '/bio' );
+define( 'AG_ABOUT', '/about' );
