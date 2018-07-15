@@ -891,6 +891,7 @@ a:hover, a:active {
   margin: 56px auto;
   font-weight: bold;
   overflow: hidden;
+  padding: 0 7px;
 }
 .comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
@@ -942,7 +943,7 @@ a:hover, a:active {
   font-weight: normal;
 }
 .entry-meta {
-  font-size: 85%;
+  font-size: 80%;
   word-spacing: 1px;
 }
 .entry-footer {
@@ -1071,7 +1072,7 @@ a:hover, a:active {
 }
 @media all and (min-width: 992px) {
   .homepage-screen h1 {
-    font-size: 6.4em;
+    font-size: 6em;
   }
 }
 .homepage-screen h1 span:last-of-type {
@@ -1079,12 +1080,17 @@ a:hover, a:active {
 }
 @media all and (min-width: 480px) {
   .homepage-screen h1 span:last-of-type {
-    margin-left: 31px;
+    margin-left: 35px;
+  }
+}
+@media all and (min-width: 600px) {
+  .homepage-screen h1 span:last-of-type {
+    margin-left: 39px;
   }
 }
 @media all and (min-width: 992px) {
   .homepage-screen h1 span:last-of-type {
-    margin-left: 45px;
+    margin-left: 53px;
   }
 }
 .homepage-screen .site-description {
@@ -1111,12 +1117,12 @@ a:hover, a:active {
 }
 @media all and (min-width: 480px) {
   .homepage-screen .site-description h2 {
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
 }
 @media all and (min-width: 992px) {
   .homepage-screen .site-description h2 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 }
 .homepage-screen .homepage-container {
@@ -1565,15 +1571,7 @@ embed, iframe, object {
 .contact-form form {
   margin: 0;
   padding-left: 0;
-  background: #132118;
-  border: 1px solid rgba(0, 0, 0, 0.5);
   border-right: none;
-}
-@media all and (min-width: 768px) {
-  .contact-form form {
-    background: none;
-    border: none;
-  }
 }
 .contact-form form p {
   margin: 0;
@@ -1604,10 +1602,11 @@ embed, iframe, object {
 }
 .contact-form form input[ type="submit"] {
   margin: 0;
+  width: auto;
+  float: right;
+  padding: 0 28px;
   border: none;
-  padding: 0 14px;
   height: 34px;
-  margin-left: -1px;
   border: 1px solid rgba(0, 0, 0, 0.8);
   background: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
