@@ -32,17 +32,21 @@
     }
     
     @media all and ( min-width: $screen__lg ) {
-      font-size: 6.4em;
+      font-size: 6em;
     }
     
     span:last-of-type {
       margin-left: 23px; 
       @media all and ( min-width: $screen__xs ) {
-        margin-left: 31px;
+        margin-left: 35px;
+      }
+      
+      @media all and ( min-width: $screen__sm ) {
+        margin-left: 39px;
       }
       
       @media all and ( min-width: $screen__lg ) {
-         margin-left: 45px;
+         margin-left: 53px;
       }
     }
   }
@@ -68,11 +72,11 @@
       font-size: 1.1em;
       margin: 0;
       @media all and ( min-width: $screen__xs ) {
-        font-size: 1.4em;
+        font-size: 1.5em;
       }
       
       @media all and ( min-width: $screen__lg ) {
-        font-size: 2em;
+        font-size: 1.8em;
       }
     }
   }
