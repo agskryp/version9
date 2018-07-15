@@ -10,7 +10,7 @@
 ?>
 
 <div id="primary">
-  <main id="main" class="site-main single-page">
+  <main id="main" class="site-main single-page content-page">
     <?php
 	  while ( have_posts() ) :
         the_post();

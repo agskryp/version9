@@ -15,7 +15,7 @@
 ?>
 
 <div id="primary" class="content-area">
-  <main id="main" class="site-main page-page">
+  <main id="main" class="site-main page-page content-page">
     <?php
       while ( have_posts() ) :
         the_post();
