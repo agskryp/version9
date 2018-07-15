@@ -885,6 +885,14 @@ a:hover, a:active {
     margin-top: 0;
   }
 }
+.entry-meta {
+  font-size: 80%;
+  word-spacing: 1px;
+}
+.entry-footer {
+  display: flex;
+  justify-content: space-between;
+}
 .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
   max-width: 600px;
   width: 100%;
@@ -943,14 +951,6 @@ a:hover, a:active {
 .search-page .search-result {
   font-weight: normal;
 }
-.entry-meta {
-  font-size: 80%;
-  word-spacing: 1px;
-}
-.entry-footer {
-  display: flex;
-  justify-content: space-between;
-}
 .single-page .entry-header, .page-page .entry-header, .portfolio-page .entry-header {
   text-align: center;
   padding: 56px 0;
@@ -981,56 +981,6 @@ a:hover, a:active {
 .single-page .entry-content li, .page-page .entry-content li, .portfolio-page .entry-content li {
   margin-bottom: 14px;
   line-height: 1.3;
-}
-.portfolio-page .page-header {
-  padding: 56px;
-}
-.portfolio-page .page-title {
-  font-weight: 100;
-}
-.portfolio-page h1 {
-  margin: 0;
-}
-.portfolio-page .entry-title {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.portfolio-page a {
-  margin: 0 14px 28px;
-  display: inline-block;
-}
-.portfolio-page a:hover img, .portfolio-page a:focus img {
-  opacity: 0.8;
-}
-.portfolio-page .entry-content {
-  display: inline-block;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.portfolio h1 {
-  margin: 0;
-}
-.portfolio h2 {
-  clear: none;
-}
-.portfolio img:hover, .portfolio img:focus {
-  opacity: 0.8;
-}
-.portfolio img.alignleft {
-  margin: 28px 28px 28px 0;
-}
-.portfolio img.alignright {
-  margin: 28px 0px 28px 28px;
-}
-.portfolio img.desktop {
-  margin: 0 0 28px;
-}
-.portfolio img.laptop {
-  margin: 28px 0 0;
-}
-.portfolio .screen-shot {
-  font-size: 80%;
-  font-style: italic;
 }
 .homepage-screen {
   display: block;
@@ -1209,6 +1159,56 @@ a:hover, a:active {
 }
 .homepage-screen .homepage-menu-item a:hover, .homepage-screen .homepage-menu-item a:focus {
   background: rgba(200, 200, 200, 0.1);
+}
+.portfolio-page .page-header {
+  padding: 56px;
+}
+.portfolio-page .page-title {
+  font-weight: 100;
+}
+.portfolio-page h1 {
+  margin: 0;
+}
+.portfolio-page .entry-title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.portfolio-page a {
+  margin: 0 14px 28px;
+  display: inline-block;
+}
+.portfolio-page a:hover img, .portfolio-page a:focus img {
+  opacity: 0.8;
+}
+.portfolio-page .entry-content {
+  display: inline-block;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.portfolio h1 {
+  margin: 0;
+}
+.portfolio h2 {
+  clear: none;
+}
+.portfolio img:hover, .portfolio img:focus {
+  opacity: 0.8;
+}
+.portfolio img.alignleft {
+  margin: 28px 28px 28px 0;
+}
+.portfolio img.alignright {
+  margin: 28px 0px 28px 28px;
+}
+.portfolio img.desktop {
+  margin: 0 0 28px;
+}
+.portfolio img.laptop {
+  margin: 28px 0 0;
+}
+.portfolio .screen-shot {
+  font-size: 80%;
+  font-style: italic;
 }
 /*--------------------------------------------------------------
  ## Comments
