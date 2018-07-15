@@ -10,7 +10,7 @@
 ?>
 
 <div id="primary" class="content-area">
-  <main id="main" class="page-404">
+  <main id="main" class="page-404 excerpt-page">
     <section class="error-404 not-found">
       <header class="page-header text-center">
         <h1 class="page-title">

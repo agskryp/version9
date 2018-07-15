@@ -10,7 +10,7 @@
 ?>
 
 <div id="primary">
-  <main id="main" class="site-main archive-page">
+  <main id="main" class="site-main archive-page excerpt-page">
     <?php
       if ( have_posts() ) :
     ?>

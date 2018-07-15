@@ -15,7 +15,7 @@
 ?>
 
 <div id="primary">
-  <main id="main" class="site-main index-page">
+  <main id="main" class="site-main index-page excerpt-page">
     <?php
       if ( have_posts() ) :
         if ( is_home() && !is_front_page() ) :
