@@ -67,7 +67,7 @@
           </svg>
 
           <p>
-            Learn more about the man behind the page in front of a computer beyond the internet
+            Learn about the man behind the page on a computer beyond the internet
           </p>
 
           <a href="<?php echo esc_url( __( AG_ABOUT, 'version9' ) ); ?>">
@@ -76,8 +76,8 @@
         </li>
       </ul>
     </main>
-  </div>    <!-- #primary -->
-</div>  <!-- #page -->
+  </div> <?php // <!-- #primary --> ?>
+</div> <?php // <!-- #page --> ?>
 
 <?php wp_footer(); ?>
 
