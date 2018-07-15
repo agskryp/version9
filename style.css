@@ -925,6 +925,7 @@ a:hover, a:active {
 }
 .index-page .entry-title, .archive-page .entry-title, .search-page .entry-title, .page-404 .entry-title {
   font-weight: 700;
+  line-height: 1;
 }
 .index-page .featured-image-container, .archive-page .featured-image-container, .search-page .featured-image-container, .page-404 .featured-image-container {
   margin-top: 28px;
