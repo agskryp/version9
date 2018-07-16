@@ -396,7 +396,7 @@ code, kbd, tt, var {
   color: #78a58f;
 }
 kbd {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
 }
 abbr, acronym {
   border-bottom: 1px dotted #666;
@@ -865,7 +865,7 @@ a:hover, a:active {
 .hentry {
   margin: 0 0 1.5em;
 }
-.updated:not(.published) {
+.updated:not( .published) {
   display: none;
 }
 .page-content, .entry-content, .entry-summary {
@@ -942,7 +942,7 @@ a:hover, a:active {
 .excerpt-page .entry-header {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding-bottom: 14px;
 }
 .excerpt-page .entry-title {
@@ -970,11 +970,11 @@ a:hover, a:active {
   font-weight: 100;
 }
 .content-page .featured-image-container {
-  max-height: 365px;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-height: 365px;
+  overflow: hidden;
   margin: 0 -15px 28px;
 }
 .content-page .entry-content {
@@ -1126,9 +1126,9 @@ a:hover, a:active {
 @media screen and (min-width: 768px) {
   .homepage-screen {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-content: center;
+    flex-direction: column;
     height: 100vh;
   }
 }
@@ -1225,6 +1225,9 @@ a:hover, a:active {
   }
 }
 .homepage-screen .homepage-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
@@ -1233,9 +1236,6 @@ a:hover, a:active {
   text-align: center;
   max-width: 440px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 @media all and (min-width: 600px) {
@@ -1466,7 +1466,7 @@ a:hover, a:active {
 .site-footer {
   background: rgba(0, 0, 0, 0.5);
   margin: 0 -15px;
-  padding: 4em 2em;
+  padding: 56px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .site-footer .social-links a {

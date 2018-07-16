@@ -187,3 +187,12 @@ require get_template_directory() . '/inc/template-comments.php';
  * Load custom constants
  */
 require get_template_directory() . '/inc/constants.php';
+
+/**
+ * Replace the default link text for excerpts
+ */
+function new_excerpt($more) {
+  global $post;
+  return '... <br> <a class="read-more pull-left" href="'. get_permalink( $post -> ID ) . '"> Continue reading &rarr;</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt' );
