@@ -430,7 +430,7 @@ html {
 body {
   background: #132118;
   /* Fallback for when there is no custom background color defined. */
-  background: url('images/bkgd.jpg') no-repeat center center fixed;
+  background: url('assets/site-background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -967,6 +967,7 @@ a:hover, a:active {
 .content-page .entry-title {
   line-height: 1;
   font-weight: 100;
+  margin: 0;
 }
 .content-page .featured-image-container {
   display: flex;
@@ -1120,7 +1121,6 @@ a:hover, a:active {
  --------------------------------------------------------------*/
 .homepage-screen {
   display: block;
-  background: rgba(0, 0, 0, 0.3);
   overflow: auto;
 }
 @media screen and (min-width: 768px) {
@@ -1612,8 +1612,9 @@ embed, iframe, object {
   margin: 0;
 }
 .contact-form form label {
-  margin: 14px 0;
+  margin: 0 0 14px;
   width: 100%;
+  font-variant: small-caps;
 }
 .contact-form form input, .contact-form form textarea {
   background: rgba(200, 200, 200, 0.1);
