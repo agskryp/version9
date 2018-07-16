@@ -668,7 +668,7 @@ a:hover, a:active {
 .main-search-form form {
   display: none;
   margin: 0;
-  padding-left: 0;
+  padding: 0 0 14px;
   text-align: center;
   background: #132118;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -1391,7 +1391,7 @@ a:hover, a:active {
 @media all and (min-width: 768px) {
   .site-branding {
     display: block;
-    margin: -28px 0 0;
+    margin: -14px 0 0;
   }
 }
 .site-title {
@@ -1400,11 +1400,21 @@ a:hover, a:active {
   line-height: 0.5;
   margin-bottom: 28px;
 }
+@media all and (min-width: 1600px) {
+  .site-title {
+    font-size: 70px;
+  }
+}
 .site-title span {
   display: block;
 }
 .site-title span:last-of-type {
   margin-left: 22px;
+}
+@media all and (min-width: 1600px) {
+  .site-title span:last-of-type {
+    margin-left: 31px;
+  }
 }
 .site-title a:hover {
   color: rgba(200, 200, 200, 0.8);
@@ -1459,6 +1469,11 @@ a:hover, a:active {
     margin-left: 0;
     border-left: none;
     padding-left: 0;
+  }
+}
+@media all and (min-width: 1600px) {
+  .site-description {
+    font-size: 33px;
   }
 }
 .site-description p {
