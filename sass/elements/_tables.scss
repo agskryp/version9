@@ -4,10 +4,10 @@ table {
 }
 
 td, th {
-  padding: 7px;
+  padding: $grid__pixel-7;
   border: 1px solid $color__soft-white;
   
   @media all and ( min-width: $screen__sm ) {
-    padding: 14px;
+    padding: ( $grid__pixel-7 * 2 );
   }
 }

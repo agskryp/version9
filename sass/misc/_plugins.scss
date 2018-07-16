@@ -2,9 +2,7 @@
   margin: 0;
   padding-left: 0;
   border-right: none;
-  @media all and ( min-width: $screen__md ) { 
-  }
-  
+
   p {
     margin: 0;
   }
@@ -42,7 +40,7 @@
     margin: 0;
     width: auto;
     float: right;
-    padding: 0 28px;
+    padding: 0 $grid__pixel-28;
     border: none;
     height: 34px;
     border: 1px solid $color__dark-80;

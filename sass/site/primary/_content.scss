@@ -1,11 +1,8 @@
-.single-page,
-.page-page,
-.portfolio-page,
 .content-page {
   
   .entry-header {
     text-align: center;
-    padding: 56px 0;
+    padding: ( $grid__pixel-28 * 2 ) 0;
   }
 
   .entry-meta {
@@ -18,24 +15,22 @@
   }
   
   .featured-image-container {
+    @include flex-center;
     max-height: 365px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 -15px 28px;
+    margin: 0 -15px $grid__pixel-28;
   }
   
   .entry-content {
     max-width: 600px;
-    margin: 0 auto 28px;
+    margin: 0 auto $grid__pixel-28;
     background: $color__dark-30;
-    padding: 28px;
+    padding: $grid__pixel-28;
     border-radius: 6px;
     border: 1px solid $color__dark-10;
     
     li {
-      margin-bottom: 14px;
+      margin-bottom: ( $grid__pixel-7 * 2 );
       line-height: 1.3;
     }
   }

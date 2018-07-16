@@ -1,11 +1,9 @@
 .homepage-screen {
   display: block;
   background: $color__dark-30;
-  @media screen and ( min-width: 768px ) {
-    display: flex;
+  @media screen and ( min-width: $screen__md ) {
+    @include flex-center;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
     height: 100vh;
   }
   
@@ -13,14 +11,14 @@
     justify-content: center;
     flex-direction: column;
     margin: 0;
-    padding: 28px 28px 0;
+    padding: $grid__pixel-28 $grid__pixel-28 0;
     @media all and ( min-width: $screen__md ) {
       flex-direction: row;
-      padding: 56px 56px 0;
+      padding: ( $grid__pixel-28 * 2 ) ( $grid__pixel-28 * 2 ) 0;
     }
     
     @media all and ( min-width: $screen__lg ) {
-      padding: 0 56px 28px;
+      padding: 0 ( $grid__pixel-28 * 2 ) $grid__pixel-28;
     }
   }
   
@@ -46,7 +44,7 @@
       }
       
       @media all and ( min-width: $screen__lg ) {
-         margin-left: 53px;
+        margin-left: 53px;
       }
     }
   }
@@ -57,8 +55,8 @@
     border-left: none !important;  // !important necessary for animation and screen breaks
     padding: 0;
     @media all and ( min-width: $screen__md ) {
-      padding-left: 28px;
-      margin-left: 28px;
+      padding-left: $grid__pixel-28;
+      margin-left: $grid__pixel-28;
       border-left: 2px solid $color__soft-white !important;  // !important necessary for animation and screen breaks
     }
     
@@ -83,7 +81,7 @@
   
   .homepage-container {
     padding: 0;
-    margin: 0 28px;
+    margin: 0 $grid__pixel-28;
     list-style: none;
     @media screen and ( min-width: $screen__lg ) {
       display: flex;
@@ -92,29 +90,27 @@
   }
 
   .homepage-menu-item {
+    @include flex-center;
     background: $color__dark-30;
     border: 1px solid $color__dark-10;
     border-radius: 6px;
-    padding: 28px;
-    margin: 28px auto;
+    padding: $grid__pixel-28;
+    margin: $grid__pixel-28 auto;
     text-align: center;
     max-width: 440px;
     position: relative; // For TweenMax animation
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     @media all and ( min-width: $screen__sm ) {
       height: 150px;
       max-width: 600px;
-      margin: 28px auto;
+      margin: $grid__pixel-28 auto;
       flex-direction: row;
     }
     
     @media all and ( min-width: $screen__lg ) {
       height: 100%;
       width: 300px;
-      margin: 28px 14px 0;
+      margin: $grid__pixel-28 ( $grid__pixel-7 * 2 ) 0;
       flex-direction: column;
     }
     
@@ -125,9 +121,9 @@
     p {
       color: $color__text-main;
       max-width: 320px;
-      margin: 14px auto 28px;
+      margin: ( $grid__pixel-7 * 2 ) auto $grid__pixel-28;
       @media all and ( min-width: $screen__sm ) {
-        margin: 0 28px;
+        margin: 0 $grid__pixel-28;
         padding: 0;
       }
       
@@ -137,15 +133,15 @@
       }
       
       @media all and ( min-width: $screen__lg ) {
-        margin: 14px auto 28px;
+        margin: ( $grid__pixel-7 * 2 ) auto $grid__pixel-28;
         padding: 0;
       }
     }
     
     a {
       color: $color__text-main;
-      border: 1px solid rgba(0, 0, 0, 0.8);
-      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid $color__dark-80;
+      background: $color__dark-80;
       display: block;
       border-radius: 8px;
       cursor: pointer;
@@ -160,6 +156,5 @@
         background: $color__light-10;
       }
     }
-
   }
 }

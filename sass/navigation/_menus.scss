@@ -29,25 +29,23 @@
     flex-direction: column-reverse;
     float: right;
     margin-top: -48px;
-    margin-right: 14px;
+    margin-right: ( $grid__pixel-7 * 2 );
     @media all and ( min-width: 350px ) {
       display: inline-flex
     }
     
     @media all and ( min-width: $screen__md ) {
-      display: flex;
+      @include flex-center;
       flex-direction: row;
-      align-items: center;
-      justify-content: center;
       float: none;
-      margin: 0 0 14px;
+      margin: 0 0 ( $grid__pixel-7 * 2 );
     
     }
     
     a {
-      margin: 7px 0;
+      margin: $grid__pixel-7 0;
       @media all and ( min-width: $screen__md ) {
-        margin: 0 14px;  
+        margin: 0 ( $grid__pixel-7 * 2 );  
       }
       
       &:focus,
@@ -144,11 +142,10 @@
   }
   
   input[ type="submit" ] {
-    margin: 0;
+    margin: 1px 0 0 -1px;
     border: none;
     padding: 0 ( $grid__pixel-7 * 2 );
     height: 34px;
-    margin-left: -1px;
     border: 1px solid $color__dark-80;
     background: $color__dark-80;
     border-radius: 0 $grid__pixel-8 $grid__pixel-8 0;

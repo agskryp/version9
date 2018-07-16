@@ -6,7 +6,7 @@
   margin: 0 0 1.5em;
 }
 
-.updated:not(.published) {
+.updated:not( .published ) {
   display: none;
 }
 
@@ -24,7 +24,7 @@
 .site-content {
   margin-top: 105px;
   background: $color__dark-30;
-  @media all and ( min-width: 768px) {
+  @media all and ( min-width: $screen__md ) {
     margin-top: 0;
   }
 }
@@ -39,9 +39,6 @@
   justify-content: space-between;
 }
 
-
-
-
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
@@ -49,10 +46,10 @@
   .site-main & {
     max-width: 600px;
     width: 100%;
-    margin: 56px auto;
+    margin: ( $grid__pixel-28 * 2 ) auto;
     font-weight: bold;
     overflow: hidden;
-    padding: 0 7px;
+    padding: 0 $grid__pixel-7;
   }
 
   .nav-previous {

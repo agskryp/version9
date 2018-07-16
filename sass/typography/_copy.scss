@@ -8,18 +8,18 @@ dfn, em, i {
 
 cite {
   margin-left: 5px;
-  @include font-size(0.9);
+  @include font-size( 0.9 );
   font-style: italic;
   font-weight: bold;
 }
 
 blockquote {
-  margin: 0 7px 28px;
+  margin: 0 $grid__pixel-7 $grid__pixel-28;
   background: $color__dark-30;
   border-left: 6px solid $color__dark-50;
-  padding: 14px;
+  padding: ( $grid__pixel-7 * 2 );
   @media all and ( min-width: $screen__sm ) {
-    margin: 0 28px 28px;
+    margin: 0 $grid__pixel-28 $grid__pixel-28;
   }
   
   p {
@@ -29,14 +29,14 @@ blockquote {
 
 address {
   margin: 0 0 1.5em 1.5em;
-  @include font-size(1.1);
+  @include font-size( 1.1 );
 }
 
 pre {
   background: $color__background-pre;
   color: $color__soft-green;
   font-family: $font__pre;
-  @include font-size(0.9375);
+  @include font-size( 0.9375 );
   line-height: $font__line-height-pre;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -46,12 +46,12 @@ pre {
 
 code, kbd, tt, var {
   font-family: $font__code;
-  @include font-size(0.9375);
+  @include font-size( 0.9375 );
   color: $color__soft-green;
 }
 
 kbd {
-  background: rgba(0,0,0,.5); // USE VARIABLE
+  background: $color__dark-50;
 }
 
 abbr, acronym {
@@ -66,11 +66,11 @@ mark, ins {
 }
 
 big {
-  @include font-size(1.25);
+  @include font-size( 1.25 );
 }
 
 q::before,
 q::after {
   font-weight: bold;
-  @include font-size(1.1);
+  @include font-size( 1.1 );
 }

@@ -1,11 +1,11 @@
 .site-footer {
   background: $color__dark-50;
   margin: 0 -15px;
-  padding: 4em 2em;
+  padding: ( $grid__pixel-28 * 2 );
   border-top: 1px solid $color__dark-10;
   
   .social-links a {
-    margin: 0 7px;
+    margin: 0 $grid__pixel-7;
   }
   
   a {

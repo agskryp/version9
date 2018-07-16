@@ -1,7 +1,7 @@
 .portfolio-page {
   
   .page-header {
-    padding: 56px;
+    padding: ( $grid__pixel-28 * 2 );
   }
   
   .page-title {
@@ -18,7 +18,7 @@
   }
   
   a {
-    margin: 0 14px 28px;
+    margin: 0 ( $grid__pixel-7 * 2 ) $grid__pixel-28;
     display: inline-block;
     &:hover,
     &:focus {
@@ -52,19 +52,19 @@
   }
   
   img.alignleft {
-    margin: 28px 28px 28px 0;
+    margin: $grid__pixel-28 $grid__pixel-28 $grid__pixel-28 0;
   }
   
   img.alignright {
-    margin: 28px 0px 28px 28px;
+    margin: $grid__pixel-28 0px $grid__pixel-28 $grid__pixel-28;
   }
   
   img.desktop {
-    margin: 0 0 28px;
+    margin: 0 0 $grid__pixel-28;
   }
   
   img.laptop {
-    margin: 28px 0 0;
+    margin: $grid__pixel-28 0 0;
   }
   
   .screen-shot {

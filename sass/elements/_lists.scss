@@ -1,6 +1,6 @@
 ul, ol {
-  margin: 0 0 14px;
-  padding-left: 28px;
+  margin: 0 0 ( $grid__pixel-7 * 2 );
+  padding-left: $grid__pixel-28;
   overflow: hidden;
 }
 
@@ -22,11 +22,11 @@ ol ol,
 ol ul,
 ul ol,
 ul ul {
-  padding-left: 28px;
+  padding-left: $grid__pixel-28;
 }
 
 ol li {
-  padding-left: 6px;
+  padding-left: $grid__pixel-7;
 }
 
 dt {
