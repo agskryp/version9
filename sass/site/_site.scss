@@ -2,16 +2,15 @@
 // @import "../layout/sidebar-content";
 
 /*--------------------------------------------------------------
-## Posts and pages
+## Primary
 --------------------------------------------------------------*/
 @import "primary/posts-and-pages";
-
-@import "pages/index";
-@import "pages/single";
-@import "pages/front-page";
-@import "pages/portfolio";
+@import "primary/excerpts";
+@import "primary/content";
+@import "primary/comments";
 
 /*--------------------------------------------------------------
-## Comments
+## Pages
 --------------------------------------------------------------*/
-@import "primary/comments";
+@import "pages/front-page";
+@import "pages/portfolio";

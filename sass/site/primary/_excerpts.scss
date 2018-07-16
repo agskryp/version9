@@ -1,7 +1,4 @@
-.index-page,
-.archive-page,
-.search-page,
-.page-404 {
+.excerpt-page {
   
   article,
   .page-content {
@@ -21,7 +18,6 @@
     font-weight: 100;
     line-height: 1;
   }
-
 
   .entry-header {
     font-family: 'Lato', sans-serif;
@@ -48,19 +44,3 @@
     display: inline-block;
   }
 }
-
-.archive-page {
-  .archive-description {
-    p {
-      margin: 0;
-      font-size: 90%;
-    }
-  }
-}
-
-.search-page {
-  .search-result {
-    font-weight: normal;
-  }
-}
-
