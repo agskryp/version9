@@ -443,7 +443,7 @@ body {
     font-size: 18px;
   }
 }
-@media all and (min-width: 600px) {
+@media all and (min-width: 1600px) {
   body {
     font-size: 20px;
   }
@@ -877,7 +877,6 @@ a:hover, a:active {
 }
 .site-content {
   margin-top: 105px;
-  background: rgba(0, 0, 0, 0.3);
 }
 @media all and (min-width: 768px) {
   .site-content {
@@ -1122,6 +1121,7 @@ a:hover, a:active {
 .homepage-screen {
   display: block;
   background: rgba(0, 0, 0, 0.3);
+  overflow: auto;
 }
 @media screen and (min-width: 768px) {
   .homepage-screen {
@@ -1129,10 +1129,12 @@ a:hover, a:active {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
     height: 100vh;
   }
 }
 .homepage-screen .site-branding {
+  display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 0;
@@ -1347,6 +1349,12 @@ a:hover, a:active {
   font-size: 80%;
   font-style: italic;
 }
+.background-shade {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
 .site-header {
   position: fixed;
   z-index: 6;
@@ -1362,8 +1370,8 @@ a:hover, a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid rgba(0, 0, 0, 0.5);
-    background: rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
     flex-direction: column;
     padding: 0;
     height: 100%;

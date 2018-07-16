@@ -19,8 +19,6 @@
       <header id="masthead" class="site-header col-12 col-md-4 col-lg-3">
         <?php require get_template_directory() . '/partials/site-branding.php'; ?>
         
-        
-
         <nav id="site-navigation" class="site-navigation">
           <div class="main-nav-button">
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
@@ -59,8 +57,6 @@
             <?php require get_template_directory() . '/searchform.php'; ?>
           </div>
         </nav>
-        
-       
       </header>
 
       <div id="content" class="site-content col-12 col-md-8 offset-md-4 col-lg-9 offset-lg-3">
