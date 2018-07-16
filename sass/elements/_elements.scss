@@ -12,7 +12,7 @@ html {
 
 body {
   background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-  background: url('images/bkgd.jpg') no-repeat center center fixed;
+  background: url('assets/site-background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
