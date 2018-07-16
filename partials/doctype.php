@@ -10,4 +10,5 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <div class="background-shade"></div>
   
