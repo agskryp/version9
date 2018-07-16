@@ -35,7 +35,7 @@
 
 <nav class="navigation post-navigation" role="navigation">
   <h2 class="screen-reader-text">
-    Page navigation
+    Site navigation
   </h2>
   
   <div class="nav-links">
