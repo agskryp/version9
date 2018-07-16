@@ -6,6 +6,7 @@
   padding: $grid__pixel-28 0 0;
   border-right: none;
   border-bottom: 1px solid $color__dark-80;
+  overflow: hidden;
   @media all and ( min-width: $screen__md ) {
     @include flex-center();
     border-right: 1px solid $color__dark-50;
@@ -13,6 +14,10 @@
     flex-direction: column;
     padding: 0;
     height: 100%;
+  }
+  
+  @media all and ( max-height: 480px ) and ( min-width: $screen__md ) {
+    overflow: scroll;
   }
   
   a {
@@ -29,12 +34,10 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  margin-left: $grid__pixel-28;
-  margin-bottom: 0;
+  margin: 0 0 0 $grid__pixel-28;
   @media all and ( min-width: $screen__md ) {
-    justify-content: center;
-    flex-direction: column; 
-    margin-left: 0;
+    display: block;
+    margin: -$grid__pixel-28 0 0;
   } 
 }
 
@@ -66,7 +69,6 @@
   border-left: none;
   margin-left: 0;
   display: none;
-  justify-content: center;
   text-shadow: 2px 2px 2px $color__dark-50;
   margin-bottom: $grid__pixel-28;
   word-spacing: 2px;
@@ -90,6 +92,7 @@
   }
   
   @media all and ( min-width: $screen__md ) {
+    display: block;
     margin-left: 0;
     border-left: none;
     padding-left: 0;
