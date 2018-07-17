@@ -1349,6 +1349,12 @@ a:hover, a:active {
 .portfolio h2 {
   clear: none;
 }
+.portfolio ul {
+  display: contents;
+}
+.portfolio li {
+  margin-left: 28px;
+}
 .portfolio img:hover, .portfolio img:focus {
   opacity: 0.8;
 }
