@@ -1116,6 +1116,24 @@ a:hover, a:active {
   padding-top: 28px;
   margin-bottom: 28px;
 }
+.comments-area .comment-form-author label, .comments-area .comment-form-email label, .comments-area .comment-form-url label, .comments-area .comment-form-cookies-consent label {
+  display: block;
+  margin: 0;
+}
+.comments-area .comment-form-author input, .comments-area .comment-form-email input, .comments-area .comment-form-url input, .comments-area .comment-form-cookies-consent input {
+  background: rgba(200, 200, 200, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: #c3c3c3;
+}
+.comments-area .comment-form-author input:focus, .comments-area .comment-form-email input:focus, .comments-area .comment-form-url input:focus, .comments-area .comment-form-cookies-consent input:focus {
+  outline: 1px dotted #c3c3c3;
+  background: rgba(200, 200, 200, 0.2);
+}
+.comments-area .comment-form-cookies-consent label {
+  font-size: 80%;
+  margin-left: 7px;
+  display: inline-block;
+}
 /*--------------------------------------------------------------
  ## Pages
  --------------------------------------------------------------*/
@@ -1495,6 +1513,7 @@ a:hover, a:active {
   margin: 0 -15px;
   padding: 56px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
 }
 .site-footer .social-links a {
   margin: 0 7px;
@@ -1510,6 +1529,56 @@ a:hover, a:active {
 }
 .site-footer a svg {
   fill: #c3c3c3;
+}
+.site-footer .footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+@media all and (min-width: 992px) {
+  .site-footer .footer-info {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+.site-footer .footer-info p {
+  margin: 0 0 0.5em;
+}
+@media all and (min-width: 992px) {
+  .site-footer .footer-info p {
+    margin: 0;
+  }
+}
+.site-footer .footer-info .privacy-policy {
+  order: 3;
+  text-align: center;
+  font-size: 80%;
+}
+@media all and (min-width: 992px) {
+  .site-footer .footer-info .privacy-policy {
+    order: 1;
+    text-align: left;
+  }
+}
+.site-footer .footer-info .copyright {
+  order: 1;
+}
+@media all and (min-width: 992px) {
+  .site-footer .footer-info .copyright {
+    order: 2;
+  }
+}
+.site-footer .footer-info .designed-by {
+  order: 2;
+  text-align: center;
+  font-size: 80%;
+}
+@media all and (min-width: 992px) {
+  .site-footer .footer-info .designed-by {
+    order: 3;
+    text-align: right;
+  }
 }
 /*--------------------------------------------------------------
  # Infinite scroll

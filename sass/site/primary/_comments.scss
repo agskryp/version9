@@ -17,24 +17,24 @@
   @media all and ( min-width: $screen__sm ) {
     font-size: 16px;
   }
-  
+
   .comments-title {
     padding: 0 28px 28px;
     margin: 0;
   }
-  
+
   .comment-list {
     padding: 0;
     list-style: none;
     margin: 0 0 28px;
     border-bottom: 1px solid $color__soft-white;
   }
-  
+
   .comment {
     padding: 28px 28px 0;
     border-top: 1px solid $color__soft-white;
   }
-  
+
   .children {
     list-style: none;
     background: $color__dark-30;
@@ -42,29 +42,29 @@
     margin: 0 -14px 28px;
     border: 1px solid $color__dark-10;
     border-radius: 6px;
-    
+
     .comment {
       padding: 28px 14px 0;
     }
-    
+
     .children {
       background: none;
       margin: 0 0 0 -0.5em;
       border: none;
-      
+
       .comment {
         padding: 0;
       }
-      
+
       .comment-body {
         padding-top: 28px;
       }
     }
   }
-  
+
   .comment-meta {
     display: flex;
-  
+
     .vcard {
       margin: 0 14px 14px 0;
     }
@@ -73,65 +73,65 @@
       font-size: 125%;
       flex: 3;
     }
-    
+
     .comment-metadata {
       font-size: 70%;
     }
   }
-  
+
   .reply {
     padding-bottom: 28px;
   }
-  
+
   .comment-content {
-    
+
     ol, ul {
       margin-bottom: 28px;
     }
-    
+
     ol ol,
-ol ul,
-ul ol,
-ul ul {
-  margin-bottom: 0;
-}
-  }
-  
-  .pingback {
-      padding: 28px;
-      border-top: 1px solid $color__soft-white;
-      font-weight: bold;
-      
-      a {
-        font-weight: normal;
-        margin-left: .5em;
-      }
-      
-      .edit-link {
-        float: right;
-        margin: 0;
-      }
+    ol ul,
+    ul ol,
+    ul ul {
+      margin-bottom: 0;
     }
-  
+  }
+
+  .pingback {
+    padding: 28px;
+    border-top: 1px solid $color__soft-white;
+    font-weight: bold;
+
+    a {
+      font-weight: normal;
+      margin-left: .5em;
+    }
+
+    .edit-link {
+      float: right;
+      margin: 0;
+    }
+  }
+
   .comment-respond {
-        padding: 0 28px;
-  
-    
+    padding: 0 28px;
+
+
     .logged-in-as a:last-of-type {
       margin-left: .5em;
     }
-    
+
     textarea {
       background: $color__light-10;
-    border: 1px solid $color__dark-80;
+      border: 1px solid $color__dark-80;
       color: $color__soft-white;
-      
+
       &:focus {
-    outline: 1px dotted $color__soft-white;
+        outline: 1px dotted $color__soft-white;
         background: $color__light-20;
       }
     }
-    
+
     .submit {
       margin: 0;
       padding: 0 14px;
@@ -142,17 +142,49 @@ ul ul {
       color: $color__soft-white;
       cursor: pointer;
       &:hover {
-          background: $color__light-10;
+        background: $color__light-10;
       }
-       &:focus {
-    outline: 1px dotted $color__soft-white;
+      
+      &:focus {
+        outline: 1px dotted $color__soft-white;
+      }
+    }
+  }
+
+  .no-comments {
+    border-top: 1px solid $color__soft-white;
+    padding-top: 28px;
+    margin-bottom: 28px;
+  }
+  
+  .comment-form-author,
+  .comment-form-email,
+  .comment-form-url,
+  .comment-form-cookies-consent {
+    
+    label {
+      display: block;
+      margin: 0;
+    }
+    
+    input {
+      background: $color__light-10;
+      border: 1px solid $color__dark-80;
+      color: $color__soft-white;
+
+      &:focus {
+        outline: 1px dotted $color__soft-white;
+        background: $color__light-20;
       }
     }
   }
   
-  .no-comments {
-        border-top: 1px solid $color__soft-white;
-    padding-top: 28px;
-    margin-bottom: 28px;
+  .comment-form-cookies-consent {
+    
+    label {
+      font-size: 80%;
+      margin-left: 7px;
+      display: inline-block;
+    }
   }
 }

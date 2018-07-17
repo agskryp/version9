@@ -11,14 +11,22 @@
 </div> <?php // #content // ?>
 
 <footer id="colophon" class="site-footer">
-  <div class="site-info text-center">
-    <?php require get_template_directory() . '/partials/social-links.php'; ?>
+  <div class="footer-info">
+    <a class="privacy-policy" href="<?php echo esc_url( __( AG_PRIVACY, 'version9' ) ); ?>">
+      Privacy Policy
+    </a>    
+  
+    <div class="copyright text-center">
+      <?php require get_template_directory() . '/partials/social-links.php'; ?>
+
+      <p>
+        &copy; 2014 - 2018 Andrew Skrypnyk
+      </p>
+    </div>
     
-    <p style="margin: 0;">
-      &copy; 2018 Andrew Skrypnyk
+    <p class="designed-by">
+      Designed by <a href="/">A.G. Skryp</a>
     </p>
-    
-    <?php printf( esc_html__( 'Designed by %s', 'version9' ), '<a href="http://agskryp.com">A.G. Skryp</a>' ); ?>
   </div>
 </footer>
 
