@@ -1373,6 +1373,7 @@ a:hover, a:active {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  z-index: -6;
 }
 .site-header {
   position: fixed;
@@ -1541,6 +1542,8 @@ a:hover, a:active {
   .site-footer .footer-info {
     flex-direction: row;
     align-items: flex-end;
+    max-width: 992px;
+    margin: 0 auto;
   }
 }
 .site-footer .footer-info p {
