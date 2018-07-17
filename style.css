@@ -586,7 +586,7 @@ a:hover, a:active {
 .site-navigation span {
   display: none;
 }
-@media all and (min-width: 630px) {
+@media all and (min-width: 645px) {
   .site-navigation span {
     display: inline-block;
     margin-right: 7px;
@@ -596,7 +596,7 @@ a:hover, a:active {
   display: none;
   flex-direction: column-reverse;
   float: right;
-  margin-top: -48px;
+  margin-top: -54px;
   margin-right: 14px;
 }
 @media all and (min-width: 350px) {
@@ -615,7 +615,7 @@ a:hover, a:active {
   }
 }
 .site-navigation .social-links a {
-  margin: 7px 0;
+  margin: 9px 0;
 }
 @media all and (min-width: 768px) {
   .site-navigation .social-links a {
@@ -1329,6 +1329,7 @@ a:hover, a:active {
 .portfolio-page .entry-title {
   font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 1.5em;
 }
 .portfolio-page a {
   margin: 0 14px 28px;
@@ -1484,7 +1485,7 @@ a:hover, a:active {
     padding-left: 28px;
   }
 }
-@media all and (min-width: 575px) {
+@media all and (min-width: 590px) {
   .site-description {
     display: flex;
   }
