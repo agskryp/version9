@@ -32,6 +32,8 @@
     @media all and ( min-width: 992px ) {
       flex-direction: row;
       align-items: flex-end;
+      max-width: 992px;
+      margin: 0 auto;
     }
     
     p {
