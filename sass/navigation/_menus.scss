@@ -18,7 +18,7 @@
   
   span {
     display: none;
-    @media all and ( min-width: 630px ) {
+    @media all and ( min-width: 645px ) {
       display: inline-block;
       margin-right: $grid__pixel-7;
     }
@@ -28,7 +28,7 @@
     display: none;
     flex-direction: column-reverse;
     float: right;
-    margin-top: -48px;
+    margin-top: -54px;
     margin-right: ( $grid__pixel-7 * 2 );
     @media all and ( min-width: 350px ) {
       display: inline-flex
@@ -43,7 +43,7 @@
     }
     
     a {
-      margin: $grid__pixel-7 0;
+      margin: 9px 0;
       @media all and ( min-width: $screen__md ) {
         margin: 0 ( $grid__pixel-7 * 2 );  
       }
