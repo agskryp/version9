@@ -967,7 +967,7 @@ a:hover, a:active {
 .content-page .entry-title {
   line-height: 1;
   font-weight: 100;
-  margin: 0;
+  max-width: 992px;
 }
 .content-page .featured-image-container {
   display: flex;
@@ -1350,10 +1350,7 @@ a:hover, a:active {
   clear: none;
 }
 .portfolio ul {
-  display: contents;
-}
-.portfolio li {
-  margin-left: 28px;
+  clear: both;
 }
 .portfolio img:hover, .portfolio img:focus {
   opacity: 0.8;
