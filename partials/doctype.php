@@ -10,5 +10,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <div class="background-shade"></div>
+  <div class="background-image">
+    <div class="background-shade"></div>
   

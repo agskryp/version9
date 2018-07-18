@@ -32,6 +32,7 @@
 
 </div> <?php // bootstrap .row // ?>
 </div> <?php // #page // ?>
+</div> <?php // .background-image // ?>
 
 <?php wp_footer(); ?>
 
