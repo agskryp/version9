@@ -460,7 +460,7 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 .background-image {
-  background: url('assets/site-background.jpg') no-repeat center center fixed;
+  background: url('assets/dark-site-background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -670,7 +670,7 @@ a:hover, a:active {
 .main-search-form form {
   display: none;
   margin: 0;
-  padding: 0 0 14px;
+  padding: 0;
   text-align: center;
   background: #132118;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -1372,13 +1372,6 @@ a:hover, a:active {
   font-size: 80%;
   font-style: italic;
 }
-.background-shade {
-  background: rgba(0, 0, 0, 0.3);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: -6;
-}
 .site-header {
   position: fixed;
   z-index: 6;
@@ -1422,7 +1415,7 @@ a:hover, a:active {
 @media all and (min-width: 768px) {
   .site-branding {
     display: block;
-    margin: -14px 0 0;
+    margin: 0;
   }
 }
 .site-title {
