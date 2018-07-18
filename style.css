@@ -1386,7 +1386,6 @@ a:hover, a:active {
   padding: 28px 0 0;
   border-right: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  overflow: hidden;
 }
 @media all and (min-width: 768px) {
   .site-header {
@@ -1402,7 +1401,7 @@ a:hover, a:active {
 }
 @media all and (max-height: 480px) and (min-width: 768px) {
   .site-header {
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 .site-header a {
