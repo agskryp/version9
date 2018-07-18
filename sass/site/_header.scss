@@ -45,7 +45,7 @@
   margin: 0 0 0 $grid__pixel-28;
   @media all and ( min-width: $screen__md ) {
     display: block;
-    margin: -( $grid__pixel-7 * 2 ) 0 0;
+    margin: 0;
   } 
 }
 
