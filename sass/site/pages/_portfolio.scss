@@ -58,11 +58,25 @@
   }
   
   img.alignleft {
-    margin: $grid__pixel-28 $grid__pixel-28 $grid__pixel-28 0;
+    margin: $grid__pixel-28 auto;
+    display: block;
+    float: none;    
+    @media all and ( min-width: 400px ) {
+      margin: $grid__pixel-28 $grid__pixel-28 $grid__pixel-28 0;
+      float: left;
+      display: inline;
+    }
   }
   
   img.alignright {
-    margin: $grid__pixel-28 0px $grid__pixel-28 $grid__pixel-28;
+    margin: $grid__pixel-28 auto;
+    display: block;
+    float: none;
+    @media all and ( min-width: 400px ) {
+      margin: $grid__pixel-28 0px $grid__pixel-28 $grid__pixel-28;
+      float: right;
+      display: inline;
+    }
   }
   
   img.desktop {
