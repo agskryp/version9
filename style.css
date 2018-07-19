@@ -335,15 +335,30 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 .h1, h1 {
-  font-size: 3em;
+  font-size: 2.25em;
   margin: 0 0 0.5rem;
   line-height: 0.8;
 }
+@media all and (min-width: 360px) {
+  .h1, h1 {
+    font-size: 3em;
+  }
+}
 .h2, h2 {
-  font-size: 2em;
+  font-size: 1.75em;
+}
+@media all and (min-width: 360px) {
+  .h2, h2 {
+    font-size: 2em;
+  }
 }
 .h3, h3 {
-  font-size: 1.75em;
+  font-size: 1.5em;
+}
+@media all and (min-width: 360px) {
+  .h3, h3 {
+    font-size: 1.75em;
+  }
 }
 p {
   margin-bottom: 1.5em;
@@ -458,13 +473,6 @@ img {
 figure {
   margin: 1em 0;
   /* Extra wide images within figure tags don't overflow the content area. */
-}
-.background-image {
-  background: url('assets/dark-site-background.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 ul, ol {
   margin: 0 0 14px;
@@ -903,7 +911,7 @@ a:hover, a:active {
 }
 .comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
-  width: 50%;
+  width: 48%;
 }
 .comment-navigation .nav-previous a, .posts-navigation .nav-previous a, .post-navigation .nav-previous a {
   display: block;
@@ -912,7 +920,7 @@ a:hover, a:active {
 .comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
   float: right;
   text-align: right;
-  width: 50%;
+  width: 48%;
 }
 .comment-navigation .nav-next a, .posts-navigation .nav-next a, .post-navigation .nav-next a {
   display: block;
@@ -949,6 +957,7 @@ a:hover, a:active {
 .excerpt-page .entry-title {
   font-weight: 700;
   line-height: 1;
+  word-wrap: break-word;
 }
 .excerpt-page .featured-image-container {
   margin-top: 28px;
@@ -970,6 +979,7 @@ a:hover, a:active {
   line-height: 1;
   font-weight: 100;
   max-width: 992px;
+  word-wrap: break-word;
 }
 .content-page .featured-image-container {
   display: flex;
@@ -1131,10 +1141,16 @@ a:hover, a:active {
   outline: 1px dotted #c3c3c3;
   background: rgba(200, 200, 200, 0.2);
 }
+.comments-area .comment-form-cookies-consent input {
+  margin-right: 7px;
+}
 .comments-area .comment-form-cookies-consent label {
   font-size: 80%;
-  margin-left: 7px;
   display: inline-block;
+}
+.comments-area .form-submit input {
+  text-transform: uppercase;
+  font-weight: 700;
 }
 /*--------------------------------------------------------------
  ## Pages
@@ -1346,6 +1362,7 @@ a:hover, a:active {
 }
 .portfolio h1 {
   margin: 0;
+  word-wrap: break-word;
 }
 .portfolio h2 {
   clear: none;
@@ -1371,6 +1388,13 @@ a:hover, a:active {
 .portfolio .screen-shot {
   font-size: 80%;
   font-style: italic;
+}
+.background-image {
+  background: url('assets/dark-site-background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .site-header {
   position: fixed;
