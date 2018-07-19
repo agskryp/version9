@@ -17,6 +17,9 @@
   @media all and ( min-width: $screen__sm ) {
     font-size: 16px;
   }
+   @media all and ( min-width: 1600px ) {
+    max-width: 970px;
+  }
 
   .comments-title {
     padding: 0 28px 28px;

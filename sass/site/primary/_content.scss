@@ -13,6 +13,7 @@
     line-height: 1;
     font-weight: 100;
     max-width: 992px;
+    margin: 0 auto 7px;
     word-wrap: break-word;
   }
   
@@ -30,6 +31,9 @@
     padding: $grid__pixel-28;
     border-radius: 6px;
     border: 1px solid $color__dark-10;
+    @media all and ( min-width: 1600px ) {
+      max-width: 970px;
+    }
     
     li {
       margin-bottom: ( $grid__pixel-7 * 2 );

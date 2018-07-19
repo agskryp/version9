@@ -909,6 +909,11 @@ a:hover, a:active {
   overflow: hidden;
   padding: 0 7px;
 }
+@media all and (min-width: 1600px) {
+  .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+    max-width: 970px;
+  }
+}
 .comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
   float: left;
   width: 48%;
@@ -940,6 +945,11 @@ a:hover, a:active {
   padding: 28px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media all and (min-width: 1600px) {
+  .excerpt-page article, .excerpt-page .page-content {
+    max-width: 970px;
+  }
 }
 .excerpt-page .page-header {
   padding: 56px;
@@ -979,6 +989,7 @@ a:hover, a:active {
   line-height: 1;
   font-weight: 100;
   max-width: 992px;
+  margin: 0 auto 7px;
   word-wrap: break-word;
 }
 .content-page .featured-image-container {
@@ -996,6 +1007,11 @@ a:hover, a:active {
   padding: 28px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media all and (min-width: 1600px) {
+  .content-page .entry-content {
+    max-width: 970px;
+  }
 }
 .content-page .entry-content li {
   margin-bottom: 14px;
@@ -1019,6 +1035,11 @@ a:hover, a:active {
 @media all and (min-width: 600px) {
   .comments-area {
     font-size: 16px;
+  }
+}
+@media all and (min-width: 1600px) {
+  .comments-area {
+    max-width: 970px;
   }
 }
 .comments-area .comments-title {
@@ -1374,10 +1395,28 @@ a:hover, a:active {
   opacity: 0.8;
 }
 .portfolio img.alignleft {
-  margin: 28px 28px 28px 0;
+  margin: 28px auto;
+  display: block;
+  float: none;
+}
+@media all and (min-width: 400px) {
+  .portfolio img.alignleft {
+    margin: 28px 28px 28px 0;
+    float: left;
+    display: inline;
+  }
 }
 .portfolio img.alignright {
-  margin: 28px 0px 28px 28px;
+  margin: 28px auto;
+  display: block;
+  float: none;
+}
+@media all and (min-width: 400px) {
+  .portfolio img.alignright {
+    margin: 28px 0px 28px 28px;
+    float: right;
+    display: inline;
+  }
 }
 .portfolio img.desktop {
   margin: 0 0 28px;

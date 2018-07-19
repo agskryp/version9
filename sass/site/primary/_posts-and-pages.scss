@@ -49,6 +49,9 @@
     font-weight: bold;
     overflow: hidden;
     padding: 0 $grid__pixel-7;
+    @media all and ( min-width: 1600px ) {
+      max-width: 970px;
+    }
   }
 
   .nav-previous {

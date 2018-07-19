@@ -8,6 +8,9 @@
     padding: $grid__pixel-28;
     border-radius: 6px;
     border: 1px solid $color__dark-10;
+    @media all and ( min-width: 1600px ) {
+      max-width: 970px;
+    }
   }
   
   .page-header {
