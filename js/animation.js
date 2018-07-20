@@ -22,20 +22,20 @@
   TweenMax.staggerFrom( ".site-description span", 1, {
     bottom: "1em",
     opacity: 0,
-    delay: 1.5
-  }, .8 );
+    delay: 1.8
+  }, .4 );
   
   if ( window.innerWidth >= 768 ) {  
     TweenMax.from( ".site-description", 3, {
       borderLeft: "2px solid",
       opacity: 0,
       delay: 2
-    } );
+    }, );
   }
 
   TweenMax.staggerFrom( ".homepage-menu-item", 1, {
     bottom: "1em",
     opacity: 0,
-    delay: 2.4
+    delay: 2.8
   }, 0.2 );
 } )();
