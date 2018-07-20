@@ -20,7 +20,7 @@
     </p>
     
     <?php if ( ! empty( get_field( 'website' ) ) ) { ?>
-      <p class="text-center font-weight-bold">
+      <p class="text-center font-weight-bold site-link">
         <a href="http://<?php echo get_field( 'website' ); ?>" target="_blank">
           Click here to visit <?php echo the_title(); ?>
         </a>

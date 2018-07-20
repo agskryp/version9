@@ -1,5 +1,4 @@
 .portfolio-page {
-  
   .page-header {
     padding: ( $grid__pixel-28 * 2 );
   }
@@ -23,7 +22,6 @@
     display: inline-block;
     &:hover,
     &:focus {
-      
       img {
         opacity: .8;
       }
@@ -37,10 +35,9 @@
   }
 }
 
-.portfolio {
-  
-  h1 {
-    margin: 0; 
+.portfolio {  
+  .entry-title {
+    margin: 0 auto; 
     word-wrap: break-word;
   }
   
@@ -61,7 +58,7 @@
     margin: $grid__pixel-28 auto;
     display: block;
     float: none;    
-    @media all and ( min-width: 400px ) {
+    @media all and ( min-width: 480px ) {
       margin: $grid__pixel-28 $grid__pixel-28 $grid__pixel-28 0;
       float: left;
       display: inline;
@@ -72,7 +69,7 @@
     margin: $grid__pixel-28 auto;
     display: block;
     float: none;
-    @media all and ( min-width: 400px ) {
+    @media all and ( min-width: 480px ) {
       margin: $grid__pixel-28 0px $grid__pixel-28 $grid__pixel-28;
       float: right;
       display: inline;
@@ -90,5 +87,9 @@
   .screen-shot {
     font-size: 80%;
     font-style: italic;
+  }
+  
+  .site-link {
+    margin: 0;
   }
 }
