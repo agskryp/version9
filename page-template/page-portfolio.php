@@ -4,7 +4,8 @@
   get_header(); 
 
   query_posts( array(
-    'post_type' => 'portfolio'
+    'post_type'      => 'portfolio',
+    'posts_per_page' => -1
   ) );
 ?>
 
