@@ -55,5 +55,5 @@
       </div>
     
     <?php endif; ?>
-  </article>
+  </div>
 </section>
