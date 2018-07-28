@@ -19,8 +19,7 @@
       <?php
         while ( have_posts() ) :
           the_post();
-      ?>
-      
+      ?>      
         <a href="<?php echo get_permalink(); ?>">
           <div class="entry-content">
             <p class="entry-title text-center">
@@ -30,7 +29,6 @@
             <?php the_post_thumbnail(); ?>
           </div>
         </a>
-      
       <?php endwhile; ?>
     </div>
   </main>

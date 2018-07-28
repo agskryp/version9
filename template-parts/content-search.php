@@ -13,8 +13,7 @@
       the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
     
       if ( 'post' === get_post_type() ) :
-    ?>
-    
+    ?>    
       <div class="entry-meta">
         <?php version9_post_header_meta(); ?>
       </div>

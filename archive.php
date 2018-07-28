@@ -11,10 +11,7 @@
 
 <div id="primary">
   <main id="main" class="site-main archive-page excerpt-page">
-    <?php
-      if ( have_posts() ) :
-    ?>
-
+    <?php if ( have_posts() ) : ?>
       <header class="page-header text-center">
         <?php
           version9_archive_title( '<h1 class="page-title">', '</h1>' );

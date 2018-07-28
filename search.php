@@ -16,7 +16,7 @@
         <h1 class="page-title text-center">
           <?php
             global $wp_query;
-            $number_of_results = $wp_query->found_posts;
+            $number_of_results = $wp_query -> found_posts;
             
             /* translators: %s: search query. */
             if ( $number_of_results == 1 ) {

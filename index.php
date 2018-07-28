@@ -29,13 +29,13 @@
       <?php
         endif;
 
-        while ( have_posts() ) :
-          the_post();
+      while ( have_posts() ) :
+        the_post();
 
-          get_template_part( 'template-parts/content', get_post_type() );
-        endwhile;
+        get_template_part( 'template-parts/content', get_post_type() );
+      endwhile;
 
-        version9_posts_navigation();
+      version9_posts_navigation();
 
       else :
         get_template_part( 'template-parts/content', 'none' );

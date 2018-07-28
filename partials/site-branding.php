@@ -45,7 +45,6 @@
           &amp; Development
         </span>
       </p>
-    </div>
-  
+    </div>  
   <?php } ?>
 </div>
