@@ -20,11 +20,9 @@
 
       if ( 'post' === get_post_type() ) :
     ?>
-
-    <div class="entry-meta">
-      <?php version9_post_header_meta(); ?>
-    </div>
-
+      <div class="entry-meta">
+        <?php version9_post_header_meta(); ?>
+      </div>
     <?php endif; ?>
   </header>
   
