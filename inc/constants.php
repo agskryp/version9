@@ -12,3 +12,8 @@
   define( 'AG_PORTFOLIO', '/portfolio' );
   define( 'AG_ABOUT', '/about' );
   define( 'AG_PRIVACY', '/privacy-policy' );
+
+  /**
+   * Version
+   */
+  define( 'AG_VERSION', '9.0.0' );
