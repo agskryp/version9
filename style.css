@@ -518,13 +518,13 @@ td, th {
  # Forms
  --------------------------------------------------------------*/
 button, input[ type="button"], input[ type="reset"], input[ type="submit"] {
+  font-size: 12px;
+  font-size: 0.75rem;
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
   line-height: 1;
   padding: 0.6em 1em 0.4em;
 }
@@ -552,9 +552,6 @@ textarea {
 /*--------------------------------------------------------------
  # Navigation
  --------------------------------------------------------------*/
-/*--------------------------------------------------------------
- ## Links
- --------------------------------------------------------------*/
 a {
   color: #9191e5;
 }
@@ -571,9 +568,6 @@ a:focus {
 a:hover, a:active {
   outline: 0;
 }
-/*--------------------------------------------------------------
- ## Menus
- --------------------------------------------------------------*/
 .site-navigation {
   max-width: 320px;
   width: 100%;
@@ -616,7 +610,16 @@ a:hover, a:active {
 }
 @media all and (min-width: 768px) {
   .site-navigation .social-links {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
     align-items: center;
     justify-content: center;
     flex-direction: row;
@@ -676,9 +679,9 @@ a:hover, a:active {
   background: rgba(200, 200, 200, 0.1);
 }
 .main-search-form form {
-  display: none;
   margin: 0;
   padding: 0;
+  display: none;
   text-align: center;
   background: #132118;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -737,13 +740,31 @@ a:hover, a:active {
   clear: both;
 }
 .main-search-form.toggled form {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   align-items: center;
   justify-content: center;
   clear: both;
 }
 .menu-toggle {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -776,7 +797,16 @@ a:hover, a:active {
     display: block;
   }
   .main-search-form form {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
     align-items: center;
     justify-content: center;
   }
@@ -898,7 +928,16 @@ a:hover, a:active {
   word-spacing: 1px;
 }
 .entry-footer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   justify-content: space-between;
 }
 .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
@@ -993,7 +1032,16 @@ a:hover, a:active {
   word-wrap: break-word;
 }
 .content-page .featured-image-container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   align-items: center;
   justify-content: center;
   max-height: 365px;
@@ -1079,14 +1127,32 @@ a:hover, a:active {
   padding-top: 28px;
 }
 .comments-area .comment-meta {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .comments-area .comment-meta .vcard {
   margin: 0 14px 14px 0;
 }
 .comments-area .comment-meta .comment-author {
   font-size: 125%;
+  -webkit-box-flex: 3;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 3;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 3;
+  /* Chrome */
+  -ms-flex: 3;
+  /* IE 10 */
   flex: 3;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .comments-area .comment-meta .comment-metadata {
   font-size: 70%;
@@ -1182,7 +1248,16 @@ a:hover, a:active {
 }
 @media screen and (min-width: 768px) {
   .homepage-screen {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -1190,7 +1265,16 @@ a:hover, a:active {
   }
 }
 .homepage-screen .site-branding {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   justify-content: center;
   flex-direction: column;
   margin: 0;
@@ -1235,10 +1319,10 @@ a:hover, a:active {
   }
 }
 .homepage-screen .site-description {
-  display: block;
   margin: 0;
-  border-left: none !important;
   padding: 0;
+  display: block;
+  border-left: none !important;
 }
 @media all and (min-width: 768px) {
   .homepage-screen .site-description {
@@ -1273,12 +1357,30 @@ a:hover, a:active {
 }
 @media screen and (min-width: 992px) {
   .homepage-screen .homepage-container {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
     justify-content: center;
   }
 }
 .homepage-screen .homepage-menu-item {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.3);
@@ -1324,7 +1426,7 @@ a:hover, a:active {
 @media all and (min-width: 768px) {
   .homepage-screen .homepage-menu-item p {
     margin: 0;
-    padding: 0 30px;
+    padding: 0 28px;
   }
 }
 @media all and (min-width: 992px) {
@@ -1334,15 +1436,16 @@ a:hover, a:active {
   }
 }
 .homepage-screen .homepage-menu-item a {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   color: #c3c3c3;
   border: 1px solid rgba(0, 0, 0, 0.8);
   background: rgba(0, 0, 0, 0.8);
-  display: block;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  padding: 6px;
+  padding: 7px;
   width: 80%;
-  margin: 0 auto;
   max-width: 160px;
   text-transform: uppercase;
   font-weight: 700;
@@ -1427,11 +1530,11 @@ a:hover, a:active {
   margin: 0;
 }
 .background-image {
-  background: url('assets/dark-site-background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background: url('assets/dark-site-background.jpg') no-repeat center center fixed;
 }
 .site-header {
   position: fixed;
@@ -1444,7 +1547,16 @@ a:hover, a:active {
 }
 @media all and (min-width: 768px) {
   .site-header {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
     align-items: center;
     justify-content: center;
     border-right: 1px solid rgba(0, 0, 0, 0.3);
@@ -1467,7 +1579,16 @@ a:hover, a:active {
   text-decoration: none;
 }
 .site-branding {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
@@ -1545,7 +1666,16 @@ a:hover, a:active {
 }
 @media all and (min-width: 590px) {
   .site-description {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
     display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
   }
 }
 @media all and (min-width: 768px) {
@@ -1590,7 +1720,16 @@ a:hover, a:active {
   fill: #c3c3c3;
 }
 .site-footer .footer-info {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
@@ -1771,7 +1910,6 @@ embed, iframe, object {
   width: auto;
   float: right;
   padding: 0 28px;
-  border: none;
   height: 34px;
   border: 1px solid rgba(0, 0, 0, 0.8);
   background: rgba(0, 0, 0, 0.8);

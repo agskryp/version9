@@ -8,33 +8,33 @@
 
 .comments-area {
   max-width: 600px;
-  margin: 0 auto 28px;
+  margin: 0 auto $grid__pixel-28;
   background: $color__dark-30;
-  padding: 28px 0 0;
-  border-radius: 6px;
+  padding: $grid__pixel-28 0 0;
+  border-radius: $border-radius;
   border: 1px solid $color__dark-10;
   font-size: 14px;
   @media all and ( min-width: $screen__sm ) {
     font-size: 16px;
   }
-   @media all and ( min-width: 1600px ) {
+   @media all and ( min-width: $screen__xd ) {
     max-width: 970px;
   }
 
   .comments-title {
-    padding: 0 28px 28px;
+    padding: 0 $grid__pixel-28 $grid__pixel-28;
     margin: 0;
   }
 
   .comment-list {
     padding: 0;
     list-style: none;
-    margin: 0 0 28px;
+    margin: 0 0 $grid__pixel-28;
     border-bottom: 1px solid $color__soft-white;
   }
 
   .comment {
-    padding: 28px 28px 0;
+    padding: $grid__pixel-28 $grid__pixel-28 0;
     border-top: 1px solid $color__soft-white;
   }
 
@@ -42,12 +42,12 @@
     list-style: none;
     background: $color__dark-30;
     padding-left: 0.5em;
-    margin: 0 -14px 28px;
+    margin: 0 -( $grid__pixel-7 * 2 ) $grid__pixel-28;
     border: 1px solid $color__dark-10;
-    border-radius: 6px;
+    border-radius: $border-radius;
 
     .comment {
-      padding: 28px 14px 0;
+      padding: $grid__pixel-28 ( $grid__pixel-7 * 2 ) 0;
     }
 
     .children {
@@ -60,21 +60,21 @@
       }
 
       .comment-body {
-        padding-top: 28px;
+        padding-top: $grid__pixel-28;
       }
     }
   }
 
   .comment-meta {
-    display: flex;
+    @include flex;
 
     .vcard {
-      margin: 0 14px 14px 0;
+      margin: 0 ( $grid__pixel-7 * 2 ) ( $grid__pixel-7 * 2 ) 0;
     }
 
     .comment-author {
       font-size: 125%;
-      flex: 3;
+      @include flex-grow( 3 );
     }
 
     .comment-metadata {
@@ -83,13 +83,12 @@
   }
 
   .reply {
-    padding-bottom: 28px;
+    padding-bottom: $grid__pixel-28;
   }
 
   .comment-content {
-
     ol, ul {
-      margin-bottom: 28px;
+      margin-bottom: $grid__pixel-28;
     }
 
     ol ol,
@@ -101,7 +100,7 @@
   }
 
   .pingback {
-    padding: 28px;
+    padding: $grid__pixel-28;
     border-top: 1px solid $color__soft-white;
     font-weight: bold;
 
@@ -117,8 +116,7 @@
   }
 
   .comment-respond {
-    padding: 0 28px;
-
+    padding: 0 $grid__pixel-28;
 
     .logged-in-as a:last-of-type {
       margin-left: .5em;
@@ -128,7 +126,6 @@
       background: $color__light-10;
       border: 1px solid $color__dark-80;
       color: $color__soft-white;
-
       &:focus {
         outline: 1px dotted $color__soft-white;
         background: $color__light-20;
@@ -137,7 +134,7 @@
 
     .submit {
       margin: 0;
-      padding: 0 14px;
+      padding: 0 ( $grid__pixel-7 * 2 );
       height: 34px;
       margin-left: -1px;
       border: 1px solid $color__dark-80;
@@ -156,15 +153,14 @@
 
   .no-comments {
     border-top: 1px solid $color__soft-white;
-    padding-top: 28px;
-    margin-bottom: 28px;
+    padding-top: $grid__pixel-28;
+    margin-bottom: $grid__pixel-28;
   }
   
   .comment-form-author,
   .comment-form-email,
   .comment-form-url,
-  .comment-form-cookies-consent {
-    
+  .comment-form-cookies-consent {    
     label {
       display: block;
       margin: 0;
@@ -174,7 +170,6 @@
       background: $color__light-10;
       border: 1px solid $color__dark-80;
       color: $color__soft-white;
-
       &:focus {
         outline: 1px dotted $color__soft-white;
         background: $color__light-20;
@@ -182,10 +177,9 @@
     }
   }
   
-  .comment-form-cookies-consent {
-    
+  .comment-form-cookies-consent {    
     input {
-      margin-right: 7px;
+      margin-right: $grid__pixel-7;
     }
     
     label {

@@ -3,7 +3,7 @@
 }
 
 .hentry {
-  margin: 0 0 1.5em;
+  margin: 0 0 $grid__padding;
 }
 
 .updated:not( .published ) {
@@ -13,12 +13,12 @@
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0;
+  margin: $grid__padding 0 0;
 }
 
 .page-links {
   clear: both;
-  margin: 0 0 1.5em;
+  margin: 0 0 $grid__padding;
 }
 
 .site-content {
@@ -34,14 +34,13 @@
 }
 
 .entry-footer {    
-  display: flex;
+  @include flex;
   justify-content: space-between;
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
   .site-main & {
     max-width: 600px;
     width: 100%;
@@ -49,7 +48,7 @@
     font-weight: bold;
     overflow: hidden;
     padding: 0 $grid__pixel-7;
-    @media all and ( min-width: 1600px ) {
+    @media all and ( min-width: $screen__xd ) {
       max-width: 970px;
     }
   }
@@ -90,5 +89,3 @@
     font-weight: normal;
   }
 }
-
-

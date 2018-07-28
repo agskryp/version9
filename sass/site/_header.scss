@@ -1,9 +1,6 @@
 .background-image {
+  @include background-size( cover );
   background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 .site-header {
@@ -14,7 +11,6 @@
   padding: $grid__pixel-28 0 0;
   border-right: none;
   border-bottom: 1px solid $color__dark-80;
-//  overflow: hidden;
   @media all and ( min-width: $screen__md ) {
     @include flex-center();
     border-right: 1px solid $color__dark-30;
@@ -24,7 +20,7 @@
     height: 100%;
   }
   
-  @media all and ( max-height: 480px ) and ( min-width: $screen__md ) {
+  @media all and ( max-height: $screen__xs ) and ( min-width: $screen__md ) {
     overflow-y: scroll;
   }
   
@@ -38,7 +34,7 @@
 }
 
 .site-branding {
-  display: flex;
+  @include flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
@@ -102,7 +98,7 @@
   }
   
   @media all and ( min-width: 590px ) {
-    display: flex;
+    @include flex;
   }
   
   @media all and ( min-width: $screen__md ) {

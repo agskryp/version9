@@ -39,7 +39,6 @@
       flex-direction: row;
       float: none;
       margin: 0 0 ( $grid__pixel-7 * 2 );
-    
     }
     
     a {
@@ -50,7 +49,6 @@
       
       &:focus,
       &:hover {
-        
         svg {
           fill: $color__soft-orange;
         }
@@ -103,9 +101,8 @@
 }
 
 .main-search-form form {
+  @include zero-cushion;
   display: none;
-  margin: 0;
-  padding: 0;
   text-align: center;
   background: $color__dark-green;
   border: 1px solid $color__dark-50;

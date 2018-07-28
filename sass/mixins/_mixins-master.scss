@@ -28,9 +28,41 @@
   width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
+// Flex support for older browsers
+@mixin flex {
+  display: -webkit-box;                /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;                   /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;                /* TWEENER - IE 10 */
+  display: -webkit-flex;               /* NEW - Chrome */
+  display: flex;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
 // Center element vertically + horizontally
 @mixin flex-center {
-  display: flex;
+  @include flex;
   align-items: center;
   justify-content: center;
+}
+
+// Flex's grow value support for older browsers
+@mixin flex-grow( $value ) {
+  -webkit-box-flex: $value;            /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $value;               /* OLD - Firefox 19- */
+  -webkit-flex: $value;                /* Chrome */
+  -ms-flex: $value;                    /* IE 10 */
+  flex: $value;                        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+// Remove all padding and margin
+@mixin zero-cushion {
+  margin: 0;
+  padding: 0;
+}
+
+// Background size support for older browser
+@mixin background-size( $size ) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
 }

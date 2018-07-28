@@ -1,12 +1,11 @@
 table {
-  margin: 0 0 1.5em;
+  margin: 0 0 $grid__padding;
   width: 100%;
 }
 
 td, th {
   padding: $grid__pixel-7;
   border: 1px solid $color__soft-white;
-  
   @media all and ( min-width: $screen__sm ) {
     padding: ( $grid__pixel-7 * 2 );
   }
