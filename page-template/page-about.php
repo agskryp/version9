@@ -32,9 +32,9 @@
         When I’m not lost in web building, I enjoy watching all types of cinema, listening to and producing a wide variety of music, drawing and writing comic strips, running or cycling when the weather is nice, solving sudoku / other puzzles, and starting a game of chess with queen’s gambit.
       </p>
 
-      <p class="text-center" style="font-size: 110%; font-weight; 700;">
+      <p class="text-center resume-link">
         <a href="<?php echo get_template_directory_uri() . AG_RESUME; ?>">
-          View my Resume
+          View my resume
         </a>
       </p>
 
@@ -45,14 +45,14 @@
       <p>
         Want to know more?  Fill out the form below.  I'm happy to answer any questions and usually reply within 24 hours.
       </p>
-
-      <p style="font-size: 65%; margin: 0;">
-        NOTE: All fields are required.
-      </p>
-
-      <div class="contact-form">
-        <?php echo do_shortcode( '[contact-form-7 id="201" title="Contact"]' ); ?>
-      </div>
+      
+      <?php 
+        while ( have_posts() ) :
+          the_post();
+            
+          the_content();
+        endwhile;
+      ?>
     </div>
   </main>
   

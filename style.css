@@ -977,6 +977,10 @@ a:hover, a:active {
 .search-page .search-result {
   font-weight: normal;
 }
+.about-page .resume-link {
+  font-size: 110%;
+  font-weight: 700;
+}
 .excerpt-page article, .excerpt-page .page-content {
   max-width: 600px;
   margin: 0 auto 28px;
