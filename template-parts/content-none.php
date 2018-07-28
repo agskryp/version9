@@ -31,11 +31,15 @@
     ?>
       
       <p>
-        Sorry, nothing on this site has ever used your search term.
+        Sorry, I can't find anything related to your search term.
       </p>
     
       <p>
-        Use the form below to try again, or click one of the links in the site menu.
+        Try using the site's navigation menu to start at something more general,
+      </p>
+    
+      <p>
+        Or, use the search form below and try your luck again.
       </p>
         
       <div id="site-search" class="main-search-form">
