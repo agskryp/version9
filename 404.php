@@ -20,7 +20,15 @@
       
       <div class="page-content">
         <p>
-          <?php esc_html_e( 'It looks like nothing was found at this location.   Use the main navigation menu, or try a search.', 'version9' ); ?>
+          Sorry about that.  If you think this page should exist, <a href="<?php echo esc_url( __( AG_BLOG, 'version9' ) ); ?>">let me know</a>!
+        </p>
+        
+        <p>
+          In the mean time, use the navigation menu to land on a more general page.
+        </p>
+        
+        <p>
+          Or, use the search form below for something more specific.
         </p>
 
         <div id="site-search" class="main-search-form">
