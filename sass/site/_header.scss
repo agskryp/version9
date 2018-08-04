@@ -1,6 +1,6 @@
 .background-image {
-  @include background-size( cover );
   background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
+  @include background-size( cover );
 }
 
 .site-header {
