@@ -43,6 +43,10 @@
       @media all and ( min-width: $screen__lg ) {
         margin-left: 48px;
       }
+      
+      @media all and ( min-width: $screen__xd ) {
+        margin-left: 53px;
+      }
     }
   }
   
