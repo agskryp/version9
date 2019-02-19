@@ -16,4 +16,4 @@
   /**
    * Version
    */
-  define( 'AG_VERSION', '9.0.0' );
+  define( 'AG_VERSION', '9.1.0' );
