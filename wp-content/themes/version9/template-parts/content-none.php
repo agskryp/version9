@@ -30,17 +30,11 @@
       elseif ( is_search() ) :
     ?>
       
-      <p>
-        Sorry, I can't find anything related to your search term.
-      </p>
+      <p>Sorry, I can't find anything related to your search term.</p>
     
-      <p>
-        Try using the site's navigation menu to start at something more general,
-      </p>
+      <p>Try using the site's navigation menu to start at something more general,</p>
     
-      <p>
-        Or, use the search form below and try your luck again.
-      </p>
+      <p>Or, use the search form below and try your luck again.</p>
         
       <div id="site-search" class="main-search-form">
         <?php require get_template_directory() . '/searchform.php';  ?>

@@ -12,7 +12,7 @@
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
   </header>
 
-  <?php if ( has_post_thumbnail() ) : ?>
+  <?php if( has_post_thumbnail() ) : ?>
     <div class="text-center featured-image-container">
       <?php version9_post_thumbnail(); ?>
     </div>
@@ -27,7 +27,7 @@
 		'after'  => '</div>',
       ) );
 	
-      if ( get_edit_post_link() ) :
+      if( get_edit_post_link() ) :
     ?>      
       <footer class="entry-footer">
 		<?php

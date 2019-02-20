@@ -16,10 +16,12 @@
     <?php the_content(); ?>
     
     <p class="text-center screen-shot">
-      All screen shots were captured on <?php echo get_field( 'screenshot_date' ); ?>
+      All screen shots were captured on 
+      
+      <?php echo get_field( 'screenshot_date' ); ?>
     </p>
     
-    <?php if ( ! empty( get_field( 'website' ) ) ) { ?>
+    <?php if( !empty( get_field( 'website' ) ) ) { ?>
       <p class="text-center font-weight-bold site-link">
         <a href="http://<?php echo get_field( 'website' ); ?>" target="_blank">
           Click here to visit <?php echo the_title(); ?>
@@ -34,15 +36,11 @@
 </article>
 
 <nav class="navigation post-navigation" role="navigation">
-  <h2 class="screen-reader-text">
-    Site navigation
-  </h2>
+  <h2 class="screen-reader-text">Site navigation</h2>
   
   <div class="nav-links">
     <div class="nav-previous">
-      <a href="<?php echo AG_PORTFOLIO; ?>">
-        Back to Portfolio
-      </a>
+      <a href="<?php echo AG_PORTFOLIO; ?>">Back to Portfolio</a>
     </div>
   </div>
 </nav>

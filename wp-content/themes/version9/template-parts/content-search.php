@@ -12,7 +12,7 @@
     <?php
       the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
     
-      if ( 'post' === get_post_type() ) :
+      if( 'post' === get_post_type() ) :
     ?>    
       <div class="entry-meta">
         <?php version9_post_header_meta(); ?>
@@ -20,7 +20,7 @@
     <?php endif; ?>
   </header>
 
-  <?php if ( has_post_thumbnail() ) : ?>
+  <?php if( has_post_thumbnail() ) : ?>
     <div class="text-center featured-image-container">
       <?php version9_post_thumbnail(); ?>
     </div>

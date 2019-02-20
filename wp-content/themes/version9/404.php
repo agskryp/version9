@@ -20,16 +20,12 @@
       
       <div class="page-content">
         <p>
-          Sorry about that.  If you think this page should exist, <a href="<?php echo esc_url( __( AG_BLOG, 'version9' ) ); ?>">let me know</a>!
+          Sorry about that.  If you think this page should exist, <a href="<?php echo esc_url( AG_BLOG ); ?>">let me know</a>!
         </p>
         
-        <p>
-          In the mean time, use the navigation menu to land on a more general page.
-        </p>
+        <p>In the mean time, use the navigation menu to land on a more general page.</p>
         
-        <p>
-          Or, use the search form below for something more specific.
-        </p>
+        <p>Or, use the search form below for something more specific.</p>
 
         <div id="site-search" class="main-search-form">
           <?php require get_template_directory() . '/searchform.php';  ?>
