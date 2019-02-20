@@ -34,7 +34,6 @@
  ## Posts and pages
  ## Comments
  ## Header
- # Infinite scroll
  # Media
  ## Captions
  ## Galleries
@@ -1788,19 +1787,6 @@ a:hover, a:active {
     order: 3;
     text-align: right;
   }
-}
-/*--------------------------------------------------------------
- # Infinite scroll
- --------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, .infinite-scroll.neverending .site-footer {
-  /* Older / Newer Posts Navigation (always hidden) */
-  /* Theme Footer (when set to scrolling) */
-  display: none;
-}
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-  display: block;
 }
 /*--------------------------------------------------------------
  # Media

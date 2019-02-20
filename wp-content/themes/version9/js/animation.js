@@ -3,7 +3,7 @@
  * Requires GSAP and TweenMax to execute
  */
 
-( function () {
+( function() {
   /**
    * @param TweenMax.method( "target", speed, { settings }, delay between elements );
    */
@@ -25,7 +25,7 @@
     delay: 1.8
   }, .4 );
   
-  if ( window.innerWidth >= 768 ) {  
+  if( window.innerWidth >= 768 ) {  
     TweenMax.from( ".site-description", 3, {
       borderLeft: "2px solid",
       opacity: 0,
