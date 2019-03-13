@@ -21,7 +21,19 @@
     
         else {
           get_template_part( 'template-parts/content', get_post_type() );
+          ?>
 
+        <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5942635838820429"
+         data-ad-slot="8057614268"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+    <?php
           // If comments are open or we have at least one comment, load up the comment template.
           if ( comments_open() || get_comments_number() ) :
             comments_template();
@@ -32,6 +44,8 @@
     
       endwhile; // End of the loop.
 	?>
+    
+
   </main>
   
   <?php

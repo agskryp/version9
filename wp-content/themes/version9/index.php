@@ -41,7 +41,15 @@
         get_template_part( 'template-parts/content', 'none' );
       
       endif;
-    ?>
+    ?>   
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5942635838820429"
+         data-ad-slot="8057614268"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </main>
   
   <?php
