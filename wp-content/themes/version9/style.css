@@ -1920,3 +1920,27 @@ embed, iframe, object {
 .contact-form form input[ type="submit"]:hover {
   background: rgba(200, 200, 200, 0.1);
 }
+.ad-container {
+  clear: both;
+  position: relative;
+  margin: 0 auto;
+}
+.ad-container ins.adsbygoogle {
+  margin: 0 0 28px;
+}
+.ad-container ins.adsbygoogle::before {
+  content: "Advertisement by Google";
+  font-size: 50%;
+  display: block;
+  color: #c3c3c3;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: -12px;
+}
+@media all and (min-width: 768px) {
+  .ad-container ins.adsbygoogle::before {
+    top: -15px;
+  }
+}
