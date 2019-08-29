@@ -10,20 +10,15 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
     <?php
-      if( is_singular() ) {
-        the_title( '<h1 class="entry-title">', '</h1>' );
-      }
-    
-      else {
-        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-      }
+      if( is_singular() ) the_title( '<h1 class="entry-title">', '</h1>' );
+      else the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 
-      if( 'post' === get_post_type() ) :
+      if( 'post' === get_post_type() ) {
     ?>
       <div class="entry-meta">
         <?php version9_post_header_meta(); ?>
       </div>
-    <?php endif; ?>
+    <?php } ?>
   </header>
   
   <?php if( has_post_thumbnail() ) : ?>
@@ -60,3 +55,14 @@
     </footer>
   </div>
 </article>
+
+<?php if( is_page_template( 'index.php' ) ) { ?>
+  <div class="ad-container">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-5942635838820429" data-ad-slot="8057614268"
+         data-ad-format="auto" data-full-width-responsive="true">
+    </ins>
+
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+<?php } ?>
