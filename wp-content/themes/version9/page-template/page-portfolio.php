@@ -22,9 +22,7 @@
       ?>      
         <a href="<?php echo get_permalink(); ?>">
           <div class="entry-content">
-            <p class="entry-title text-center">
-              <?php the_title(); ?>
-            </p>
+            <p class="entry-title text-center"><?php the_title(); ?></p>
 
             <?php the_post_thumbnail(); ?>
           </div>
