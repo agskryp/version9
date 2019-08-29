@@ -77,11 +77,11 @@
   }
   
   img.desktop {
-    margin: 0 0 $grid__pixel-28;
+    margin: 0 auto $grid__pixel-28;
   }
   
   img.laptop {
-    margin: $grid__pixel-28 0 0;
+    margin: $grid__pixel-28 auto 0;
   }
   
   .screen-shot {
