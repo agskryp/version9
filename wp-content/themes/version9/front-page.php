@@ -10,9 +10,7 @@
 ?>
 
 <div id="page" class="homepage-screen">
-  <a class="skip-link screen-reader-text">
-    <?php esc_html_e( 'Skip to menu', 'version9' ); ?>
-  </a>
+  <a class="skip-link screen-reader-text"><?php esc_html_e( 'Skip to menu', 'version9' ); ?></a>
 
   <div id="primary" class="content-area">
     <header>
