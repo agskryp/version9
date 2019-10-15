@@ -4796,6 +4796,7 @@ a:hover, a:active {
 }
 .background-image {
   background: url('assets/dark-site-background.jpg') no-repeat center center fixed;
+  background: url('assets/dark-site-background.webp') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
