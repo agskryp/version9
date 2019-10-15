@@ -3799,6 +3799,9 @@ input[ type="text"]:focus, input[ type="email"]:focus, input[ type="url"]:focus,
 select {
   border: 1px solid #ccc;
 }
+label {
+  display: inline-block;
+}
 textarea {
   width: 100%;
 }
