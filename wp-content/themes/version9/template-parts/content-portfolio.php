@@ -13,20 +13,16 @@
   </header>
   
   <div class="entry-content">    
-    <?php the_content(); ?>
+    <?php
+      the_content();
     
-    <p class="text-center screen-shot">
-      All screen shots were captured on 
-      
-      <?php echo get_field( 'screenshot_date' ); ?>
-    </p>
+      echo '<p class="text-center screen-shot">All screen shots were captured on ' . get_field( 'screenshot_date' ) . '</p>';
     
-    <?php if( !empty( get_field( 'website' ) ) ) { ?>
-      <p class="text-center font-weight-bold site-link">
-        <a href="http://<?php echo get_field( 'website' ); ?>" target="_blank">
-          Click here to visit <?php echo the_title(); ?>
-        </a>
-      </p>
+      if( !empty( get_field( 'website' ) ) ) {
+    ?>
+      <a class="text-center font-weight-bold site-link" style="display: block;"
+         href="http://<?php echo get_field( 'website' ); ?>" 
+         target="_blank" rel="noopener">Click here to visit <?php echo the_title(); ?></a>
     <?php } ?>
     
     <footer class="entry-footer">

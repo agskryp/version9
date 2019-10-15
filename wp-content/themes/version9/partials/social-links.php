@@ -1,7 +1,7 @@
 <div class="social-links">
   <?php 
     printf( esc_html__( '%s', 'version9' ), 
-      '<a target="_blank" title="Github" href="https://github.com/agskryp/">
+      '<a target="_blank" rel="noopener" title="Github" href="https://github.com/agskryp/">
         <p class="sr-only">
           Github
         </p>
@@ -13,7 +13,7 @@
     );
 
     printf( esc_html__( '%s', 'version9' ), 
-      '<a target="_blank" title="Codepen" href="https://codepen.io/agskryp/">
+      '<a target="_blank" rel="noopener" title="Codepen" href="https://codepen.io/agskryp/">
         <p class="sr-only">
           Codepen
         </p>
