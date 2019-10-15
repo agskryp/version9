@@ -10,4 +10,4 @@ define( 'AG_ABOUT',     '/about' );
 define( 'AG_PRIVACY',   '/privacy-policy' );
 
 // Version
-define( 'AG_VERSION',   '9.1.0' );
+define( 'AG_VERSION',   '9.2.0' );
