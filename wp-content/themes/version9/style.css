@@ -413,6 +413,9 @@ template {
 .text-center {
   text-align: center !important;
 }
+.font-weight-bold {
+  font-weight: 700 !important;
+}
 /*!
  * Bootstrap Grid v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -4796,7 +4799,6 @@ a:hover, a:active {
 }
 .background-image {
   background: url('assets/dark-site-background.jpg') no-repeat center center fixed;
-  background: url('assets/dark-site-background.webp') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
