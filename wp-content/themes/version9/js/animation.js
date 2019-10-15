@@ -30,7 +30,7 @@
       borderLeft: "2px solid",
       opacity: 0,
       delay: 2
-    }, );
+    } );
   }
 
   TweenMax.staggerFrom( ".homepage-menu-item", 1, {
