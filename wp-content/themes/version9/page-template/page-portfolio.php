@@ -24,7 +24,7 @@
           <div class="entry-content">
             <p class="entry-title text-center"><?php the_title(); ?></p>
 
-            <?php the_post_thumbnail(); ?>
+            <?php the_post_thumbnail( 'medium' ); ?>
           </div>
         </a>
       <?php endwhile; ?>
