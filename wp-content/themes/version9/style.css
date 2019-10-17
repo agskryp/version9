@@ -213,7 +213,7 @@
 
  .contact-form form input[ type="submit"]:hover { background:rgba(200, 200, 200, 0.1); }
 
- .ad-container { clear:both; position:relative; margin:0 auto; }
+ .ad-container { clear:both; position:relative; margin:0 auto; text-align:center; }
 
  .ad-container ins.adsbygoogle { margin:0 0 28px; }
 
@@ -2108,7 +2108,7 @@
 
  abbr,acronym { border-bottom:1px dotted #666; cursor:help; }
 
- mark,ins { background:#9f8b68; text-decoration:none; color:rgba(0, 0, 0, 0.8); }
+ mark,ins { background:transparent; text-decoration:none; color:rgba(0, 0, 0, 0.8); }
 
  big { font-size:20px; font-size:1.25rem; }
 
@@ -2321,6 +2321,8 @@
  }
 
  .no-results { height:80vh; }
+
+ .front-page-loading { display:none; }
 
  .entry-meta { font-size:80%; word-spacing:1px; }
 
