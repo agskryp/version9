@@ -4,6 +4,8 @@
  */
 
 ( function() {
+  document.getElementById( 'primary' ).style.display = 'block';
+  
   /**
    * @param TweenMax.method( "target", speed, { settings }, delay between elements );
    */
