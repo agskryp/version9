@@ -2072,13 +2072,13 @@
 
  }
 
- .h2,h2 { font-size:1.75em; margin-bottom:0.5rem; margin-top:0; }
+ .h2,h2 { font-size:1.75em; font-weight:400; margin-bottom:0.5rem; margin-top:0; }
 
  @media all and (min-width:360px) { .h2,h2 { font-size:2em; }
 
  }
 
- .h3,h3 { font-size:1.5em; margin-bottom:0.5rem; font-weight:500; line-height:1.2; }
+ .h3,h3 { font-size:1.5em; margin-top:0; margin-bottom:0.5rem; font-weight:500; line-height:1.2; }
 
  @media all and (min-width:360px) { .h3,h3 { font-size:1.75em; }
 
