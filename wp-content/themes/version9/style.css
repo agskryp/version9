@@ -215,11 +215,11 @@
 
  .ad-container { clear:both; position:relative; margin:0 auto; text-align:center; }
 
- .ad-container ins.adsbygoogle { margin:0 0 28px; }
+ .ad-container ins.adsbygoogle,.ad-container .google-auto-placed.ap_container { margin:0 0 28px; }
 
- .ad-container ins.adsbygoogle::before { content:"Advertisement by Google"; font-size:50%; display:block; color:#c3c3c3; position:absolute; text-align:center; left:0; right:0; top:-12px; }
+ .ad-container ins.adsbygoogle::before,.ad-container .google-auto-placed.ap_container::before { content:"Advertisement by Google"; font-size:50%; display:block; color:#c3c3c3; position:absolute; text-align:center; left:0; right:0; top:-12px; }
 
- @media all and (min-width:768px) { .ad-container ins.adsbygoogle::before { top:-15px; }
+ @media all and (min-width:768px) { .ad-container ins.adsbygoogle::before,.ad-container .google-auto-placed.ap_container::before { top:-15px; }
 
  }
 

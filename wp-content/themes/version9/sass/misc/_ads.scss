@@ -20,7 +20,8 @@
   margin: 0 auto;
   text-align: center;
   
-  ins.adsbygoogle {
+  ins.adsbygoogle,
+  .google-auto-placed.ap_container {
     margin: 0 0 $grid__pixel-28;
     &::before {
       @include global-ad-settings( "Advertisement by Google", $color__soft-white );
