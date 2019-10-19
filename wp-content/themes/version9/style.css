@@ -8,9 +8,6 @@
  License: GNU General Public License v2 or later
  License URI: LICENSE
  Text Domain: version9
- Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
- This theme, like WordPress, is licensed under the GPL.
- Use it to make something cool, have fun, and share what you've learned with others.
  version9 is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
  Underscores is distributed under the terms of the GNU GPL v2 or later.
  Normalizing styles have been helped along thanks to the fine work of
@@ -33,9 +30,6 @@
  ## Posts and pages
  ## Comments
  ## Header
- # Media
- ## Captions
- ## Galleries
  # Misc
  --------------------------------------------------------------*/ /*--------------------------------------------------------------
  # Normalize
@@ -215,11 +209,11 @@
 
  .ad-container { clear:both; position:relative; margin:0 auto; text-align:center; }
 
- .ad-container ins.adsbygoogle,.ad-container .google-auto-placed.ap_container { margin:0 0 28px; }
+ ins.adsbygoogle,.google-auto-placed { margin:0 0 28px; }
 
- .ad-container ins.adsbygoogle::before,.ad-container .google-auto-placed.ap_container::before { content:"Advertisement by Google"; font-size:50%; display:block; color:#c3c3c3; position:absolute; text-align:center; left:0; right:0; top:-12px; }
+ ins.adsbygoogle::before,.google-auto-placed::before { content:"Advertisement by Google"; font-size:50%; display:block; color:#c3c3c3; position:absolute; text-align:center; left:0; right:0; top:-12px; }
 
- @media all and (min-width:768px) { .ad-container ins.adsbygoogle::before,.ad-container .google-auto-placed.ap_container::before { top:-15px; }
+ @media all and (min-width:768px) { ins.adsbygoogle::before,.google-auto-placed::before { top:-15px; }
 
  }
 
