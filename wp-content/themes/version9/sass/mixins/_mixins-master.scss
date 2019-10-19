@@ -23,11 +23,6 @@
   clear: both;
 }
 
-// Column width with margin
-@mixin column-width( $numberColumns: 3 ) {
-  width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
-}
-
 // Flex support for older browsers
 @mixin flex {
   display: -webkit-box;                /* OLD - iOS 6-, Safari 3.1-6 */
