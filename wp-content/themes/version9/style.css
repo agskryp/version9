@@ -223,8 +223,6 @@
 
  }
 
- .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0, 0, 0, 0); white-space:nowrap; border:0; }
-
  .text-center { text-align:center !important; }
 
  .font-weight-bold { font-weight:700 !important; }
@@ -2078,7 +2076,7 @@
 
  }
 
- .h3,h3 { font-size:1.5em; margin-top:0; margin-bottom:0.5rem; font-weight:500; line-height:1.2; }
+ .h3,h3 { font-size:1.5em; margin-top:0; margin-bottom:0.5rem; font-weight:500; line-height:1; }
 
  @media all and (min-width:360px) { .h3,h3 { font-size:1.75em; }
 
