@@ -24,6 +24,7 @@
 ins.adsbygoogle,
 .google-auto-placed {
   margin: 0 0 $grid__pixel-28;
+  position: relative;
   &::before {
     @include global-ad-settings( "Advertisement by Google", $color__soft-white );
   }

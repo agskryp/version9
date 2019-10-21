@@ -209,7 +209,7 @@
 
  .ad-container { clear:both; position:relative; margin:0 auto; text-align:center; }
 
- ins.adsbygoogle,.google-auto-placed { margin:0 0 28px; }
+ ins.adsbygoogle,.google-auto-placed { margin:0 0 28px; position:relative; }
 
  ins.adsbygoogle::before,.google-auto-placed::before { content:"Advertisement by Google"; font-size:50%; display:block; color:#c3c3c3; position:absolute; text-align:center; left:0; right:0; top:-12px; }
 
