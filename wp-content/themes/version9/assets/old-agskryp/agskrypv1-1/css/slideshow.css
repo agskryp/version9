@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+#slideShow { background: #FFFFFF;
+   		     border: 1px solid #333;
+			 height: 320px;
+			 width: 620px;
+			 margin: auto;
+			 box-shadow: 2px 2px 4px #333; }
+
+#slideShow li { position: absolute;   list-style: none; }
+.slide1 { -webkit-animation: frameone 24s linear infinite;   animation: frameone 24s linear infinite; }  
+.slide2 { -webkit-animation: frametwo 24s linear infinite;   animation: frametwo 24s linear infinite; }
+.slide3 { -webkit-animation: framethree 24s linear infinite;   animation: framethree 24s linear infinite; }
+.slide4 { -webkit-animation: framefour 24s linear infinite;   animation: framefour 24s linear infinite; }
+
+@-webkit-keyframes frameone { 0%  { opacity: 1; } 
+						      20% { opacity: 1; } 
+   						      25% { opacity: 0; } 
+   						      95% { opacity: 0; } 
+   						      100%{ opacity: 1; } }
+						   
+@keyframes frameone { 0%  { opacity: 1; } 
+				      20% { opacity: 1; } 
+   				      25% { opacity: 0; } 
+   				      95% { opacity: 0; } 
+   				      100%{ opacity: 1; } }
+
+@-webkit-keyframes frametwo { 0%  { opacity: 0; }
+							  20% { opacity: 0; }
+   							  25% { opacity: 1; }
+							  45% { opacity: 1; }
+							  50% { opacity: 0; }
+							  100%{ opacity: 0; } }
+							  
+@keyframes frametwo { 0%  { opacity: 0; }
+					  20% { opacity: 0; }
+   					  25% { opacity: 1; }
+					  45% { opacity: 1; }
+					  50% { opacity: 0; }
+					  100%{ opacity: 0; } }
+
+@-webkit-keyframes framethree { 0%  { opacity: 0; }
+								45% { opacity: 0; }
+								50% { opacity: 1; }
+								70% { opacity: 1; }
+								75% { opacity: 0; }
+								100%{ opacity: 0; } }
+
+@keyframes framethree { 0%  { opacity: 0; }
+						45% { opacity: 0; }
+						50% { opacity: 1; }
+						70% { opacity: 1; }
+						75% { opacity: 0; }
+						100%{ opacity: 0; } }
+						
+@-webkit-keyframes framefour { 0%  { opacity: 0; }
+							   70% { opacity: 0; }
+							   75% { opacity: 1; }
+							   95% { opacity: 1; }
+   							   100%{ opacity: 0; } }
+							   
+@keyframes framefour { 0%  { opacity: 0; }
+					   70% { opacity: 0; }
+					   75% { opacity: 1; }
+					   95% { opacity: 1; }
+   					   100%{ opacity: 0; } }

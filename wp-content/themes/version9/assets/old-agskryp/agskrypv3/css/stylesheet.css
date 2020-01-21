@@ -1,0 +1,95 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+
+* { margin: 0px;
+	padding: 0px; }
+
+html { background: #753 url(../images/bkgd2.jpg) no-repeat center center fixed;
+	   background-size: cover;
+	   height: 100%;
+	   width: 100%;
+	   font-family: "Open Sans", sans-serif; }
+	 
+.bodyTextMargin { margin: 0% 5%; }
+
+.name { font-weight: 700;
+	   font-size: 89px;
+	   line-height: 74px;
+	   text-shadow: 2px 3px #000000;
+	   padding-bottom: 22px; }
+		   
+.bio { font-weight: 600;
+	   font-size: 46px;
+	   line-height: 40px;
+	   text-shadow: 2px 2px #000000;
+	   padding-bottom: 40px;
+	   font-variant: small-caps;
+	   -webkit-animation: biohazard 6s ease-in-out infinite;
+	   animation: biohazard 6s ease-in-out infinite; }
+		   
+.five { font-weight: 400;
+		font-size: 22px;
+		line-height: 22px;
+		text-shadow: 1px 1px #000000;
+		padding-bottom: 40px; }
+		   
+.links { font-weight: 600;
+		 font-size: 40px;
+		 line-height: 40px;
+		 text-shadow: 1px 1px #000000;
+		 padding-bottom: 80px !important; }
+		   
+.six { font-weight: 300;
+	   font-size: 18px;
+	   text-shadow: 1px 1px #000000; }
+		   
+a { color: #C1DAFB;
+	text-decoration: none;
+	font-variant: small-caps; }
+a:hover { color: #788AE0; }
+
+.minWidth { min-width: 300px; }
+
+#info { font-size: 36px;
+		color: #FFF;
+		position: absolute;
+		margin: auto;
+		padding: 0px;
+		left: 0px;
+		right: 0px;
+		top: 15%;
+		text-align: center; }
+		
+#bottom { position: fixed;
+		  margin: auto;
+		  width: 100%;
+		  color: #FFF;
+		  bottom: 2%;
+		  text-align: center; }
+		  
+@media screen and (max-width: 480px) {
+.name { font-size: 49px;
+	   line-height: 44px;
+	   padding-bottom: 12px; }
+		   
+.bio { font-size: 20px;
+	   line-height: 20px;
+	   text-shadow: 1px 1px #000000;
+	   padding-bottom: 36px; }
+		   
+.five { font-size: 17px;
+		line-height: 17px;
+		padding-bottom: 36px; }
+		   
+.links { font-size: 25px; }
+		   
+.six { font-size: 14px; } }
+
+@-webkit-keyframes biohazard { 0% { color: #ef3580; }
+					   50% { color: #ffcf29; }
+					   51% { color: #ffcf29; }
+					   100% { color: #ef3580; } }
+
+@keyframes biohazard { 0% { color: #ef3580; }
+					   50% { color: #ffcf29; }
+					   51% { color: #ffcf29; }
+					   100% { color: #ef3580; } }

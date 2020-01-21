@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+* {	margin: 0px;   padding: 0px; }
+
+body { background: #EFEFEF; }
+		
+#container { margin: auto;
+			 background: #EFEFEF;
+		 	 font: 14px/18px "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, Verdana, Geneva, sans-serif;
+			 color: #333; }
+
+#headerContainer { width: 100%;   
+				   height: 50px;   
+				   background: #6C6;
+				   position: fixed;   
+				   z-index: 666666;
+				   border-bottom: 1px solid #333;
+				   box-shadow: 0px 0px 6px #333; }
+				   				   
+#headerBar { max-width: 700px;
+			 min-width: 625px;
+			 width: 98%;   
+			 margin: auto;   
+			 background: #6F9; }
+			 
+#headerBorder {	width: 100%;   
+				height: 75px;
+				background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF));
+				background-image: -webkit-linear-gradient(rgba(255,255,255,1)75%, rgba(255,255,255,0));
+				background-image: linear-gradient(rgba(255,255,255,1)75%, rgba(255,255,255,0));
+				position: fixed;   
+				z-index: 20; }
+
+.headerBanner {	float: left; }
+.headerButton {	float: right;	
+				margin-left: 10px; 
+				opacity: 0.6;
+				-webkit-transition: .4s ease;
+				transition: .4s ease; }
+.headerButton:hover { opacity: 1; }
+
+.bannerBlock { display: block;
+			   width: 170px;
+			   float: left; }
+			   
+#contactTab { max-width: 300px;
+			  min-width: 200px;
+			  width: 40%;
+			  padding: 20px;
+			  -webkit-transition: top .7s;
+			  transition: top .7s;
+		   	  height: 300px;
+		      background: #6C6;
+		      position: fixed;
+			  z-index: -50;
+		      top: -250px;
+			  right: 50px;
+		      border-bottom: 1px solid #333;
+		      box-shadow: 0px 0px 2px #333;
+		      border-radius: 0px 0px 70px 70px; }
+			
+#bodyContainer { padding-top: 51px;
+				 margin: auto;
+				 z-index: 10; }
+				 			
+#sectionI { background: -webkit-gradient(linear, left top, left bottom, from(#900), to(#6C6)) fixed;
+			background: -webkit-linear-gradient(#900,#6C6) fixed;
+			background: linear-gradient(#900,#6C6) fixed;
+			position: relative;
+			border-bottom: 1px solid #999;
+			padding: 80px 0px;
+			width: 100%;
+			min-width: 966px;
+			margin: auto; 
+			z-index: 99; }
+			
+#sectionII { background: #DEDEDE;
+			 border-bottom: 1px solid #999;
+			 padding: 60px 0px;
+			 width: 100%;
+			 min-width: 650px;
+			 margin: auto; }
+			 
+#portfolio { max-width: 980px;
+			 margin: auto; }
+			 			
+.workBox { padding: 1px;
+		   margin: 1px;
+		   float: left;
+		   position: inherit;
+		   background: #999;
+		   width: 300px;
+		   border: 9px solid #CCC;
+	  	   -webkit-transition: border 0.4s;
+		   transition: border 0.4s; }
+.workBox:hover { border-color: #999; }
+
+.img { opacity: 0.8;
+	   -webkit-transition: opacity: .2s;
+	   transition: .2s; }
+.img:hover { opacity: 1; }
+
+.badLink, .goodLink { text-decoration: none;
+		   			  display: block;
+		   			  background: #EFEFEF;
+		   		      color: #000; }
+.badLink:hover { background: #F99; }
+.goodLink:hover { background: #9F9; }
+
+#textContainer { font: 14px/14px Verdana, Geneva, sans-serif;
+				 text-align: center;
+ 				 margin: auto; 
+ 				 width: 250px;
+				 height: 30px;
+				 padding: 15px; }
+				 
+h1 { font-family: Georgia, Times, serif;
+	 font-size: 36px;
+	 letter-spacing: .3px; }
+	 
+#sectionIII { background: #EFEFEF;
+			  border-bottom: 1px solid #999;
+			  padding: 60px 0px;
+			  width: 100%;
+			  min-width: 650px;
+			  margin: auto; }
+	 
+#about { max-width: 800px;
+		 min-width: 425px;
+		 padding-left: 30px;
+		 margin: auto; }
+
+#connect { width: 210px;
+		   display: block;
+		   float: right;
+		   padding-left: 60px;
+		   padding-right: 30px; }
+		   
+#connect a { color: #6C6;
+			 text-decoration: none; }
+#connect a:hover { color: #900; }
+		   
+footer { clear: both;
+		 background: #333;
+		 min-width: 650px;
+		 color: #EFEFEF;
+		 width: 100%;
+		 padding-top: 20px;
+		 text-align: center;
+		 font: 10px/12px Arial, Helvetica, sans-serif; }
+footer a { color: #696;
+		   text-decoration: none; }
+footer a:hover { color: #999; }
+
+#contactTab p.error, p.success { font-weight: bold;
+								 padding: 10px;
+								 border: 1px solid; }
+#contactTab p.error { background: #ffc0c0;   color: #900; }
+#contactTab p.success { background: #b3ff69;   color: #4fa000; }
+		
+textarea { width: 100%; 
+		   height: 162px;  
+		   resize: none;
+		   border: 1px solid #999; } 
+
+.formButton { width: 80px;
+			  height: 25px;
+			  margin: 5px;   
+			  padding: 3px 5px; 
+			  background: #EFEFEF;
+			  border: 1px solid #333;
+			  border-radius: 2px;
+			  cursor: pointer; }
+.formButton:hover { background: #9F9; }
+
+input[type="text"] { border: 1px solid #999;
+					 width: 95%;
+					 height: 20px;
+					 margin-right: 5px; }
