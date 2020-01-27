@@ -34,8 +34,15 @@ if ( !function_exists( 'version9_post_header_meta' ) ) :
       esc_html_x( 'Posted %s in ', 'post date', 'version9' ),
       '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
+    
+    $posted_date = get_the_time('F j, Y');
+    $updated_date = get_the_modified_time('F j, Y');
 	
     echo $posted_on . $categories_list;
+    
+    if( is_single() && $updated_date != $posted_date ) {
+      echo '<br /><span>Last updated on <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $updated_date .  '</a></span>';
+    }
   }
 endif;
 
