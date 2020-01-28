@@ -1,0 +1,108 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);	   
+
+a { text-decoration: underline; }
+.fullWidth { width: 100%;   margin: auto 0;   max-width: initial; }	   
+.middle { display: table-cell;   vertical-align: middle; }
+.img-centered { display: block;   margin: auto; }
+.shadow { box-shadow: 2px 2px 6px #333; } 
+.white-font { color: #eee; }
+.nav-button { background: rgba(0,0,0,0.2);   border: 1px solid white;   font-variant: small-caps; } 
+
+section { width: 100%;
+		  min-height: 100%;
+		  padding: 8% 4%;
+    	  box-sizing: border-box; }
+		  
+.section-header { font-variant: small-caps;
+				  font-weight: bold;
+				  letter-spacing: .1em;
+				  text-align: center; }
+
+#home { background: #66C69C url(../images/homebkgd.jpg) no-repeat center center;
+        background-size: cover;
+		display: table;
+		width: 100%; }
+
+.home-header { color: #FFF;
+			   text-shadow: 2px 2px 2px #006036;
+			   font-family: "Open Sans", san-serif;
+			   font-size: 64px;
+			   line-height: 54px; }
+			   
+.home-title { color: #66C69C;
+			  text-shadow: 2px 2px #006036;
+			  -webkit-animation: technical 10s ease-in-out infinite;
+	    	  animation: technical 10s ease-in-out infinite; }
+			  
+.home-description { color: #fff;
+			        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
+					
+#projects { background: #8471a7 url(../images/projectsbkgd.jpg) no-repeat center center fixed;
+	   		background-size: cover;
+			display: table;
+			width: 100%; }
+			
+#info { background: #757428 url(../images/skillbkgd.png) repeat;
+	    display: table; }
+		
+#info li i { padding-left: 20px; }
+		  						   			 			   			  			  
+.info-title { color: #A9A31F;
+			  text-shadow: 1px 1px #4b2658 }
+			  
+.info-list-title { white-space: nowrap; 
+				   color: #DDD88D;
+				   text-decoration: underline; } 
+			  								
+footer { height: 10px; 
+		 background: #565656; }
+
+.fixed-nav { position: fixed;
+			 top: 0;
+			 right: 0;
+			 padding-top: 2%; }
+.fixed-nav a { color: #787878;
+			   text-decoration: none; }
+.fixed-nav li { margin-top: 3px; }
+
+.fi-home:before,
+.fi-clipboard-pencil:before,
+.fi-database:before { font-size: 36px;
+				  	  padding: 12px;
+				  	  line-height: 25px;
+				  	  width: 50px;
+				  	  height: 50px;
+				  	  margin: auto;
+				  	  background: rgba(0,0,0,0.4);
+				  	  box-shadow: 0px 1px 0px #333, -1px -1px 0px #787878; }
+.fi-home:hover:before,
+.fi-clipboard-pencil:hover:before,
+.fi-database:hover:before { background: rgba(0,0,0,0.8); }
+
+
+			   
+@-webkit-keyframes technical { 
+0% { color: #66C69C; }
+25% { color: #9C66C6; }
+26% { color: #9C66C6; }
+50% { color: #C69C66; }
+51% { color: #C69C66; }
+75% { color: #9CC666; }
+76% { color: #9CC666; }
+100% { color: #66C69C; } }
+							   
+@keyframes technical { 
+0% { color: #66C69C; }
+25% { color: #9C66C6; }
+26% { color: #9C66C6; }
+50% { color: #C69C66; }
+51% { color: #C69C66; }
+75% { color: #9CC666; }
+76% { color: #9CC666; }
+100% { color: #66C69C; } }
+
+
+
+@media screen and (max-width: 40em) {
+.home-header { font-size: 45px;
+			   line-height: 38px; }

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" ng-app="AGSkryp">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A.G. Skryp //Front-End Web Development" />
+  <meta name="author" content="Andrew Skrypnyk" />
+  <meta name="keywords" content="Andrew Skrypnyk, Front-end, web, design, development, html, css, coding" />
+  <meta property="og:title" content="A.G. Skryp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://agskryp.com/" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content="A.G. Skryp //Front-End Web Development" />
+    <title>A.G.Skryp //Front-End Web Development</title>
+  <link href="css/foundation.min.css" rel="stylesheet" type="text/css" />
+  <link href="foundation-icons/foundation-icons.css" rel="stylesheet" type="text/css" />
+  <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+  <link href="css/bounce.css" rel="stylesheet" type="text/css" />
+  <link href="favicon.ico" rel="shortcut icon" />
+</head>
+
+<body ng-controller="MainCtrl">
+  
+  <section id="home" class="row fullWidth">
+    <div class="medium-9 medium-centered small-12 columns middle">
+      <h1><span class="home-header">Andrew<br />Skrypnyk</span></h1>
+      <div style="margin:25px 0">
+        <h2><strong class="home-title">Front-End Web Developer</strong></h2>
+      </div>
+      <p class="home-description">Hi,<br />
+      I'm a designer and developer for the front-end of the internet.<br />
+      This is my little website showing off what I have done, and what I can do.<br />
+      Take a look around!</p>
+      <div style="padding-top:15px">
+        <a href="#projects"><input class="button radius nav-button" type="button" value="Major Projects" /></a>
+        <a href="#info"><input class="button radius nav-button" type="button" value="More Infomation" /></a>
+      </div>
+    </div>
+  </section>
+  
+  
+  <div ui-view></div>
+  
+    
+  <section id="info" class="row fullWidth" style="padding-bottom:0">
+    <div class="large-8 large-centered medium-10 medium-cenetered small-12 small-centered columns">
+      <h1 class="section-header white-font">More Information</h1><br />
+      <div class="medium-7 small-12 columns">
+        <h3 class="text-center"><strong class="info-title">About Me</strong></h3>
+        <p class="white-font">Based in Toronto, Canada, I work on programming the front-end of 
+        <strong style="color:#FFF">Web Pages</strong> and <strong style="color:#FFF">
+        Applications</strong>.  I develop efficient and functional pages that are responsive, and user friendly, 
+        focusing on designs that are simple, clean, and can transition from portable devices, to large 
+        desktop monitors, and anything in between.<br /><br />
+        From time to time, I write tutorials and blog about front-end development at my 
+        <a href="https://agskryp.wordpress.com/">wordpress</a> page.  I also experiment and practice with 
+        different styles, languages, and techniques, as well as viewing codes from other users at 
+        <a href="http://codepen.io/agskryp/">codepen</a>.
+        </p><br />
+        <h3 class="text-center"><strong class="info-title">Contact Me</strong></h3>
+        <p class="white-font">If you need to reach me, I love reading <a href="mailto:agskryp@gmail.com">
+        e-mails</a>.  You can also leave a comment at my <a href="https://agskryp.wordpress.com/">blog</a> page.
+        </p><br />
+      </div>
+      
+      <div class="medium-5 small-12 columns">
+        <h3 class="text-center"><strong class="info-title" style="white-space:nowrap">Technical Skills</strong>
+        </h3>
+        <span class="white-font">
+          <ul class="no-bullet"><strong class="info-list-title">Computer Programs</strong>
+        	<li><i class="fi-text-color"></i>&nbsp;&nbsp;Dreamweaver</li>
+        	<li><i class="fi-photo"></i>&nbsp;&nbsp;Photoshop</li>
+      	  </ul>  
+          <ul class="no-bullet"><strong class="info-list-title">Programming Languages</strong>
+            <li><i class="fi-html5"></i>&nbsp;&nbsp;HTML / HTML5</li>
+       		<li><i class="fi-css3"></i>&nbsp;&nbsp;CSS / CSS3</li>
+       		<li><i class="fi-asterisk"></i>&nbsp;&nbsp;Javascript</li>
+      	  </ul>
+          <ul class="no-bullet"><strong class="info-list-title">Front-end Frameworks</strong>
+            <li><i class="fi-layout"></i>&nbsp;&nbsp;Bootstrap</li>
+            <li><i class="fi-foundation"></i>&nbsp;&nbsp;Foundation</li>
+          </ul>
+          <ul class="no-bullet"><strong class="info-list-title">Javascript Libraries</strong>
+            <li><i class="fi-wrench"></i>&nbsp;&nbsp; jQuery / jQuery UI</li>
+            <li><i class="fi-link"></i>&nbsp;&nbsp; Angular.js</li>
+            <li><i class="fi-record"></i>&nbsp;&nbsp; Bounce.js</li>
+          </ul>
+        </span>
+      </div>   
+    </div>
+    <p class="text-center white-font" style="clear:both; font-size:10px"><br /><br />
+    and if you're really bored, you can view an <a href="http://agskryp.com/v2/">older design</a> 
+    of this webpage</p>
+  </section>
+  
+  <footer class="row fullWidth"><div class="small-12"></div></footer>
+  
+  <nav>
+    <div class="fixed-nav hide-for-small-only">
+  	  <ul class="no-bullet">
+        <a href="#home"><li><i class="fi-home"></i></li></a>
+        <a href="#projects"><li><i class="fi-database"></i></li></a>
+        <a href="#info"><li><i class="fi-clipboard-pencil"></i></li></a>
+       </ul>
+    </div>
+  </nav>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+  <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="js/projectsNav.js"></script>
+
+</body>
+</html>
