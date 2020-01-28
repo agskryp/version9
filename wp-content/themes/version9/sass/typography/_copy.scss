@@ -50,6 +50,13 @@ code, kbd, tt, var {
   color: $color__soft-green;
 }
 
+code {
+  background: $color__background-pre;
+  line-height: $font__line-height-pre;
+  padding: 3px 6px;
+  font-family: $font__pre;
+}
+
 kbd {
   background: $color__dark-50;
 }
