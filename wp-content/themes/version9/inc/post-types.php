@@ -9,14 +9,14 @@ function portfolio_post_type() {
     'archives'              => 'Portfolio',
     'attributes'            => 'P_A',
     'parent_item_colon'     => 'P_P_I_C',
-    'all_items'             => 'All Items',
-    'add_new_item'          => 'Add New Portfolio Site',
-    'add_new'               => 'Add Portfolio Site',
-    'new_item'              => 'New Portfolio Site',
-    'edit_item'             => 'Edit Portfolio Site',
-    'update_item'           => 'Update Portfolio Site',
-    'view_item'             => 'View Portfolio Site',
-    'view_items'            => 'View Portfolio Sites',
+    'all_items'             => 'All Projects',
+    'add_new_item'          => 'Add New Project',
+    'add_new'               => 'Add Project',
+    'new_item'              => 'New Project',
+    'edit_item'             => 'Edit Project',
+    'update_item'           => 'Update Project',
+    'view_item'             => 'View Project',
+    'view_items'            => 'View Projects',
     'search_items'          => 'Search Portfolio',
     'not_found'             => 'Not found',
     'not_found_in_trash'    => 'Not found in Trash',
@@ -33,7 +33,7 @@ function portfolio_post_type() {
   
   $args = array(
     'label'                 => 'Portfolio',
-    'description'           => 'Portfolio use for web dev work',
+    'description'           => 'Portfolio use for dev work',
     'labels'                => $labels,
     'supports'              => array( 'title', 'editor', 'thumbnail' ),
     'hierarchical'          => false,
@@ -48,7 +48,8 @@ function portfolio_post_type() {
     'has_archive'           => false,
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
-    'capability_type'       => 'page',
+    'capability_type'       => 'post',
+    'taxonomies' 	          => array( 'category' ),
   );
   
   register_post_type( 'portfolio', $args );
