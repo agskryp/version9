@@ -11,7 +11,10 @@
     </header>  
 
     <div class="text-center">
-      <a href="#portfolioWebsites">Websites</a> | <a href="#portfolioApplications">Applications</a>
+      <a href="#portfolioWebsites">Websites</a> 
+      <span style="color: rgba(255, 255, 255, 0.6)">|</span>
+      
+      <a href="#portfolioApplications">Applications</a>
       
       <h2 id="portfolioWebsites" style="font-weight: 100;     line-height: 1;
     margin-bottom: 28px;">Websites</h2>
@@ -47,7 +50,7 @@
         if( have_posts() ) {
       ?>
 
-      <hr />
+      <hr style="background-color: rgba(255,255,255,0.3)" />
   
     <h2 id="portfolioApplications" style="font-weight: 100;">Applications</h2>
       <?php
@@ -60,8 +63,8 @@
         while ( have_posts() ) :
           the_post();
       ?>      
-        <a href="<?php echo get_permalink(); ?>">
-          <div class="entry-content">
+        <a href="<?php echo get_permalink(); ?>" style="width: 100%;  max-width: 300px;">
+          <div class="entry-content" style="width: 100%;">
             <?php the_post_thumbnail( 'medium' ); ?>
 
             <p class="entry-title text-center" style="margin: 10px 0 0;"><?php the_title(); ?></p>
