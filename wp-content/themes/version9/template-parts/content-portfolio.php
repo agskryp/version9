@@ -5,6 +5,9 @@
    * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
    * @package version9
    */
+
+    $primary_category   = get_the_category()[0] -> name;
+    $secondary_category = get_the_category()[1] -> name;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -12,18 +15,28 @@
 	  <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
   </header>
   
-  <div class="entry-content">    
+  <div class="entry-content"> 
     <?php
       the_content();
     
-      echo '<p class="text-center screen-shot">All screen shots were captured on ' . get_field( 'screenshot_date' ) . '</p>';
+      echo '<p class="text-center screen-shot">';
+        echo 'All screen shots were captured on ' . get_field( 'screenshot_date' );
+      echo '</p>';
     
       if( !empty( get_field( 'website' ) ) ) {
+        if( $primary_category == 'Application' || $secondary_category == 'Application' ) {
+          echo '<a class="text-center font-weight-bold site-link" style="display: block;"';
+          echo 'href="http://' . get_field( 'website' ) . '" target="_blank"';
+          echo 'rel="noopener">Click here to view ' . get_the_title() . '</a>';
+        } 
+        
+        else {
+          echo '<a class="text-center font-weight-bold site-link" style="display: block;"';
+          echo 'href="http://' . get_field( 'website' ) . '" target="_blank"';
+          echo 'rel="noopener">Click here to visit ' . get_the_title() . '</a>';
+        }
+      }
     ?>
-      <a class="text-center font-weight-bold site-link" style="display: block;"
-         href="http://<?php echo get_field( 'website' ); ?>" 
-         target="_blank" rel="noopener">Click here to visit <?php echo the_title(); ?></a>
-    <?php } ?>
     
     <footer class="entry-footer">
       <?php version9_post_footer_meta(); ?>
