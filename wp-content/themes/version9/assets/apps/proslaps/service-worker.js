@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.c7112220da0f1730a2cf44b8da012536.js"
+  "precache-manifest.6ef03ee9f8798368559a5c3e86a58f3f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pro-slaps"});
