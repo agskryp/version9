@@ -10,7 +10,8 @@
       .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
       .pipe(gulp.dest('./'));
   });
-   
-  // gulp.task('sass:watch', function () {
-  //   gulp.watch('./sass/**/*.scss', ['sass']);
-  // });
+
+  gulp.task('watch', function() {
+    gulp.watch('./sass/**/*.scss', gulp.series('sass'));
+  });
+  
