@@ -1,4 +1,0 @@
-[12-Dec-2019 17:36:30 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home1/agskryp/public_html/wp-content/themes/version9/404.php on line 9
-[14-Dec-2019 17:45:34 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home1/agskryp/public_html/wp-content/themes/version9/404.php on line 9
-[11-Jan-2020 12:29:14 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home1/agskryp/public_html/wp-content/themes/version9/404.php on line 9
-[14-Jan-2020 12:44:45 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home1/agskryp/public_html/wp-content/themes/version9/404.php on line 9
