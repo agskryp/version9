@@ -48,38 +48,16 @@
 
 .comment-navigation,
 .posts-navigation,
-.post-navigation {
-  .site-main & {
-    max-width: 600px;
-    width: 100%;
-    margin: ( $grid__pixel-28 * 2 ) auto;
-    font-weight: bold;
-    overflow: hidden;
-    padding: 0 $grid__pixel-7;
-    @media all and ( min-width: $screen__xd ) {
-      max-width: 970px;
-    }
-  }
-
-  .nav-previous {
-    float: left;
-    width: 48%;
-    
-    a {
-      display: block;
-      line-height: 1.1;
-    }
-  }
-
-  .nav-next {
-    float: right;
-    text-align: right;
-    width: 48%;
-    
-    a {
-      display: block;
-      line-height: 1.1;
-    }
+.post-navigation, 
+.site-main  {
+  max-width: 600px;
+  width: 100%;
+  margin: ( $grid__pixel-28 * 2 ) auto;
+  font-weight: bold;
+  overflow: hidden;
+  padding: 0 $grid__pixel-7;
+  @media all and ( min-width: $screen__xd ) {
+    max-width: 970px;
   }
 }
 

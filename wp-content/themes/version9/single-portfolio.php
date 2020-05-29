@@ -1,48 +1,59 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- * @package version9
- */
+  /**
+   * The template for portfolio posts
+   */
+
+  $primary_category   = get_the_category()[0] -> name;
+  $secondary_category = get_the_category()[1] -> name;
 
   get_header();
 ?>
 
-<div id="primary">
-  Portfolio only!
-  <main id="main" class="site-main single-page content-page">
+<div>
+  <main>
     <?php
-	  while( have_posts() ) {
+	    while( have_posts() ) {
         the_post();
-    
-        if( get_post_type() === 'portfolio' ) get_template_part( 'template-parts/content', 'portfolio' );
-        else get_template_part( 'template-parts/content', get_post_type() );
-        
-        if( get_post_type() !== 'portfolio' ) {
     ?>
-      <div class="ad-container">
-        <ins class="adsbygoogle" style="display:block"
-             data-ad-client="ca-pub-5942635838820429" data-ad-slot="8057614268"
-             data-ad-format="auto" data-full-width-responsive="true">
-        </ins>
+      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <header class="page-header">
+          <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+        </header>
+  
+        <div class="page-content"> 
+          <?php
+            the_content();
+    
+            echo '<p class="text-center screen-shot">';
+              echo 'All screen shots were captured on ' . get_field( 'screenshot_date' );
+            echo '</p>';
+    
+            if( !empty( get_field( 'website' ) ) ) {
+              if( $primary_category == 'Application' || $secondary_category == 'Application' ) {
+                echo '<a class="text-center font-weight-bold site-link" style="display: block;"';
+                echo 'href="http://' . get_field( 'website' ) . '" target="_blank"';
+                echo 'rel="noopener">Click here to view ' . get_the_title() . '</a>';
+              } 
+              
+              else {
+                echo '<a class="text-center font-weight-bold site-link" style="display: block;"';
+                echo 'href="http://' . get_field( 'website' ) . '" target="_blank"';
+                echo 'rel="noopener">Click here to visit ' . get_the_title() . '</a>';
+              }
+            }
+          ?>
+        </div>
+      </article>
 
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    <?php
-        }
-        
-        if( comments_open() || get_comments_number() ) {
-          comments_template();
-
-          version9_blog_navigation();
-        }
-      }
-	?>
+      <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links">
+          <div class="nav-previous">
+            <a href="<?php echo AG_PORTFOLIO; ?>">&larr; Back to Portfolio</a>
+          </div>
+        </div>
+      </nav>
+    <?php } ?>
   </main>
   
-  <?php
-    get_sidebar();
-    get_footer();
-  ?>
+  <?php get_footer(); ?>
 </div>

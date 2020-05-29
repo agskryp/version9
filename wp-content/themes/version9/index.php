@@ -1,13 +1,13 @@
 <?php
   /**
-   * Template Name: Blog Page
+   * The template for the blog page
    */
 
   get_header();
 ?>
 
 <div>
-  <main id="main" class="site-main index-page excerpt-page">
+  <main class="site-main index-page excerpt-page">
     <header class="page-header">
       <h1 class="page-title"><?php single_post_title(); ?></h1>
     </header>
