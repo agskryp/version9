@@ -12,6 +12,7 @@
   });
 
   gulp.task('watch', function() {
+    gulp.watch('./old-sass/**/*.scss', gulp.series('sass'));
     gulp.watch('./sass/**/*.scss', gulp.series('sass'));
   });
   
