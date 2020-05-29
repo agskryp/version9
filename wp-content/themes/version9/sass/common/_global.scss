@@ -1,0 +1,29 @@
+.page-header {
+  text-align: center;
+  padding: 56px 0;
+}
+
+.page-title {
+  line-height: 1;
+  font-weight: 100;
+  max-width: 850px;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+
+.page-content {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  background: rgba( 0, 0, 0, 0.3 );
+  padding: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba( 0, 0, 0, 0.1 );
+  @media all and ( min-width: $screen-xxl ) {
+    max-width: 970px;
+  }
+  
+  li {
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+}

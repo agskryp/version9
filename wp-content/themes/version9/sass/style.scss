@@ -1,4 +1,9 @@
 // Import old settings untill unnecessary
 @import "../old-sass/style";
 
+// Common
+@import "common/variables";
+@import "common/global";
+
+// Templates
 @import "templates/default";
