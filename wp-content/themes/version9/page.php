@@ -7,7 +7,7 @@
 ?>
 
 <div>
-  <main id="main" class="site-main page-page content-page">
+  <main class="default-page-container">
     <?php
       while( have_posts() ) {
         the_post();
@@ -18,46 +18,11 @@
         </header>
 
         <div class="entry-content">
-          <?php
-            the_content();
-
-            wp_link_pages( array(
-          'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'version9' ),
-          'after'  => '</div>',
-            ) );
-	
-      if( get_edit_post_link() ) :
-    ?>      
-      <footer class="entry-footer">
-		<?php
-		  edit_post_link( sprintf( wp_kses(
-		    /* translators: %s: Name of current post. Only visible to screen readers */
-            __( 'Edit <span class="screen-reader-text">%s</span>', 'version9' ),
-            array(
-              'span' => array(
-                'class' => array(),
-            ), )
-		  ), get_the_title() ),	'<span class="edit-link">',	'</span>' );
-		?>
-      </footer>
-	<?php endif; ?>
-  </div>
-</article>
-
-        <?php
-
-        // If comments are open or we have at least one comment, load up the comment template.
-        if ( comments_open() || get_comments_number() ) :
-          comments_template();
-        endif;
-
-      }
-    ?>
+          <?php the_content(); ?>
+        </div>
+      </article>
+    <?php } ?>
   </main>
   
-  <?php
-    get_sidebar();
-
-    get_footer();
-  ?>
+  <?php get_footer(); ?>
 </div>
