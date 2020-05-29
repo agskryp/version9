@@ -1,23 +1,18 @@
 <?php
-/**
- * The main template file
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @package version9
- */
+  /**
+   * Template Name: Blog Page
+   */
 
   get_header();
 ?>
 
-<div id="primary">
+<div>
   <main id="main" class="site-main index-page excerpt-page">
-    <?php if( is_home() && !is_front_page() ) { ?>
-      <header class="page-header text-center">
-        <h1 class="page-title"><?php single_post_title(); ?></h1>
-      </header>
-    <?php
-      }
+    <header class="page-header">
+      <h1 class="page-title"><?php single_post_title(); ?></h1>
+    </header>
     
+    <?php    
       if( have_posts() ) {
         while( have_posts() ) {
           the_post();
@@ -41,9 +36,5 @@
     </div>
   </main>
   
-  <?php
-    get_sidebar();
-  
-    get_footer();
-  ?>
+  <?php get_footer(); ?>
 </div>
