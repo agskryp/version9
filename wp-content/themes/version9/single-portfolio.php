@@ -24,27 +24,15 @@
           <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
         </header>
   
-        <div class="page-content"> 
+        <div class="page-content portfolio-post"> 
           <?php the_content(); ?>
     
           <div class="text-center">
             <p class="screen-shot">All screen shots were captured on  <?php echo $screenshot_date; ?></p>
-    
-    <?php
-            if( !empty( get_field( 'website' ) ) ) {
-              if( $primary_category == 'Application' || $secondary_category == 'Application' ) {
-                echo '<a class="text-center font-weight-bold site-link" style="display: block;"';
-                echo 'href="http://' . get_field( 'website' ) . '" target="_blank"';
-                echo 'rel="noopener">Click here to view ' . get_the_title() . '</a>';
-              } 
-              
-              else {
-                echo '<a class="text-center font-weight-bold site-link" style="display: block;"';
-                echo 'href="http://' . get_field( 'website' ) . '" target="_blank"';
-                echo 'rel="noopener">Click here to visit ' . get_the_title() . '</a>';
-              }
-            }
-          ?>
+
+            <a target="_blank" rel="noopener" href="<?php echo $project_url; ?>">
+              <strong>Click here to view <?php echo get_the_title(); ?></strong>
+            </a>
           </div>
         </div>
       </article>

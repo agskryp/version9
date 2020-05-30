@@ -1,0 +1,81 @@
+.portfolio-page {
+  .page-header {
+    padding: ( 28px * 2 );
+  }
+  
+  .page-title {
+    font-weight: 100;
+  }
+
+  h1 {
+    margin: 0;
+  }
+  
+  .entry-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+  }
+  
+  a {
+    margin: 0 ( $grid__pixel-7 * 2 ) 28px;
+    display: inline-block;
+    &:hover,
+    &:focus {
+      img {
+        opacity: .8;
+      }
+    }
+  }
+  
+  .entry-content {
+    display: inline-block;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+.portfolio-post {
+  h2 { clear: none; }
+  ul { clear: both; }
+
+  img {
+    &:hover,
+    &:focus {
+      opacity: .8;
+    }
+  
+    &.alignleft {
+      margin: 28px auto;
+      display: block;
+      float: none;    
+      @media all and ( min-width: $screen-xs ) {
+        margin: 28px 28px 28px 0;
+        float: left;
+        display: inline;
+      }
+    }
+  
+    &.alignright {
+      margin: 28px auto;
+      display: block;
+      float: none;
+      @media all and ( min-width: $screen-xs ) {
+        margin: 28px 0px 28px 28px;
+        float: right;
+        display: inline;
+      }
+    }
+
+    &.desktop { margin: 0 auto 28px; }
+    &.laptop { margin: 28px auto 0; }
+  }
+  
+  .screen-shot {
+    font-size: 80%;
+    font-style: italic;
+  }
+}

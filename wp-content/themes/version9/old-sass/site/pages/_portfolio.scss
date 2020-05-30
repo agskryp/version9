@@ -35,61 +35,62 @@
   }
 }
 
-.portfolio {  
-  .entry-title {
-    margin: 0 auto; 
-    word-wrap: break-word;
-  }
+// .portfolio {  
+//   .entry-title {
+//     margin: 0 auto; 
+//     word-wrap: break-word;
+//   }
   
-  h2 {
-    clear: none;
-  }
+//   h2 {
+//     clear: none;
+//   }
   
-  ul {
-    clear: both;
-  }
+//   ul {
+//     clear: both;
+//   }
   
-  img:hover,
-  img:focus {
-    opacity: .8;
-  }
+//   img:hover,
+//   img:focus {
+//     opacity: .8;
+//   }
   
-  img.alignleft {
-    margin: $grid__pixel-28 auto;
-    display: block;
-    float: none;    
-    @media all and ( min-width: 480px ) {
-      margin: $grid__pixel-28 $grid__pixel-28 $grid__pixel-28 0;
-      float: left;
-      display: inline;
-    }
-  }
+//   img.alignleft {
+//     margin: $grid__pixel-28 auto;
+//     display: block;
+//     float: none;    
+//     @media all and ( min-width: 480px ) {
+//       margin: $grid__pixel-28 $grid__pixel-28 $grid__pixel-28 0;
+//       float: left;
+//       display: inline;
+//     }
+//   }
   
-  img.alignright {
-    margin: $grid__pixel-28 auto;
-    display: block;
-    float: none;
-    @media all and ( min-width: 480px ) {
-      margin: $grid__pixel-28 0px $grid__pixel-28 $grid__pixel-28;
-      float: right;
-      display: inline;
-    }
-  }
+//   img.alignright {
+//     margin: $grid__pixel-28 auto;
+//     display: block;
+//     float: none;
+//     @media all and ( min-width: 480px ) {
+//       margin: $grid__pixel-28 0px $grid__pixel-28 $grid__pixel-28;
+//       float: right;
+//       display: inline;
+//     }
+//   }
   
-  img.desktop {
-    margin: 0 auto $grid__pixel-28;
-  }
+//   img.desktop {
+//     margin: 0 auto $grid__pixel-28;
+//   }
   
-  img.laptop {
-    margin: $grid__pixel-28 auto 0;
-  }
+//   img.laptop {
+//     margin: $grid__pixel-28 auto 0;
+//   }
   
-  .screen-shot {
-    font-size: 80%;
-    font-style: italic;
-  }
+//   .screen-shot {
+//     font-size: 80%;
+//     font-style: italic;
+//   }
   
-  .site-link {
-    margin: 0;
-  }
-}
+//   .site-link {
+//     margin: 0;
+//   }
+// }
+
