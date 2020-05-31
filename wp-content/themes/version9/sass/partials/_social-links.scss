@@ -8,7 +8,7 @@
     display: inline-flex
   }
   
-  @media all and ( min-width: 768px ) {
+  @media all and ( min-width: $screen-md ) {
     // @include flex-center;
     flex-direction: row;
     float: none;
@@ -17,15 +17,15 @@
   
   a {
     margin: 9px 0;
-    @media all and ( min-width: 768px ) {
+    @media all and ( min-width: $screen-md ) {
       margin: 0 14px;  
     }
     
     &:focus,
     &:hover {
-      // svg {
-      //   fill: $orange;
-      // }
+      svg {
+        fill: $orange;
+      }
     }
   }
 }
