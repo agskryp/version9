@@ -9,24 +9,22 @@
 </div> <?php // #content // ?>
 
 <footer class="footer-container">
-  <div class="footer-info">
+  <div class="footer-content">
     <div class="privacy-container">
       <a href="<?php echo esc_url( AG_PRIVACY ); ?>">Privacy Policy</a>
     </div>
   
-    <div class="copyright text-center">
+    <div class="copyright-container">
       <?php 
         require get_template_directory() . '/partials/social-links.php';
         
-        echo '<p>&copy; 2014 - ' . $current_year . '  Andrew Skrypnyk</p>';
+        echo '<span>&copy; 2014 - ' . $current_year . ' Andrew Skrypnyk</span>';
       ?>
     </div>
     
-    <p class="designed-by">
-      Designed by 
-      
-      <a href="<?php echo home_url(); ?>">A.G. Skryp</a>
-    </p>
+    <div class="credit-container"> 
+      <span>Site by  <a href="<?php echo home_url(); ?>">A.G. Skryp</a></span>
+    </div>
   </div>
 </footer>
 

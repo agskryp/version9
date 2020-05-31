@@ -23,38 +23,6 @@
       margin-right: $grid__pixel-7;
     }
   }
-  
-  .social-links {
-    display: none;
-    flex-direction: column-reverse;
-    float: right;
-    margin-top: -54px;
-    margin-right: ( $grid__pixel-7 * 2 );
-    @media all and ( min-width: 350px ) {
-      display: inline-flex
-    }
-    
-    @media all and ( min-width: $screen__md ) {
-      @include flex-center;
-      flex-direction: row;
-      float: none;
-      margin: 0 0 ( $grid__pixel-7 * 2 );
-    }
-    
-    a {
-      margin: 9px 0;
-      @media all and ( min-width: $screen__md ) {
-        margin: 0 ( $grid__pixel-7 * 2 );  
-      }
-      
-      &:focus,
-      &:hover {
-        svg {
-          fill: $color__soft-orange;
-        }
-      }
-    }
-  }
 }
 
 .main-nav-button {

@@ -5,7 +5,7 @@
   border-top: 1px solid $dark-1;
   font-size: .9em;
 
-  .footer-info {
+  .footer-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,24 +27,15 @@
       }
     }
 
-    
-    p {
-      margin: 0 0 .5em;
-      @media all and ( min-width: $screen-lg ) {
-        margin: 0; 
-      }
-    }
-    
-
-    
-    .copyright {
+    .copyright-container {
       order: 1;
+      text-align: center;
       @media all and ( min-width: $screen-lg ) {
         order: 2;
       }
     }
-    
-    .designed-by {
+
+    .credit-container {
       order: 2;
       text-align: center;
       font-size: 80%;
@@ -53,26 +44,18 @@
         text-align: right;
       }
     }
-  }
-  
-  .social-links a {
-    margin: 0 7px;
-  }
-  
-  a {
-    color: $white;
-    &:hover {
-      color: $orange;
-      
-      svg {
-        fill: $orange;
+
+    a {
+      color: $white;
+
+      svg { fill: $white; }
+
+      &:hover,
+      &:focus {
+        color: $orange;
+        
+        svg { fill: $orange; }
       }
     }
-    
-    svg {
-      fill: $white;
-    }
   }
-  
-
 }

@@ -1,12 +1,18 @@
 // Import old settings untill unnecessary
 @import "../old-sass/style";
 
+
 // Common
 @import "common/variables";
 @import "common/global";
 
+
 // Component
 @import "components/footer";
+
+
+// Partials
+@import "partials/social-links";
 
 
 // Templates
