@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    font-size: 80%;
     @media all and ( min-width: $screen-lg ) {
       flex-direction: row;
       align-items: flex-end;
@@ -20,7 +21,6 @@
     .privacy-container {
       order: 3;
       text-align: center;
-      font-size: 80%;
       @media all and ( min-width: $screen-lg ) {
         order: 1;
         text-align: left;
@@ -38,7 +38,6 @@
     .credit-container {
       order: 2;
       text-align: center;
-      font-size: 80%;
       @media all and ( min-width: $screen-lg ) {
         order: 3;
         text-align: right;

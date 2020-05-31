@@ -1,22 +1,9 @@
 .social-links {
-  display: none;
-  flex-direction: column-reverse;
-  float: right;
-  margin-top: -54px;
-  margin-right: 14px;
-  @media all and ( min-width: 350px ) {
-    display: inline-flex
-  }
-  
-  @media all and ( min-width: $screen-md ) {
-    // @include flex-center;
-    flex-direction: row;
-    float: none;
-    margin: 0 0 14px;
-  }
-  
+  margin: 0 0 14px;
+  text-align: center;
+
   a {
-    margin: 9px 0;
+    margin: 14px;
     @media all and ( min-width: $screen-md ) {
       margin: 0 14px;  
     }

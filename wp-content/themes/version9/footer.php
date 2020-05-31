@@ -18,7 +18,7 @@
       <?php 
         require get_template_directory() . '/partials/social-links.php';
         
-        echo '<span>&copy; 2014 - ' . $current_year . ' Andrew Skrypnyk</span>';
+        echo '<span>&copy; 2014 - ' . $current_year . ' &nbsp; Andrew Skrypnyk</span>';
       ?>
     </div>
     
