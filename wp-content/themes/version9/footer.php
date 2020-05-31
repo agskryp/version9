@@ -1,10 +1,6 @@
 <?php
   /**
    * The template for displaying the footer
-   * Contains the closing of the #content div and all content after.
-   *
-   * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
-   * @package version9
    */
 
    $current_year = date( 'Y' );
@@ -12,9 +8,11 @@
 
 </div> <?php // #content // ?>
 
-<footer id="colophon" class="site-footer">
+<footer class="footer-container">
   <div class="footer-info">
-    <a class="privacy-policy" href="<?php echo esc_url( AG_PRIVACY ); ?>">Privacy Policy</a>    
+    <div class="privacy-container">
+      <a href="<?php echo esc_url( AG_PRIVACY ); ?>">Privacy Policy</a>
+    </div>
   
     <div class="copyright text-center">
       <?php 
