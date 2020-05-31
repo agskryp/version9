@@ -37,12 +37,10 @@
         </div>
       </article>
 
-      <nav class="navigation post-navigation" role="navigation">
-        <div class="nav-links">
-          <div class="nav-previous">
-            <a href="<?php echo AG_PORTFOLIO; ?>">&larr; Back to Portfolio</a>
-          </div>
-        </div>
+      <nav class="footer-page-navigation">
+        <div class="nav-previous">
+          <a href="<?php echo AG_PORTFOLIO; ?>">&larr; Back to Portfolio</a>
+        </div>      
       </nav>
     <?php } ?>
   </main>
