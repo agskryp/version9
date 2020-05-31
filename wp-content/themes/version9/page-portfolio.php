@@ -21,15 +21,14 @@
       while( have_posts() ) {
         the_post();
     ?>      
-      <div class="text-center">
-        <a href="<?php echo get_permalink(); ?>">
-          <div class="entry-content">
-            <?php the_post_thumbnail( 'medium' ); ?>
+      
+      <a href="<?php echo get_permalink(); ?>">
+        <div class="entry-content">
+          <?php the_post_thumbnail( 'medium' ); ?>
 
-            <h2 class="entry-title text-center" style="margin: 10px 0 0;"><?php the_title(); ?></h2>
-          </div>
-        </a>
-      </div>
+          <h2 class="entry-title" style="margin: 10px 0 0;"><?php the_title(); ?></h2>
+        </div>
+      </a>
     <?php } ?>  
   </main>
 
