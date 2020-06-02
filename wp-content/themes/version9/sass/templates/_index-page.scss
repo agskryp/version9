@@ -1,0 +1,49 @@
+.index-page-container {
+  article,
+  .page-content {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    background: $dark-3;
+    padding: 28px;
+    border-radius: 6px;
+    border: 1px solid $dark-1;
+    @media all and ( min-width: $screen-xxl ) {
+      max-width: 970px;
+    }
+  }
+  
+  .page-header {
+    padding: ( 28px * 2 ) 0;
+  }
+  
+  .page-title {
+    font-weight: 100;
+    line-height: 1;
+  }
+
+  .entry-header {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    border-bottom: 1px solid $dark-3;
+    padding-bottom: ( $grid__pixel-7 * 2 );
+  }
+  
+  .entry-title {
+    font-weight: 700;
+    line-height: 1;
+    word-wrap: break-word;
+  }
+  
+  .featured-image-container {
+    margin-top: 28px;
+    
+    a:focus,
+    a:hover {
+      opacity: .8;
+    }
+  }
+
+  .post-thumbnail {
+    display: inline-block;
+  }
+}
