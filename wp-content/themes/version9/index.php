@@ -17,7 +17,7 @@
         while( have_posts() ) {
           the_post();
       ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-content' ); ?>>
           <header class="entry-header">
             <h2 class="entry-title">
               <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a>
