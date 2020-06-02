@@ -1,39 +1,38 @@
 .portfolio-page-container {
-
-  .entry-title {
-    font-weight: 700;
-    text-transform: uppercase;
+  .portfolio-post-list {
     text-align: center;
-    font-size: 14px;
   }
   
-  a {
+  .entry-content {
+    background: $dark-3;
+    padding: 28px;
+    border-radius: 6px;
+    border: 1px solid $dark-1;
     margin: 0 14px 28px;
     display: inline-block;
+    max-width: 300px;
+    width: 100%;
+    @media all and ( min-width: $screen-xxl ) {
+      max-width: 970px;
+    }
+
     &:hover,
     &:focus {
       img {
         opacity: .8;
       }
     }
-  }
-  
-  .featured-image-container {
-    @include flex-center;
-    max-height: 365px;
-    overflow: hidden;
-    margin: 0 -15px 28px;
-  }
-  
-  .entry-content {
-    max-width: 300px;
-    margin: 0 auto;
-    background: $dark-3;
-    padding: 28px;
-    border-radius: 6px;
-    border: 1px solid $dark-1;
-    @media all and ( min-width: $screen-xxl ) {
-      max-width: 970px;
+
+    img {
+      max-height: 190px;
+      object-fit: contain;
+    }
+
+    .entry-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 16px;
+      margin: 10px 0 0;
     }
   }
 }

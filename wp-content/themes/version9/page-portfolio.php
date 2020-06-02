@@ -5,7 +5,7 @@
 
   query_posts( array(
     'post_type'      => 'portfolio',
-    'posts_per_page' => 6
+    'posts_per_page' => -1
   ) );
 
   get_header(); 
@@ -17,19 +17,18 @@
       <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
     </header>  
 
-    <?php
-      while( have_posts() ) {
-        the_post();
-    ?>      
-      
-      <a href="<?php echo get_permalink(); ?>">
-        <div class="entry-content">
+    <div class="portfolio-post-list">
+      <?php
+        while( have_posts() ) {
+          the_post();
+      ?>            
+        <a class="entry-content" href="<?php echo get_permalink(); ?>">
           <?php the_post_thumbnail( 'medium' ); ?>
 
-          <h2 class="entry-title" style="margin: 10px 0 0;"><?php the_title(); ?></h2>
-        </div>
-      </a>
-    <?php } ?>  
+          <h2 class="entry-title"><?php the_title(); ?></h2>
+        </a>
+      <?php } ?>  
+    </div>
   </main>
 
   <?php get_footer(); ?>
