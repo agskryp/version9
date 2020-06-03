@@ -236,6 +236,24 @@ add_action( 'wp_enqueue_scripts', 'deregister_stylesheet', 20 );
 
 
 
+function get_most_recent_posts( $type = 'post', $limit = 3 ) {
+
+  $args = [
+      'post_status'         => 'publish',
+      'post_type'           => $type,
+      'posts_per_page'      => $limit,
+      'orderby'             => 'date',
+      'order'               => 'DESC',
+      'ignore_sticky_posts' => 1,
+  ];
+
+
+  $posts = new \WP_Query( $args );
+
+  return $posts;
+}
+
+
 
 
 
@@ -288,30 +306,7 @@ function rcc_video_podcast_loadmore_ajax_handler(){
       while( $new_query -> have_posts() ): 
           $new_query -> the_post();
       
-          $post_meta = get_post_meta( get_the_ID() );
-          // $locked = $post_meta['_rcc_member_restrict_content'][0];
-
-          // $video_podcast_array = Template\prepare_video_podcast_data(get_the_ID());
-          // Template\video_podcast($video_podcast_array, $locked);
-?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-content' ); ?>>
-          <header class="entry-header">
-            <div class="entry-meta">
-              <?php echo get_the_category_list( ', ' ); ?>
-            </div>
-
-            <h2 class="entry-title">
-              <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
-            </h2>
-          </header>
-  
-          <div class="entry-content">
-            <?php the_excerpt(); ?>
-          </div>
-        </article>
-
-<?php
-
+          include( 'partials/excerpt-container.php' );
       endwhile;
   endif;
   wp_reset_query();
