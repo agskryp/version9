@@ -12,6 +12,7 @@
       <h1 class="page-title"><?php single_post_title(); ?></h1>
     </header>
     
+    <div class="test-article-container">
     <?php    
       if( have_posts() ) {
         while( have_posts() ) {
@@ -38,31 +39,31 @@
           /**
            * Use an ajax button to load more
            */
-          $navigation = '';
+          // $navigation = '';
         
-          // Don't print empty markup if there's only one page.
-          if ( $GLOBALS[ 'wp_query' ] -> max_num_pages > 1 ) {
-            $args = wp_parse_args( $args, array(
-              'prev_text'          => esc_html__( 'View older posts', 'moltodestroyed' ),
-              'next_text'          => esc_html__( 'View newer posts', 'moltodestroyed' ),
-              'screen_reader_text' => esc_html__( 'Posts navigation', 'moltodestroyed' ),
-            ) );
+          // // Don't print empty markup if there's only one page.
+          // if ( $GLOBALS[ 'wp_query' ] -> max_num_pages > 1 ) {
+          //   $args = wp_parse_args( $args, array(
+          //     'prev_text'          => esc_html__( 'View older posts', 'moltodestroyed' ),
+          //     'next_text'          => esc_html__( 'View newer posts', 'moltodestroyed' ),
+          //     'screen_reader_text' => esc_html__( 'Posts navigation', 'moltodestroyed' ),
+          //   ) );
         
-            $next_link = get_previous_posts_link( $args[ 'next_text' ] );
-            $prev_link = get_next_posts_link( $args[ 'prev_text' ] );
+          //   $next_link = get_previous_posts_link( $args[ 'next_text' ] );
+          //   $prev_link = get_next_posts_link( $args[ 'prev_text' ] );
         
-            if ( $prev_link ) {
-              $navigation .= '<div class="nav-previous">' . $prev_link . '</div>';
-            }
+          //   if ( $prev_link ) {
+          //     $navigation .= '<div class="nav-previous">' . $prev_link . '</div>';
+          //   }
         
-            if ( $next_link ) {
-              $navigation .= '<div class="nav-next">' . $next_link . '</div>';
-            }
+          //   if ( $next_link ) {
+          //     $navigation .= '<div class="nav-next">' . $next_link . '</div>';
+          //   }
         
-            $navigation = _navigation_markup( $navigation, 'posts-navigation', $args[ 'screen_reader_text' ] );
-          }
+          //   $navigation = _navigation_markup( $navigation, 'posts-navigation', $args[ 'screen_reader_text' ] );
+          // }
         
-          echo $navigation;
+          // echo $navigation;
       }
      
       function get_most_recent_posts( $type = 'post', $categories = '', $limit = 3, $exclude = [] ) {
@@ -101,6 +102,8 @@
     
       $video_podcast_cat   = $video_podcast_posts -> query_vars[ 'category_name' ];
         ?>
+        </div>
+
             <div class="load-more-button">
               <a href="#" class="rcc-video-podcast-loadmore" 
                 excluded-ids='<?= implode(",",$excluded_ids); ?>' 

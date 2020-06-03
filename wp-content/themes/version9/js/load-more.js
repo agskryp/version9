@@ -34,6 +34,7 @@
       },
       
       success : function( html ){
+        console.log( html );
   
         // re-enable the load more button
         el.prop('disabled',false);
@@ -59,7 +60,7 @@
   
   $('.rcc-video-podcast-loadmore').click(function(e){
 
-    load_more_func(e, $(this), $('.video-podcast-items'));
+    load_more_func(e, $(this), $('.test-article-container'));
   });
   
 })(jQuery);

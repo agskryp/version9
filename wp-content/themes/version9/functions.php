@@ -239,45 +239,49 @@ add_action( 'wp_enqueue_scripts', 'deregister_stylesheet', 20 );
 
 
 
+function get_parameter_array( $post, $is_event = false ) {
+
+  $args = [];
+  $args['paged'] = $post['page'] + 1; // we need next page to be loaded
+  $args['post_status'] = 'publish';
+  $args['post_type'] = $post['action'];
+  $args['posts_per_page'] = $post['posts_per_page'];
+  $args['category_name'] = $post['category_name'];
+  $args['tag'] = $post['tag'];
+  $args['post__not_in'] = explode(',', $post['excluded_ids']);
+
+  return $args;
+}
+
+
+
 
 /**
  * RCC video and podcast loadmore script
  */
 function rcc_video_podcast_loadmore_ajax_handler(){
 
-  return true;
-  die();
 
   // prepare our arguments for the query
   $args = get_parameter_array($_POST);
 
   // First page is already displayed, start at page 2
+  
   $paged = $args['paged'] + 1;
-  $category = $args['category_name'];
 
-  // it is always better to use WP_Query but not here
-  // query_posts( array(
-  //     'paged' => $paged,
-  //     'post_status' => 'publish',
-  //     'post_type' => array ( 'video', 'podcast' ),
-  //     'posts_per_page' => '2',
-  //     'category_name' => null,
-  //     'tag' => null )
-  // );
+  
 
-  // current language
-  global $sitepress;
-  $sitepress->switch_lang(ICL_LANGUAGE_CODE, true);
-  load_theme_textdomain( 'RCC', get_template_directory_uri() . '/lang' );
+
 
   $new_query = new WP_Query( array(
-      'paged' => $paged,
-      'post_status' => 'publish',
-      'post_type' => array ( 'video', 'podcast' ),
-      'posts_per_page' => '2',
-      'category_name' => $category,
-      'tag' => null )
+      'paged'          => $paged,
+      'post_status'    => 'publish',
+      'post_type'      => 'post',
+      'posts_per_page' => '6', )
   );
+
+  
+
 
   if( $new_query -> have_posts() ) :
       // run the loop
@@ -285,10 +289,29 @@ function rcc_video_podcast_loadmore_ajax_handler(){
           $new_query -> the_post();
       
           $post_meta = get_post_meta( get_the_ID() );
-          $locked = $post_meta['_rcc_member_restrict_content'][0];
+          // $locked = $post_meta['_rcc_member_restrict_content'][0];
 
-          $video_podcast_array = Template\prepare_video_podcast_data(get_the_ID());
-          Template\video_podcast($video_podcast_array, $locked);
+          // $video_podcast_array = Template\prepare_video_podcast_data(get_the_ID());
+          // Template\video_podcast($video_podcast_array, $locked);
+?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-content' ); ?>>
+          <header class="entry-header">
+            <div class="entry-meta">
+              <?php echo get_the_category_list( ', ' ); ?>
+            </div>
+
+            <h2 class="entry-title">
+              <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
+            </h2>
+          </header>
+  
+          <div class="entry-content">
+            <?php the_excerpt(); ?>
+          </div>
+        </article>
+
+<?php
+
       endwhile;
   endif;
   wp_reset_query();
