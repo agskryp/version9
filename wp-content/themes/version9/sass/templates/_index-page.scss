@@ -5,10 +5,32 @@
     border-bottom: 1px solid $dark-3;
     padding-bottom: 14px;
   }
+  .entry-meta {
+    margin-bottom: 14px;
+
+    a {
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+    }
+  }
   
   .entry-title {
     font-weight: 700;
     line-height: 1;
     word-wrap: break-word;
+  }
+
+  .entry-content {
+    margin: 14px 0 0;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      margin-top: 14px;
+      display: inline-block;
+    }
   }
 }
