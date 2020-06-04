@@ -58,9 +58,9 @@
   }
   
   
-  $('.rcc-video-podcast-loadmore').click(function(e){
+  $('.load-more-blog-posts').click(function(e){
 
-    load_more_func(e, $(this), $('.test-article-container'));
+    load_more_func(e, $(this), $('.excerpt-list-container'));
   });
   
 })(jQuery);

@@ -237,7 +237,7 @@ add_action( 'wp_enqueue_scripts', 'deregister_stylesheet', 20 );
 
 
 
-function get_parameter_array( $post, $is_event = false ) {
+function get_parameter_array( $post ) {
 
   $args = [];
   $args['paged'] = $post['page'] + 1; // we need next page to be loaded
@@ -257,7 +257,7 @@ function get_parameter_array( $post, $is_event = false ) {
 /**
  * RCC video and podcast loadmore script
  */
-function rcc_video_podcast_loadmore_ajax_handler(){
+function blog_posts_loadmore_ajax_handler() {
 
   // prepare our arguments for the query
   $args = get_parameter_array($_POST);
@@ -273,17 +273,18 @@ function rcc_video_podcast_loadmore_ajax_handler(){
       'posts_per_page' => '6', )
   );
 
-  if( $new_query -> have_posts() ) :
-      // run the loop
-      while( $new_query -> have_posts() ): 
-          $new_query -> the_post();
-      
-          include( 'partials/excerpt-container.php' );
-      endwhile;
-  endif;
+  if( $new_query -> have_posts() ) {
+    while( $new_query -> have_posts() ) { 
+      $new_query -> the_post();
+  
+      include( 'partials/excerpt-container.php' );
+    }
+  }
+
   wp_reset_query();
+  
   die; // here we exit the script and even no wp_reset_query() required!
 }
 
-add_action('wp_ajax_videopodcast', 'rcc_video_podcast_loadmore_ajax_handler'); // wp_ajax_{action}
-add_action('wp_ajax_nopriv_videopodcast', 'rcc_video_podcast_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+add_action('wp_ajax_blog', 'blog_posts_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_blog', 'blog_posts_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}

@@ -25,7 +25,7 @@
       <h1 class="page-title"><?php single_post_title(); ?></h1>
     </header>
     
-    <div class="test-article-container">
+    <div class="excerpt-list-container">
       <?php    
         if( have_posts() ) {
           while( have_posts() ) {
@@ -38,10 +38,10 @@
     </div>
 
     <div class="load-more-container text-center" style="margin-bottom: 28px;">
-      <a href="#" class="rcc-video-podcast-loadmore" 
+      <a href="#" class="load-more-blog-posts"
         posts-per-page='<?= $posts_per_page ?>'
         current-page='0'
-        action="videopodcast"
+        action="blog"
         max-pages='<?= $max_number_of_pages ?>'>Load more &#x25BC;</a>
     </div>    
 
