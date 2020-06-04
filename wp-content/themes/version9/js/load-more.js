@@ -24,6 +24,9 @@
     // get the button text so it can be reset
     var buttonText = el.text();
   
+    console.log( max_page );
+    console.log( current_page );
+
   
     $.ajax( {
       url : '/wp-admin/admin-ajax.php', // AJAX handler
@@ -34,8 +37,6 @@
       },
       
       success : function( html ){
-        console.log( html );
-  
         // re-enable the load more button
         el.prop('disabled',false);
   

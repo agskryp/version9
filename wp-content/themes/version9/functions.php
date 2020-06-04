@@ -45,11 +45,7 @@ if( !function_exists( 'version9_setup' ) ) {
      * to output valid HTML5.
      */
     add_theme_support( 'html5', array(
-      'search-form',
-      'comment-form',
-      'comment-list',
-      'gallery',
-      'caption',
+      'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
     ) );
 
     // Set up the WordPress core custom background feature.
@@ -120,9 +116,7 @@ add_action( 'after_setup_theme', 'version9_content_width', 0 );
 function version9_scripts() {
   
   // CSS
-  wp_enqueue_style( 
-    'version9-style', get_stylesheet_uri(), array(), AG_VERSION, false 
-  );  
+  wp_enqueue_style( 'version9-style', get_stylesheet_uri(), array(), AG_VERSION, false );  
 
   // JS
   if( !is_front_page() ) {
@@ -186,7 +180,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 function new_excerpt( $more ) {
   global $post;
   
-  return '... <br> <a class="read-more pull-left" href="' . get_permalink( $post -> ID ) . '"> Continue reading &rarr;</a>';
+  return '... <br> <a class="read-more pull-right" href="' . get_permalink( $post -> ID ) . '"> Continue reading &rarr;</a>';
 }
 add_filter( 'excerpt_more', 'new_excerpt' );
 
@@ -197,11 +191,12 @@ add_filter( 'excerpt_more', 'new_excerpt' );
 
 /**
  * Best embedding of google fonts
+ * 
+ * <!-- Code snippet to speed up Google Fonts rendering: googlefonts.3perf.com -->
  */
 
 function themeprefix_load_fonts() { 
   ?> 
-    <!-- Code snippet to speed up Google Fonts rendering: googlefonts.3perf.com --> 
     <link rel="dns-prefetch" href="https://fonts.gstatic.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"> 
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Lato:100,300,700" as="fetch" crossorigin="anonymous"> 
@@ -236,42 +231,25 @@ add_action( 'wp_enqueue_scripts', 'deregister_stylesheet', 20 );
 
 
 
-
-function get_parameter_array( $post ) {
-
-  $args = [];
-  $args['paged'] = $post['page'] + 1; // we need next page to be loaded
-  $args['post_status'] = 'publish';
-  $args['post_type'] = $post['action'];
-  $args['posts_per_page'] = $post['posts_per_page'];
-  $args['category_name'] = $post['category_name'];
-  $args['tag'] = $post['tag'];
-  $args['post__not_in'] = explode(',', $post['excluded_ids']);
-
-  return $args;
-}
-
-
-
-
 /**
  * RCC video and podcast loadmore script
  */
 function blog_posts_loadmore_ajax_handler() {
 
   // prepare our arguments for the query
-  $args = get_parameter_array($_POST);
+  $args = [];
+  $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
 
   // First page is already displayed, start at page 2
   
   $paged = $args['paged'] + 1;
 
   $new_query = new WP_Query( array(
-      'paged'          => $paged,
-      'post_status'    => 'publish',
-      'post_type'      => 'post',
-      'posts_per_page' => '6', )
-  );
+    'paged'          => $paged,
+    'post_status'    => 'publish',
+    'post_type'      => 'post',
+    'posts_per_page' => '6',
+  ) );
 
   if( $new_query -> have_posts() ) {
     while( $new_query -> have_posts() ) { 
@@ -286,5 +264,5 @@ function blog_posts_loadmore_ajax_handler() {
   die; // here we exit the script and even no wp_reset_query() required!
 }
 
-add_action('wp_ajax_blog', 'blog_posts_loadmore_ajax_handler'); // wp_ajax_{action}
-add_action('wp_ajax_nopriv_blog', 'blog_posts_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+add_action( 'wp_ajax_blog', 'blog_posts_loadmore_ajax_handler' );
+add_action( 'wp_ajax_nopriv_blog', 'blog_posts_loadmore_ajax_handler' );

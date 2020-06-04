@@ -5,14 +5,11 @@
 
   get_header();
 
-  $posts_per_page = 2;
+  $posts_per_page = 6;
   $blog_posts = new WP_Query( array(
     'post_status'         => 'publish',
     'post_type'           => 'post',
     'posts_per_page'      => 6,
-    'orderby'             => 'date',
-    'order'               => 'DESC',
-    'ignore_sticky_posts' => 1,
 ) );
 
   $max_number_of_pages = $blog_posts -> max_num_pages - 1;
