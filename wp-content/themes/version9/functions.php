@@ -236,26 +236,6 @@ add_action( 'wp_enqueue_scripts', 'deregister_stylesheet', 20 );
 
 
 
-function get_most_recent_posts( $type = 'post', $limit = 3 ) {
-
-  $args = [
-      'post_status'         => 'publish',
-      'post_type'           => $type,
-      'posts_per_page'      => $limit,
-      'orderby'             => 'date',
-      'order'               => 'DESC',
-      'ignore_sticky_posts' => 1,
-  ];
-
-
-  $posts = new \WP_Query( $args );
-
-  return $posts;
-}
-
-
-
-
 
 function get_parameter_array( $post, $is_event = false ) {
 
@@ -279,7 +259,6 @@ function get_parameter_array( $post, $is_event = false ) {
  */
 function rcc_video_podcast_loadmore_ajax_handler(){
 
-
   // prepare our arguments for the query
   $args = get_parameter_array($_POST);
 
@@ -287,19 +266,12 @@ function rcc_video_podcast_loadmore_ajax_handler(){
   
   $paged = $args['paged'] + 1;
 
-  
-
-
-
   $new_query = new WP_Query( array(
       'paged'          => $paged,
       'post_status'    => 'publish',
       'post_type'      => 'post',
       'posts_per_page' => '6', )
   );
-
-  
-
 
   if( $new_query -> have_posts() ) :
       // run the loop

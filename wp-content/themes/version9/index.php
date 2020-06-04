@@ -4,6 +4,19 @@
    */
 
   get_header();
+
+  $posts_per_page = 2;
+  $blog_posts = new WP_Query( array(
+    'post_status'         => 'publish',
+    'post_type'           => 'post',
+    'posts_per_page'      => 6,
+    'orderby'             => 'date',
+    'order'               => 'DESC',
+    'ignore_sticky_posts' => 1,
+) );
+
+  $max_number_of_pages = $blog_posts -> max_num_pages - 1;
+
 ?>
 
 <div>
@@ -13,36 +26,24 @@
     </header>
     
     <div class="test-article-container">
-    <?php    
-      if( have_posts() ) {
-        while( have_posts() ) {
-          the_post();
-          
-          include( 'partials/excerpt-container.php' );
+      <?php    
+        if( have_posts() ) {
+          while( have_posts() ) {
+            the_post();
+            
+            include( 'partials/excerpt-container.php' );
+          }
         }
-      }
-     
-    
+      ?>
+    </div>
 
-
-      $posts_per_page = 2;
-      $video_podcast_posts = get_most_recent_posts( 'post', $posts_per_page );
-
-      $max_number_of_pages = $video_podcast_posts -> max_num_pages - 1;
-    
-        ?>
-        </div>
-
-            <div class="load-more-container text-center" style="margin-bottom: 28px;">
-              <a href="#" class="rcc-video-podcast-loadmore" 
-                posts-per-page='<?= $posts_per_page ?>'
-                current-page='0'
-                action="videopodcast"
-                max-pages='<?= $max_number_of_pages ?>'>Load more &#x25BC;</a>
-              </div> 
-        <?php // }    
-    ?>   
-    
+    <div class="load-more-container text-center" style="margin-bottom: 28px;">
+      <a href="#" class="rcc-video-podcast-loadmore" 
+        posts-per-page='<?= $posts_per_page ?>'
+        current-page='0'
+        action="videopodcast"
+        max-pages='<?= $max_number_of_pages ?>'>Load more &#x25BC;</a>
+    </div>    
 
     <div class="ad-container">
       <ins class="adsbygoogle" style="display:block"
