@@ -14,6 +14,11 @@
           'posts_per_page': el.attr( 'posts-per-page' ),
           'page': current_page,
         };
+
+        // need to target elements this way.  Try using
+        // ClassName or querySelector
+        var container = document.getElementById( 'loadMore' );
+
   
     $.ajax( {
       url: '/wp-admin/admin-ajax.php',
@@ -36,12 +41,14 @@
           button.text = buttonText;
   
           if( current_page > max_page ) {
-            button.hide(); // if last page
+            console.log( 'hide button because value is greater' );
+            container.style.display = 'none'; // if last page
           }
         }
         
         else {
-          button.hide(); // if no data
+          console.log( 'hide button because no data' );
+          container.style.display = 'none'; // if no data
         }
       }
     } );
@@ -52,3 +59,9 @@
   } );
 } )( jQuery );
   
+// Vanilla JS click event
+// document.getElementById("okButton")
+//         .addEventListener("click", function() {
+//   document.getElementById("welcome").hidden = true;
+//   document.getElementById("awesome").hidden = false;
+// }, false);

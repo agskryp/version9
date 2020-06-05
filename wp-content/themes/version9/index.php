@@ -32,7 +32,7 @@
       ?>
     </div>
 
-    <div class="load-more-container text-center" style="margin-bottom: 28px;">
+    <div id="loadMore" class="load-more-container text-center" style="margin-bottom: 28px;">
       <a href="#" class="load-more-blog-posts"
         posts-per-page='<?= $posts_per_page ?>'
         current-page='1'
