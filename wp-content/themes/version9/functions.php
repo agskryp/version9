@@ -130,8 +130,14 @@ function version9_scripts() {
   );
 
   wp_enqueue_script( 
+    'jquery-ajax', get_template_directory_uri() . '/js/jQuery-ajax.js', array(), '221', true
+  );
+
+  wp_enqueue_script( 
     'version9-load-more', get_template_directory_uri() . '/js/load-more.js', array(), '202050', true
   );
+
+ 
   
   if( is_front_page() ) {
     wp_enqueue_script( 

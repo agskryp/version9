@@ -12,7 +12,7 @@
         data = {
           'action': el.attr( 'action' ),
           'posts_per_page': el.attr( 'posts-per-page' ),
-          'page' : current_page,
+          'page': current_page,
         };
   
     $.ajax( {
