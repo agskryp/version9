@@ -232,37 +232,33 @@ add_action( 'wp_enqueue_scripts', 'deregister_stylesheet', 20 );
 
 
 /**
- * RCC video and podcast loadmore script
+ * Load blog posts via ajax
  */
 function blog_posts_loadmore_ajax_handler() {
-
-  // prepare our arguments for the query
-  $args = [];
-  $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
-
-  // First page is already displayed, start at page 2
-  
-  $paged = $args['paged'] + 1;
+  $args                     = [];
+  $args[ 'paged' ]          = $_POST[ 'page' ] + 1;
+  $args[ 'posts_per_page' ] = $_POST[ 'posts_per_page' ];
 
   $new_query = new WP_Query( array(
-    'paged'          => $paged,
+    'paged'          => $args[ 'paged' ],
     'post_status'    => 'publish',
     'post_type'      => 'post',
-    'posts_per_page' => '6',
+    'posts_per_page' => $args[ 'posts_per_page' ],
   ) );
 
   if( $new_query -> have_posts() ) {
     while( $new_query -> have_posts() ) { 
       $new_query -> the_post();
   
+      // Use a partial file from your theme
       include( 'partials/excerpt-container.php' );
     }
   }
 
   wp_reset_query();
   
-  die; // here we exit the script and even no wp_reset_query() required!
+  die; 
 }
 
-add_action( 'wp_ajax_blog', 'blog_posts_loadmore_ajax_handler' );
-add_action( 'wp_ajax_nopriv_blog', 'blog_posts_loadmore_ajax_handler' );
+add_action( 'wp_ajax_loadblogposts', 'blog_posts_loadmore_ajax_handler' );
+add_action( 'wp_ajax_nopriv_loadblogposts', 'blog_posts_loadmore_ajax_handler' );

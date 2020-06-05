@@ -1,69 +1,54 @@
-(function ($) {
-
-  function load_more_func(e, el, item){
+( function ($) {
+  function load_more_func( e, el, item ) {
     e.preventDefault();
   
     // disable load more button for accidental double clicks
-    el.prop('disabled',true);
-  
+    el.prop( 'disabled', true );
   
     var button = el,
-        max_page = el.attr('max-pages'),
-        current_page = el.attr('current-page'),
+        buttonText = el.text(),
+        max_page = el.attr( 'max-pages' ),
+        current_page = el.attr( 'current-page' ),
         data = {
-          'action': el.attr('action'),
-          'search': el.attr('search'),
-          'category_name': el.attr('category'),
-          'tag': el.attr('tag'),
-          'posts_per_page': el.attr('posts-per-page'),
-          'excluded_ids': el.attr('excluded-ids'),
+          'action': el.attr( 'action' ),
+          'posts_per_page': el.attr( 'posts-per-page' ),
           'page' : current_page,
-          'cat' : el.attr('cat')
         };
   
-    // get the button text so it can be reset
-    var buttonText = el.text();
-  
-    console.log( max_page );
-    console.log( current_page );
-
-  
     $.ajax( {
-      url : '/wp-admin/admin-ajax.php', // AJAX handler
-      data : data,
-      type : 'POST',
-      beforeSend : function ( xhr ) {
-        button.text( 'Loading...' ); // change the button text
+      url: '/wp-admin/admin-ajax.php',
+      data: data,
+      type: 'POST',
+
+      beforeSend: function( xhr ) {
+        button.text( 'Loading...' );
       },
       
-      success : function( html ){
-        // re-enable the load more button
-        el.prop('disabled',false);
+      success: function( html ) {
+        el.prop( 'disabled', false );
   
         button.text( buttonText );
   
         if( html ) {
-          item.append(html);
-          button.attr('current-page', ++current_page);
+          item.append( html );
+          
+          button.attr( 'current-page', ++current_page );
           button.text = buttonText;
   
-          if ( current_page === max_page ){
+          if( current_page > max_page ) {
             button.hide(); // if last page
           }
-        } else {
+        }
+        
+        else {
           button.hide(); // if no data
         }
-        // change_button_text(html, loadmore_params.current_page, button, max_page)
       }
-      });
+    } );
   }
   
-  
-  $('.load-more-blog-posts').click(function(e){
-
-    load_more_func(e, $(this), $('.excerpt-list-container'));
-  });
-  
-})(jQuery);
-  
+  $( '.load-more-blog-posts' ).click( function(e) {
+    load_more_func( e, $( this ), $( '.excerpt-list-container' ) );
+  } );
+} )( jQuery );
   
