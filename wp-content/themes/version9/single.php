@@ -4,6 +4,8 @@
  */
 
   get_header();
+
+  $posted_date = get_the_time('F j, Y');
 ?>
 
 <div>
@@ -17,7 +19,9 @@
           <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 
           <div class="entry-meta">
-            <?php version9_post_header_meta(); ?>
+            <?php echo 'Posted <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $posted_date . '</a> in <span class="cat-links">' . get_the_category_list( esc_html__( ', ', 'version9' ) ) . '</span>'; ?>
+    
+            <?php // version9_post_header_meta(); ?>
           </div>
         </header>
 
