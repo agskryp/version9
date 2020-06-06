@@ -37,7 +37,7 @@
         posts-per-page='<?= $posts_per_page ?>'
         current-page='1'
         action="loadblogposts"
-        max-pages='<?= $max_number_of_pages ?>'>Load more &#x25BC;</a>
+        max-pages='<?= $max_number_of_pages ?>'>Load more &darr;</a>
     </div>    
 
     <div class="ad-container">
