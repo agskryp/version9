@@ -6,26 +6,19 @@
   get_header();
 
   $posts_per_page = 6;
-  $category_name  = single_cat_title( '', false );
-  $blog_posts = $all_posts = new WP_Query( array(
+  $category_name  = get_the_category()[0] -> category_nicename;
+  $blog_posts     = new WP_Query( array(
     'post_status'    => 'publish',
     'post_type'      => 'post',
-    // 'posts_per_page' => $posts_per_page,
     'category_name'  => $category_name
   ) );
   
-  $post_count       = $all_posts -> post_count;
+  $post_count = $blog_posts -> post_count;
   
-  $blog_posts->set('posts_per_page', $posts_per_page);
-  $blog_posts->query($blog_posts->query_vars);
+  $blog_posts -> set( 'posts_per_page', $posts_per_page );
+  $blog_posts -> query( $blog_posts -> query_vars );
 
   $max_num_of_pages = $blog_posts -> max_num_pages - 1;
-
-  // var_dump( '<pre>' );
-  // var_dump( $blog_posts );
-  // var_dump( '</pre>' );
-  var_dump( $posts_per_page );
-  var_dump( $max_num_of_pages );
 ?>
 
 <div>
