@@ -1,50 +1,71 @@
 <?php
   /**
    * The template for displaying archive pages
-   *
-   * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-   * @package version9
    */
 
   get_header();
+
+  $posts_per_page = 6;
+  $category_name  = single_cat_title( '', false );
+  $blog_posts = $all_posts = new WP_Query( array(
+    'post_status'    => 'publish',
+    'post_type'      => 'post',
+    // 'posts_per_page' => $posts_per_page,
+    'category_name'  => $category_name
+  ) );
+  
+  $post_count       = $all_posts -> post_count;
+  
+  $blog_posts->set('posts_per_page', $posts_per_page);
+  $blog_posts->query($blog_posts->query_vars);
+
+  $max_num_of_pages = $blog_posts -> max_num_pages - 1;
+
+  // var_dump( '<pre>' );
+  // var_dump( $blog_posts );
+  // var_dump( '</pre>' );
+  var_dump( $posts_per_page );
+  var_dump( $max_num_of_pages );
 ?>
 
-<div id="primary">
-  <main id="main" class="site-main archive-page excerpt-page">
-    <?php if( have_posts() ) : ?>
-      <header class="page-header text-center">
-        <?php
-          version9_archive_title( '<h1 class="page-title">', '</h1>' );
-
-          the_archive_description( '<div class="archive-description">', '</div>' );
-        ?>
+<div>
+  <main class="index-page-container">
+    <?php if( have_posts() ) { ?>
+      <header class="page-header">
+        <h1 class="page-title"><?php echo single_cat_title( '', false ); ?></h1>
       </header>
 
-      <?php
-        while ( have_posts() ) :
-          the_post();
-
-          /*
-           * Include the Post-Type-specific template for the content.
-           * If you want to override this in a child theme, then include a file
-           * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-           */
-          get_template_part( 'template-parts/content', get_post_type() );
-
-        endwhile;
-
-        the_posts_navigation();
-
-      else :
-        get_template_part( 'template-parts/content', 'none' );
-
-      endif;
-    ?>
+      <div class="excerpt-list-container">
+        <?php    
+          while( $blog_posts -> have_posts() ) {
+            $blog_posts -> the_post();
+            
+            include( 'partials/excerpt-container.php' );
+          }
+        ?>
+      </div>
+    <?php } ?>
   </main>
 
-  <?php
-    get_sidebar();
+  <?php if( $post_count > $posts_per_page ) { ?>
+    <div id="loadMore" class="load-more-container text-center">
+      <a href="#" class="load-more-blog-posts"
+        posts-per-page='<?= $posts_per_page ?>'
+        category-name='<?= $category_name ?>'
+        current-page='1'
+        action="loadblogposts"
+        max-pages='<?= $max_num_of_pages ?>'>Load more &darr;</a>
+    </div>    
+  <?php } ?>
 
-    get_footer();
-  ?>
+  <div class="ad-container">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-5942635838820429" data-ad-slot="8057614268"
+         data-ad-format="auto" data-full-width-responsive="true">
+    </ins>
+    
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <?php get_footer(); ?>
 </div>

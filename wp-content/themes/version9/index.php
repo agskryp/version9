@@ -5,7 +5,7 @@
 
   get_header();
 
-  $posts_per_page = 3;
+  $posts_per_page = 6;
   $blog_posts = new WP_Query( array(
     'post_status'    => 'publish',
     'post_type'      => 'post',
@@ -32,7 +32,7 @@
       ?>
     </div>
 
-    <div id="loadMore" class="load-more-container text-center" style="margin-bottom: 28px;">
+    <div id="loadMore" class="load-more-container text-center">
       <a href="#" class="load-more-blog-posts"
         posts-per-page='<?= $posts_per_page ?>'
         current-page='1'

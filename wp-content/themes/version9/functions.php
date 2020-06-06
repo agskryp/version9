@@ -48,14 +48,8 @@ if( !function_exists( 'version9_setup' ) ) {
       'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
     ) );
 
-    // Set up the WordPress core custom background feature.
-    // add_theme_support( 'custom-background', apply_filters( 'version9_custom_background_args', array(
-    //   'default-color' => 'ffffff',
-    //   'default-image' => '',
-    // ) ) );
-
     // Add theme support for selective refresh for widgets.
-    // add_theme_support( 'customize-selective-refresh-widgets' );
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
     /**
      * Add support for core custom logo.
@@ -95,18 +89,18 @@ add_action( 'after_setup_theme', 'version9_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-// function version9_widgets_init() {
-//   register_sidebar( array(
-//     'name'          => esc_html__( 'Sidebar', 'version9' ),
-//     'id'            => 'sidebar-1',
-//     'description'   => esc_html__( 'Add widgets here.', 'version9' ),
-//     'before_widget' => '<section id="%1$s" class="widget %2$s">',
-//     'after_widget'  => '</section>',
-//     'before_title'  => '<h2 class="widget-title">',
-//     'after_title'   => '</h2>',
-//   ) );
-// }
-// add_action( 'widgets_init', 'version9_widgets_init' );
+function version9_widgets_init() {
+  register_sidebar( array(
+    'name'          => esc_html__( 'Sidebar', 'version9' ),
+    'id'            => 'sidebar-1',
+    'description'   => esc_html__( 'Add widgets here.', 'version9' ),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
+}
+add_action( 'widgets_init', 'version9_widgets_init' );
 
 
 
@@ -181,12 +175,18 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
 /**
- * Replace the default link text for excerpts
+ * Replace the default setup for post excerpt
  */
 function new_excerpt( $more ) {
   global $post;
+
+  $excerpt = '...';
+
+  $excerpt .= '<div class="v9-text-right">';
+  $excerpt .= '<a href="' . get_permalink( $post -> ID ) . '">Continue reading &rarr;</a>';
+  $excerpt .= '</div>';
   
-  return '... <br> <a class="read-more pull-right" href="' . get_permalink( $post -> ID ) . '"> Continue reading &rarr;</a>';
+  return $excerpt;
 }
 add_filter( 'excerpt_more', 'new_excerpt' );
 
@@ -197,10 +197,8 @@ add_filter( 'excerpt_more', 'new_excerpt' );
 
 /**
  * Best embedding of google fonts
- * 
  * <!-- Code snippet to speed up Google Fonts rendering: googlefonts.3perf.com -->
  */
-
 function themeprefix_load_fonts() { 
   ?> 
     <link rel="dns-prefetch" href="https://fonts.gstatic.com"> 
@@ -209,7 +207,6 @@ function themeprefix_load_fonts() {
     <script type="text/javascript"> 
     !function(e,n,t){"use strict";var o="https://fonts.googleapis.com/css?family=Lato:100,300,700",r="__3perf_googleFontsStylesheet";function c(e){(n.head||n.body).appendChild(e)}function a(){var e=n.createElement("link");e.href=o,e.rel="stylesheet",c(e)}function f(e){if(!n.getElementById(r)){var t=n.createElement("style");t.id=r,c(t)}n.getElementById(r).innerHTML=e}e.FontFace&&e.FontFace.prototype.hasOwnProperty("display")?(t[r]&&f(t[r]),fetch(o).then(function(e){return e.text()}).then(function(e){return e.replace(/@font-face {/g,"@font-face{font-display:swap;")}).then(function(e){return t[r]=e}).then(f).catch(a)):a()}(window,document,localStorage); 
     </script>
-    <!-- End of code snippet for Google Fonts -->
   <?php
 }
 add_action( 'wp_head', 'themeprefix_load_fonts' ); 
@@ -244,12 +241,14 @@ function blog_posts_loadmore_ajax_handler() {
   $args                     = [];
   $args[ 'paged' ]          = $_POST[ 'page' ] + 1;
   $args[ 'posts_per_page' ] = $_POST[ 'posts_per_page' ];
+  $args[ 'category_name' ]  = $_POST[ 'category_name' ];
 
   $new_query = new WP_Query( array(
     'paged'          => $args[ 'paged' ],
     'post_status'    => 'publish',
     'post_type'      => 'post',
     'posts_per_page' => $args[ 'posts_per_page' ],
+    'category_name'  => $args[ 'category_name' ],
   ) );
 
   if( $new_query -> have_posts() ) {
@@ -268,3 +267,17 @@ function blog_posts_loadmore_ajax_handler() {
 
 add_action( 'wp_ajax_loadblogposts', 'blog_posts_loadmore_ajax_handler' );
 add_action( 'wp_ajax_nopriv_loadblogposts', 'blog_posts_loadmore_ajax_handler' );
+
+
+
+
+// Remove customize link in admin header bar
+add_action( 'wp_before_admin_bar_render', 'wpse200296_before_admin_bar_render' ); 
+
+function wpse200296_before_admin_bar_render()
+{
+    global $wp_admin_bar;
+
+    $wp_admin_bar->remove_menu('customize');
+}
+
