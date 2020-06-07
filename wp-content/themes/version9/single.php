@@ -7,6 +7,14 @@
 
   $posted_date  = get_the_time( 'F jS, Y' );
   $updated_date = get_the_modified_time( 'F jS, Y' );
+  
+  $previous = get_previous_post_link(
+    '<div class="nav-previous"><small>View an older post</small>%link</div>', '&larr; %title'
+  );
+
+  $next = get_next_post_link(
+    '<div class="nav-next"><small>View a newer post</small>%link</div>', '%title &rarr;'
+  );
 ?>
 
 <div>
@@ -23,7 +31,7 @@
             <?php
               echo 'Posted <a href="' . get_permalink() . '" rel="bookmark">' . $posted_date . '</a> in ' . get_the_category_list( esc_html__( ', ' ) );
             
-              if( $updated_date != $posted_date ) echo '<div>Updated on ' . $updated_date . '</div>';
+              if( $updated_date != $posted_date ) echo '<div><em>Updated ' . $updated_date . '</em></div>';
             ?>
           </div>
         </header>
@@ -45,21 +53,7 @@
       <?php
         if( comments_open() || get_comments_number() ) comments_template();
 
-          $previous = get_previous_post_link(
-            '<div class="nav-previous"><small>View an older post</small><br> %link</div>'
-          );
-        
-          $next = get_next_post_link(
-            '<div class="nav-next"><small>View a newer post</small><br> %link</div>'
-          );
-
-          if( $previous || $next ) {
-            echo '<nav class="footer-page-navigation">';
-            echo $previous;
-            echo $next;
-            echo '</nav>';
-            // echo _navigation_markup( $previous . $next, 'post-navigation' );
-          }
+        if( $previous || $next ) echo '<nav class="footer-page-navigation">' . $previous . $next . '</nav>';
       }
     ?>
   </main>

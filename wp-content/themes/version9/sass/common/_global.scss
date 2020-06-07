@@ -46,6 +46,22 @@
     max-width: 970px;
   }
 
+  small {
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  .nav-next {
+    float: right;
+    text-align: right;
+    width: 48%;
+    
+    a {
+      display: block;
+      line-height: 1.1;
+    }
+  }
+
   .nav-previous {
     float: left;
     width: 48%;
@@ -56,17 +72,3 @@
     }
   }
 }
-
-////////////////////////////////////
-.nav-next {
-  float: right;
-  text-align: right;
-  width: 48%;
-  
-  a {
-    display: block;
-    line-height: 1.1;
-  }
-}
-////////////////////////////////////
-
