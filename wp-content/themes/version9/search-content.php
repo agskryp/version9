@@ -1,62 +1,56 @@
 <?php
   /**
-   * The template for displaying search results pages
+   * The template for displaying search with results
    */
+
+  // $posts_per_page = -1;
+  // $blog_posts = new WP_Query( array(
+  //   'post_status'    => 'publish',
+  //   'post_type'      => 'post',
+  //   'posts_per_page' => $posts_per_page,
+  // ) );
+  // $max_number_of_pages = $blog_posts -> max_num_pages - 1;
 
   get_header();
 ?>
 
 <div>
-  <main class="site-main search-page excerpt-page">
-    <?php if( have_posts() ) { ?>
-      <header class="page-header">
-        
-        <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-      </header>
+  <main class="index-page-container">
+    <header class="page-header">
+      <h1 class="page-title ">
+        <?php
+          global $wp_query;
 
-      <header class="page-header">
-        <h1 class="page-title text-center">
-          <?php
-            global $wp_query;
-            $number_of_results = $wp_query -> found_posts;
+          $number_of_results = $wp_query -> found_posts;
             
-            /* translators: %s: search query. */
-            if ( $number_of_results == 1 ) {
-              printf( esc_html__( 'There is ' . $number_of_results . ' result for %s', 'version9' ),
-              '<span class="search-result">' . get_search_query() . '</span>' );
-            }
+          if( $number_of_results == 1 ) {
+            echo 'There is ' . $number_of_results . ' result for <span class="search-result">' . get_search_query() . '</span>';
+          }
 
-            else {
-              printf( esc_html__( 'There are ' . $number_of_results . ' results for %s', 'version9' ),
-              '<span class="search-result">&#39;' . get_search_query() . '&#39;</span>' );
-            }
-          ?>
-        </h1>
-      </header>
+          else {
+            echo 'There\'s ' . $number_of_results . ' results for <span class="search-result">' . get_search_query() . '</span>';
+          }
+        ?>
+      </h1>
+    </header>
 
+    <div class="excerpt-list-container">
       <?php
-        /* Start the Loop */
-        while( have_posts() ) :
+        while( have_posts() ) {
           the_post();
 
-          /**
-           * Run the loop for the search to output the results.
-           * If you want to overload this in a child theme then include a file
-           * called content-search.php and that will be used instead.
-           */
-          get_template_part( 'template-parts/content', 'search' );
+          include( 'partials/excerpt-container.php' ); 
+        }
+      ?>
+    </div>
 
-        endwhile;
-
-        the_posts_navigation();
-
-      } else {
-
-        echo 'blah blah';
-        get_template_part( 'template-parts/content', 'none' );
-
-      }
-    ?>
+    <div id="loadMore" class="load-more-container text-center">
+      <a href="#" class="load-more-blog-posts"
+        posts-per-page='<?= $posts_per_page ?>'
+        current-page='1'
+        action="loadblogposts"
+        max-pages='<?= $max_number_of_pages ?>'>Load more &darr;</a>
+    </div>   
   </main>
   
   <?php get_footer(); ?>

@@ -1,6 +1,6 @@
 <?php
   /**
-   * The template for displaying search results pages
+   * The template for displaying no search results
    */
 
   get_header();
