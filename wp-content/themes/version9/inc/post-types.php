@@ -49,7 +49,7 @@ function portfolio_post_type() {
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
     'capability_type'       => 'post',
-    'taxonomies' 	          => array( 'category' ),
+    // 'taxonomies' 	          => array( 'category' ),
   );
   
   register_post_type( 'portfolio', $args );
