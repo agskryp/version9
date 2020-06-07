@@ -6,8 +6,8 @@
   get_header();
 ?>
 
-<div>
-  <main class="index-page-container">
+<div style="height: 100vh; display: flex;  flex-direction: column;">
+  <main class="index-page-container" style="flex-grow: 2;">
     <header class="page-header">
       <h1 class="page-title">Nothing Found</h1>
     </header>

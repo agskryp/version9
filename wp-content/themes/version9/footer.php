@@ -6,8 +6,6 @@
    $current_year = date( 'Y' );
 ?>
 
-</div> <?php // #content // ?>
-
 <footer class="footer-container">
   <div class="footer-content">
     <div class="privacy-container">
