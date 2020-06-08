@@ -242,24 +242,24 @@ function blog_posts_loadmore_ajax_handler() {
   $args[ 'paged' ]          = $_POST[ 'page' ] + 1;
   $args[ 'posts_per_page' ] = $_POST[ 'posts_per_page' ];
   $args[ 'category_name' ]  = $_POST[ 'category_name' ];
+  $args[ 'search_value' ]   = $_POST[ 'search_value' ];
 
   $new_query = new WP_Query( array(
     'paged'          => $args[ 'paged' ],
     'post_status'    => 'publish',
-    'post_type'      => 'post',
+    // 'post_type'      => 'post',
     'posts_per_page' => $args[ 'posts_per_page' ],
     'category_name'  => $args[ 'category_name' ],
+    's'              => $args[ 'search_value' ]
   ) );
-
-  if( $new_query -> have_posts() ) {
-    while( $new_query -> have_posts() ) { 
-      $new_query -> the_post();
   
-      // Use a partial file from your theme
-      include( 'partials/excerpt-container.php' );
-    }
-  }
+  while( $new_query -> have_posts() ) { 
+    $new_query -> the_post();
 
+    // Use a partial file from your theme
+    include( 'partials/excerpt-container.php' );
+  }
+  
   wp_reset_query();
   
   die; 

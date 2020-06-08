@@ -3,7 +3,7 @@
    * The template for displaying search with results
    */
 
-  // $posts_per_page = -1;
+  $posts_per_page = 6;
   // $blog_posts = new WP_Query( array(
   //   'post_status'    => 'publish',
   //   'post_type'      => 'post',
@@ -20,6 +20,8 @@
       <h1 class="page-title ">
         <?php
           global $wp_query;
+
+          $search_value = $wp_query -> query['s'];
 
           $number_of_results = $wp_query -> found_posts;
             
@@ -44,13 +46,16 @@
       ?>
     </div>
 
-    <div id="loadMore" class="load-more-container text-center">
-      <a href="#" class="load-more-blog-posts"
-        posts-per-page='<?= $posts_per_page ?>'
-        current-page='1'
-        action="loadblogposts"
-        max-pages='<?= $max_number_of_pages ?>'>Load more &darr;</a>
-    </div>   
+    <?php if( $number_of_results > $posts_per_page ) { ?>
+      <div id="loadMore" class="load-more-container text-center">
+        <a href="#" class="load-more-blog-posts"
+          posts-per-page='<?= $posts_per_page ?>'
+          current-page='1'
+          action="loadblogposts"
+          search="<?= $search_value ?>"
+          max-pages='<?= $max_number_of_pages ?>'>Load more &darr;</a>
+      </div>
+    <?php } ?>
   </main>
   
   <?php get_footer(); ?>

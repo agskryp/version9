@@ -13,6 +13,7 @@
           'action': el.attr( 'action' ),
           'posts_per_page': el.attr( 'posts-per-page' ),
           'category_name': el.attr( 'category-name' ),
+          'search_value': el.attr( 'search' ),
           'page': current_page,
         };
 
