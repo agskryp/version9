@@ -3,13 +3,11 @@
    * The template for displaying search with results
    */
 
-  $posts_per_page = 6;
-  // $blog_posts = new WP_Query( array(
-  //   'post_status'    => 'publish',
-  //   'post_type'      => 'post',
-  //   'posts_per_page' => $posts_per_page,
-  // ) );
-  // $max_number_of_pages = $blog_posts -> max_num_pages - 1;
+  global $wp_query;
+
+  $search_value      = $wp_query -> query[ 's' ];
+  $number_of_results = $wp_query -> found_posts;
+  $posts_per_page    = AG_PPP;
 
   get_header();
 ?>
@@ -18,13 +16,7 @@
   <main class="index-page-container">
     <header class="page-header">
       <h1 class="page-title ">
-        <?php
-          global $wp_query;
-
-          $search_value = $wp_query -> query['s'];
-
-          $number_of_results = $wp_query -> found_posts;
-            
+        <?php            
           if( $number_of_results == 1 ) {
             echo 'There is ' . $number_of_results . ' result for <span class="search-result">' . get_search_query() . '</span>';
           }

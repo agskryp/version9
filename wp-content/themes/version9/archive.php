@@ -5,7 +5,7 @@
 
   get_header();
 
-  $posts_per_page = 2;
+  $posts_per_page = AG_PPP;
   $category_name  = get_the_category()[0] -> category_nicename;
   $blog_posts     = new WP_Query( array(
     'post_status'    => 'publish',

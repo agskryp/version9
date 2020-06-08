@@ -5,8 +5,8 @@
 
   get_header();
 
-  $posts_per_page = 6;
-  $blog_posts = new WP_Query( array(
+  $posts_per_page = AG_PPP;
+  $blog_posts     = new WP_Query( array(
     'post_status'    => 'publish',
     'post_type'      => 'post',
     'posts_per_page' => $posts_per_page,

@@ -245,9 +245,8 @@ function blog_posts_loadmore_ajax_handler() {
   $args[ 'search_value' ]   = $_POST[ 'search_value' ];
 
   $new_query = new WP_Query( array(
-    'paged'          => $args[ 'paged' ],
     'post_status'    => 'publish',
-    // 'post_type'      => 'post',
+    'paged'          => $args[ 'paged' ],
     'posts_per_page' => $args[ 'posts_per_page' ],
     'category_name'  => $args[ 'category_name' ],
     's'              => $args[ 'search_value' ]
