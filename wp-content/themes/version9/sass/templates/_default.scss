@@ -2,3 +2,13 @@
   margin-bottom: 28px;
   font-weight: bold;
 }
+
+.main-content-column {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex-grow: 2;
+  }
+}
