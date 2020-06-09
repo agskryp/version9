@@ -21,14 +21,14 @@
     </div>
     
     <div class="credit-container"> 
-      <span>Site by  <a href="<?php echo home_url(); ?>">A.G. Skryp</a></span>
+      <span>Site by <a href="<?php echo home_url(); ?>">A.G. Skryp</a></span>
     </div>
   </div>
 </footer>
 
-</div> <?php // bootstrap .row // ?>
-</div> <?php // #page // ?>
-</div> <?php // .background-image // ?>
+</div> <!-- bootstrap .row // ?> -->
+</div> <!--  #page // ?> -->
+</div> <!--  // .background-image // -->
 
 <?php wp_footer(); ?>
 
