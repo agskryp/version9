@@ -279,4 +279,3 @@ function wpse200296_before_admin_bar_render()
 
     $wp_admin_bar->remove_menu('customize');
 }
-
