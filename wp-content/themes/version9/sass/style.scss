@@ -4,12 +4,14 @@
 
 // Common
 @import "common/variables";
+@import "common/bootstrap-grid";
 @import "common/global";
 @import "common/utilities";
 
 
 // Component
 @import "components/footer";
+@import "components/header";
 
 
 // Partials

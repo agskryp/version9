@@ -10,8 +10,6 @@
 ?>
 
 <div id="page" class="homepage-screen">
-  <a class="skip-link screen-reader-text"><?php esc_html_e( 'Skip to menu', 'version9' ); ?></a>
-
   <div id="primary" class="content-area front-page-loading">
     <header>
       <?php require get_template_directory() . '/partials/site-branding.php'; ?>

@@ -21,13 +21,6 @@
   margin: 0 0 $grid__padding;
 }
 
-.site-content {
-  margin-top: 105px;
-  @media all and ( min-width: $screen__md ) {
-    margin-top: 0;
-  }
-}
-
 .no-results {
   height: 80vh;
 }

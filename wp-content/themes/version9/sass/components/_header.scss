@@ -1,0 +1,135 @@
+.site-title {
+  font-size: 50px;
+  line-height: 0.5;
+  margin-bottom: 28px;
+  @media all and ( min-width: $screen-xxl ) {
+    font-size: 70px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+  
+  span {
+    display: block;
+    
+    &:last-of-type {
+      margin-left: 22px;
+      @media all and ( min-width: $screen-xxl ) {
+        margin-left: 31px;
+      }
+    }
+  }
+}
+
+.site-description {
+  font-weight: 700;
+  font-size: 25px;
+  font-variant: small-caps;
+  line-height: .9;
+  padding-left: 0;
+  border-left: none;
+  margin-left: 0;
+  display: none;
+  text-shadow: 2px 2px 2px $dark-5;
+  margin-bottom: 28px;
+  word-spacing: 2px;
+  animation: description-colour-rotation 10s ease-in-out infinite;
+  @keyframes description-colour-rotation {
+    0%   { color: $orange; }
+    25%  { color: $white;  }
+    50%  { color: $green;  }
+    75%  { color: $blue;   }
+    100% { color: $orange; }
+  }
+  
+  @media all and ( min-width: 520px ) {
+    margin-left: 28px;
+    border-left: 2px solid $white;
+    padding-left: 28px;
+  }
+  
+  @media all and ( min-width: 590px ) {
+    @include flex;
+  }
+  
+  @media all and ( min-width: $screen-md ) {
+    display: block;
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  @media all and ( min-width: $screen-xxl ) {
+    font-size: 33px;
+  }
+  
+  span { display: block; }
+}
+
+
+
+
+.content-container {
+  margin-top: 105px;
+  @media all and ( min-width: $screen-md ) {
+    margin-top: 0;
+  }
+}
+
+
+
+
+
+
+
+.background-image {
+  background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
+  @include background-size( cover );
+}
+
+.site-header {
+  position: fixed;
+  z-index: 6;
+  display: block;
+  background: $color__dark-green;
+  padding: $grid__pixel-28 0 0;
+  border-right: none;
+  border-bottom: 1px solid $color__dark-80;
+  @media all and ( min-width: $screen__md ) {
+    @include flex-center();
+    border-right: 1px solid $color__dark-30;
+    background: $color__dark-30;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+  }
+  
+  @media all and ( max-height: $screen__xs ) and ( min-width: $screen__md ) {
+    overflow-y: scroll;
+  }
+  
+  a {
+    color: $color__text-main;
+    font-weight: 100;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.site-branding {
+  @include flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 0 0 0 $grid__pixel-28;
+  @media all and ( min-width: $screen__md ) {
+    display: block;
+    margin: 0;
+  } 
+}
+
+
+
