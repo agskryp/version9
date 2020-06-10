@@ -68,65 +68,6 @@
   }
 }
 
-.main-search-form form {
-  @include zero-cushion;
-  display: none;
-  text-align: center;
-  background: $color__dark-green;
-  border: 1px solid $color__dark-50;
-  border-right: none;
-  @media all and ( min-width: $screen__md ) {
-    background: none; 
-    border: none;
-  }
-  
-  label {
-    margin: ( $grid__pixel-7 * 2 ) 0;
-  }
-  
-  input {
-    background: $color__light-10;
-    border: 1px solid $color__dark-80;
-    padding: ( $grid__pixel-8 / 2 ) $grid__pixel-8;
-    color: $color__text-main;
-    border-radius: $grid__pixel-8 0 0 $grid__pixel-8;
-    &:focus {
-      outline: 1px dotted $color__text-main;     
-      color: $color__text-main;
-      background: $color__light-20;
-    }
-    
-    &:active {
-      color: $color__text-main;
-      background: $color__light-20;
-    }
-    
-    &::placeholder {
-      color: $color__light-40;
-    }
-  }
-  
-  input[ type="submit" ] {
-    margin: 0 0 0 -1px;
-    border: none;
-    padding: 0 ( $grid__pixel-7 * 2 );
-    height: 34px;
-    border: 1px solid $color__dark-80;
-    background: $color__dark-80;
-    border-radius: 0 $grid__pixel-8 $grid__pixel-8 0;
-    cursor: pointer;
-    font-weight: 700;
-    text-transform: uppercase;
-    &:focus {
-      outline: 1px dotted $color__text-main;
-      background: $color__light-10;
-    }
-    
-    &:hover {
-      background: $color__light-10;
-    }
-  }
-}
 
 /* Small menu. */
 .main-navigation.toggled ul {
@@ -134,10 +75,7 @@
   clear: both;
 }
 
-.main-search-form.toggled form {
-  @include flex-center;
-  clear: both;
-}
+
 
 .menu-toggle {
   @include flex-center;
@@ -174,9 +112,5 @@
   
   .main-navigation ul {
     display: block;
-  }
-  
-  .main-search-form form {
-    @include flex-center;
   }
 }

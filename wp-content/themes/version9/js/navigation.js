@@ -6,11 +6,13 @@
  */
 
 ( function() {
+  console.log( 'doop' );
   // Declare variables
   var searchContainer = document.getElementById( 'site-search' );
   var navContainer = document.getElementById( 'main-navigation' );
   var contentContainer = document.getElementById( 'content' );
   var container = document.getElementById( 'site-navigation' );
+
   var searchButton = container.getElementsByTagName( 'button' )[1];
   var button = container.getElementsByTagName( 'button' )[0];
   var searchForm = searchContainer.getElementsByTagName( 'form' )[0];
@@ -22,7 +24,8 @@
   // Because the navigation menu is created with wp_nav_menu(), use javascript to set aria-expanded to false
   menu.setAttribute( 'aria-expanded', 'false' );
   
-  // check if the navigation menu has '.nav-menu', if it doesn't add '.nav-menu' (important for the toggleFocus function)
+  // check if the navigation menu has '.nav-menu',
+  // if it doesn't add '.nav-menu' (important for the toggleFocus function)
   if( -1 === menu.className.indexOf( 'nav-menu' ) ) {
     menu.classList.add( 'nav-menu' );
   }  

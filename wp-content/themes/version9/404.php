@@ -19,9 +19,7 @@
       
       <p>Or, type in the search form below for something more specific.</p>
 
-      <div class="main-search-form">
-        <?php require get_template_directory() . '/searchform.php';  ?>
-      </div>
+      <?php require get_template_directory() . '/searchform.php';  ?>
     </div>
   </main>
     
