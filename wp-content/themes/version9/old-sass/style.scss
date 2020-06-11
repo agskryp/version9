@@ -8,70 +8,26 @@ Version: 9.2.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: version9
-
-version9 is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-    ## Header
-# Misc
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
-# Misc
---------------------------------------------------------------*/
-// @import "misc/plugins";
-// @import "misc/ads";
-// @import "misc/bootstrap";
-
-/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
 @import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
 @import "forms/forms";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
 @import "navigation/navigation";
 
-
-
+/*--------------------------------------------------------------
+## Primary
+--------------------------------------------------------------*/
+@import "site/primary/posts-and-pages";
+@import "site/primary/comments";
 
 /*--------------------------------------------------------------
-# Content
+## Pages
 --------------------------------------------------------------*/
-@import "site/site";
-@import "site/header";
-@import "site/footer";
+@import "site/pages/front-page";
+

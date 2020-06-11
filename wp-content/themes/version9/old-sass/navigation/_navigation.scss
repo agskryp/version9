@@ -1,2 +1,93 @@
-@import "links";
-@import "menus";
+a {
+  color: $color__link;
+  &:visited {
+    color: $color__link-visited;
+  }
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+    text-decoration: none;
+  }
+  
+  &:focus {
+    outline: thin dotted;
+  }
+  
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+.site-navigation {
+  max-width: 320px;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  z-index: 6;
+  margin-top: -44px;
+  @media all and ( min-width: $screen__md ) {
+    margin-top: 0;
+    position: relative;
+    max-width: none;
+  }
+  
+  svg {
+    color: $color__text-main;
+    fill: $color__text-main;
+  }
+  
+  span {
+    display: none;
+    @media all and ( min-width: 645px ) {
+      display: inline-block;
+      margin-right: $grid__pixel-7;
+    }
+  }
+}
+
+.main-nav-button {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  float: right;
+  margin-top: -60px;
+}
+
+
+
+.menu-toggle {
+  @include flex-center;
+  box-sizing: border-box;
+  height: 52px;
+  background: $color__dark-50;
+  color: $color__text-main;
+  border: 1px solid $color__dark-80;
+  border-bottom: none;
+  border-right: none;
+  border-radius: 0;
+  float: right;
+  margin: 0 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: $grid__pixel-7 * 2;
+  &:hover,
+  &:active,
+  &.on {
+    background: $color__light-10;
+    border-color: $color__dark-80;
+  }
+  
+  &:focus {
+    border-color: $color__dark-80;
+    outline: 1px dotted $color__text-main;
+  }
+}
+
+@media screen and ( min-width: $screen__md ) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
