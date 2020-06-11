@@ -81,6 +81,57 @@
 
 
 
+.main-navigation {
+  clear: both;
+  display: block;
+  background: $green;
+  border-left: 1px solid $dark-5;
+  @media all and ( min-width: $screen-md ) {
+    background: none; 
+    border-left: none;
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    text-align: center;
+    border-top: 1px solid $dark-5;
+    @media screen and ( min-width: $screen-md ) {
+      display: block;
+    }
+    
+    li {
+      text-transform: uppercase;
+      font-size: 12px;
+      border-bottom: 1px solid $dark-5;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 14px 0; 
+      font-weight: 700;
+      &:hover {
+        background: $light-1;
+      }
+    }
+  }
+}
+
+
+/* Small menu. */
+.main-navigation.toggled ul {
+  display: block;
+  clear: both;
+}
+
+
+
+
+
+
 
 
 
@@ -93,7 +144,7 @@
   position: fixed;
   z-index: 6;
   display: block;
-  background: $color__dark-green;
+  background: $green;
   padding: $grid__pixel-28 0 0;
   border-right: none;
   border-bottom: 1px solid $color__dark-80;

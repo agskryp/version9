@@ -42,13 +42,17 @@
           </button>
         </div>
                   
+
+
+        
         <?php require get_template_directory() . '/partials/social-links.php'; ?>
                   
-        <div id="main-navigation" class="main-navigation">
+        <!-- <div id="main-navigation" class="main-navigation"> -->
+        <div class="main-navigation">
           <?php
             wp_nav_menu( array(
-              'theme_location' => 'menu-1',
-              'menu_class'     => 'main-navigation',
+              'theme_location' => 'header-main-menu',
+              // 'menu_class'     => 'main-navigation',
               'depth'          => 1,
             ) );
           ?>
