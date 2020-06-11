@@ -76,3 +76,10 @@
 .search-result {
   font-weight: 500;
 }
+
+
+
+.background-image {
+  background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
+  @include background-size( cover );
+}

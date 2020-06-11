@@ -8,13 +8,12 @@
   left: 0;
   right: 0;
   top: -12px;
-  @media all and ( min-width: $screen__md ) {
+  @media all and ( min-width: $screen-md ) {
     top: -15px;
   }
 }
 
 .ad-container {
-//  max-width: 970px;
   clear: both;
   position: relative;
   margin: 0 auto;
@@ -23,10 +22,11 @@
 
 ins.adsbygoogle,
 .google-auto-placed {
-  margin: 0 0 $grid__pixel-28;
+  margin: 0 0 28px;
   position: relative;
+
   &::before {
-    @include global-ad-settings( "Advertisement by Google", $color__soft-white );
+    @include global-ad-settings( "Advertisement by Google", $white );
   }
 }
 

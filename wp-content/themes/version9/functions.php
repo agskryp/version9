@@ -183,7 +183,7 @@ function new_excerpt( $more ) {
 
   $excerpt = '...';
 
-  $excerpt .= '<div class="v9-text-right">';
+  $excerpt .= '<div class="text-right">';
   $excerpt .= '<a href="' . get_permalink( $post -> ID ) . '">Continue reading &rarr;</a>';
   $excerpt .= '</div>';
   
