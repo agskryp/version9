@@ -1,8 +1,12 @@
+
+@import "common/normalize";
+
 // Import old settings untill unnecessary
 @import "../old-sass/style";
 
 
 // Common
+
 @import "common/variables";
 @import "common/bootstrap-grid";
 @import "common/global";
@@ -12,6 +16,10 @@
 // Component
 @import "components/footer";
 @import "components/header";
+
+
+// Extensions
+@import "extension/plugins";
 
 
 // Partials
