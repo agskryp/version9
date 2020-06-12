@@ -12,15 +12,5 @@ Text Domain: version9
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "typography/typography";
+
 @import "navigation/navigation";
-@import "site/primary/comments";
-
-/*--------------------------------------------------------------
-## Pages
---------------------------------------------------------------*/
-@import "site/pages/front-page";
-

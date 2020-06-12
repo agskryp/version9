@@ -74,7 +74,7 @@
 
     .comment-author {
       font-size: 125%;
-      @include flex-grow( 3 );
+      flex-grow: 3;
     }
 
     .comment-metadata {

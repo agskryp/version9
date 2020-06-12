@@ -1,16 +1,18 @@
 
 // SCSS + Site Initialization
 @import "_initialize/variables";
-@import "_initialize/normalize";      // Checked
-@import "_initialize/bootstrap-grid"; // Checked
+@import "_initialize/mixins";
+@import "_initialize/normalize";      
+@import "_initialize/bootstrap-grid"; 
 
 
 
 
 // Import old settings untill unnecessary
-@import "../old-sass/style";
+// @import "../old-sass/style";
 
 @import "elements/elements";
+@import "elements/typography";
 
 // Common
 @import "common/elements";  // Checked
@@ -31,12 +33,14 @@
 
 
 // Partials
+@import "partials/comments";
 @import "partials/searchform";
 @import "partials/social-links"; // Checked
 
 
 // Templates
 @import "templates/default";
+@import "templates/front-page";
 @import "templates/index-page";
 @import "templates/portfolio-page";
 @import "templates/portfolio-post";

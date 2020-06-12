@@ -1,5 +1,6 @@
 .main-search-form form {
-  @include zero-cushion;
+  margin: 0;
+  padding: 0;
   display: none;
   text-align: center;
   background: $dark-green;

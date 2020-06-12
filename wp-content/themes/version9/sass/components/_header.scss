@@ -134,29 +134,33 @@
 
 
 
+
+
+
+
 .site-header {
   position: fixed;
   z-index: 6;
   display: block;
   background: $green;
-  padding: $grid__pixel-28 0 0;
+  padding: 28px 0 0;
   border-right: none;
-  border-bottom: 1px solid $color__dark-80;
-  @media all and ( min-width: $screen__md ) {
+  border-bottom: 1px solid $dark-8;
+  @media all and ( min-width: $screen-md ) {
     @include flex-center();
-    border-right: 1px solid $color__dark-30;
-    background: $color__dark-30;
+    border-right: 1px solid $dark-3;
+    background: $dark-3;
     flex-direction: column;
     padding: 0;
     height: 100%;
   }
   
-  @media all and ( max-height: $screen__xs ) and ( min-width: $screen__md ) {
+  @media all and ( max-height: $screen-xs ) and ( min-width: $screen-md ) {
     overflow-y: scroll;
   }
   
   a {
-    color: $color__text-main;
+    color: $white;
     font-weight: 100;
     &:hover {
       text-decoration: none;
@@ -169,8 +173,8 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  margin: 0 0 0 $grid__pixel-28;
-  @media all and ( min-width: $screen__md ) {
+  margin: 0 0 0 28px;
+  @media all and ( min-width: $screen-md ) {
     display: block;
     margin: 0;
   } 

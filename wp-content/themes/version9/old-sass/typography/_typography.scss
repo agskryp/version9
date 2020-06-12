@@ -3,13 +3,9 @@ button {
   line-height: 1.5;
 }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
-p {
-  margin: 0 0 28px;
-}
+p { margin: 0 0 28px; }
 
 h1 {
   font-size: 2.25em;
@@ -43,9 +39,9 @@ h3 {
 
 
 pre {
-  background: $color__background-pre;
-  color: $color__soft-green;
-  font-family: $font__pre;
+  background: $dark-5;
+  color: $green;
+  font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 1.6em;
@@ -55,10 +51,10 @@ pre {
 }
 
 code, kbd {
-  font-family: $font__code;
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 14px;
-  color: $color__soft-green;
-  background: $color__background-pre;
+  color: $green;
+  background: $dark-5;
   line-height: 1.6;
   padding: 3px 6px;
 }

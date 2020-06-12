@@ -6,7 +6,7 @@
 
 html,
 body {
-  background-image: url( 'assets/dark-site-background.jpg' );
+  background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
   background-size: cover;
   background-color: $dark-green;
   background-attachment: fixed;
@@ -36,4 +36,24 @@ hr {
 img {
   height: auto;
   max-width: 100%;
+}
+
+a {
+  color: $blue;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $orange;
+    text-decoration: none;
+  }
+  
+  &:focus {
+    outline: thin dotted;
+  }
+  
+  &:hover,
+  &:active {
+    outline: 0;
+  }
 }
