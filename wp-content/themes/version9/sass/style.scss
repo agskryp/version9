@@ -8,6 +8,7 @@
 // Common
 @import "common/variables";
 @import "common/bootstrap-grid"; // Checked
+@import "common/elements";  // Checked
 @import "common/global";
 @import "common/utilities";  // Checked
 
@@ -19,7 +20,6 @@
 
 // Extensions
 @import "extension/ads"; 
-@import "extension/plugins";  // Checked
 
 
 // Partials
