@@ -1,0 +1,46 @@
+form {    
+  label { font-variant: small-caps; }
+  p { margin: 0 0 14px; }
+}
+
+input,
+textarea {
+  background: $light-1;
+  width: 100%;
+  border: 1px solid $dark-8;
+  padding: 4px 8px;
+  color: $white;
+  border-radius: 8px;
+
+  &:focus,
+  &:active {
+    outline: 1px dotted $white;     
+    color: $white;
+    background: $light-2;
+  }
+
+  &:focus {
+    outline: 1px dotted $white;
+  }
+}
+
+input[ type=submit ] {
+  @include font-size( 0.75 );
+  width: auto;
+  padding: 0 28px;
+  height: 34px;
+  border: 1px solid $dark-8;
+  background: $dark-8;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {         
+    background: $light-1;
+  }
+
+  &:focus {
+    outline: 1px dotted $white;
+  }
+}

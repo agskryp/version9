@@ -1,13 +1,18 @@
 
-@import "common/normalize";  // Checked
+// SCSS + Site Initialization
+@import "_initialize/variables";
+@import "_initialize/normalize";      // Checked
+@import "_initialize/bootstrap-grid"; // Checked
+
+
+
 
 // Import old settings untill unnecessary
 @import "../old-sass/style";
 
+// @import "elements/typography";
 
 // Common
-@import "common/variables";
-@import "common/bootstrap-grid"; // Checked
 @import "common/elements";  // Checked
 @import "common/global";
 @import "common/utilities";  // Checked
@@ -16,6 +21,9 @@
 // Component
 @import "components/footer"; // Checked
 @import "components/header";
+
+
+// Site Elements
 
 
 // Extensions
