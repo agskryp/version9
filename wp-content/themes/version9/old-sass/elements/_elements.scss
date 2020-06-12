@@ -1,29 +1,4 @@
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
 
-*,
-*:before,
-*:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit;
-}
-
-body {
-  background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  color: $white;
-  line-height: 1.5;
-  @media all and ( min-width: $screen__xs ) {
-    font-size: 18px;
-  }
-  
-  @media all and ( min-width: $screen__xd ) {
-    font-size: 20px;
-  }
-}
 
 hr {
   background-color: $color__background-hr;
@@ -37,9 +12,9 @@ img {
   max-width: 100%; /* Adhere to container width. */
 }
 
-figure {
-  margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
-}
+// figure {
+//   margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+// }
 
 ul, ol {
   margin: 0 0 ( $grid__pixel-7 * 2 );
@@ -72,24 +47,24 @@ ol li {
   padding-left: $grid__pixel-7;
 }
 
-dt {
-  font-weight: bold;
-}
+// dt {
+//   font-weight: bold;
+// }
 
-dd {
-  margin: 0 $grid__padding $grid__padding;
-}
+// dd {
+//   margin: 0 $grid__padding $grid__padding;
+// }
 
-table {
-  margin: 0 0 $grid__padding;
-  width: 100%;
-}
+// table {
+//   margin: 0 0 $grid__padding;
+//   width: 100%;
+// }
 
-td, th {
-  padding: $grid__pixel-7;
-  border: 1px solid $color__soft-white;
-  @media all and ( min-width: $screen__sm ) {
-    padding: ( $grid__pixel-7 * 2 );
-  }
-}
+// td, th {
+//   padding: $grid__pixel-7;
+//   border: 1px solid $color__soft-white;
+//   @media all and ( min-width: $screen__sm ) {
+//     padding: ( $grid__pixel-7 * 2 );
+//   }
+// }
 

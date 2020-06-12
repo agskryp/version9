@@ -25,5 +25,5 @@
     </head>
 
     <body <?php body_class(); ?>>
-      <div class="background-image">
+      <!-- <div class="background-image"> -->
       

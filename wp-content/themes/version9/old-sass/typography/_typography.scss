@@ -46,7 +46,7 @@ pre {
   background: $color__background-pre;
   color: $color__soft-green;
   font-family: $font__pre;
-  @include font-size( 0.9375 );
+  font-size: 14px;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -56,7 +56,7 @@ pre {
 
 code, kbd {
   font-family: $font__code;
-  @include font-size( 0.9375 );
+  font-size: 14px;
   color: $color__soft-green;
   background: $color__background-pre;
   line-height: 1.6;
