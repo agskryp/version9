@@ -1,41 +1,32 @@
-button {
-  color: $white;
-  line-height: 1.5;
-}
-
-a { text-decoration: none; }
-
-p { margin: 0 0 28px; }
-
 h1 {
-  font-size: 2.25em;
-  margin: 0 0 .5rem;
+  font-size: 40px;
+  // margin: 0 0 .5rem;
   line-height: 0.8;
-  @media all and ( min-width: 360px ) {
-    font-size: 3em;
+  @media all and ( min-width: $screen-xxs ) {
+    font-size: 54px;
   }
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 31px;
   font-weight: 400;
-  margin-bottom: .5rem;
-  margin-top: 0;
-  @media all and ( min-width: 360px ) {
-    font-size: 2em;
+  margin: 0 0 7px;
+  @media all and ( min-width: $screen-xxs ) {
+    font-size: 36px;
   }
 }
  
 h3 {
-  font-size: 1.5em;
-  margin-top: 0;
-  margin-bottom: .5em;
+  font-size: 26px;
+  margin: 0 0 7px;
   font-weight: 500;
   line-height: 1.2;
-  @media all and ( min-width: 360px ) {
-    font-size: 1.55em;
+  @media all and ( min-width: $screen-xxs ) {
+    font-size: 28px;
   }
 }
+
+p { margin: 0 0 28px; }
 
 pre {
   background: $dark-5;
@@ -43,10 +34,10 @@ pre {
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 1.6em;
-  max-width: 100%;
+  margin: 0 0 28px;
+  // max-width: 100%;
   overflow: auto;
-  padding: 1.6em;
+  padding: 28px;
 }
 
 code, kbd {
@@ -54,10 +45,7 @@ code, kbd {
   font-size: 14px;
   color: $green;
   background: $dark-5;
-  line-height: 1.6;
   padding: 3px 6px;
 }
 
-del {
-  opacity: .5;
-}
+del { opacity: .5; }

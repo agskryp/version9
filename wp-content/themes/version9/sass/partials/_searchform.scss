@@ -18,7 +18,7 @@
     border: 1px solid $dark-8;
     padding: 4px 8px;
     color: $white;
-    border-radius: 8px 0 0 8px;
+    border-radius: 6px 0 0 6px;
     &:focus {
       outline: 1px dotted $white;     
       color: $white;
@@ -42,7 +42,7 @@
     height: 34px;
     border: 1px solid $dark-8;
     background: $dark-8;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 6px 6px 0;
     cursor: pointer;
     font-weight: 700;
     text-transform: uppercase;

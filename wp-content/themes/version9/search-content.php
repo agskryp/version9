@@ -15,14 +15,14 @@
 <div>
   <main class="index-page-container">
     <header class="page-header">
-      <h1 class="page-title ">
+      <h1 class="page-title">
         <?php            
           if( $number_of_results == 1 ) {
-            echo 'There is ' . $number_of_results . ' result for <span class="search-result">' . get_search_query() . '</span>';
+            echo 'There is ' . $number_of_results . ' result for <strong>' . get_search_query() . '</strong>';
           }
 
           else {
-            echo 'There\'s ' . $number_of_results . ' results for <span class="search-result">' . get_search_query() . '</span>';
+            echo 'There\'s ' . $number_of_results . ' results for <strong>' . get_search_query() . '</strong>';
           }
         ?>
       </h1>

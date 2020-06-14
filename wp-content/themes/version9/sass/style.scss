@@ -7,17 +7,17 @@
 
 // Site Elements
 @import "elements/elements";          // Checked
-@import "elements/typography";
+@import "elements/typography";        // Checked
+@import "elements/form";              // Checked
 
 
 // Common
-@import "common/elements";  
 @import "common/global";
-@import "common/utilities"; 
+@import "common/utilities";           // Checked
 
 
 // Component
-@import "components/footer"; 
+@import "components/footer";          // Checked
 @import "components/header";
 
 
