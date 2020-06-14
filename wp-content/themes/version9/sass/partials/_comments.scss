@@ -31,12 +31,12 @@
   .children {
     list-style: none;
     background: $dark-3;
-    margin-top: 28px;
+    margin: 28px -14px 0;
     padding: 0;
     border-radius: 6px;
 
     .comment-body {
-      padding: 28px;
+      padding: 28px 14px;
     }
 
     .comment {
@@ -45,7 +45,7 @@
     }
 
     .children {
-      border-top: 1px solid $white;
+      border-top: 1px solid $light-4;
       background: none;
       border-radius: 0;
       margin: 0;
@@ -64,7 +64,7 @@
 
 
 
-  
+
   .comment-meta {
     display: flex;
 

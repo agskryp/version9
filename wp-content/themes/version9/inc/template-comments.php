@@ -81,12 +81,12 @@ class version9_Walker_Comment extends Walker {
         break;
         
       case 'ol':
-        $output .= "</ol><!-- .children -->\n";
+        $output .= "</ol>\n";
         break;
       
       case 'ul':
         default:
-          $output .= "</ul><!-- .children -->\n";
+          $output .= "</ul>\n";
           break;
     }
   }
