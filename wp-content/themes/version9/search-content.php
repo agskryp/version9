@@ -12,7 +12,7 @@
   get_header();
 ?>
 
-<div>
+<div class="main-content-column">
   <main class="index-page-container">
     <header class="page-header">
       <h1 class="page-title">

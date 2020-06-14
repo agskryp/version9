@@ -1,70 +1,62 @@
-.main-search-form form {
-  margin: 0;
-  padding: 0;
-  display: none;
-  text-align: center;
-  background: $dark-green;
-  border: 1px solid $dark-5;
-  border-right: none;
-  @media all and ( min-width: $screen-md ) {
-    background: none; 
-    border: none;
-  }
-  
-  label { margin: 14px 0; }
-  
-  input {
-    background: $light-1;
-    border: 1px solid $dark-8;
-    padding: 4px 8px;
-    color: $white;
-    border-radius: 6px 0 0 6px;
-    &:focus {
-      outline: 1px dotted $white;     
-      color: $white;
-      background: $light-2;
+.main-search-form {
+  form {
+    display: none;
+    background: $dark-green;
+    border: 1px solid $dark-5;
+    border-right: none;
+    font-size: 16px;
+    @media all and ( min-width: $screen-md ) {
+      @include flex-center;
+      background: none; 
+      border: none;
     }
     
-    &:active {
-      color: $white;
-      background: $light-2;
-    }
+    label { margin: 14px 0; }
     
-    &::placeholder {
-      color: $light-4;
-    }
-  }
-  
-  input[ type=submit ] {
-    margin: 0 0 0 -1px;
-    border: none;
-    padding: 0 14px;
-    height: 34px;
-    border: 1px solid $dark-8;
-    background: $dark-8;
-    border-radius: 0 6px 6px 0;
-    cursor: pointer;
-    font-weight: 700;
-    text-transform: uppercase;
-    &:focus {
-      outline: 1px dotted $white;
+    input {
       background: $light-1;
+      border: 1px solid $dark-8;
+      padding: 4px 8px;
+      color: $white;
+      border-radius: 6px 0 0 6px;
+      
+      &:active,
+      &:focus {
+        color: $white;
+        background: $light-2;
+      }
+
+      &:focus { outline: 1px dotted $white; }
+      &::placeholder { 
+        font-family: 'Lato', sans-serif;
+        color: $light-4; 
+      }
     }
     
-    &:hover {
-      background: $light-1;
+    input[ type=submit ] {
+      margin: 0 0 0 -1px;
+      border: none;
+      padding: 0 14px;
+      height: 34px;
+      border: 1px solid $dark-8;
+      background: $dark-8;
+      font-size: 14px;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+      font-weight: 700;
+      text-transform: uppercase;
+      
+      &:hover,
+      &:focus {
+        background: $light-1;
+      }
+
+      &:focus { outline: 1px dotted $white; }
     }
   }
-}
 
-.main-search-form.toggled form {
-  @include flex-center;
-  clear: both;
-}
-
-
-@media screen and ( min-width: $screen-md ) {  
-  .main-search-form form {
+  &.toggled form {
     @include flex-center;
+    clear: both;
   }
 }

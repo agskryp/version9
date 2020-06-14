@@ -1,18 +1,3 @@
-@mixin global-ad-settings( $heading, $link-color ) {
-  content: $heading;
-  font-size: 50%;
-  display: block;
-  color: $link-color;
-  position: absolute;
-  text-align: center;
-  left: 0;
-  right: 0;
-  top: -12px;
-  @media all and ( min-width: $screen-md ) {
-    top: -15px;
-  }
-}
-
 .ad-container {
   clear: both;
   position: relative;
@@ -26,7 +11,17 @@ ins.adsbygoogle,
   position: relative;
 
   &::before {
-    @include global-ad-settings( "Advertisement by Google", $white );
+    content: "Advertisement by Google";
+    font-size: 50%;
+    display: block;
+    color: $white;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: -12px;
+    @media all and ( min-width: $screen-md ) {
+      top: -15px;
+    }
   }
 }
-
