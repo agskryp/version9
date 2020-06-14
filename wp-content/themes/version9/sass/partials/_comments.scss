@@ -1,75 +1,77 @@
-.comment-content a {
-  word-wrap: break-word;
-}
-
-.bypostauthor {
-  display: block;
-}
-
 .comments-area {
   max-width: 600px;
   margin: 0 auto 28px;
   background: $dark-3;
-  padding: 28px 0 0;
+  padding: 28px 0;
   border-radius: 6px;
   border: 1px solid $dark-1;
   font-size: 14px;
   @media all and ( min-width: $screen-sm ) {
     font-size: 16px;
   }
-   @media all and ( min-width: $screen-xxl ) {
+
+  @media all and ( min-width: $screen-xxl ) {
     max-width: 970px;
   }
 
-  .comments-title {
-    padding: 0 28px 28px;
-    margin: 0;
-  }
+  .comments-title { margin: 0 28px 28px; }
 
   .comment-list {
     padding: 0;
     list-style: none;
     margin: 0 0 28px;
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid $light-4;
   }
 
   .comment {
-    padding: 28px 28px 0;
-    border-top: 1px solid $white;
+    padding: 28px;
+    border-top: 1px solid $light-4;
   }
 
   .children {
     list-style: none;
     background: $dark-3;
-    padding-left: 0.5em;
-    margin: 0 -( 7px * 2 ) 28px;
-    border: 1px solid $dark-1;
+    margin-top: 28px;
+    padding: 0;
     border-radius: 6px;
 
+    .comment-body {
+      padding: 28px;
+    }
+
     .comment {
-      padding: 28px ( 7px * 2 ) 0;
+      padding: 0;
+      border: none;
     }
 
     .children {
+      border-top: 1px solid $white;
       background: none;
-      margin: 0 0 0 -0.5em;
-      border: none;
-
-      .comment {
-        padding: 0;
-      }
-
-      .comment-body {
-        padding-top: 28px;
-      }
+      border-radius: 0;
+      margin: 0;
     }
   }
 
+
+
+
+
+
+  
+
+
+
+
+
+
+  
   .comment-meta {
     display: flex;
 
     .vcard {
-      margin: 0 ( 7px * 2 ) ( 7px * 2 ) 0;
+      margin: 0 14px 28px 0;
+      max-width: 64px;
+      max-height: 64px;
     }
 
     .comment-author {
@@ -83,7 +85,7 @@
   }
 
   .reply {
-    padding-bottom: 28px;
+    // padding-bottom: 28px;
   }
 
   .comment-content {
@@ -116,7 +118,7 @@
   }
 
   .comment-respond {
-    padding: 0 28px;
+    padding: 28px 0 0;
 
     .logged-in-as a:last-of-type {
       margin-left: .5em;
@@ -192,4 +194,12 @@
     text-transform: uppercase;
     font-weight: 700;
   }
+}
+
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.bypostauthor {
+  display: block;
 }

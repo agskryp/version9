@@ -7,7 +7,7 @@
 ?>
 
 <div id="comments" class="comments-area">
-  <?php if( have_comments() ) : ?>
+  <?php if( have_comments() ) { ?>
     <h2 class="comments-title text-center">Comments</h2>
 
     <?php the_comments_navigation(); ?>
@@ -35,7 +35,7 @@
 
     <?php
       }
-    endif; // Check for have_comments().
+    }
 
     comment_form();
   ?>
