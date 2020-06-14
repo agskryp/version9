@@ -51,7 +51,7 @@
   }
   
   @media all and ( min-width: 590px ) {
-    @include flex;
+    display: flex;
   }
   
   @media all and ( min-width: $screen-md ) {
@@ -169,7 +169,7 @@
 }
 
 .site-branding {
-  @include flex;
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
