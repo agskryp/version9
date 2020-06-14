@@ -201,10 +201,10 @@ class version9_Walker_Comment extends Walker {
     }
     
     if ( 'div' == $args[ 'style' ] )
-      $output .= "</div><!-- #comment-## -->\n";
+      $output .= "</div>\n";
     
     else
-      $output .= "</li><!-- #comment-## -->\n";
+      $output .= "</li>\n";
   }
 
   /**
