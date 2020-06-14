@@ -21,6 +21,10 @@
     list-style: none;
     margin: 0 0 28px;
     border-bottom: 1px solid $light-4;
+
+    .comment-respond { 
+      padding: 28px 0 0;
+    }
   }
 
   .comment {
@@ -45,25 +49,16 @@
     }
 
     .children {
-      border-top: 1px solid $light-4;
+      border-top: 1px solid $light-2;
       background: none;
       border-radius: 0;
       margin: 0;
     }
+
+    .comment-respond { 
+      padding: 0 14px 28px;
+    }
   }
-
-
-
-
-
-
-  
-
-
-
-
-
-
 
   .comment-meta {
     display: flex;
@@ -84,122 +79,73 @@
     }
   }
 
-  .reply {
-    // padding-bottom: 28px;
-  }
-
-  .comment-content {
-    ol, ul {
-      margin-bottom: 28px;
-    }
-
-    ol ol,
-    ol ul,
-    ul ol,
-    ul ul {
-      margin-bottom: 0;
-    }
-  }
-
   .pingback {
     padding: 28px;
-    border-top: 1px solid $white;
+    border-top: 1px solid $light-4;
     font-weight: bold;
 
     a {
       font-weight: normal;
-      margin-left: .5em;
+      margin-left: 7px;
     }
 
-    .edit-link {
-      float: right;
-      margin: 0;
-    }
+    .edit-link { float: right; }
   }
 
   .comment-respond {
-    padding: 28px 0 0;
+    padding: 0 28px;
 
-    .logged-in-as a:last-of-type {
-      margin-left: .5em;
+    .logged-in-as a:last-of-type { float: right; }
+
+    .comment-reply-title {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      a { font-size: 80%; }
     }
 
     textarea {
       background: $light-1;
       border: 1px solid $dark-8;
       color: $white;
+
       &:focus {
         outline: 1px dotted $white;
         background: $light-2;
       }
     }
 
-    .submit {
+    .form-submit {
       margin: 0;
-      padding: 0 ( 7px * 2 );
-      height: 34px;
-      margin-left: -1px;
-      border: 1px solid $dark-8;
-      background: $dark-8;
-      color: $white;
-      cursor: pointer;
-      &:hover {
-        background: $light-1;
+
+      .submit {
+        padding: 0 14px;
+        border: 1px solid $dark-8;
+        background: $dark-8;
+        color: $white;
+        cursor: pointer;
+
+        &:hover { background: $light-1; }
+        &:focus { outline: 1px dotted $white; }
+      }
+
+      input {
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  
+    .comment-form-cookies-consent {    
+      input {
+        margin-right: 7px;
+        width: auto;
       }
       
-      &:focus {
-        outline: 1px dotted $white;
+      label {
+        font-size: 80%;
+        display: inline-block;
       }
     }
   }
-
-  .no-comments {
-    border-top: 1px solid $white;
-    padding-top: 28px;
-    margin-bottom: 28px;
-  }
-  
-  .comment-form-author,
-  .comment-form-email,
-  .comment-form-url,
-  .comment-form-cookies-consent {    
-    label {
-      display: block;
-      margin: 0;
-    }
-    
-    input {
-      background: $light-1;
-      border: 1px solid $dark-8;
-      color: $white;
-      &:focus {
-        outline: 1px dotted $white;
-        background: $light-2;
-      }
-    }
-  }
-  
-  .comment-form-cookies-consent {    
-    input {
-      margin-right: 7px;
-    }
-    
-    label {
-      font-size: 80%;
-      display: inline-block;
-    }
-  }
-  
-  .form-submit input {
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-}
-
-.comment-content a {
-  word-wrap: break-word;
-}
-
-.bypostauthor {
-  display: block;
 }
