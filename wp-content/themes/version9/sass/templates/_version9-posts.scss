@@ -1,8 +1,11 @@
-.portfolio-post-container {
+.version9-post-container {
   h2 { clear: none; }
   ul { clear: both; }
 
-  img {
+  a img {
+    margin: 28px auto;
+    display: block;
+
     &:hover,
     &:focus {
       opacity: .8;
@@ -29,9 +32,6 @@
         display: inline;
       }
     }
-
-    &.desktop { margin: 0 auto 28px; }
-    &.laptop { margin: 28px auto 0; }
   }
   
   .screen-shot {

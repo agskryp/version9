@@ -14,7 +14,7 @@
 ?>
 
 <div>
-  <main class="portfolio-post-container">
+  <main class="version9-post-container">
     <?php
       while( have_posts() ) {
         the_post();

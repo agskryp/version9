@@ -43,13 +43,11 @@
           button.text = buttonText;
   
           if( current_page > max_page ) {
-            console.log( 'hide button because value is greater' );
             container.style.display = 'none'; // if last page
           }
         }
         
         else {
-          console.log( 'hide button because no data' );
           container.style.display = 'none'; // if no data
         }
       }
