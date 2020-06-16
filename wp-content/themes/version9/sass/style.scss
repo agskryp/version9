@@ -12,7 +12,6 @@
 
 
 // Common
-@import "common/global";
 @import "common/utilities";           // Checked
 
 
@@ -33,5 +32,5 @@
 // Templates
 @import "templates/front-page";
 @import "templates/portfolio-page";   // Checked
-// @import "templates/version9-pages";
+@import "templates/version9-pages";   // Checked
 @import "templates/version9-posts";   // Checked

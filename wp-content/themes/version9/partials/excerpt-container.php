@@ -2,7 +2,7 @@
   <header class="excerpt-header">
     <?php
       if( !empty( get_the_category_list( ', ' ) ) ) {
-        echo '<div class="category-container">' . get_the_category_list( ', ' ) . '</div>';
+        echo '<div class="excerpt-category">' . get_the_category_list( ', ' ) . '</div>';
       }
     ?>
 
