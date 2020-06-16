@@ -7,7 +7,7 @@
 ?>
 
 <div class="main-content-column">
-  <main class="index-page-container">
+  <main class="version9-page-container">
     <header class="page-header">
       <h1 class="page-title">Nothing Found</h1>
     </header>

@@ -28,7 +28,7 @@
           <?php the_content(); ?>
     
           <div class="text-center">
-            <p class="screen-shot">All screen shots were captured on  <?php echo $screenshot_date; ?></p>
+            <p class="screen-shot">All screen shots were captured on <?php echo $screenshot_date; ?></p>
 
             <a target="_blank" rel="noopener" href="<?php echo $project_url; ?>">
               <strong>Click here to view <?php echo get_the_title(); ?></strong>

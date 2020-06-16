@@ -17,17 +17,18 @@
       <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
     </header>  
 
-    <div class="portfolio-post-list">
+    <div class="text-center">
       <?php
         while( have_posts() ) {
           the_post();
-      ?>            
-        <a class="entry-content" href="<?php echo get_permalink(); ?>">
-          <?php the_post_thumbnail( 'medium' ); ?>
 
-          <h2 class="entry-title"><?php the_title(); ?></h2>
-        </a>
-      <?php } ?>  
+          echo '<a class="portfolio-item-container" href="' . get_permalink() . '">'; 
+            the_post_thumbnail( 'small' ); 
+
+            echo '<h2>' . get_the_title() . '</h2>';
+          echo '</a>';
+        }
+      ?>  
     </div>
   </main>
 

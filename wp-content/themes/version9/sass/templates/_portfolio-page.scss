@@ -1,9 +1,5 @@
 .portfolio-page-container {
-  .portfolio-post-list {
-    text-align: center;
-  }
-  
-  .entry-content {
+   .portfolio-item-container {
     background: $dark-3;
     padding: 28px;
     border-radius: 6px;
@@ -28,11 +24,11 @@
       object-fit: contain;
     }
 
-    .entry-title {
+    h2 {
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 16px;
-      margin: 10px 0 0;
+      font-size: 18px;
+      margin: 7px 0 0;
     }
   }
 }
