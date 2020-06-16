@@ -1,23 +1,17 @@
 .page-header {
   text-align: center;
   padding: 56px 0;
+
+  .page-title {
+    line-height: 1;
+    font-weight: 100;
+    max-width: 850px;
+    margin: 0 auto;
+    word-wrap: break-word;
+  }
 }
 
-.page-title {
-  line-height: 1;
-  font-weight: 100;
-  max-width: 850px;
-  margin: 0 auto;
-  word-wrap: break-word;
-}
-
-.page-meta {
-  font-size: 80%;
-  margin-top: 14px;
-  font-weight: bold;
-}
-
-.page-content {
+.full-content {
   max-width: 600px;
   margin: 0 auto 28px;
   background: $dark-3;
@@ -32,4 +26,17 @@
     margin-bottom: 14px;
     line-height: 1.3;
   }
+}
+
+.load-more-container {
+  margin: 56px 0;
+  font-weight: bold;
+}
+
+.main-content-column {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main { flex-grow: 2; }
 }

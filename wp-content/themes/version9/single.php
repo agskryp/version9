@@ -27,7 +27,7 @@
         <header class="page-header">
           <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 
-          <div class="page-meta">
+          <div class="meta-container">
             <?php
               echo 'Posted <a href="' . get_permalink() . '" rel="bookmark">' . $posted_date . '</a> in ' . get_the_category_list( esc_html__( ', ' ) );
             
@@ -36,7 +36,7 @@
           </div>
         </header>
 
-        <div class="page-content"> 
+        <div class="full-content"> 
           <?php the_content(); ?>
         </div>
       </article>

@@ -12,7 +12,7 @@
       <h1 class="page-title">Nothing Found</h1>
     </header>
 
-    <div class="page-content">
+    <div class="full-content">
       <p>Sorry, there is nothing related to your search term.</p>
 
       <p>Use the navigation menu to start at something more general,</p>

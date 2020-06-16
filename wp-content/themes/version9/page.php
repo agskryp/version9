@@ -17,7 +17,7 @@
           <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
         </header>
 
-        <div class="page-content">
+        <div class="full-content">
           <?php the_content(); ?>
         </div>
       </article>

@@ -12,7 +12,7 @@
       <h1 class="page-title">This page can't be found!</h1>
     </header>
     
-    <div class="page-content">
+    <div class="full-content">
       <p>Not all roads lead to Rome, this one lead to a 404 page.</p>
       
       <p>Use the navigation menu to go to a more general page.</p>
