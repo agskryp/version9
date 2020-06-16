@@ -1,0 +1,25 @@
+.page-footer-navigation  {
+  max-width: 600px;
+  // width: 100%;
+  margin: 56px auto;
+  font-weight: bold;
+  overflow: hidden;
+  @media all and ( min-width: $screen_xxl ) {
+    max-width: 970px;
+  }
+
+  small {
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  .nav-next,
+  .nav-previous {
+    width: 48%;
+
+    a {
+      display: inline-block;
+      line-height: 1.1;
+    }
+  }
+}

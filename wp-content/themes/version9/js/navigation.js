@@ -6,7 +6,7 @@
  */
 
 ( function() {
-  console.log( 'doop' );
+  
   // Declare variables
   var searchContainer = document.getElementById( 'site-search' );
   var navContainer = document.getElementById( 'main-navigation' );

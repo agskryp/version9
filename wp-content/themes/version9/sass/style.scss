@@ -16,17 +16,15 @@
 @import "common/utilities";           // Checked
 
 
-// Component
-@import "components/footer";          // Checked
-@import "components/header";
-
-
 // Extensions
 @import "extension/ads";              // Checked
 
 
 // Partials
 @import "partials/comments";          // Checked
+@import "partials/footer";            // Checked
+@import "partials/header";
+@import "partials/page-footer";
 @import "partials/searchform";        // Checked
 @import "partials/social-links";      // Checked
 

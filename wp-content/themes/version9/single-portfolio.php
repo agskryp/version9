@@ -37,7 +37,7 @@
         </div>
       </article>
 
-      <nav class="footer-page-navigation">
+      <nav class="page-footer-navigation">
         <div class="nav-previous">
           <a href="<?php echo AG_PORTFOLIO; ?>">&larr; Back to Portfolio</a>
         </div>      

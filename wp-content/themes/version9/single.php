@@ -9,11 +9,11 @@
   $updated_date = get_the_modified_time( 'F jS, Y' );
   
   $previous = get_previous_post_link(
-    '<div class="nav-previous"><small>View an older post</small>%link</div>', '&larr; %title'
+    '<div class="nav-previous float-left"><small>View an older post</small>%link</div>', '&larr; %title'
   );
 
   $next = get_next_post_link(
-    '<div class="nav-next"><small>View a newer post</small>%link</div>', '%title &rarr;'
+    '<div class="nav-next float-right text-right"><small>View a newer post</small>%link</div>', '%title &rarr;'
   );
 ?>
 
@@ -53,7 +53,7 @@
       <?php
         if( comments_open() || get_comments_number() ) comments_template();
 
-        if( $previous || $next ) echo '<nav class="footer-page-navigation">' . $previous . $next . '</nav>';
+        if( $previous || $next ) echo '<nav class="page-footer-navigation">' . $previous . $next . '</nav>';
       }
     ?>
   </main>
