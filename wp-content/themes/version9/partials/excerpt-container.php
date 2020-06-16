@@ -1,10 +1,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'page-content' ); ?>>
   <header class="entry-header">
-    <?php if( !empty( get_the_category_list( ', ' ) ) ) { ?>
-      <div class="entry-meta">
-        <?php echo get_the_category_list( ', ' ); ?>
-      </div>
-    <?php } ?>
+    <?php
+      if( !empty( get_the_category_list( ', ' ) ) ) {
+        echo '<div class="category-container">' . get_the_category_list( ', ' ) . '</div>';
+      }
+    ?>
 
     <h2 class="entry-title">
       <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
