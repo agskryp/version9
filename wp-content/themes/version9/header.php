@@ -65,4 +65,4 @@
       </nav>
     </header>
 
-    <div id="content" class="content-container col-12 col-md-8 offset-md-4 col-lg-9 offset-lg-3">
+    <div id="content" class="main-content-container col-12 col-md-8 offset-md-4 col-lg-9 offset-lg-3">

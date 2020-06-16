@@ -7,12 +7,12 @@
 ?>
 
 <div class="main-content-column">
-  <main class="version9-page-container">
+  <main>
     <header class="page-header">
       <h1 class="page-title">This page can't be found!</h1>
     </header>
     
-    <div class="full-content">
+    <div class="content-container">
       <p>Not all roads lead to Rome, this one lead to a 404 page.</p>
       
       <p>Use the navigation menu to go to a more general page.</p>

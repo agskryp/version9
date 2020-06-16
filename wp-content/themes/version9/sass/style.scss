@@ -22,6 +22,7 @@
 
 // Partials
 @import "partials/comments";          // Checked
+@import "partials/excerpts";          // Checked
 @import "partials/footer";            // Checked
 @import "partials/header";
 @import "partials/page-footer";       // Checked
@@ -32,5 +33,5 @@
 // Templates
 @import "templates/front-page";
 @import "templates/portfolio-page";   // Checked
-@import "templates/version9-pages";
+// @import "templates/version9-pages";
 @import "templates/version9-posts";   // Checked

@@ -36,7 +36,7 @@
           </div>
         </header>
 
-        <div class="full-content"> 
+        <div class="content-container">
           <?php the_content(); ?>
         </div>
       </article>

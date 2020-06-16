@@ -1,5 +1,5 @@
-.version9-page-container {
-  .entry-header {
+.excerpt-list-container {
+  .excerpt-header {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     border-bottom: 1px solid $dark-3;
@@ -16,13 +16,13 @@
     }
   }
   
-  .entry-title {
+  .excerpt-title {
     font-weight: 700;
     line-height: 1;
     word-wrap: break-word;
   }
 
-  .entry-content {
+  .excerpt-content {
     margin: 14px 0 0;
 
     p { margin: 0; }

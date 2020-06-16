@@ -24,7 +24,7 @@
           <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
         </header>
 
-        <div class="full-content"> 
+        <div class="content-container"> 
           <?php the_content(); ?>
     
           <div class="text-center">

@@ -7,12 +7,12 @@
 ?>
 
 <div class="main-content-column">
-  <main class="version9-page-container">
+  <main>
     <header class="page-header">
       <h1 class="page-title">Nothing Found</h1>
     </header>
 
-    <div class="full-content">
+    <div class="content-container">
       <p>Sorry, there is nothing related to your search term.</p>
 
       <p>Use the navigation menu to start at something more general,</p>
