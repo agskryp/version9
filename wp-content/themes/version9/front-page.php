@@ -12,7 +12,24 @@
 <div id="page" class="homepage-screen">
   <div id="primary" class="content-area front-page-loading">
     <header>
-      <?php require get_template_directory() . '/partials/site-branding.php'; ?>
+    <div class="site-branding">
+  
+    <h1 class="site-title">
+      <span class="site-title-top">Andrew</span>
+
+      <span class="site-title-bottom">Skrypnyk</span>
+    </h1>
+  
+    <div class="site-description">
+      <h2 class="text-center">
+        <span>Web Design</span>
+
+        <span>&amp; Development</span>
+      </h2>
+    </div>
+  
+</div>
+
     </header>
 
     <main id="main" class="site-main" role="main">

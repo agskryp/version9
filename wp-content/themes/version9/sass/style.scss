@@ -3,16 +3,13 @@
 @import "_initialize/mixins";         // Checked
 @import "_initialize/normalize";      // Checked
 @import "_initialize/bootstrap-grid"; // Checked
+@import "_initialize/utilities";      // Checked
 
 
 // Site Elements
 @import "elements/elements";          // Checked
 @import "elements/typography";        // Checked
 @import "elements/form";              // Checked
-
-
-// Common
-@import "common/utilities";           // Checked
 
 
 // Extensions
@@ -24,6 +21,7 @@
 @import "partials/excerpts";          // Checked
 @import "partials/footer";            // Checked
 @import "partials/header";
+@import "partials/navigation";
 @import "partials/page-footer";       // Checked
 @import "partials/searchform";        // Checked
 @import "partials/social-links";      // Checked

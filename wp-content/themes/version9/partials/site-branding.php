@@ -13,11 +13,5 @@
         <span>&amp; Development</span>
       </h2>
     </div>
-  <?php 
-    }
-  
-    else {
-  ?>
-
   <?php } ?>
 </div>
