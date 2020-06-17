@@ -54,7 +54,7 @@
     }
   }
   
-  .site-description {
+  .occupation-title {
     margin: 0;
     padding: 0;
     display: block;
@@ -71,8 +71,6 @@
     }
     
     h2 {
-      font-weight: bold;
-      line-height: 0.9;
       font-size: 1.1em;
       margin: 0;
       @media all and ( min-width: $screen-xs ) {

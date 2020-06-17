@@ -1,10 +1,11 @@
 .site-navigation {
-  max-width: 320px;
-  width: 100%;
-  position: absolute;
-  right: 0;
+  // max-width: 320px;
+  // width: 100%;
+  // position: absolute;
+  // right: 0;
+  // top: 0;
   z-index: 6;
-  margin-top: -44px;
+  // margin-top: 0;
   @media all and ( min-width: $screen-md ) {
     margin-top: 0;
     position: relative;
@@ -23,13 +24,30 @@
       margin-right: 7px;
     }
   }
+
+  .social-links {
+    display: none;
+
+    @media all and ( min-width: 360px ) {
+      display: block;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+
+      a {
+        margin: 0 16px;
+        display: flex;
+        height: 52px;
+        align-items: center;
+      }
+    }
+  }
 }
 
 .main-nav-button {
   display: inline-flex;
   flex-direction: column-reverse;
   float: right;
-  margin-top: -60px;
 }
 
 
@@ -45,7 +63,7 @@
   border-right: none;
   border-radius: 0;
   float: right;
-  margin: 0 2px;
+  // margin: 0 2px;
   text-transform: uppercase;
   cursor: pointer;
   padding: 14px;

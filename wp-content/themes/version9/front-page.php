@@ -14,14 +14,13 @@
     <header>
     <div class="site-branding">
   
-    <h1 class="site-title">
-      <span class="site-title-top">Andrew</span>
-
-      <span class="site-title-bottom">Skrypnyk</span>
+    <h1 class="full-name-container">
+      <span class="given-name">Andrew</span>
+      <span class="sur-name">Skrypnyk</span>
     </h1>
   
-    <div class="site-description">
-      <h2 class="text-center">
+    <div class="occupation-animation occupation-title">
+      <h2 class="text-center font-weight-bold">
         <span>Web Design</span>
 
         <span>&amp; Development</span>

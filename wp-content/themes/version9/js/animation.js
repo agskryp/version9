@@ -9,26 +9,26 @@
   /**
    * @param TweenMax.method( "target", speed, { settings }, delay between elements );
    */
-  TweenMax.from( ".site-title-top", 2, {
+  TweenMax.from( ".given-name", 2, {
     paddingLeft: "1em",
     opacity: 0,
     ease: Power1.easeInOut
   } );
 
-  TweenMax.from( ".site-title-bottom", 2, {
+  TweenMax.from( ".sur-name", 2, {
     paddingRight: "1em",
     opacity: 0,
     ease: Power1.easeInOut
   } );
 
-  TweenMax.staggerFrom( ".site-description span", 1, {
+  TweenMax.staggerFrom( ".occupation-title span", 1, {
     bottom: "1em",
     opacity: 0,
     delay: 1.8
   }, .4 );
   
   if( window.innerWidth >= 768 ) {  
-    TweenMax.from( ".site-description", 3, {
+    TweenMax.from( ".occupation-title", 3, {
       borderLeft: "2px solid",
       opacity: 0,
       delay: 2
