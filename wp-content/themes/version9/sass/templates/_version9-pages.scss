@@ -11,6 +11,14 @@
   }
 }
 
+.main-content-column {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main { flex-grow: 2; }
+}
+
 .content-container {
   max-width: 600px;
   margin: 0 auto 28px;
@@ -31,12 +39,4 @@
 .load-more-container {
   margin: 56px 0;
   font-weight: bold;
-}
-
-.main-content-column {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  main { flex-grow: 2; }
 }

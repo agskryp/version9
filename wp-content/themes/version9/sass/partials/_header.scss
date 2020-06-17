@@ -72,41 +72,30 @@
 
 
 
+
+
+
 .site-header {
+  background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
+  background-size: cover;
+  background-color: $dark-green;
   position: fixed;
   z-index: 6;
-  display: block;
-  background: $green;
-  padding: 28px 0 0;
+  padding: 0;
   border-right: none;
   border-bottom: 1px solid $dark-8;
   @media all and ( min-width: $screen-md ) {
     @include flex-center();
     border-right: 1px solid $dark-3;
-    background: $dark-3;
+    // background: $dark-3;
     flex-direction: column;
-    padding: 0;
     height: 100%;
   }
   
   @media all and ( max-height: $screen-xs ) and ( min-width: $screen-md ) {
     overflow-y: scroll;
   }
-  
-  a {
-    color: $white;
-    font-weight: 100;
-    &:hover {
-      text-decoration: none;
-    }
-  }
 }
-
-
-
-
-
-
 
 .main-content-container {
   margin-top: 105px;
