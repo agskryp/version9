@@ -5,21 +5,22 @@
 
   require get_template_directory() . '/partials/doctype.php';
 ?>
+
 <div class="container-fluid">
   <div class="row">
     <a class="screen-reader-text" href="#content">Skip to content</a>
 
     <header class="site-header col-12 col-md-4 col-lg-3">
-      <div style="width: 100%;  height: 100%; background: rgba( 0, 0, 0, 0.3 ); z-index: 0; position: absolute; top: 0; left: 0;"></div>
+      <div class="header-background-overlay"></div>
 
-      <div style="position: relative; z-index: 2; width: 100%; height: 100%; display: flex; align-items: center;">
-        <div style="margin-bottom: 7px; margin-left: 21px; flex-grow: 3;">
-        <a class="full-name-container" href="<?php echo home_url(); ?>">
-          <span>Andrew</span>
-          <span>Skrypnyk</span>
-        </a>
+      <div class="header-content-container">
+        <div class="title-container">
+          <a class="full-name-container" href="<?php echo home_url(); ?>">
+            <span>Andrew</span>
+            <span>Skrypnyk</span>
+          </a>
       
-        <div class="occupation-animation occupation-title text-center font-weight-bold">
+        <div class="occupation-animation occupation-container text-center font-weight-bold" style="">
           <span>Web Design</span>
           <span>&amp; Development</span>
         </div>  

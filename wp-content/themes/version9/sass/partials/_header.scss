@@ -1,44 +1,4 @@
-
-.occupation-title {
-  font-size: 25px;
-  padding-left: 0;
-  border-left: none;
-  margin-left: 0;
-  display: none;
-  margin-bottom: 28px;
-
-  
-  @media all and ( min-width: 520px ) {
-    margin-left: 28px;
-    border-left: 2px solid $white;
-    padding-left: 28px;
-  }
-  
-  @media all and ( min-width: 590px ) {
-    display: flex;
-  }
-  
-  @media all and ( min-width: $screen-md ) {
-    display: block;
-    margin-left: 0;
-    border-left: none;
-    padding-left: 0;
-  }
-  
-  @media all and ( min-width: $screen-xxl ) {
-    font-size: 33px;
-  }
-  
-  span { display: block; }
-}
-
-
-
-
-
-
-
-//////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 .site-header {
   background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
   background-size: cover;
@@ -46,20 +6,121 @@
   position: fixed;
   z-index: 6;
   padding: 0;
-  border-right: none;
+  // border-right: none;
   border-bottom: 1px solid $dark-8;
-  height: 104px;
-  @media all and ( min-width: $screen-md ) {
-    @include flex-center();
-    flex-direction: column;
-    border-right: 1px solid $dark-3;
-    height: 100%;
-  }
+  // height: 104px;
+
+  // @media all and ( min-width: $screen-md ) {
+  //   @include flex-center();
+  //   flex-direction: column;
+  //   border-right: 1px solid $dark-3;
+  //   height: 100%;
+  // }
   
-  @media all and ( max-height: $screen-xs ) and ( min-width: $screen-md ) {
-    overflow-y: scroll;
+  // @media all and ( max-height: $screen-xs ) and ( min-width: $screen-md ) {
+  //   overflow-y: scroll;
+  // }
+
+
+  .header-background-overlay {
+    width: 100%;
+    height: 100%;
+    background: $dark-3;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
+
+  .header-content-container {
+    position: relative;
+    z-index: 2;
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .title-container {
+      margin-left: 21px;
+      flex-grow: 3;
+      display: flex;
+      align-items: center;
+
+      .full-name-container {
+        font-size: 50px;
+        line-height: 0.5;
+        font-weight: 100;
+        color: $white;
+        // display: block;
+        // text-align: center;
+        // margin: 22px;
+        // @media all and ( min-width: $screen-md ) {
+        //   margin: 0 0 28px;
+        // }
+      
+        // @media all and ( min-width: $screen-xxl ) {
+        //   font-size: 70px;
+        // }
+      
+        &:hover,
+        &:focus {
+          // color: $white;
+          opacity: 0.7;
+        }
+        
+        
+        span {
+          display: block;
+          // margin-left: -47px;
+          
+          &:last-of-type {
+            margin-left: 22px;
+            // @media all and ( min-width: $screen-xxl ) {
+            //   margin-left: 31px;
+            // }
+          }
+        }
+      }
+
+      .occupation-container {
+        font-size: 28px;
+        display: none;        
+        // margin-bottom: 0;
+        margin-left: 28px;
+        border-left: 2px solid $light-4;
+        padding-left: 28px;
+  
+        
+        @media all and ( min-width: $screen-sm ) {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        // @media all and ( min-width: $screen-md ) {
+        //   display: block;
+        //   margin-left: 0;
+        //   border-left: none;
+        //   padding-left: 0;
+        // }
+        
+        // @media all and ( min-width: $screen-xxl ) {
+        //   font-size: 33px;
+        // }
+        
+        span { display: block; }
+      }
+    }
+  }
+
+
+
+
+
+
 }
+
+
+//////////////////////////
 
 .main-content-container {
   margin-top: 105px;
