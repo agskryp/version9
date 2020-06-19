@@ -36,6 +36,11 @@ img {
   max-width: 100%;
 }
 
+svg {
+  color: $white;
+  fill: $white;
+}
+
 a {
   color: $blue;
   text-decoration: none; 
