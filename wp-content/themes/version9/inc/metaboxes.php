@@ -2,17 +2,17 @@
 
 // $theme = wp_get_theme();
 
-// function static_blog_page() {
-//   $blog_page_URL = get_post_type_archive_link( 'post' );
-//   $blog_page_ID  = url_to_postid( $blog_page_URL );
-//   $post_id       = intval( $_GET[ 'post' ] );
+function static_blog_page() {
+  $blog_page_URL = get_post_type_archive_link( 'post' );
+  $blog_page_ID  = url_to_postid( $blog_page_URL );
+  $post_id       = intval( $_GET[ 'post' ] );
   
-//   if( $blog_page_ID === $post_id ) {
-//     return true;
-//   }
+  if( $blog_page_ID === $post_id ) {
+    return true;
+  }
   
-//   return false;
-// }
+  return false;
+}
 
 function portfolio_posts() {
   $cmb2 = new_cmb2_box( array(
@@ -50,3 +50,63 @@ function portfolio_posts() {
   ) );
 }
 add_action( 'cmb2_admin_init', 'portfolio_posts' );
+
+function front_page_menu() {
+  $cmb2 = new_cmb2_box( array(
+    'id'           => 'front_page_menu',
+    'title'        => 'Front Page Nav Menu',
+    'object_types' => array( 'page' ),
+    'show_on'      => array( 'key' => 'front-page', 'value' => '' ),
+    'context'      => 'normal',
+    'priority'     => 'high',
+    'show_names'   => true, // Show field names on the left
+    'cmb_styles'   => true, // false to disable the CMB stylesheet
+  ) );
+
+  $nav_menu_id = $cmb2 -> add_field( array(
+    'id'          => 'front_page_menu_group',
+    'type'        => 'group',
+    'options'     => array(
+      'group_title'       => 'Item {#}',
+      'add_button'        => 'Add Another Item',
+      'remove_button'     => 'Remove Item',
+      'sortable'          => true,
+    ),
+  ) );
+  
+  $cmb2 -> add_group_field( $nav_menu_id, array(
+    'name' => 'Icon',
+    'id'   => 'icon',
+    // 'desc' => 'ex. March 12th, 2019',
+    'type' => 'text'
+  ) );
+
+  $cmb2 -> add_group_field( $nav_menu_id, array(
+    'name' => 'Title',
+    'id'   => 'title',
+    // 'desc' => 'ex. agskryp.com',
+    'type' => 'text'
+  ) );
+
+  $cmb2 -> add_group_field( $nav_menu_id, array(
+    'name' => 'Content',
+    'id'   => 'content',
+    // 'desc' => 'ex. agskryp.com',
+    'type' => 'textarea_small'
+  ) );
+
+  $cmb2 -> add_group_field( $nav_menu_id, array(
+    'name' => 'Button Label',
+    'id'   => 'button_label',
+    // 'desc' => 'ex. agskryp.com',
+    'type' => 'text'
+  ) );
+
+  $cmb2 -> add_group_field( $nav_menu_id, array(
+    'name' => 'Button URL',
+    'id'   => 'button_url',
+    // 'desc' => 'ex. agskryp.com',
+    'type' => 'text_url'
+  ) );
+}
+add_action( 'cmb2_admin_init', 'front_page_menu' );
