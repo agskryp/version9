@@ -5,7 +5,7 @@
 
   get_header();
 
-  $posts_per_page = AG_PPP;
+  $posts_per_page = AG_posts_per_page;
   $category_name  = get_the_category()[0] -> category_nicename;
   $blog_posts     = new WP_Query( array(
     'post_status'    => 'publish',
@@ -18,7 +18,7 @@
   $blog_posts -> set( 'posts_per_page', $posts_per_page );
   $blog_posts -> query( $blog_posts -> query_vars );
 
-  $max_num_of_pages = $blog_posts -> max_num_pages - 1;
+  $max_number_of_pages = $blog_posts -> max_num_pages - 1;
 ?>
 
 <div>
@@ -47,7 +47,7 @@
         category-name='<?= $category_name ?>'
         current-page='1'
         action="loadblogposts"
-        max-pages='<?= $max_num_of_pages ?>'>Load more &darr;</a>
+        max-pages='<?= $max_number_of_pages ?>'>Load more &darr;</a>
     </div>    
   <?php } ?>
 

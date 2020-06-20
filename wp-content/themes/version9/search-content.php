@@ -5,9 +5,10 @@
 
   global $wp_query;
 
-  $search_value      = $wp_query -> query[ 's' ];
-  $number_of_results = $wp_query -> found_posts;
-  $posts_per_page    = AG_PPP;
+  $search_value        = $wp_query -> query[ 's' ];
+  $number_of_results   = $wp_query -> found_posts;
+  $max_number_of_pages = $wp_query -> max_num_pages - 1;
+  $posts_per_page      = AG_posts_per_page;
 
   get_header();
 ?>
