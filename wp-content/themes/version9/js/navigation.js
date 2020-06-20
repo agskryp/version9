@@ -8,17 +8,17 @@
 ( function() {
   
   // Declare variables
-  var searchContainer = document.getElementById( 'site-search' );
-  var navContainer = document.getElementById( 'main-navigation' );
+  var searchContainer  = document.getElementById( 'searchNavigation' );
+  var navContainer     = document.getElementById( 'mainNavigation' );
   var contentContainer = document.getElementById( 'content' );
-  var container = document.getElementById( 'site-navigation' );
+  var container        = document.getElementById( 'siteNavigation' );
+  var searchButton     = document.getElementById( 'searchButton' );
+  var button           = document.getElementById( 'menuButton' );
 
-  var searchButton = container.getElementsByTagName( 'button' )[1];
-  var button = container.getElementsByTagName( 'button' )[0];
   var searchForm = searchContainer.getElementsByTagName( 'form' )[0];
-  var menu = container.getElementsByTagName( 'ul' )[0];
-  var links = menu.getElementsByTagName( 'a' );
-  var len = links.length;
+  var menu       = container.getElementsByTagName( 'ul' )[0];
+  var links      = menu.getElementsByTagName( 'a' );
+  var len        = links.length;
   var i;
   
   // Because the navigation menu is created with wp_nav_menu(), use javascript to set aria-expanded to false

@@ -1,4 +1,4 @@
-<div class="main-search-form">
+<div id="searchNavigation" class="main-search-form">
   <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>" aria-expanded="false">
     <label>
       <span class="screen-reader-text">Search for:</span>
