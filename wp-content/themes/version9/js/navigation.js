@@ -26,9 +26,9 @@
   
   // check if the navigation menu has '.nav-menu',
   // if it doesn't add '.nav-menu' (important for the toggleFocus function)
-  if( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-    menu.classList.add( 'nav-menu' );
-  }  
+  // if( -1 === menu.className.indexOf( 'nav-menu' ) ) {
+  //   menu.classList.add( 'nav-menu' );
+  // }  
   
   // When executed, remove '.toggled' from search form container, set aria-expanded on the
   // search button and search form to false, and remove '.on' from the search button
@@ -70,7 +70,7 @@
   // If true, execute the toggleSearchOff function.
   // Else, execute the toggleSearchOn function
   searchButton.onclick = function() {
-    if( -1 !== searchContainer.className.indexOf( 'toggled' ) ) {
+    if( !searchContainer.className.indexOf( 'toggled' ) ) {
       toggleSearchOff();
     } 
     
@@ -106,32 +106,32 @@
   };
   
   // Sets or removes .focus class on an element
-  function toggleFocus() {
-    var self = this;
+  // function toggleFocus() {
+  //   var self = this;
 
-    // Move up through the ancestors of the current link until we hit .nav-menu
-    while( -1 === self.className.indexOf( 'nav-menu' ) ) {
+  //   // Move up through the ancestors of the current link until we hit .nav-menu
+  //   while( -1 === self.className.indexOf( 'nav-menu' ) ) {
       
-      // On li elements toggle the class .focus
-      if( 'li' === self.tagName.toLowerCase() ) {
-        if( -1 !== self.className.indexOf( 'focus' ) ) {
-          self.classList.remove( 'focus' );
-        } 
+  //     // On li elements toggle the class .focus
+  //     if( 'li' === self.tagName.toLowerCase() ) {
+  //       if( -1 !== self.className.indexOf( 'focus' ) ) {
+  //         self.classList.remove( 'focus' );
+  //       } 
         
-        else {
-          self.classList.add( 'focus' );
-        }
-      }
+  //       else {
+  //         self.classList.add( 'focus' );
+  //       }
+  //     }
 
-      self = self.parentElement;
-    }
-  }
+  //     self = self.parentElement;
+  //   }
+  // }
 
   // Each time a menu link is focused or blurred, toggle focus.
-  for( i = 0; i < len; i += 1 ) {
-    links[i].addEventListener( 'focus', toggleFocus, true );
-    links[i].addEventListener( 'blur', toggleFocus, true );
-  }
+  // for( i = 0; i < len; i += 1 ) {
+  //   links[i].addEventListener( 'focus', toggleFocus, true );
+  //   links[i].addEventListener( 'blur', toggleFocus, true );
+  // }
 
   // Toggles `focus` class to allow submenu access on tablets.
   ( function( container ) {
