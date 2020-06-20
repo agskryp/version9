@@ -47,17 +47,18 @@
       
           <?php require get_template_directory() . '/partials/social-links.php'; ?>
 
-          <div id="mainNavigation" class="main-navigation">
-            <?php
-              wp_nav_menu( array(
-                'theme_location' => 'header-main-menu',
-                'depth'          => 1,
-              ) );
-            ?>
-          </div>
+          <div class="navigation-container">
+            <div id="mainNavigation" class="main-navigation">
+              <?php
+                wp_nav_menu( array(
+                  'theme_location' => 'header-main-menu',
+                  'depth'          => 1,
+                ) );
+              ?>
+            </div>
 
-          <div >
-            <?php require get_template_directory() . '/searchform.php'; ?>
+            
+            <?php require get_template_directory() . '/searchform.php'; ?>          
           </div>
         </nav>
       </div>

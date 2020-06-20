@@ -60,6 +60,16 @@
       }
     }
   }
+
+  .navigation-container {
+    position: absolute;
+    right: 0;
+    width: 260px;
+    @media all and ( min-width: $screen-md ) {
+      position: relative;
+      width: auto;
+    }
+  }
   
   .social-links {
     display: none;
