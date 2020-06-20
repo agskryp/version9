@@ -17,9 +17,9 @@
 
   var searchForm = searchContainer.getElementsByTagName( 'form' )[0];
   var menu       = container.getElementsByTagName( 'ul' )[0];
-  var links      = menu.getElementsByTagName( 'a' );
-  var len        = links.length;
-  var i;
+  // var links      = menu.getElementsByTagName( 'a' );
+  // var len        = links.length;
+  // var i;
   
   // Because the navigation menu is created with wp_nav_menu(), use javascript to set aria-expanded to false
   menu.setAttribute( 'aria-expanded', 'false' );
@@ -70,39 +70,34 @@
   // If true, execute the toggleSearchOff function.
   // Else, execute the toggleSearchOn function
   searchButton.onclick = function() {
-    if( !searchContainer.className.indexOf( 'toggled' ) ) {
+    if( searchContainer.classList.contains( 'toggled' ) ) {
       toggleSearchOff();
+
+      return;
     } 
     
-    else {
-      toggleSearchOn();
-    }
+    toggleSearchOn();
   };
   
   // When the menu button is clicked, check if the navigation menu container has '.toggled'
   // If true, execute the toggleMenuOff function.
   // Else, execute the toggleMenuOn function
   button.onclick = function() {
-    if( -1 !== navContainer.className.indexOf( 'toggled' ) ) {
+    if( navContainer.classList.contains( 'toggled' ) ) {
       toggleMenuOff();
+
+      return;
     } 
     
-    else {
-      toggleMenuOn();
-    }
+    toggleMenuOn();
   };
   
   // When the body content container is clicked, check if the search form container
   // or the navigation menu container has '.toggled'.  If true, execute the 
   // toggleSearchOff or toggleMenuOff function respectively.
   contentContainer.onclick = function() {
-    if( -1 !== searchContainer.className.indexOf( 'toggled' ) ) {
-      toggleSearchOff();
-    }
-    
-    if( -1 !== navContainer.className.indexOf( 'toggled' ) ) {
-      toggleMenuOff();
-    }
+    toggleSearchOff();
+    toggleMenuOff();
   };
   
   // Sets or removes .focus class on an element
@@ -134,37 +129,37 @@
   // }
 
   // Toggles `focus` class to allow submenu access on tablets.
-  ( function( container ) {
-    var parentLink = container.querySelectorAll('.menu-item-has-children > a, .page_item_has_children > a');
-    var touchStartFn, i;
+  // ( function( container ) {
+  //   var parentLink = container.querySelectorAll('.menu-item-has-children > a, .page_item_has_children > a');
+  //   var touchStartFn, i;
 
-    if( 'ontouchstart' in window ) {
-      touchStartFn = function(e) {
-        var menuItem = this.parentNode;
-        var i;
+  //   if( 'ontouchstart' in window ) {
+  //     touchStartFn = function(e) {
+  //       var menuItem = this.parentNode;
+  //       var i;
 
-        if( !menuItem.classList.contains( 'focus' ) ) {
-          e.preventDefault();
+  //       if( !menuItem.classList.contains( 'focus' ) ) {
+  //         e.preventDefault();
           
-          for( i = 0; i < menuItem.parentNode.children.length; i += 1 ) {
-            if( menuItem === menuItem.parentNode.children[i] ) {
-              continue;
-            }
+  //         for( i = 0; i < menuItem.parentNode.children.length; i += 1 ) {
+  //           if( menuItem === menuItem.parentNode.children[i] ) {
+  //             continue;
+  //           }
             
-            menuItem.parentNode.children[i].classList.remove( 'focus' );
-          }
+  //           menuItem.parentNode.children[i].classList.remove( 'focus' );
+  //         }
           
-          menuItem.classList.add( 'focus' );
-        } 
+  //         menuItem.classList.add( 'focus' );
+  //       } 
         
-        else {
-          menuItem.classList.remove( 'focus' );
-        }
-      };
+  //       else {
+  //         menuItem.classList.remove( 'focus' );
+  //       }
+  //     };
 
-      for( i = 0; i < parentLink.length; i += 1 ) {
-        parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
-      }
-    }
-  } ( container ) );
+  //     for( i = 0; i < parentLink.length; i += 1 ) {
+  //       parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
+  //     }
+  //   }
+  // } ( container ) );
 } ) ();
