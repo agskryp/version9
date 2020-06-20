@@ -5,9 +5,7 @@
   position: fixed;
   z-index: 6;
   padding: 0;
-  // border-right: none;
   border-bottom: 1px solid $dark-5;
-  // height: 104px;
 
   @media all and ( min-width: $screen-md ) {
     @include flex-center();
@@ -19,7 +17,6 @@
   // @media all and ( max-height: $screen-xs ) and ( min-width: $screen-md ) {
   //   overflow-y: scroll;
   // }
-
 
   .header-background-overlay {
     width: 100%;
@@ -57,9 +54,6 @@
         line-height: 0.5;
         font-weight: 100;
         color: $white;
-        // display: block;
-        // text-align: center;
-        // margin: 22px;
         @media all and ( min-width: $screen-md ) {
           margin: 0 0 28px;
         }
@@ -70,14 +64,12 @@
       
         &:hover,
         &:focus {
-          // color: $white;
           opacity: 0.7;
         }
         
         
         span {
           display: block;
-          // margin-left: -47px;
           
           &:last-of-type {
             margin-left: 22px;
@@ -90,8 +82,7 @@
 
       .occupation-container {
         font-size: 28px;
-        display: none;        
-        // margin-bottom: 0;
+        display: none;
         margin-left: 28px;
         border-left: 2px solid $light-4;
         padding-left: 28px;

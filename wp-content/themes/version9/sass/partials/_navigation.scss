@@ -1,13 +1,4 @@
 .site-navigation {
-  // max-width: 320px;
-  // width: 100%;
-  // position: absolute;
-  // right: 0;
-  // top: 0;
-  // z-index: 6;
-  // margin-top: 0;
-  
-
   @media all and ( min-width: $screen-md ) {
     margin-top: 0;
     position: relative;
@@ -21,15 +12,10 @@
 
     button {
       @include flex-center;
-      /* box-sizing: border-box; */
-      /* height: 52px; */
       background: $dark-5;
-      /* color: #c3c3c3; */
       border: 1px solid $dark-8;
       border-bottom: none;
       border-right: none;
-      /* border-radius: 0; */
-      /* float: right; */
       text-transform: uppercase;
       cursor: pointer;
       padding: 14px;
@@ -41,13 +27,9 @@
       &:active,
       &.on {
         background: $light-1;
-        // border-color: $dark-8;
       }
       
-      &:focus {
-        // border-color: $dark-8;
-        outline: 1px dotted $white;
-      }
+      &:focus { outline: 1px dotted $white; }
     
       span {
         display: none;
@@ -62,6 +44,9 @@
   }
 
   .navigation-container {
+    background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
+    background-size: cover;
+    background-color: $dark-green;
     position: absolute;
     right: 0;
     width: 260px;
@@ -95,8 +80,6 @@
       }
     } 
   }
-
-
 }
 
 
@@ -106,14 +89,16 @@
 
 
 .main-navigation {
-  clear: both;
-  display: block;
-  background: $dark-green;
+  // background: url( 'assets/dark-site-background.jpg' ) no-repeat center center fixed;
+  // background-size: cover;
+  // background-color: $dark-green;
   border-left: 1px solid $dark-5;
   @media all and ( min-width: $screen-md ) {
     background: none; 
     border-left: none;
   }
+
+  &.toggled ul { display: block; }
 
   ul {
     display: none;
@@ -134,22 +119,13 @@
 
     a {
       display: block;
-      text-decoration: none;
       padding: 14px 0; 
       font-weight: 700;
       color: $white;
+
       &:hover {
         background: $light-1;
       }
     }
   }
 }
-
-
-/* Small menu. */
-.main-navigation.toggled ul {
-  display: block;
-  clear: both;
-}
-
-

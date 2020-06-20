@@ -48,7 +48,9 @@
           <?php require get_template_directory() . '/partials/social-links.php'; ?>
 
           <div class="navigation-container">
-            <div id="mainNavigation" class="main-navigation">
+            <div class="header-background-overlay"></div>
+            
+            <div id="mainNavigation" class="main-navigation" style="position: relative; z-index: 7;">
               <?php
                 wp_nav_menu( array(
                   'theme_location' => 'header-main-menu',
@@ -56,9 +58,8 @@
                 ) );
               ?>
             </div>
-
             
-            <?php require get_template_directory() . '/searchform.php'; ?>          
+            <?php require get_template_directory() . '/searchform.php'; ?>            
           </div>
         </nav>
       </div>

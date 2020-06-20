@@ -1,13 +1,16 @@
 .main-search-form {
+  position: relative;
+  z-index: 7;
+
   form {
     display: none;
-    background: $dark-green;
+    background: none;
     border: 1px solid $dark-5;
+    border-top: none;
     border-right: none;
     font-size: 16px;
     @media all and ( min-width: $screen-md ) {
       @include flex-center;
-      background: none; 
       border: none;
     }
     
