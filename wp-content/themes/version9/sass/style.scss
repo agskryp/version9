@@ -3,7 +3,7 @@
 @import "_initialize/mixins";         // Checked
 @import "_initialize/normalize";      // Checked
 @import "_initialize/bootstrap-grid"; // Checked
-@import "_initialize/global";      // Checked
+@import "_initialize/global";         
 @import "_initialize/utilities";      // Checked
 
 
@@ -21,8 +21,8 @@
 @import "partials/comments";          // Checked
 @import "partials/excerpts";          // Checked
 @import "partials/footer";            // Checked
-@import "partials/header";
-@import "partials/navigation";
+@import "partials/header";            // Checked
+@import "partials/navigation";        // Checked
 @import "partials/page-footer";       // Checked
 @import "partials/searchform";        // Checked
 @import "partials/social-links";      // Checked

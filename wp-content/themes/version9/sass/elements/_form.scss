@@ -15,7 +15,7 @@ textarea {
 
   &:focus,
   &:active {
-    outline: 1px dotted $white;     
+    outline: 1px dotted $light-4;     
     color: $white;
     background: $light-2;
   }
@@ -38,7 +38,7 @@ input[ type=submit ] {
   }
 
   &:focus {
-    outline: 1px dotted $white;
+    outline: 1px dotted $light-4;
   }
 }
 

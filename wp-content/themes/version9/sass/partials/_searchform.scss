@@ -29,7 +29,7 @@
         background: $light-2;
       }
 
-      &:focus { outline: 1px dotted $white; }
+      &:focus { outline: 1px dotted $light-4; }
       &::placeholder { 
         font-family: 'Lato', sans-serif;
         color: $light-4; 
@@ -54,7 +54,7 @@
         background: $light-1;
       }
 
-      &:focus { outline: 1px dotted $white; }
+      &:focus { outline: 1px dotted $light-4; }
     }
   }
 

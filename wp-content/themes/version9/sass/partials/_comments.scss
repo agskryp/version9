@@ -111,7 +111,7 @@
       color: $white;
 
       &:focus {
-        outline: 1px dotted $white;
+        outline: 1px dotted $light-4;
         background: $light-2;
       }
     }
@@ -127,7 +127,7 @@
         cursor: pointer;
 
         &:hover { background: $light-1; }
-        &:focus { outline: 1px dotted $white; }
+        &:focus { outline: 1px dotted $light-4; }
       }
 
       input {
