@@ -34,7 +34,7 @@
     } );
   }
 
-  TweenMax.staggerFrom( ".homepage-menu-item", 1, {
+  TweenMax.staggerFrom( ".menu-item", 1, {
     bottom: "56px",
     opacity: 0,
     delay: 2.8

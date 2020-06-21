@@ -19,37 +19,29 @@
     </h2>
   </header>
 
-    <main>
-      <div id="homepageMenu" class="homepage-container">
-<?php
-      $entries = get_post_meta( get_the_ID(), 'front_page_menu_group', true );
+  <main>
+    <div id="homepageMenu" class="menu-container">
+      <?php
+        $items = get_post_meta( get_the_ID(), 'front_page_menu_group', true );
 
-foreach ( (array) $entries as $key => $entry ) {
+        foreach ( (array) $items as $key => $entry ) {
+          $icon = $title = $content = $label = $url = '';
 
-	$icon = $title = $content = $label = $url = '';
-
-	if( isset( $entry['icon'] ) ) $icon = esc_html( $entry['icon'] );
-	if( isset( $entry['title'] ) ) $title = esc_html( $entry['title'] );
-	if( isset( $entry['content'] ) ) $content = esc_html( $entry['content'] );
-	if( isset( $entry['button_label'] ) ) $label = esc_html( $entry['button_label'] );
-  if( isset( $entry['button_url'] ) ) $url = esc_html( $entry['button_url'] )
+          if( isset( $entry[ 'icon' ] ) )         $icon = esc_html( $entry[ 'icon' ] );
+          if( isset( $entry[ 'title' ] ) )        $title = esc_html( $entry[ 'title' ] );
+          if( isset( $entry[ 'content' ] ) )      $content = esc_html( $entry[ 'content' ] );
+          if( isset( $entry[ 'button_label' ] ) ) $label = esc_html( $entry[ 'button_label' ] );
+          if( isset( $entry[ 'button_url' ] ) )   $url = esc_html( $entry[ 'button_url' ] );
   
-  ?>
-  <div class="homepage-menu-item">
-          <?php 
-          echo $icon; 
-          echo '<h3 class="screen-reader-text">' . $title . '</h3>';
+          echo '<div class="menu-item">';
+            echo $icon . '<h3 class="screen-reader-text">' . $title . '</h3>';
 
-          echo '<p>' . $content . '</p>';
+            echo '<p>' . $content . '</p>';
 
-          echo '<a href="' . $url . '">' . $label . '</a>';
-          ?>
-</div>
-        
-<?php
-	// Do something with the data
-}
-?>
+            echo '<a href="' . $url . '">' . $label . '</a>';
+          echo '</div>';
+        }
+      ?>
 
 
         <!-- <div class="homepage-menu-item">

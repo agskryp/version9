@@ -32,7 +32,7 @@
       font-weight: 100;
       margin: 0 0 28px;
       @media all and ( min-width: $screen-xs ) {
-        font-size: 79px;
+        font-size: 74px;
       }
       
       @media all and ( min-width: $screen-lg ) {
@@ -58,137 +58,126 @@
           }
         }
       }
-    }   
-  }
-
-
-  
-  
-
-
-
-  .occupation-container {
-    margin: 0;
-    padding: 0;
-    display: block;
-    border-left: none !important;  // !important necessary for animation and screen breaks
-    font-size: 1.1em;
-    margin: 0;
-    @media all and ( min-width: $screen-xs ) {
-      font-size: 1.5em;
-    }
-    
-    @media all and ( min-width: $screen-md ) {
-      padding-left: 56px;
-      margin-left: 56px;
-      border-left: 2px solid $light-8 !important;  // !important necessary for animation and screen breaks
-      font-size: 30px;
     }
 
-    @media all and ( min-width: $screen-lg ) {
-      font-size: 46px;
-    }
-    
-    span {
-      display: inline-block;
-      position: relative; // For TweenMax animation
-      @media all and ( min-width: $screen-md ) {
-        display: block;
-      }
-    }
-  }
-  
-  .homepage-container {
-    padding: 0;
-    margin: 0 28px;
-    list-style: none;
-    @media screen and ( min-width: $screen-lg ) {
-    
-      max-width: 1200px;
-      text-align: center;
-    }
-  }
-
-
-
-  .homepage-menu-item {
-    @include flex-center;
-    background: $dark-3;
-    border: 1px solid $dark-1;
-    border-radius: 6px;
-    padding: 28px;
-    margin: 28px auto;
-    text-align: center;
-    max-width: 440px;
-    position: relative; // For TweenMax animation
-    flex-direction: column;
-
-
-    // background: rgba(0,0,0,0.3);
-    // padding: 28px;
-    // border-radius: 6px;
-    // border: 1px solid rgba(0,0,0,0.1);
-
-
-
-    @media all and ( min-width: $screen-sm ) {
-      height: 150px;
-      max-width: 600px;
-      margin: 28px auto;
-      flex-direction: row;
-    }
-    
-    @media all and ( min-width: $screen-lg ) {
-      height: 100%;
-      width: 300px;
-      margin: 28px 14px 0;
-      // flex-direction: column;
-
-      margin: 0 14px 28px;
-      display: inline-block;
-      max-width: 300px;
-      width: 100%;
-    }
-    
-    svg {
-      fill: $green;
-    }
-    
-    p {
-      color: $white;
-      max-width: 320px;
-      margin: 14px auto 28px;
-      @media all and ( min-width: $screen-sm ) {
-        margin: 0 28px;
-        padding: 0;
+    .occupation-container {
+      margin: 0;
+      padding: 0;
+      display: block;
+      border-left: none !important;  // !important necessary for animation and screen breaks
+      font-size: 22px;
+      margin: 0;
+      @media all and ( min-width: $screen-xs ) {
+        font-size: 32px;
       }
       
       @media all and ( min-width: $screen-md ) {
-        margin: 0;
-        padding: 0 28px;
+        padding-left: 56px;
+        margin-left: 56px;
+        border-left: 2px solid $light-8 !important;  // !important necessary for animation and screen breaks
+        font-size: 36px;
+      }
+  
+      @media all and ( min-width: $screen-lg ) {
+        font-size: 46px;
+      }
+      
+      span {
+        display: inline-block;
+        position: relative; // For TweenMax animation
+        @media all and ( min-width: $screen-md ) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .menu-container {
+    // padding: 0;
+    margin: 0 28px;
+    // max-width: 1200px;
+    text-align: center;
+    // list-style: none;
+
+    .menu-item {
+      @include flex-center;
+      background: $dark-3;
+      border: 1px solid $dark-1;
+      border-radius: 6px;
+      padding: 28px;
+      margin: 28px auto;
+      text-align: center;
+      max-width: 440px;
+      position: relative; // For TweenMax animation
+      flex-direction: column;
+  
+  
+      // background: rgba(0,0,0,0.3);
+      // padding: 28px;
+      // border-radius: 6px;
+      // border: 1px solid rgba(0,0,0,0.1);
+  
+  
+  
+      @media all and ( min-width: $screen-sm ) {
+        height: 150px;
+        max-width: 600px;
+        margin: 28px auto;
+        flex-direction: row;
       }
       
       @media all and ( min-width: $screen-lg ) {
-        margin: 14px auto 28px;
-        padding: 0;
+        height: 100%;
+        width: 300px;
+        margin: 28px 14px 0;
+        // flex-direction: column;
+  
+        margin: 0 14px 28px;
+        display: inline-block;
+        max-width: 300px;
+        width: 100%;
       }
-    }
-    
-    a {
-      color: $white;
-      border: 1px solid $dark-8;
-      background: $dark-8;
-      border-radius: 6px;
-      cursor: pointer;
-      padding: 7px;
-      width: 80%;
-      max-width: 160px;
-      text-transform: uppercase;
-      font-weight: 700;
       
-      &:hover,
-      &:focus {
-        background: $light-1;
+      svg {
+        fill: $green;
+      }
+      
+      p {
+        color: $white;
+        max-width: 320px;
+        margin: 14px auto 28px;
+        @media all and ( min-width: $screen-sm ) {
+          margin: 0 28px;
+          padding: 0;
+        }
+        
+        @media all and ( min-width: $screen-md ) {
+          margin: 0;
+          padding: 0 28px;
+        }
+        
+        @media all and ( min-width: $screen-lg ) {
+          margin: 14px auto 28px;
+          padding: 0;
+        }
+      }
+      
+      a {
+        color: $white;
+        border: 1px solid $dark-8;
+        background: $dark-8;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 7px;
+        width: 80%;
+        max-width: 160px;
+        text-transform: uppercase;
+        font-weight: 700;
+        
+        &:hover,
+        &:focus {
+          background: $light-1;
+        }
       }
     }
   }
