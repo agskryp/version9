@@ -9,11 +9,11 @@
 <div class="front-page-container">
   <header class="header-container">
     <h1 class="name-container">
-      <span class="given-name">Andrew</span>
-      <span class="sur-name">Skrypnyk</span>
+      <span id="givenName">Andrew</span>
+      <span id="surName">Skrypnyk</span>
     </h1>
 
-    <h2 class="occupation-animation occupation-title text-center font-weight-bold">
+    <h2 id="occupationAnimation" class="colour-cycle occupation-container text-center font-weight-bold">
       <span>Web Design</span>
       <span>&amp; Development</span>
     </h2>

@@ -4,30 +4,30 @@
  */
 
 ( function() {
-  
+
   /**
    * @param TweenMax.method( "target", speed, { settings }, delay between elements );
    */
-  TweenMax.from( ".given-name", 2, {
-    paddingLeft: "1em",
+  TweenMax.from( "#givenName", 2, {
+    paddingLeft: "112px",
     opacity: 0,
     ease: Power1.easeInOut
   } );
 
-  TweenMax.from( ".sur-name", 2, {
-    paddingRight: "1em",
+  TweenMax.from( "#surName", 2, {
+    paddingRight: "112px",
     opacity: 0,
     ease: Power1.easeInOut
   } );
 
-  TweenMax.staggerFrom( ".occupation-title span", 1, {
-    bottom: "1em",
+  TweenMax.staggerFrom( "#occupationAnimation span", 1, {
+    bottom: "56px",
     opacity: 0,
     delay: 1.8
   }, .4 );
   
   if( window.innerWidth >= 768 ) {  
-    TweenMax.from( ".occupation-title", 3, {
+    TweenMax.from( "#occupationAnimation", 3, {
       borderLeft: "2px solid",
       opacity: 0,
       delay: 2
@@ -35,7 +35,7 @@
   }
 
   TweenMax.staggerFrom( ".homepage-menu-item", 1, {
-    bottom: "1em",
+    bottom: "56px",
     opacity: 0,
     delay: 2.8
   }, 0.2 );

@@ -20,7 +20,7 @@
             <span>Skrypnyk</span>
           </a>
       
-          <div class="occupation-animation occupation-container text-center font-weight-bold">
+          <div class="colour-cycle occupation-container text-center font-weight-bold">
             <span>Web Design</span>
             <span>&amp; Development</span>
           </div>  
