@@ -15,7 +15,7 @@
 
       <div class="header-content-container">
         <div class="title-container">
-          <a class="full-name-container" href="<?php echo home_url(); ?>">
+          <a class="name-container" href="<?php echo home_url(); ?>">
             <span>Andrew</span>
             <span>Skrypnyk</span>
           </a>

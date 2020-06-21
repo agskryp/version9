@@ -1,16 +1,18 @@
-.homepage-screen {
+.front-page-container {
   display: block;
-  overflow: auto;
+  // overflow: auto;
+
+  padding: 0;
   
   @media screen and ( min-width: $screen-md ) {
     @include flex-center;
     flex-direction: column;
+    padding: 30px 0;
     height: 100vh;
   }
   
-  .site-branding {
-    display: flex;
-    justify-content: center;
+  .header-container {
+    @include flex-center;
     flex-direction: column;
     margin: 0;
     padding: 28px 28px 0;
@@ -23,37 +25,85 @@
     @media all and ( min-width: $screen-lg ) {
       padding: 0 56px 28px;
     }
-  }
-  
-  h1 {
-    font-size: 3.2em;
-    font-weight: 100;
-    
-    @media all and ( min-width: $screen-xs ) {
-      font-size: 4.4em;
-    }
-    
-    @media all and ( min-width: $screen-lg ) {
-      font-size: 6em;
-    }
-    
-    span:last-of-type {
-      margin-left: 23px; 
+
+    .name-container {
+      // font-size: 50px;
+      line-height: 0.5;
+      font-weight: 100;
+      color: $white;
+      display: block;
+      font-size: 3.2em;
+      font-weight: 100;
+      margin: 0;
       
       @media all and ( min-width: $screen-xs ) {
-        margin-left: 35px;
+        font-size: 4.4em;
       }
       
       @media all and ( min-width: $screen-lg ) {
-        margin-left: 48px;
+        font-size: 6em;
       }
       
-      @media all and ( min-width: $screen-xxl ) {
-        margin-left: 53px;
+      span:last-of-type {
+        margin-left: 23px; 
+        
+        @media all and ( min-width: $screen-xs ) {
+          margin-left: 35px;
+        }
+        
+        @media all and ( min-width: $screen-lg ) {
+          margin-left: 48px;
+        }
+        
+        @media all and ( min-width: $screen-xxl ) {
+          margin-left: 53px;
+        }
+      }
+      // text-align: center;
+      // margin: 22px;
+      //////////////////////////
+      // @media all and ( min-width: $screen-md ) {
+      //   margin: 0 0 28px;
+      // }
+    
+      // @media all and ( min-width: $screen-xxl ) {
+      //   font-size: 70px;
+      // }
+    
+      // &:hover,
+      // &:focus {
+      //   color: $white;
+      //   opacity: 0.7;
+      // }
+      
+      
+      span {
+        display: block;
+      //   // margin-left: -47px;
+        
+      //   &:last-of-type {
+      //     margin-left: 22px;
+      //     @media all and ( min-width: $screen-xxl ) {
+      //       margin-left: 31px;
+      //     }
+      //   }
       }
     }
+
+      h1 {
+      
+      }
+    
+      
+
   }
+
+
   
+  
+
+
+
   .occupation-title {
     margin: 0;
     padding: 0;
@@ -179,51 +229,3 @@
   }
 }
 
-.site-branding {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  margin: 0 0 0 28px;
-  @media all and ( min-width: $screen-md ) {
-    display: block;
-    margin: 0;
-  } 
-}
-
-.full-name-container {
-  font-size: 50px;
-  line-height: 0.5;
-  font-weight: 100;
-  color: $white;
-  display: block;
-  // text-align: center;
-  // margin: 22px;
-  //////////////////////////
-  @media all and ( min-width: $screen-md ) {
-    margin: 0 0 28px;
-  }
-
-  @media all and ( min-width: $screen-xxl ) {
-    font-size: 70px;
-  }
-
-  &:hover,
-  &:focus {
-    color: $white;
-    opacity: 0.7;
-  }
-  
-  
-  span {
-    display: block;
-    // margin-left: -47px;
-    
-    &:last-of-type {
-      margin-left: 22px;
-      @media all and ( min-width: $screen-xxl ) {
-        margin-left: 31px;
-      }
-    }
-  }
-}
