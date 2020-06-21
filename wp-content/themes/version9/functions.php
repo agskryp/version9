@@ -280,3 +280,10 @@ function wpse200296_before_admin_bar_render()
 
     $wp_admin_bar->remove_menu('customize');
 }
+
+
+// TODO:
+//
+// - Hide front-page.php & page-portfolio.php from showing in the search results.
+// - Set tabindex for header navigation, mobile functions
+//

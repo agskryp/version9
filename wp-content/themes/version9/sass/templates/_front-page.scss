@@ -88,10 +88,13 @@
     margin: 0 28px;
     list-style: none;
     @media screen and ( min-width: $screen-lg ) {
-      display: flex;
-      justify-content: center;
+    
+      max-width: 1200px;
+      text-align: center;
     }
   }
+
+
 
   .homepage-menu-item {
     @include flex-center;
@@ -104,6 +107,15 @@
     max-width: 440px;
     position: relative; // For TweenMax animation
     flex-direction: column;
+
+
+    // background: rgba(0,0,0,0.3);
+    // padding: 28px;
+    // border-radius: 6px;
+    // border: 1px solid rgba(0,0,0,0.1);
+
+
+
     @media all and ( min-width: $screen-sm ) {
       height: 150px;
       max-width: 600px;
@@ -115,7 +127,12 @@
       height: 100%;
       width: 300px;
       margin: 28px 14px 0;
-      flex-direction: column;
+      // flex-direction: column;
+
+      margin: 0 14px 28px;
+      display: inline-block;
+      max-width: 300px;
+      width: 100%;
     }
     
     svg {
