@@ -2,8 +2,8 @@
 Contributors: LiteSpeedTech
 Tags: caching, optimize, performance, pagespeed, seo, speed, image optimize, compress, object cache, redis, memcached, database cleaner
 Requires at least: 4.0
-Tested up to: 5.4.1
-Stable tag: 3.1
+Tested up to: 5.4.2
+Stable tag: 3.2.3.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -233,8 +233,8 @@ For more detailed information about crawler setup, please see [the Crawler docum
 * [Ninja Forms](https://wordpress.org/plugins/ninja-forms/)
 * [Post Types Order 1.9.3.6+](https://wordpress.org/plugins/post-types-order/)
 * [BoomBox — Viral Magazine WordPress Theme](https://themeforest.net/item/boombox-viral-buzz-wordpress-theme/16596434?ref=PX-lab)
-* Beaver Builder
 * FacetWP (LSWS 5.3.6+)
+* Beaver Builder
 * WpDiscuz
 * WP-Stateless
 * Elementor
@@ -243,6 +243,51 @@ The vast majority of plugins and themes are compatible with LiteSpeed Cache. The
 
 
 == Changelog ==
+
+= 3.2.3.2 - Jun 19 2020 =
+* 🔥🐞**Page Optimize** Hotfix for CSS/JS minify/combine.
+
+= 3.2.3.1 - Jun 18 2020 =
+* **API** New filter `litespeed_buffer_before` and `litespeed_buffer_after`. (#PR243 @joejordanbrown)
+
+= 3.2.3 - Jun 18 2020 =
+* 🌱**Page Optimize** Added Unique CSS option for future removal of unused CSS per page. (@moongear)
+* **Page Optimize** Fixed an issue where Font Optimization could fail when having Load JS Deferred and Load Inline JS Deferred. (#PR241 @joejordanbrown)
+* 🐞**Page Optimize** Fixed an issue with Font Display Optimization which caused Google Fonts to load incorrectly. (#PR240 @joejordanbrown @haidan)
+* 🐞**Network** Use Primary Site Configuration setting for network sites now works properly with Object Cache and Browser Cache. (#56175101)
+* **API** Added filter `litespeed_is_from_cloud` to detect if the current request is from QC or not. (@lechon)
+* **ESI** ESI Nonce now can fetch latest list with one click.
+* **GUI** Updated remaining documentation links & some minor UI tweaks. (@Joshua Reynolds)
+
+= 3.2.2 - Jun 10 2020 =
+* 🌱**Purge** Scheduled Purge URLs now supports wildcard. (#427338)
+* 🌱**ESI** ESI Nonce supports wildcard match now.
+* **Network** Use Primary Site Settings now can support Domain Key, and override mechanism improved. (@alican532 #96266273)
+* **Cloud** Debug mode will now have no interval limit for most cloud requests. (@ruikai)
+* **Conf** Default Purge Stale to OFF.
+* **GUI** Purge Stale renamed to Serve Stale.
+* **Data** Predefined nonce list located in `/litespeed-cache/data/esi.nonce.txt`. Pull requests welcome.
+* **Debug** Limited parameter log length.
+* 🐞**CDN** Fixed an issue where upgrading lost value of CDN switch setting. (#888668)
+* **3rd** Caldera Forms ESI Nonce enhancement. (@paconarud16 @marketingsweet)
+* **3rd** Elementor now purges correctly after post/page updates.
+* **3rd** Disabled Page Optimization features on AMP to avoid webfont JS inject. (@rahulgupta1985)
+
+= 3.2.1 - Jun 1 2020 =
+* **Cloud** LQIP/CCSS rate limit tweaks. (@ianpegg)
+* **Admin** Improved frontend Admin Bar menu functionality. (#708642)
+* **Crawler** Fixed an issue where cleaning up a crawler map with a leftover page number would cause a MySQL error. (@saowp)
+* **Image Optimize** Added WP default thumbnails to image optimization summary list. (@johnny Nguyen)
+* **REST** Improved REST compatibility w/ WP4.4-. (#767203)
+* **GUI** Moved Use Primary Site Configuration to General menu. (@joshua)
+
+= 3.2 - May 27 2020 =
+* **Image Optimize** Major improvements in queue management, scalability, and speed. (@Lucas Rolff)
+* **Cloud** Implemented a series of communication enhancements. (@Lucas Rolff)
+* **Crawler** Enhanced PHP 5.3 compatibility. (@JTS-FIN #230)
+* **Page Optimize** Appended image template in wpDiscuz script into default lazyload image exclude list. (@philipfaster @szmigieldesign)
+* **Page Optimize** Eliminated the 404 issue for CSS/JS in server environments with missing SCRIPT_URI. (@ankit)
+* **Data** ENhanced summary data storage typecasting.
 
 = 3.1 - May 20 2020 =
 * 🌱**Network** Added Debug settings to network level when on network.

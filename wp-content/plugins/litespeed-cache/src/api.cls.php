@@ -12,8 +12,7 @@ namespace LiteSpeed;
 
 defined( 'WPINC' ) || exit;
 
-class API extends Base
-{
+class API extends Base {
 	const VERSION =	Core::VER;
 
 	const TYPE_FEED 					= Tag::TYPE_FEED ;
@@ -44,8 +43,7 @@ class API extends Base
 	 * @since  3.0
 	 * @access protected
 	 */
-	protected function __construct()
-	{
+	protected function __construct() {
 	}
 
 	/**
@@ -55,8 +53,7 @@ class API extends Base
 	 *
 	 * @since  3.0
 	 */
-	public function init()
-	{
+	public function init() {
 		/**
 		 * Init
 		 */
@@ -132,6 +129,11 @@ class API extends Base
 		add_action( 'litespeed_vary_no', __NAMESPACE__ . '\Control::set_no_vary' ); // API::set_cache_no_vary() -> Action `litespeed_vary_no` // Set cache status to no vary
 
 		add_filter( 'litespeed_is_mobile', __NAMESPACE__ . '\Control::is_mobile' ); // API::set_mobile() -> Filter `litespeed_is_mobile`
+
+		/**
+		 * Cloud
+		 */
+		add_filter( 'litespeed_is_from_cloud', __NAMESPACE__ . '\Cloud::is_from_cloud' ); // Check if current request is from QC (usally its to check REST access) // @see https://wordpress.org/support/topic/image-optimization-not-working-3/
 
 		/**
 		 * GUI

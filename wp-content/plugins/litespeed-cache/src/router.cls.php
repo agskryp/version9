@@ -146,8 +146,9 @@ class Router extends Instance
 		 * Bypass post/page link setting
 		 * @since 2.9.8.5
 		 */
+		$rest_prefix = function_exists( 'rest_get_url_prefix' ) ? rest_get_url_prefix() : apply_filters( 'rest_url_prefix', 'wp-json' );
 		if (
-			strpos( $_SERVER[ 'REQUEST_URI' ], rest_get_url_prefix() . '/wp/v2/media' ) !== false
+			strpos( $_SERVER[ 'REQUEST_URI' ], $rest_prefix . '/wp/v2/media' ) !== false
 			&& strpos( $_SERVER[ 'HTTP_REFERER' ], 'wp-admin') !== false
 		) {
 			Debug2::debug( '[Router] CDN bypassed: wp-json on admin page' ) ;
@@ -586,26 +587,23 @@ class Router extends Instance
 	 * Check if the ip is in the range
 	 *
 	 * @since 1.1.0
-	 * @access private
-	 * @param  string $ip_list IP list
-	 * @return bool
+	 * @access public
 	 */
-	private function ip_access( $ip_list )
-	{
+	public function ip_access( $ip_list ) {
 		if ( ! $ip_list ) {
-			return false ;
+			return false;
 		}
 		if ( ! isset( self::$_ip ) ) {
-			self::$_ip = $this->get_ip() ;
+			self::$_ip = $this->get_ip();
 		}
-		// $uip = explode('.', $_ip) ;
-		// if(empty($uip) || count($uip) != 4) Return false ;
-		// foreach($ip_list as $key => $ip) $ip_list[$key] = explode('.', trim($ip)) ;
+		// $uip = explode('.', $_ip);
+		// if(empty($uip) || count($uip) != 4) Return false;
+		// foreach($ip_list as $key => $ip) $ip_list[$key] = explode('.', trim($ip));
 		// foreach($ip_list as $key => $ip) {
-		// 	if(count($ip) != 4) continue ;
-		// 	for($i = 0 ; $i <= 3 ; $i++) if($ip[$i] == '*') $ip_list[$key][$i] = $uip[$i] ;
+		// 	if(count($ip) != 4) continue;
+		// 	for($i = 0; $i <= 3; $i++) if($ip[$i] == '*') $ip_list[$key][$i] = $uip[$i];
 		// }
-		return in_array( self::$_ip, $ip_list ) ;
+		return in_array( self::$_ip, $ip_list );
 	}
 
 	/**
@@ -654,15 +652,23 @@ class Router extends Instance
 	 */
 	public static function serve_static()
 	{
-		if ( empty( $_SERVER[ 'SCRIPT_URI' ] ) ) {
+		if ( ! empty( $_SERVER[ 'SCRIPT_URI' ] ) ) {
+			if ( strpos( $_SERVER[ 'SCRIPT_URI' ], LITESPEED_STATIC_URL . '/' ) !== 0 ) {
+				return;
+			}
+			$path = substr( $_SERVER[ 'SCRIPT_URI' ], strlen( LITESPEED_STATIC_URL . '/' ) );
+		}
+		elseif ( ! empty( $_SERVER[ 'REQUEST_URI' ] ) ) {
+			$static_path = parse_url( LITESPEED_STATIC_URL, PHP_URL_PATH ) . '/';
+			if ( strpos( $_SERVER[ 'REQUEST_URI' ], $static_path ) !== 0 ) {
+				return;
+			}
+			$path = substr( parse_url( $_SERVER[ 'REQUEST_URI' ], PHP_URL_PATH ), strlen( $static_path ) );
+		}
+		else {
 			return;
 		}
 
-		if ( strpos( $_SERVER[ 'SCRIPT_URI' ], LITESPEED_STATIC_URL . '/' ) !== 0 ) {
-			return;
-		}
-
-		$path = substr( $_SERVER[ 'SCRIPT_URI' ], strlen( LITESPEED_STATIC_URL . '/' ) );
 		$path = explode( '/', $path, 2 );
 
 		if ( empty( $path[ 0 ] ) || empty( $path[ 1 ] ) ) {

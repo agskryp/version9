@@ -15,7 +15,8 @@ class Cloud extends Base
 	const CLOUD_SERVER_DASH = 'https://my.quic.cloud';
 
 	const SVC_D_NODES 			= 'd/nodes';
-	const SVC_D_SYNC_CONF 		= 'd/sync_conf';
+	const SVC_D_SYNC_CONF		= 'd/sync_conf';
+	const SVC_D_REGIONNODES		= 'd/regionnodes';
 	const SVC_D_USAGE 			= 'd/usage';
 	const SVC_CCSS 				= 'ccss' ;
 	const SVC_LQIP 				= 'lqip' ;
@@ -27,9 +28,11 @@ class Cloud extends Base
 	const IMG_OPTM_JUMBO_GROUP = 1000;
 	const IMG_OPTM_DEFAULT_GROUP = 200;
 
-	const EXPIRATION_NODE = 3; // Days before node expired
-	const EXPIRATION_REQ = 300; // Seconds of min interval between two unfinished requests
-	const EXPIRATION_TOKEN = 900; // Min intval to request a token 15m
+	const IMGOPTM_TAKEN         = 'img_optm-taken';
+
+	const EXPIRATION_NODE 	= 6; 	// Hours before node expired
+	const EXPIRATION_REQ	= 300; 	// Seconds of min interval between two unfinished requests
+	const EXPIRATION_TOKEN 	= 900; 	// Min intval to request a token 15m
 
 	const API_NEWS 			= 'wp/news';
 	const API_REPORT		= 'wp/report' ;
@@ -38,6 +41,7 @@ class Cloud extends Base
 
 	private static $CENTER_SVC_SET = array(
 		self::SVC_D_NODES,
+		self::SVC_D_REGIONNODES,
 		self::SVC_D_SYNC_CONF,
 		self::SVC_D_USAGE,
 		self::API_NEWS,
@@ -305,7 +309,9 @@ class Cloud extends Base
 
 		// Check if the stored server needs to be refreshed
 		if ( ! $force ) {
-			if ( ! empty( $this->_summary[ 'server.' . $service ] ) && ! empty( $this->_summary[ 'server_date.' . $service ] ) && $this->_summary[ 'server_date.' . $service ] > time() - 86400 * self::EXPIRATION_NODE ) {
+			$expiry = time() - (3600 * self::EXPIRATION_NODE);
+
+			if ( ! empty( $this->_summary[ 'server.' . $service ] ) && ! empty( $this->_summary[ 'server_date.' . $service ] ) && $this->_summary[ 'server_date.' . $service ] > $expiry ) {
 				return $this->_summary[ 'server.' . $service ];
 			}
 		}
@@ -317,7 +323,13 @@ class Cloud extends Base
 		}
 
 		// Send request to Quic Online Service
-		$json = $this->_post( self::SVC_D_NODES, array( 'svc' => $service ) );
+		$cloud_endpoint = self::SVC_D_NODES;
+
+		if($service == self::SVC_IMG_OPTM) {
+			$cloud_endpoint = self::SVC_D_REGIONNODES;
+		}
+
+		$json = $this->_post( $cloud_endpoint, array( 'svc' => $service ) );
 
 		// Check if get list correctly
 		if ( empty( $json[ 'list' ] ) || ! is_array( $json[ 'list' ] ) ) {
@@ -327,14 +339,22 @@ class Cloud extends Base
 				$msg = __( 'Cloud Error', 'litespeed-cache' ) . ": [Service] $service [Info] " . $json;
 				Admin_Display::error( $msg );
 			}
+
+			// Return cached version if we have it
+			if ( ! empty( $this->_summary[ 'server.' . $service ] ) ){
+				return $this->_summary[ 'server.' . $service ];
+			}
+
 			return false;
 		}
 
 		// Ping closest cloud
 		$speed_list = array();
+
 		foreach ( $json[ 'list' ] as $v ) {
 			$speed_list[ $v ] = Utility::ping( $v );
 		}
+
 		$min = min( $speed_list );
 
 		if ( $min == 99999 ) {
@@ -425,7 +445,7 @@ class Cloud extends Base
 		$this->_summary[ 'curr_request.' . $service_tag ] = time();
 		self::save_summary();
 
-		$response = wp_remote_get( $url, array( 'timeout' => 15, 'sslverify' => false ) );
+		$response = wp_remote_get( $url, array( 'timeout' => 15, 'sslverify' => true ) );
 
 		return $this->_parse_response( $response, $service, $service_tag, $server );
 	}
@@ -438,9 +458,25 @@ class Cloud extends Base
 	 */
 	private function _maybe_cloud( $service_tag )
 	{
+		// we don't want the `img_optm-taken` to fail at any given time
+		if ( $service_tag == self::IMGOPTM_TAKEN ) {
+			return true;
+		}
+
 		// Limit frequent unfinished request to 5min
-		if ( ! empty( $this->_summary[ 'curr_request.' . $service_tag ] ) ) {
-			$expired = $this->_summary[ 'curr_request.' . $service_tag ] + self::EXPIRATION_REQ - time();
+		$timestamp_tag = 'curr_request.';
+		if ( $service_tag == self::SVC_IMG_OPTM . '-' . Img_Optm::TYPE_NEW_REQ ) {
+			$timestamp_tag = 'last_request.';
+		}
+		else {
+			// For all other requests, if is under debug mode, will always allow
+			if ( Conf::val( Base::O_DEBUG ) ) {
+				return true;
+			}
+		}
+
+		if ( ! empty( $this->_summary[ $timestamp_tag . $service_tag ] ) ) {
+			$expired = $this->_summary[ $timestamp_tag . $service_tag ] + self::EXPIRATION_REQ - time();
 			if ( $expired > 0 ) {
 				Debug2::debug( "[Cloud] ❌ try [$service_tag] after $expired seconds" );
 
@@ -513,7 +549,7 @@ class Cloud extends Base
 		$this->_summary[ 'curr_request.' . $service_tag ] = time();
 		self::save_summary();
 
-		$response = wp_remote_post( $url, array( 'body' => $param, 'timeout' => $time_out ?: 15, 'sslverify' => false ) );
+		$response = wp_remote_post( $url, array( 'body' => $param, 'timeout' => $time_out ?: 15, 'sslverify' => true ) );
 
 		return $this->_parse_response( $response, $service, $service_tag, $server );
 	}
@@ -767,7 +803,7 @@ class Cloud extends Base
 	{
 		$data = array(
 			'site_url'	=> home_url(),
-			'rest'		=> rest_get_url_prefix(),
+			'rest'		=> function_exists( 'rest_get_url_prefix' ) ? rest_get_url_prefix() : apply_filters( 'rest_url_prefix', 'wp-json' ),
 			'server_ip'	=> Conf::val( Base::O_SERVER_IP ),
 		);
 		if ( ! empty( $this->_summary[ 'token' ] ) ) {
@@ -959,6 +995,24 @@ class Cloud extends Base
 
 		// Drop QS
 		echo "<script>window.history.pushState( 'remove_gen_link', document.title, window.location.href.replace( '&qc_res=" . $_GET[ 'qc_res' ] . "&domain_hash=" . $_GET[ 'domain_hash' ] . "', '' ) );</script>";
+	}
+
+	/**
+	 * Check if this visit is from cloud or not
+	 *
+	 * @since  3.0
+	 */
+	public static function is_from_cloud() {
+		$response = wp_remote_get( 'https://www.quic.cloud/ips?json' );
+		if ( is_wp_error( $response ) ) {
+			$error_message = $response->get_error_message();
+			Debug2::debug( '[CLoud] failed to get ip whitelist: ' . $error_message );
+			throw new \Exception( 'Failed to fetch QUIC.cloud whitelist' );
+		}
+
+		$json = json_decode( $response[ 'body' ], true );
+
+		return Router::get_instance()->ip_access( $json );
 	}
 
 	/**

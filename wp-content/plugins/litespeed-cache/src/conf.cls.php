@@ -23,6 +23,7 @@ class Conf extends Base
 
 	private $_options = array();
 	private $_const_options = array();
+	private $_primary_options = array();
 	private $_site_options = array();
 	private $_updated_ids = array();
 
@@ -142,15 +143,14 @@ class Conf extends Base
 	 * @since  3.0
 	 * @access public
 	 */
-	public function load_options( $blog_id = null, $dry_run = false )
-	{
-		$options = array() ;
+	public function load_options( $blog_id = null, $dry_run = false ) {
+		$options = array();
 		foreach ( self::$_default_options as $k => $v ) {
 			if ( ! is_null( $blog_id ) ) {
-				$options[ $k ] = self::get_blog_option( $blog_id, $k, $v ) ;
+				$options[ $k ] = self::get_blog_option( $blog_id, $k, $v );
 			}
 			else {
-				$options[ $k ] = self::get_option( $k, $v ) ;
+				$options[ $k ] = self::get_option( $k, $v );
 			}
 
 			// Correct value type
@@ -158,15 +158,18 @@ class Conf extends Base
 		}
 
 		if ( $dry_run ) {
-			return $options ;
+			return $options;
 		}
 
 		// Bypass site special settings
 		if ( $blog_id !== null ) {
-			$options = array_diff_key( $options, array_flip( self::$SINGLE_SITE_OPTIONS ) ) ; // These options are network only
+			$options = array_diff_key( $options, array_flip( self::$SINGLE_SITE_OPTIONS ) ); // These options are network only
+			$this->_primary_options = array_merge( $this->_primary_options, $options );
+		}
+		else {
+			$this->_options = array_merge( $this->_options, $options );
 		}
 
-		$this->_options = array_merge( $this->_options, $options );
 
 		// Append const options
 		if ( defined( 'LITESPEED_CONF' ) && LITESPEED_CONF ) {
@@ -185,25 +188,25 @@ class Conf extends Base
 	 * @since 1.0.13
 	 * @access private
 	 */
-	private function _try_load_site_options()
-	{
+	private function _try_load_site_options() {
 		if ( ! $this->_if_need_site_options() ) {
-			return ;
+			return;
 		}
 
-		$this->_conf_site_db_init() ;
+		$this->_conf_site_db_init();
 
 		// If network set to use primary setting
 		if ( ! empty ( $this->_site_options[ self::NETWORK_O_USE_PRIMARY ] ) ) {
 			// Get the primary site settings
 			// If it's just upgraded, 2nd blog is being visited before primary blog, can just load default config (won't hurt as this could only happen shortly)
-			$this->load_options( BLOG_ID_CURRENT_SITE ) ;
+			$this->load_options( BLOG_ID_CURRENT_SITE );
 		}
 
 		// Overwrite single blog options with site options
 		foreach ( self::$_default_options as $k => $v ) {
 			if ( isset( $this->_site_options[ $k ] ) ) {
-				$this->_options[ $k ] = $this->_site_options[ $k ] ;
+				$this->_options[ $k ] = $this->_site_options[ $k ];
+				$this->_primary_options[ $k ] = $this->_site_options[ $k ];
 			}
 		}
 	}
@@ -403,7 +406,7 @@ class Conf extends Base
 	public function get_options( $ori = false )
 	{
 		if ( ! $ori ) {
-			return array_merge( $this->_options, $this->_const_options );
+			return array_merge( $this->_options, $this->_primary_options, $this->_const_options );
 		}
 
 		return $this->_options ;
@@ -424,6 +427,11 @@ class Conf extends Base
 				$val = $instance->const_overwritten( $id );
 				if ( $val !== null ) {
 					defined( 'LSCWP_LOG' ) && Debug2::debug( '[Conf] 🏛️ const option ' . $id . '=' . var_export( $val, true ) ) ;
+					return $val;
+				}
+
+				$val = $instance->primary_overwritten( $id ); // Network Use primary site settings
+				if ( $val !== null ) {
 					return $val;
 				}
 			}
@@ -449,7 +457,7 @@ class Conf extends Base
 	}
 
 	/**
-	 * Check if is overwritten
+	 * Check if is overwritten by const
 	 *
 	 * @since  3.0
 	 */
@@ -459,6 +467,19 @@ class Conf extends Base
 			return null;
 		}
 		return $this->_const_options[ $id ];
+	}
+
+	/**
+	 * Check if is overwritten by primary site
+	 *
+	 * @since  3.2.2
+	 */
+	public function primary_overwritten( $id )
+	{
+		if ( ! isset( $this->_primary_options[ $id ] ) || $this->_primary_options[ $id ] == $this->_options[ $id ] ) {
+			return null;
+		}
+		return $this->_primary_options[ $id ];
 	}
 
 	/**
@@ -667,64 +688,49 @@ class Conf extends Base
 	 * @access private
 	 */
 	private function _set_conf()
-	{exit('');
+	{
+		/**
+		 * NOTE: For URL Query String setting,
+		 * 		1. If append lines to an array setting e.g. `cache-force_uri`, use `set[cache-force_uri][]=the_url`.
+		 *   	2. If replace the array setting with one line, use `set[cache-force_uri]=the_url`.
+		 *   	3. If replace the array setting with multi lines value, use 2 then 1.
+		 */
 		if ( empty( $_GET[ self::TYPE_SET ] ) || ! is_array( $_GET[ self::TYPE_SET ] ) ) {
+			return;
+		}
+
+		$the_matrix = array();
+		foreach ( $_GET[ self::TYPE_SET ] as $id => $v ) {
+			if ( ! array_key_exists( $id, $this->_options ) ) {
+				continue;
+			}
+
+			// Append new item to array type settings
+			if ( is_array( $v ) && is_array( $this->_options[ $id ] ) ) {
+				$v = array_merge( $this->_options[ $id ], $v ) ;
+
+				Debug2::debug( '[Conf] Appended to settings [' . $id . ']: ' . var_export( $v, true ) );
+			}
+			else {
+				Debug2::debug( '[Conf] Set setting [' . $id . ']: ' . var_export( $v, true ) );
+			}
+
+			$the_matrix[ $id ] = $v;
+		}
+
+		if ( ! $the_matrix ) {
 			return ;
 		}
 
-		$options = $this->_options ;
-		// Get items
-		foreach ( $this->stored_items() as $v ) {//xxx
-			$options[ $v ] = $this->get_item( $v ) ;
-		}
+		$this->update_confs( $the_matrix );
 
-		$changed = false ;
-		foreach ( $_GET[ self::TYPE_SET ] as $k => $v ) {
-			if ( ! isset( $options[ $k ] ) ) {
-				continue ;
-			}
-
-			if ( is_bool( $options[ $k ] ) ) {//xx
-				$v = (bool) $v ;
-			}
-
-			// Change for items
-			if ( is_array( $v ) && is_array( $options[ $k ] ) ) {
-				$changed = true ;
-
-				$options[ $k ] = array_merge( $options[ $k ], $v ) ;
-
-				Debug2::debug( '[Conf] Appended to item [' . $k . ']: ' . var_export( $v, true ) ) ;
-			}
-
-			// Chnage for single option
-			if ( ! is_array( $v ) ) {
-				$changed = true ;
-
-				$options[ $k ] = $v ;
-
-				Debug2::debug( '[Conf] Changed [' . $k . '] to ' . var_export( $v, true ) ) ;
-			}
-
-		}
-
-		if ( ! $changed ) {
-			return ;
-		}
-
-		$output = Admin_Settings::get_instance()->validate_plugin_settings( $options, true ) ; // Purge will be auto run in validating items when found diff
-		// Save settings now (options & items)
-		foreach ( $output as $k => $v ) {
-			self::update_option( $k, $v ) ;
-		}
-
-		$msg = __( 'Changed setting successfully.', 'litespeed-cache' ) ;
-		Admin_Display::succeed( $msg ) ;
+		$msg = __( 'Changed setting successfully.', 'litespeed-cache' );
+		Admin_Display::succeed( $msg );
 
 		// Redirect if changed frontend URL
 		if ( ! empty( $_GET[ 'redirect' ] ) ) {
-			wp_redirect( $_GET[ 'redirect' ] ) ;
-			exit() ;
+			wp_redirect( $_GET[ 'redirect' ] );
+			exit();
 		}
 	}
 
@@ -736,19 +742,19 @@ class Conf extends Base
 	 */
 	public static function handler()
 	{
-		$instance = self::get_instance() ;
+		$instance = self::get_instance();
 
-		$type = Router::verify_type() ;
+		$type = Router::verify_type();
 
 		switch ( $type ) {
 			case self::TYPE_SET :
-				$instance->_set_conf() ;
-				break ;
+				$instance->_set_conf();
+				break;
 
 			default:
-				break ;
+				break;
 		}
 
-		Admin::redirect() ;
+		Admin::redirect();
 	}
 }

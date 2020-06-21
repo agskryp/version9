@@ -205,39 +205,44 @@ class Admin_Display extends Base
 	 * @since    1.0.0
 	 * @access public
 	 */
-	public function enqueue_scripts()
-	{
-		wp_register_script( Core::PLUGIN_NAME, LSWCP_PLUGIN_URL . 'assets/js/litespeed-cache-admin.js', array(), Core::VER, false ) ;
+	public function enqueue_scripts() {
+		wp_register_script( Core::PLUGIN_NAME, LSWCP_PLUGIN_URL . 'assets/js/litespeed-cache-admin.js', array(), Core::VER, false );
 
-		$localize_data = array() ;
+		$localize_data = array();
 		if ( GUI::has_whm_msg() ) {
-			$ajax_url_dismiss_whm = Utility::build_url( Core::ACTION_DISMISS, GUI::TYPE_DISMISS_WHM, true ) ;
-			$localize_data[ 'ajax_url_dismiss_whm' ] = $ajax_url_dismiss_whm ;
+			$ajax_url_dismiss_whm = Utility::build_url( Core::ACTION_DISMISS, GUI::TYPE_DISMISS_WHM, true );
+			$localize_data[ 'ajax_url_dismiss_whm' ] = $ajax_url_dismiss_whm;
 		}
 
 		if ( GUI::has_msg_ruleconflict() ) {
-			$ajax_url = Utility::build_url( Core::ACTION_DISMISS, GUI::TYPE_DISMISS_EXPIRESDEFAULT, true ) ;
-			$localize_data[ 'ajax_url_dismiss_ruleconflict' ] = $ajax_url ;
+			$ajax_url = Utility::build_url( Core::ACTION_DISMISS, GUI::TYPE_DISMISS_EXPIRESDEFAULT, true );
+			$localize_data[ 'ajax_url_dismiss_ruleconflict' ] = $ajax_url;
 		}
 
-		$promo_tag = GUI::get_instance()->show_promo( true ) ;
+		$promo_tag = GUI::get_instance()->show_promo( true );
 		if ( $promo_tag ) {
-			$ajax_url_promo = Utility::build_url( Core::ACTION_DISMISS, GUI::TYPE_DISMISS_PROMO, true, null, array( 'promo_tag' => $promo_tag ) ) ;
-			$localize_data[ 'ajax_url_promo' ] = $ajax_url_promo ;
+			$ajax_url_promo = Utility::build_url( Core::ACTION_DISMISS, GUI::TYPE_DISMISS_PROMO, true, null, array( 'promo_tag' => $promo_tag ) );
+			$localize_data[ 'ajax_url_promo' ] = $ajax_url_promo;
 		}
 
 		// If on crawler page, append getIP link
 		global $pagenow;
 		if ( $pagenow == 'admin.php' && ! empty( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'litespeed-crawler' ) {
-			$localize_data[ 'ajax_url_getIP' ] = function_exists( 'get_rest_url' ) ? get_rest_url( null, 'litespeed/v1/tool/check_ip' ) : '/' ;
+			$localize_data[ 'ajax_url_getIP' ] = function_exists( 'get_rest_url' ) ? get_rest_url( null, 'litespeed/v1/tool/check_ip' ) : '/';
+			$localize_data[ 'nonce' ] = wp_create_nonce( 'wp_rest' );
+		}
+		if ( ( $pagenow == 'admin.php' && ! empty( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'litespeed-crawler' )
+			|| ( $pagenow == 'options-general.php' && ! empty( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'litespeed-cache-options' )
+		) {
+			$localize_data[ 'ajax_url_fetch_esi_nonce' ] = function_exists( 'get_rest_url' ) ? get_rest_url( null, 'litespeed/v1/fetch_esi_nonce' ) : '/';
 			$localize_data[ 'nonce' ] = wp_create_nonce( 'wp_rest' );
 		}
 
 		if ( $localize_data ) {
-			wp_localize_script(Core::PLUGIN_NAME, 'litespeed_data', $localize_data ) ;
+			wp_localize_script(Core::PLUGIN_NAME, 'litespeed_data', $localize_data );
 		}
 
-		wp_enqueue_script( Core::PLUGIN_NAME ) ;
+		wp_enqueue_script( Core::PLUGIN_NAME );
 	}
 
 	/**
@@ -250,10 +255,10 @@ class Admin_Display extends Base
 	 */
 	public function add_plugin_links($links)
 	{
-		// $links[] = '<a href="' . admin_url('options-general.php?page=litespeed-cache') . '">' . __('Settings', 'litespeed-cache') . '</a>' ;
-		$links[] = '<a href="' . admin_url('admin.php?page=litespeed-cache') . '">' . __('Settings', 'litespeed-cache') . '</a>' ;
+		// $links[] = '<a href="' . admin_url('options-general.php?page=litespeed-cache') . '">' . __('Settings', 'litespeed-cache') . '</a>';
+		$links[] = '<a href="' . admin_url('admin.php?page=litespeed-cache') . '">' . __('Settings', 'litespeed-cache') . '</a>';
 
-		return $links ;
+		return $links;
 	}
 
 	/**
@@ -268,10 +273,10 @@ class Admin_Display extends Base
 	public function add_update_text($translations, $text)
 	{
 		if ( $text !== 'Updated!' ) {
-			return $translations ;
+			return $translations;
 		}
 
-		return $translations . ' ' . __('It is recommended that LiteSpeed Cache be purged after updating a plugin.', 'litespeed-cache') ;
+		return $translations . ' ' . __('It is recommended that LiteSpeed Cache be purged after updating a plugin.', 'litespeed-cache');
 	}
 
 	/**
@@ -282,7 +287,7 @@ class Admin_Display extends Base
 	 */
 	public function set_update_text()
 	{
-		add_filter('gettext', array($this, 'add_update_text'), 10, 2) ;
+		add_filter('gettext', array($this, 'add_update_text'), 10, 2);
 	}
 
 	/**
@@ -293,7 +298,7 @@ class Admin_Display extends Base
 	 */
 	public function unset_update_text()
 	{
-		remove_filter('gettext', array($this, 'add_update_text')) ;
+		remove_filter('gettext', array($this, 'add_update_text'));
 	}
 
 	/**
@@ -706,7 +711,7 @@ class Admin_Display extends Base
 
 		echo "<textarea name='$id' rows='5' cols='$cols'>" . esc_textarea( $val ) . "</textarea>" ;
 
-		$this->_check_const_overwritten( $id );
+		$this->_check_overwritten( $id );
 	}
 
 	/**
@@ -740,7 +745,7 @@ class Admin_Display extends Base
 			echo "<input type='$type' class='$cls' name='$id' value='" . esc_textarea( $val ) ."' id='input_$label_id' /> ";
 		}
 
-		$this->_check_const_overwritten( $id );
+		$this->_check_overwritten( $id );
 	}
 
 	/**
@@ -772,7 +777,7 @@ class Admin_Display extends Base
 			<label for='input_checkbox_$label_id'>$title</label>
 		</div>" ;
 
-		$this->_check_const_overwritten( $id );
+		$this->_check_overwritten( $id );
 	}
 
 	/**
@@ -804,7 +809,7 @@ class Admin_Display extends Base
 				</div>
 			</div>" ;
 
-		$this->_check_const_overwritten( $id );
+		$this->_check_overwritten( $id );
 	}
 
 	/**
@@ -833,7 +838,7 @@ class Admin_Display extends Base
 
 		echo '</div>';
 
-		$this->_check_const_overwritten( $id );
+		$this->_check_overwritten( $id );
 	}
 
 	/**
@@ -863,12 +868,14 @@ class Admin_Display extends Base
 	 *
 	 * @since  3.0
 	 */
-	protected function _check_const_overwritten( $id )
-	{
-		$val = $this->__cfg->const_overwritten( $id );
-		if ( $val === null ) {
+	protected function _check_overwritten( $id ) {
+		$const_val = $this->__cfg->const_overwritten( $id );
+		$primary_val = $this->__cfg->primary_overwritten( $id );
+		if ( $const_val === null && $primary_val === null ) {
 			return;
 		}
+
+		$val = $const_val !== null ? $const_val : $primary_val;
 
 		$default = isset( self::$_default_options[ $id ] ) ? self::$_default_options[ $id ] : self::$_default_site_options[ $id ];
 
@@ -882,10 +889,15 @@ class Admin_Display extends Base
 			$val = esc_textarea( $val );
 		}
 
-		echo '<div class="litespeed-desc litespeed-warning">⚠️ ' .
-				sprintf( __( 'This setting is overwritten by the PHP constant %s', 'litespeed-cache' ), '<code>' . Base::conf_const( $id ) . '</code>' ) . ', ' .
-				sprintf( __( 'currently set to %s', 'litespeed-cache' ), "<code>$val</code>" ) .
-			'</div>';
+		echo '<div class="litespeed-desc litespeed-warning">⚠️ ';
+
+		if ( $const_val !== null ) {
+			echo sprintf( __( 'This setting is overwritten by the PHP constant %s', 'litespeed-cache' ), '<code>' . Base::conf_const( $id ) . '</code>' );
+		} else {
+			echo __( 'This setting is overwritten by the primary site setting', 'litespeed-cache' );
+		}
+
+		echo ', ' . sprintf( __( 'currently set to %s', 'litespeed-cache' ), "<code>$val</code>" ) . '</div>';
 	}
 
 	/**
@@ -1064,7 +1076,7 @@ class Admin_Display extends Base
 			. __( 'API', 'litespeed-cache' ) . ': '
 			. sprintf( __( 'Server variable(s) %s available to override this setting.', 'litespeed-cache' ), $s ) ;
 
-		$this->learn_more( 'https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:lscwp:configuration:server_variables' ) ;
+		$this->learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/admin/#limiting-the-crawler' ) ;
 	}
 
 	/**

@@ -91,7 +91,7 @@ class Lang extends Base
 			self::O_OBJECT_TRANSIENTS			=> __( 'Store Transients', 'litespeed-cache' ),
 
 			self::O_PURGE_ON_UPGRADE			=> __( 'Purge All On Upgrade', 'litespeed-cache' ),
-			self::O_PURGE_STALE					=> __( 'Purge Stale', 'litespeed-cache' ),
+			self::O_PURGE_STALE					=> __( 'Serve Stale', 'litespeed-cache' ),
 			self::O_PURGE_TIMED_URLS			=> __( 'Scheduled Purge URLs', 'litespeed-cache' ),
 			self::O_PURGE_TIMED_URLS_TIME		=> __( 'Scheduled Purge Time', 'litespeed-cache' ),
 			self::O_CACHE_FORCE_URI				=> __( 'Force Cache URIs', 'litespeed-cache' ),
@@ -103,6 +103,7 @@ class Lang extends Base
 			self::O_CACHE_EXC_ROLES				=> __( 'Do Not Cache Roles', 'litespeed-cache' ),
 			self::O_OPTM_CSS_MIN				=> __( 'CSS Minify', 'litespeed-cache' ),
 			self::O_OPTM_CSS_COMB				=> __( 'CSS Combine', 'litespeed-cache' ),
+			self::O_OPTM_CSS_UNIQUE				=> __( 'Unique CSS', 'litespeed-cache' ),
 			self::O_OPTM_CSS_HTTP2				=> __( 'CSS HTTP/2 Push', 'litespeed-cache' ),
 			self::O_OPTM_JS_MIN					=> __( 'JS Minify', 'litespeed-cache' ),
 			self::O_OPTM_JS_COMB				=> __( 'JS Combine', 'litespeed-cache' ),
