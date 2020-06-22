@@ -1,6 +1,5 @@
 h1 {
   font-size: 40px;
-  // margin: 0 0 .5rem;
   line-height: 0.8;
   @media all and ( min-width: $screen-xxs ) {
     font-size: 54px;
@@ -35,7 +34,6 @@ pre {
   font-size: 14px;
   line-height: 1.6;
   margin: 0 0 28px;
-  // max-width: 100%;
   overflow: auto;
   padding: 28px;
 }

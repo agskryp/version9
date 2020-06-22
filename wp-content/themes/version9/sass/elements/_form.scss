@@ -37,9 +37,7 @@ input[ type=submit ] {
     background: $light-1;
   }
 
-  &:focus {
-    outline: 1px dotted $light-4;
-  }
+  &:focus { outline: 1px dotted $light-4; }
 }
 
 button {

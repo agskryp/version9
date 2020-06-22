@@ -286,4 +286,5 @@ function wpse200296_before_admin_bar_render()
 //
 // - Hide front-page.php & page-portfolio.php from showing in the search results.
 // - Set tabindex for header navigation, mobile functions
+// - Rewrite load-more.js to be vanilla javascript, kill jQuery-ajax.js
 //

@@ -4,7 +4,7 @@
   @media all and ( min-width: $screen-md ) {
     @include flex-center;
     flex-direction: column;
-    padding: 30px 0;
+    padding: 28px 0;
     min-height: 100vh;
   }
   
@@ -114,7 +114,7 @@
       padding: 28px;
       margin: 28px auto;
       text-align: center;
-      max-width: 440px;
+      max-width: 300px;
       position: relative; // For TweenMax animation
       flex-direction: column;
   
@@ -178,8 +178,10 @@
         padding: 7px;
         width: 80%;
         max-width: 160px;
+        width: 100%;
         text-transform: uppercase;
         font-weight: 700;
+        display: inline-block;
         
         &:hover,
         &:focus {
