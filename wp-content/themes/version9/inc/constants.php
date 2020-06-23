@@ -2,7 +2,6 @@
 
 // Pages
 define( 'AG_PORTFOLIO', '/portfolio' );
-define( 'AG_ABOUT',     '/about' );
 
 // Ajax constants
 define( 'AG_posts_per_page' , 6 );

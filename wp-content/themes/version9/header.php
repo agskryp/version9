@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <a class="screen-reader-text" href="#content">Skip to content</a>
+    <a class="screen-reader-text" href="#content">Go to content</a>
 
     <header class="site-header col-12 col-md-4 col-lg-3">
       <div class="header-background-overlay"></div>

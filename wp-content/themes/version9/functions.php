@@ -287,4 +287,10 @@ function wpse200296_before_admin_bar_render()
 // - Hide front-page.php & page-portfolio.php from showing in the search results.
 // - Set tabindex for header navigation, mobile functions
 // - Rewrite load-more.js to be vanilla javascript, kill jQuery-ajax.js
+// 
+// - Set 0 opacity to front page content to avoid brief visuals before anitmatino
+// - Go through and optimize js files
+// - Go through and optimize inc files
+// - Optimize function.php
+// - Add theme declaration in style.scss 
 //

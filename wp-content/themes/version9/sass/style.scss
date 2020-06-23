@@ -3,7 +3,7 @@
 @import "_initialize/mixins";         // Checked
 @import "_initialize/normalize";      // Checked
 @import "_initialize/bootstrap-grid"; // Checked
-@import "_initialize/global";         
+@import "_initialize/global";         // Checked
 @import "_initialize/utilities";      // Checked
 
 
@@ -29,7 +29,7 @@
 
 
 // Templates
-@import "templates/front-page";
+@import "templates/front-page";       // Checked
 @import "templates/portfolio-page";   // Checked
 @import "templates/version9-pages";   // Checked
 @import "templates/version9-posts";   // Checked
