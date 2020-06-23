@@ -23,7 +23,6 @@
     }
 
     .name-container {
-      // font-size: 50px;
       line-height: 0.5;
       font-weight: 100;
       color: $white;
@@ -93,19 +92,9 @@
   }
 
   .menu-container {
-    // padding: 0;
     margin: 0 28px;
-    // max-width: 1200px;
     text-align: center;
-    // list-style: none;
 
-
-
-
-
-
-
-    ///////////
     .menu-item {
       @include flex-center;
       background: $dark-3;
@@ -113,59 +102,40 @@
       border-radius: 6px;
       padding: 28px;
       margin: 28px auto;
-      text-align: center;
       max-width: 300px;
       position: relative; // For TweenMax animation
       flex-direction: column;
   
-  
-      // background: rgba(0,0,0,0.3);
-      // padding: 28px;
-      // border-radius: 6px;
-      // border: 1px solid rgba(0,0,0,0.1);
-  
-  
-  
       @media all and ( min-width: $screen-sm ) {
-        height: 150px;
         max-width: 600px;
-        margin: 28px auto;
         flex-direction: row;
       }
       
       @media all and ( min-width: $screen-lg ) {
         height: 100%;
-        width: 300px;
-        margin: 28px 14px 0;
-        // flex-direction: column;
-  
         margin: 0 14px 28px;
         display: inline-block;
         max-width: 300px;
-        width: 100%;
       }
       
       svg {
+        width: 100%;
+        max-width: 56px;
+        max-height: 56px;
         fill: $green;
+
+        path { fill: $green; }
       }
       
       p {
-        color: $white;
-        max-width: 320px;
         margin: 14px auto 28px;
+        padding: 0;
         @media all and ( min-width: $screen-sm ) {
           margin: 0 28px;
-          padding: 0;
-        }
-        
-        @media all and ( min-width: $screen-md ) {
-          margin: 0;
-          padding: 0 28px;
         }
         
         @media all and ( min-width: $screen-lg ) {
           margin: 14px auto 28px;
-          padding: 0;
         }
       }
       
@@ -174,9 +144,7 @@
         border: 1px solid $dark-8;
         background: $dark-8;
         border-radius: 6px;
-        cursor: pointer;
         padding: 7px;
-        width: 80%;
         max-width: 160px;
         width: 100%;
         text-transform: uppercase;
@@ -191,4 +159,3 @@
     }
   }
 }
-

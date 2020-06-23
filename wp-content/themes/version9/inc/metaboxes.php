@@ -75,37 +75,33 @@ function front_page_menu() {
   ) );
   
   $cmb2 -> add_group_field( $nav_menu_id, array(
-    'name' => 'Icon',
+    'name' => 'SVG Icon',
     'id'   => 'icon',
-    // 'desc' => 'ex. March 12th, 2019',
-    'type' => 'text'
+    'desc' => 'Enter full filename.',
+    'type' => 'text_medium'
   ) );
 
   $cmb2 -> add_group_field( $nav_menu_id, array(
     'name' => 'Title',
     'id'   => 'title',
-    // 'desc' => 'ex. agskryp.com',
     'type' => 'text'
   ) );
 
   $cmb2 -> add_group_field( $nav_menu_id, array(
     'name' => 'Content',
     'id'   => 'content',
-    // 'desc' => 'ex. agskryp.com',
     'type' => 'textarea_small'
   ) );
 
   $cmb2 -> add_group_field( $nav_menu_id, array(
     'name' => 'Button Label',
     'id'   => 'button_label',
-    // 'desc' => 'ex. agskryp.com',
     'type' => 'text'
   ) );
 
   $cmb2 -> add_group_field( $nav_menu_id, array(
     'name' => 'Button URL',
     'id'   => 'button_url',
-    // 'desc' => 'ex. agskryp.com',
     'type' => 'text_url'
   ) );
 }
