@@ -16,6 +16,7 @@ if( !function_exists( 'version9_setup' ) ) {
    * as indicating support for post thumbnails.
    */
   function version9_setup() {
+    add_theme_support( 'post-thumbnails' );
     
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -28,13 +29,6 @@ if( !function_exists( 'version9_setup' ) ) {
      */
     add_theme_support( 'title-tag' );
 
-    /*
-     * Enable support for Post Thumbnails on posts and pages.
-     *
-     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-     */
-    add_theme_support( 'post-thumbnails' );
-
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
       'header-main-menu'   => 'Header Menu',
@@ -46,9 +40,6 @@ if( !function_exists( 'version9_setup' ) ) {
      * to output valid HTML5.
      */
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-
-    // Add theme support for selective refresh for widgets.
-    add_theme_support( 'customize-selective-refresh-widgets' );
   }
 }
 add_action( 'after_setup_theme', 'version9_setup' );
@@ -72,7 +63,7 @@ function version9_scripts() {
   // JS
   if( !is_front_page() ) {
     wp_enqueue_script( 
-      'version9-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true
+      'version9-navigation', get_template_directory_uri() . '/js/navigation.js', array(), AG_VERSION, true
     );
   }
   
@@ -92,7 +83,7 @@ function version9_scripts() {
     );    
     
     wp_enqueue_script( 
-      'version9-animation', get_template_directory_uri() . '/js/animation.js', array(), '1.0.0', true 
+      'version9-animation', get_template_directory_uri() . '/js/animation.js', array(), '1.1.0', true 
     );
   }
   
@@ -119,7 +110,7 @@ require get_template_directory() . '/inc/metaboxes.php';
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function version9_pingback_header() {
-	if ( is_singular() && pings_open() ) {
+	if( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
