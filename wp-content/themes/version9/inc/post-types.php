@@ -7,8 +7,6 @@ function portfolio_post_type() {
     'menu_name'             => 'Portfolio',
     'name_admin_bar'        => 'Portfolio',
     'archives'              => 'Portfolio',
-    'attributes'            => 'P_A',
-    'parent_item_colon'     => 'P_P_I_C',
     'all_items'             => 'All Projects',
     'add_new_item'          => 'Add New Project',
     'add_new'               => 'Add Project',
@@ -49,7 +47,6 @@ function portfolio_post_type() {
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
     'capability_type'       => 'post',
-    // 'taxonomies' 	          => array( 'category' ),
   );
   
   register_post_type( 'portfolio', $args );
