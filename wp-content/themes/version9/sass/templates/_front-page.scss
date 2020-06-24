@@ -23,11 +23,7 @@
     }
 
     .name-container {
-      line-height: 0.5;
-      font-weight: 100;
-      color: $white;
       display: block;
-      font-size: 51px;
       font-weight: 100;
       margin: 0 0 28px;
       @media all and ( min-width: $screen-xs ) {
@@ -39,13 +35,14 @@
       }
       
       span {
-        display: block;
-      
+        opacity: 0;
+        margin-left: -112px;
+        
         &:last-of-type {
-          margin-left: 23px; 
+          margin-right: -112px;
           
           @media all and ( min-width: $screen-xs ) {
-            margin-left: 35px;
+            margin-left: 33px;
           }
           
           @media all and ( min-width: $screen-lg ) {
@@ -65,7 +62,6 @@
       display: block;
       border-left: none !important;  // !important necessary for animation and screen breaks
       font-size: 22px;
-      margin: 0;
       @media all and ( min-width: $screen-xs ) {
         font-size: 32px;
       }
@@ -97,12 +93,7 @@
 
     .menu-item {
       @include flex-center;
-      background: $dark-3;
-      border: 1px solid $dark-1;
-      border-radius: 6px;
-      padding: 28px;
       margin: 28px auto;
-      max-width: 300px;
       position: relative; // For TweenMax animation
       flex-direction: column;
   

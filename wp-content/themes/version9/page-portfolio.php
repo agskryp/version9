@@ -22,7 +22,7 @@
         while( have_posts() ) {
           the_post();
 
-          echo '<a class="portfolio-item-container" href="' . get_permalink() . '">'; 
+          echo '<a class="global-menu-item portfolio-item-container" href="' . get_permalink() . '">'; 
             the_post_thumbnail( 'small' ); 
 
             echo '<h2>' . get_the_title() . '</h2>';

@@ -1,3 +1,23 @@
+.global-name-container {
+  font-size: 50px;
+  line-height: 0.5;
+  font-weight: 100;
+  color: $white;
+  span {
+    display: block;
+  
+    &:last-of-type { margin-left: 23px; }
+  }
+}
+
+.global-menu-item {
+  background: $dark-3;
+  padding: 28px;
+  border-radius: 6px;
+  border: 1px solid $dark-1;
+  max-width: 300px;
+}
+
 .colour-cycle {
   text-shadow: 2px 2px 2px $dark-5;
   line-height: .9;

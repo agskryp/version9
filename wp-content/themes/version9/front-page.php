@@ -8,7 +8,7 @@
 
 <div class="front-page-container">
   <header class="header-container">
-    <h1 class="name-container">
+    <h1 class="global-name-container name-container">
       <span id="givenName">Andrew</span>
       <span id="surName">Skrypnyk</span>
     </h1>
@@ -32,7 +32,7 @@
         if( isset( $entry[ 'button_label' ] ) ) $label = esc_html( $entry[ 'button_label' ] );
         if( isset( $entry[ 'button_url' ] ) )   $url = esc_html( $entry[ 'button_url' ] );
 
-        echo '<div class="menu-item">';
+        echo '<div class="global-menu-item  menu-item">';
           if( !empty( $icon ) ) {
             echo file_get_contents( get_template_directory_uri() . '/assets/images/icons/' . $icon );
           }

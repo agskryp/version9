@@ -8,15 +8,15 @@
   /**
    * @param TweenMax.method( "target", speed, { settings }, delay between elements );
    */
-  TweenMax.from( "#givenName", 2, {
-    paddingLeft: "112px",
-    opacity: 0,
+  TweenMax.to( "#givenName", 2, {
+    marginLeft: "0",
+    opacity: 1,
     ease: Power1.easeInOut
   } );
 
-  TweenMax.from( "#surName", 2, {
-    paddingRight: "112px",
-    opacity: 0,
+  TweenMax.to( "#surName", 2, {
+    marginRight: "0",
+    opacity: 1,
     ease: Power1.easeInOut
   } );
 

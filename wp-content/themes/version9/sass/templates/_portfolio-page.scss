@@ -1,12 +1,7 @@
 .portfolio-page-container {
    .portfolio-item-container {
-    background: $dark-3;
-    padding: 28px;
-    border-radius: 6px;
-    border: 1px solid $dark-1;
     margin: 0 14px 28px;
     display: inline-block;
-    max-width: 300px;
     width: 100%;
     @media all and ( min-width: $screen-xxl ) {
       max-width: 970px;
