@@ -40,7 +40,7 @@
         
         &:last-of-type {
           margin-right: -112px;
-          
+
           @media all and ( min-width: $screen-xs ) {
             margin-left: 33px;
           }
@@ -80,6 +80,8 @@
       span {
         display: inline-block;
         position: relative; // For TweenMax animation
+        bottom: 36px;
+        opacity: 0;
         @media all and ( min-width: $screen-md ) {
           display: block;
         }
@@ -96,6 +98,8 @@
       margin: 28px auto;
       position: relative; // For TweenMax animation
       flex-direction: column;
+      bottom: 66px;
+      opacity: 0;
   
       @media all and ( min-width: $screen-sm ) {
         max-width: 600px;

@@ -1,6 +1,6 @@
 /**
  * File animation.js.
- * Requires GSAP and TweenMax to execute
+ * Requires TweenMax to execute
  */
 
 ( function() {
@@ -20,9 +20,9 @@
     ease: Power1.easeInOut
   } );
 
-  TweenMax.staggerFrom( "#occupationAnimation span", 1, {
-    bottom: "56px",
-    opacity: 0,
+  TweenMax.staggerTo( "#occupationAnimation span", 1, {
+    bottom: "0",
+    opacity: 1,
     delay: 1.8
   }, .4 );
   
@@ -34,9 +34,9 @@
     } );
   }
 
-  TweenMax.staggerFrom( ".menu-item", 1, {
-    bottom: "56px",
-    opacity: 0,
+  TweenMax.staggerTo( ".menu-item", 1, {
+    bottom: "0",
+    opacity: 1,
     delay: 2.8
-  }, 0.2 );
+  }, .26 );
 } )();
