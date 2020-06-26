@@ -19,23 +19,19 @@
   
     &.alignleft {
       margin: 28px auto;
-      display: block;
       float: none;    
       @media all and ( min-width: $screen-xs ) {
         margin: 28px 28px 28px 0;
         float: left;
-        display: inline;
       }
     }
   
     &.alignright {
       margin: 28px auto;
-      display: block;
       float: none;
       @media all and ( min-width: $screen-xs ) {
         margin: 28px 0px 28px 28px;
         float: right;
-        display: inline;
       }
     }
   }
