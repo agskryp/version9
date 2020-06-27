@@ -132,7 +132,6 @@ function blog_posts_loadmore_ajax_handler() {
   
   die; 
 }
-
 add_action( 'wp_ajax_loadblogposts', 'blog_posts_loadmore_ajax_handler' );
 add_action( 'wp_ajax_nopriv_loadblogposts', 'blog_posts_loadmore_ajax_handler' );
 
