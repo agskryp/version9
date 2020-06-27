@@ -54,9 +54,9 @@
           margin: 0 0 28px;
         }
       
-        // @media all and ( min-width: $screen-xxl ) {
-        //   font-size: 70px;
-        // }
+        @media all and ( min-width: $screen-xxl ) {
+          font-size: 70px;
+        }
       
         &:hover,
         &:focus {
@@ -93,9 +93,9 @@
           padding-left: 0;
         }
         
-        // @media all and ( min-width: $screen-xxl ) {
-        //   font-size: 33px;
-        // }
+        @media all and ( min-width: $screen-xxl ) {
+          font-size: 33px;
+        }
         
         span { display: block; }
       }
