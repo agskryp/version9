@@ -13,10 +13,6 @@
     border-right: 1px solid $dark-5;
     height: 100%;
   }
-  
-  // @media all and ( max-height: $screen-xs ) and ( min-width: $screen-md ) {
-  //   overflow-y: scroll;
-  // }
 
   .header-background-overlay {
     width: 100%;
@@ -63,7 +59,6 @@
           opacity: 0.7;
           color: $white;
         }
-        
         
         span {
           &:last-of-type {
