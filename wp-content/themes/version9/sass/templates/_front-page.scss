@@ -7,7 +7,7 @@
     padding: 28px 0;
     min-height: 100vh;
   }
-  
+
   .header-container {
     @include flex-center;
     flex-direction: column;
@@ -100,7 +100,7 @@
       flex-direction: column;
       bottom: 66px;
       opacity: 0;
-  
+
       @media all and ( min-width: $screen-sm ) {
         max-width: 600px;
         flex-direction: row;
@@ -128,12 +128,12 @@
         @media all and ( min-width: $screen-sm ) {
           margin: 0 28px;
         }
-        
+
         @media all and ( min-width: $screen-lg ) {
           margin: 14px auto 28px;
         }
       }
-      
+
       a {
         color: $white;
         border: 1px solid $dark-8;
