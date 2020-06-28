@@ -56,7 +56,7 @@ function front_page_menu() {
     'id'           => 'front_page_menu',
     'title'        => 'Front Page Nav Menu',
     'object_types' => array( 'page' ),
-    'show_on'      => array( 'key' => 'front-page', 'value' => '' ),
+    'show_on'      => array( 'key' => 'page-template', 'value' => 'template-front.php' ),
     'context'      => 'normal',
     'priority'     => 'high',
     'show_names'   => true, // Show field names on the left

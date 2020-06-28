@@ -1,6 +1,6 @@
 <?php
   /**
-   * The front page file.
+   * Template Name: Front Page Template 
    */
 
   require get_template_directory() . '/partials/doctype.php';
@@ -32,15 +32,13 @@
         if( isset( $entry[ 'button_label' ] ) ) $label = esc_html( $entry[ 'button_label' ] );
         if( isset( $entry[ 'button_url' ] ) )   $url = esc_html( $entry[ 'button_url' ] );
 
-        echo '<div class="global-menu-item  menu-item">';
+        echo '<div class="global-menu-item menu-item">';
           if( !empty( $icon ) ) {
             echo file_get_contents( get_template_directory_uri() . '/assets/images/icons/' . $icon );
           }
 
           echo '<h3 class="screen-reader-text">' . $title . '</h3>';
-
           echo '<p>' . $content . '</p>';
-
           echo '<a href="' . $url . '">' . $label . '</a>';
         echo '</div>';
       }
@@ -51,5 +49,4 @@
 <?php wp_footer(); ?>
 
 </body>
-
 </html>
