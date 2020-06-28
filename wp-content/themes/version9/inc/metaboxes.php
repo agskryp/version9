@@ -1,7 +1,5 @@
 <?php
 
-// $theme = wp_get_theme();
-
 function static_blog_page() {
   $blog_page_URL = get_post_type_archive_link( 'post' );
   $blog_page_ID  = url_to_postid( $blog_page_URL );
