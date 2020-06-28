@@ -1,6 +1,6 @@
 <?php
   /**
-   * Template Name: Default Template 
+   * This template is for default pages
    */
 
   get_header();
