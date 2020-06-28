@@ -4,41 +4,41 @@ Theme URI: https://underscores.me/
 Author: Andrew Skrypnyk
 Author URI: https://agskryp.com/
 Description: Version9 is a custom built theme by Andrew Skrypnyk for the agskryp.com website.  It's built using the framework of the underscores theme.
-Version: 9.5
+Version: 9.5.1
 */
 
 // SCSS + Site Initialization
-@import "_initialize/variables";      // Checked
-@import "_initialize/mixins";         // Checked
-@import "_initialize/normalize";      // Checked
-@import "_initialize/bootstrap-grid"; // Checked
-@import "_initialize/global";         // Checked
-@import "_initialize/utilities";      // Checked
+@import "_initialize/variables";      
+@import "_initialize/mixins";         
+@import "_initialize/normalize";      
+@import "_initialize/bootstrap-grid"; 
+@import "_initialize/global";         
+@import "_initialize/utilities";      
 
 
 // Site Elements
-@import "elements/elements";          // Checked
-@import "elements/typography";        // Checked
-@import "elements/form";              // Checked
+@import "elements/elements";          
+@import "elements/typography";        
+@import "elements/form";              
 
 
 // Extensions
-@import "extension/ads";              // Checked
+@import "extension/ads";              
 
 
 // Partials
-@import "partials/comments";          // Checked
-@import "partials/excerpts";          // Checked
-@import "partials/footer";            // Checked
-@import "partials/header";            // Checked
-@import "partials/navigation";        // Checked
-@import "partials/page-footer";       // Checked
-@import "partials/searchform";        // Checked
-@import "partials/social-links";      // Checked
+@import "partials/comments";          
+@import "partials/excerpts";          
+@import "partials/footer";            
+@import "partials/header";            
+@import "partials/navigation";        
+@import "partials/page-footer";       
+@import "partials/searchform";        
+@import "partials/social-links";      
 
 
 // Templates
-@import "templates/front-page";       // Checked
-@import "templates/portfolio-page";   // Checked
-@import "templates/version9-pages";   // Checked
-@import "templates/version9-posts";   // Checked
+@import "templates/front-page";       
+@import "templates/portfolio-page";   
+@import "templates/version9-pages";   
+@import "templates/version9-posts";   

@@ -59,7 +59,7 @@
               ?>
             </div>
             
-            <?php require get_template_directory() . '/searchform.php'; ?>            
+            <?php require get_template_directory() . '/partials/searchform.php'; ?>            
           </div>
         </nav>
       </div>

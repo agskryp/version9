@@ -19,7 +19,7 @@
 
       <p>Or, use the search form below and try your luck again.</p>
 
-      <?php require get_template_directory() . '/searchform.php';  ?>
+      <?php require get_template_directory() . '/partials/searchform.php';  ?>
     </div>
   </main>
   
