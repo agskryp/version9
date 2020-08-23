@@ -5,13 +5,13 @@ defined( 'WPINC' ) || exit ;
 
 <h3 class="litespeed-title-short">
 	<?php echo __( 'ESI Settings', 'litespeed-cache' ) ; ?>
-	<?php $this->learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/cache/#esi-tab', false, 'litespeed-learn-more' ) ; ?>
+	<?php Doc::learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/cache/#esi-tab' ); ?>
 </h3>
 
 <div class="litespeed-description">
 	<p><?php echo __( 'With ESI (Edge Side Includes), pages may be served from cache for logged-in users.', 'litespeed-cache' ) ; ?></p>
 	<p><?php echo __( 'ESI allows you to designate parts of your dynamic page as separate fragments that are then assembled together to make the whole page. In other words, ESI lets you “punch holes” in a page, and then fill those holes with content that may be cached privately, cached publicly with its own TTL, or not cached at all.', 'litespeed-cache' ) ; ?>
-		<?php $this->learn_more( 'https://blog.litespeedtech.com/2017/08/30/wpw-private-cache-vs-public-cache/', __( 'WpW: Private Cache vs. Public Cache', 'litespeed-cache' ) ) ; ?>
+		<?php Doc::learn_more( 'https://blog.litespeedtech.com/2017/08/30/wpw-private-cache-vs-public-cache/', __( 'WpW: Private Cache vs. Public Cache', 'litespeed-cache' ) ); ?>
 	</p>
 	<p>
 		💡:
@@ -21,10 +21,10 @@ defined( 'WPINC' ) || exit ;
 			'<code>[shortcodeA att1="val1" att2="val2"]</code>',
 			'<code>[esi shortcodeA att1="val1" att2="val2"]</code>'
 		) ; ?>
-		<?php $this->learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/admin/#turning-wordpress-shortcodes-into-esi-blocks' ) ; ?>
+		<?php Doc::learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/admin/#turning-wordpress-shortcodes-into-esi-blocks' ); ?>
 	</p>
 	<p>
-		<?php $this->learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/api/#generate-esi-block-url', __( 'ESI sample for developers', 'litespeed-cache' ) ) ; ?>
+		<?php Doc::learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/api/#generate-esi-block-url', __( 'ESI sample for developers', 'litespeed-cache' ) ); ?>
 	</p>
 </div>
 
@@ -88,9 +88,9 @@ defined( 'WPINC' ) || exit ;
 					<?php $this->build_textarea( $id ) ; ?>
 				</div>
 				<div class="litespeed-width-3-10">
-					<a class="button litespeed-btn-warning" id="litespeed_fetch_esi_nonce"><?php echo __( 'Fetch Latest Predefined Nonce', 'litespeed-cache' ); ?></a>
+					<a class="button litespeed-btn-warning" id="litespeed_fetch_esi_nonce"><?php echo __( 'Fetch Latest Predefined Nonces', 'litespeed-cache' ); ?></a>
 					<p class="litespeed-desc">
-						<?php echo __( 'This will append any new predefined nonce found from the latest list source', 'litespeed-cache' ); ?>: <a href="https://github.com/litespeedtech/lscache_wp/blob/master/data/esi.nonce.txt" target="_blank">https://github.com/litespeedtech/lscache_wp/blob/master/data/esi.nonce.txt</a>
+						<?php echo __( 'This will append any new predefined nonces found from the latest list source', 'litespeed-cache' ); ?>: <a href="https://github.com/litespeedtech/lscache_wp/blob/master/data/esi.nonce.txt" target="_blank">https://github.com/litespeedtech/lscache_wp/blob/master/data/esi.nonce.txt</a>
 					</p>
 				</div>
 			</div>

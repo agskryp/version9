@@ -89,6 +89,11 @@ class Conf extends Base
 			if ( ! is_admin() && ! defined( 'LITESPEED_CLI' ) ) {
 				$this->_options = $this->load_default_vals();
 				$this->_try_load_site_options();
+
+				// Disable new installation auto upgrade to avoid overwritten to customized data.ini
+				if ( ! $ver ) {
+					! defined( 'LITESPEED_BYPASS_AUTO_V' ) && define( 'LITESPEED_BYPASS_AUTO_V', true );
+				}
 				return;
 			}
 		}
@@ -205,7 +210,7 @@ class Conf extends Base
 		// Overwrite single blog options with site options
 		foreach ( self::$_default_options as $k => $v ) {
 			if ( isset( $this->_site_options[ $k ] ) ) {
-				$this->_options[ $k ] = $this->_site_options[ $k ];
+				// $this->_options[ $k ] = $this->_site_options[ $k ];
 				$this->_primary_options[ $k ] = $this->_site_options[ $k ];
 			}
 		}
@@ -572,6 +577,15 @@ class Conf extends Base
 
 		if ( $val && $this->_conf_pswd( $id ) && ! preg_match( '|[^\*]|', $val ) ) {
 			return;
+		}
+
+		// Special handler for CDN Original URLs
+		if ( $id == Base::O_CDN_ORI && ! $val ) {
+			$home_url = home_url( '/' );
+			$parsed = parse_url( $home_url );
+			$home_url = str_replace( $parsed[ 'scheme' ] . ':', '', $home_url );
+
+			$val = $home_url;
 		}
 
 		// Validate type

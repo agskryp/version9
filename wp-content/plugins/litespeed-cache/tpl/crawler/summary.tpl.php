@@ -40,13 +40,13 @@ if($seconds > 0):
 
 	<h3 class="litespeed-title litespeed-relative">
 		<?php echo __('Crawler Cron', 'litespeed-cache'); ?>
-		<?php $this->learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/crawler/', false, 'litespeed-learn-more' ); ?>
+		<?php Doc::learn_more( 'https://docs.litespeedtech.com/lscache/lscwp/crawler/' ); ?>
 	</h3>
 
 	<?php if ( ! Router::can_crawl() ): ?>
 		<div class="litespeed-callout notice notice-error inline">
 			<h4><?php echo __('WARNING', 'litespeed-cache'); ?></h4>
-			<p><?php echo __('The crawler feature is not enabled on the LiteSpeed server. Please consult your server admin.', 'litespeed-cache'); ?></p>
+			<p><?php echo __('The crawler feature is not enabled on the LiteSpeed server. Please consult your server admin or hosting provider.', 'litespeed-cache'); ?></p>
 			<p><?php echo sprintf(__('See <a %s>Introduction for Enabling the Crawler</a> for detailed information.', 'litespeed-cache'), 'href="https://docs.litespeedtech.com/lscache/lscwp/admin/#enabling-and-limiting-the-crawler" target="_blank"'); ?></p>
 		</div>
 	<?php endif; ?>

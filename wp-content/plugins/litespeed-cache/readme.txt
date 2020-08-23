@@ -3,7 +3,7 @@ Contributors: LiteSpeedTech
 Tags: caching, optimize, performance, pagespeed, seo, speed, image optimize, compress, object cache, redis, memcached, database cleaner
 Requires at least: 4.0
 Tested up to: 5.4.2
-Stable tag: 3.2.3.2
+Stable tag: 3.3.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -16,16 +16,16 @@ LiteSpeed Cache for WordPress (LSCWP) is an all-in-one site acceleration plugin,
 LSCWP supports WordPress Multisite and is compatible with most popular plugins, including WooCommerce, bbPress, and Yoast SEO.
 
 == Requirements ==
-**General Features** may be used by anyone with any web server (LiteSpeed, Apache, NGiNX, etc.).
+**General Features** may be used by anyone with any web server (LiteSpeed, Apache, NGINX, etc.).
 
-**LiteSpeed Exclusive Features** require one of the following: OpenLiteSpeed, commercial LiteSpeed products, LiteSpeed-powered hosting, or QUIc.cloud CDN. [Why?](https://docs.litespeedtech.com/lscache/lscwp/faq/#why-do-the-cache-features-require-a-litespeed-server)
+**LiteSpeed Exclusive Features** require one of the following: OpenLiteSpeed, commercial LiteSpeed products, LiteSpeed-powered hosting, or QUIC.cloud CDN. [Why?](https://docs.litespeedtech.com/lscache/lscwp/faq/#why-do-the-cache-features-require-a-litespeed-server)
 
 == Plugin Features ==
 
 = General Features =
 
 * Free QUIC.cloud CDN Cache
-* Object Cache (Memcached/LSMCD/Redis)
+* Object Cache (Memcached/LSMCD/Redis) Support<sup>+</sup>
 * Image Optimization (Lossless/Lossy)
 * Minify CSS, JavaScript, and HTML
 * Minify inline CSS/JS
@@ -33,21 +33,22 @@ LSCWP supports WordPress Multisite and is compatible with most popular plugins, 
 * Automatically generate Critical CSS
 * Lazyload images/iframes
 * Responsive Image Placeholders
-* Multiple CDN support
+* Multiple CDN Support<sup>+</sup>
 * Load CSS/JS Asynchronously
-* Browser Cache
+* Browser Cache Support<sup>+</sup>
 * Database Cleaner and Optimizer
 * PageSpeed score optimization
-* OPcode Cache
+* OPcode Cache Support<sup>+</sup>
 * HTTP/2 Push for CSS/JS (on web servers that support it)
 * DNS Prefetch
 * Cloudflare API
-* Single Site and Multi Site (Network) support
+* Single Site and Multisite (Network) support
 * Import/Export settings
-* Basic/Advanced setting view
 * Attractive, easy-to-understand interface
 * WebP image format support
 * Heartbeat control
+
+<sup>+</sup> This service is not provided by the LSCache plugin, nor is it guaranteed to be installed by your service provider. However, the plugin is compatible with the service if it is in use on your site.
 
 = LiteSpeed Exclusive Features =
 
@@ -58,7 +59,7 @@ LSCWP supports WordPress Multisite and is compatible with most popular plugins, 
 * Separate caching of desktop and mobile views
 * Ability to schedule purge for specified URLs
 * WooCommerce and bbPress support
-* [WordPress CLI](https://docs.litespeedtech.com/lscache/lscwp/admin/#wordpress-cli) commands
+* [WordPress CLI](https://docs.litespeedtech.com/lscache/lscwp/cli/) commands
 * API system for easy cache integration
 * Exclude from cache by URI, Category, Tag, Cookie, User Agent
 * Smart preload crawler with support for SEO-friendly sitemap
@@ -109,13 +110,13 @@ LSCWP supports WordPress Multisite and is compatible with most popular plugins, 
 = Notes for LiteSpeed Web Server Enterprise =
 
 * Make sure that your license includes the LSCache module. A [2-CPU trial license with LSCache module](https://www.litespeedtech.com/products/litespeed-web-server/download/get-a-trial-license "trial license") is available for free for 15 days.
-* The server must be configured to have caching enabled. If you are the server admin, [click here](https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cache:common_installation#web_server_configuration) for instructions. Otherwise, please request that the server admin configure the cache root for the server.
+* The server must be configured to have caching enabled. If you are the server admin, [click here](https://docs.litespeedtech.com/lscache/lscwp/overview/#configure-cache-root) for instructions. Otherwise, please request that the server admin configure the cache root for the server.
 
 = Notes for OpenLiteSpeed =
 
 * This integration utilizes OpenLiteSpeed's cache module.
-* If it is a fresh OLS installation, the easiest way to integrate is to use [ols1clk](http://open.litespeedtech.com/mediawiki/index.php/Help:1-Click_Install). If using an existing WordPress installation, use the `--wordpresspath` parameter.
-* If OLS and WordPress are both already installed, please follow the instructions in [How To Set Up LSCache For WordPress](http://open.litespeedtech.com/mediawiki/index.php/Help:How_To_Set_Up_LSCache_For_WordPress).
+* If it is a fresh OLS installation, the easiest way to integrate is to use [ols1clk](https://openlitespeed.org/kb/1-click-install/). If using an existing WordPress installation, use the `--wordpresspath` parameter.
+* If OLS and WordPress are both already installed, please follow the instructions in [How To Set Up LSCache For WordPress](https://openlitespeed.org/kb/how-to-setup-lscache-for-wordpress/).
 
 == Third Party Compatibility ==
 
@@ -191,11 +192,11 @@ In short, yes. However, for some WooCommerce themes, the cart may not be updated
 
 = Are my images optimized? =
 
-Images are not optimized automatically unless you set **LiteSpeed Cache > Image Optimization > Image Optimization Settings > Auto Request Cron** to `ON`. You may also optimiza your images manually. [Learn more](https://docs.litespeedtech.com/lscache/lscwp/imageopt/).
+Images are not optimized automatically unless you set **LiteSpeed Cache > Image Optimization > Image Optimization Settings > Auto Request Cron** to `ON`. You may also optimize your images manually. [Learn more](https://docs.litespeedtech.com/lscache/lscwp/imageopt/).
 
 = How do I make a WP nonce cacheable in my third-party plugin? =
 
-Our API includes a function that uses ESI to "punch a hole" in a cached page for a nonce. This allows the nonce to be cached for 12 hours, regardless of the TTL of the page it is on. Learn more in [the API documentation](https://docs.litespeedtech.com/lscache/lscwp/api/).
+Our API includes a function that uses ESI to "punch a hole" in a cached page for a nonce. This allows the nonce to be cached separately, regardless of the TTL of the page it is on. Learn more in [the API documentation](https://docs.litespeedtech.com/lscache/lscwp/api/#esi). We also welcome contributions to our predefined list of known third party plugin nonces that users can optionally include via [the plugin's ESI settings](https://docs.litespeedtech.com/lscache/lscwp/cache/#esi-nonce).
 
 = How do I enable the crawler? =
 
@@ -227,7 +228,7 @@ For more detailed information about crawler setup, please see [the Crawler docum
 * [WP-PostRatings](https://wordpress.org/plugins/wp-postratings/)
 * [Avada 5.1 RC1+](https://avada.theme-fusion.com/)
 * [Elegant Themes Divi 3.0.67+](https://www.elegantthemes.com/gallery/divi/)
-* [Elegant Divi Builder] (https://www.elegantthemes.com/plugins/divi-builder/)
+* [Elegant Divi Builder](https://www.elegantthemes.com/plugins/divi-builder/)
 * [Caldera Forms](https://wordpress.org/plugins/caldera-forms/) 1.5.6.2+
 * Login With Ajax
 * [Ninja Forms](https://wordpress.org/plugins/ninja-forms/)
@@ -244,8 +245,58 @@ The vast majority of plugins and themes are compatible with LiteSpeed Cache. The
 
 == Changelog ==
 
+= 3.3.1 - Aug 12 2020 =
+* 🌱**Page Optimize** New option to Remove Noscript Tags. (@phuc88bmt)
+* 🐞**LQIP** Fixed a critical bug that bypassed all requests in v3.3.
+* **LQIP** Requests are now bypassed if domain has no credit left.
+* **Page Optimize** Inline defer will be bypassed if document listener is detected in the code. (@ssurfer)
+* **CCSS** Print-only styles will no longer be included in Critical CSS.
+* **API** Added hooks to Purge action to handle file deletions. (@biati)
+* **Cloud** Plain permalinks are no longer required for use of cloud services.
+* **Data** Added an access denial to work with OpenLiteSpeed. (@spenweb #PR228)
+* **GUI** Spelling and grammar adjustments. (@blastoise186 #PR253)
+
+= 3.3 - Aug 6 2020 =
+* 🌱**Page Optimize** Added a new setting, Inline JS Deferred Excludes. (@ankit)
+* **Page Optimize** CSS/JS Combine/Minify file versions will be differentiated by query string hash instead of new filename to reduce DB/file system storage.
+* **Page Optimize** Added the ability to use local copies of external JS files for better control over page score impacts.
+* **Page Optimize** Improved combination of CSS media queries. (@galbaras)
+* **Page Optimize** Reprioritized Inline JS Defer to be optimized before encoding, for a significantly smaller result.
+* **LQIP** Detect if the file exists before sending LQIP request to QUIC.cloud.
+* **CCSS** Sped up CCSS process significantly by sending HTML and CSS in request.
+* **CCSS** Improvements to mobile CSS support in CCSS.
+* **CCSS** Minimize CCSS failures by attempting to automatically fix CSS syntax errors.
+* **Cloud** Domain Key will be deleted after QUIC.cloud site_not_registered error to avoid endless repeated requests.
+* **CDN** CDN Original URL will default to WP Site URL if not set. (@ruikai)
+* **CLI** Global output format `--format=json/yaml/dump` and `--json` support in CLI. (@alya1992)
+* **CDN** Improved handling of non-image CSS `url()` sources in CDN. (@daniel McD)
+* 🐞**CDN** Fixed CDN replacement conflict w/ JS/CSS Optimize. (@ankit)
+* **Crawler** Only reset Crawler waiting queues when crawling begins. (@ruikai)
+* **Network** Network Enable Cache is no longer reset to ON Use Network Settings in enabled. (@RavanH)
+* 🐞**Activation** Fixed a PHP warning that appeared during uninstall. (@RavanH)
+* **Debug** Automatically omit long strings when dumping an array to debug log.
+* **Report** Subsites report now shows overwritten values along w/ original values. (#52593959)
+* **REST** Improved WP5.5 REST compatibility. (@oldrup)
+* **GUI** Server IP setting moved from Crawler menu to General menu.
+* **GUI** Localize resources moved to Localization tab.
+* **Config** News option now defaults to ON.
+
+= 3.2.4 - Jul 8 2020 =
+* **Object** New installations no longer get custom data.ini reset, as this could cause lost configuration. (@Eric)
+* **ESI** Now using `svar` to load nonces more quickly. (@Lauren)
+* **ESI** Fixed the conflicts between nonces in inline JS and ESI Nonces when Inline JS Deferred is enabled. (@JesseDistad)
+* 🐞**ESI** Fixed Fetch Latest Predefined Nonce button.
+* 🐞**Cache** Fixed an issue where mobile visits were not being cached when Cache Mobile was disabled.
+* **CDN** Bypass CDN constant `LITESPEED_BYPASS_CDN` now will apply to all CDN replacements.
+* **Router** Dropped `Router::get_uid()` function.
+* **Crawler** Updated role simulator function for future UCSS usage.
+* **GUI** Textarea will now automatically adjust the height based on the number of rows input.
+* **CLI** Fixed an issue that caused WP-Cron to exit when a task errored out. (@DovidLevine @MatthewJohnson)
+* **Cloud** No longer communcate with QUIC.cloud when Domain Key is not set and Debug is enabled.
+* **Cloud** Score banner no longer automatically fetches a new score. (@LucasRolff)
+
 = 3.2.3.2 - Jun 19 2020 =
-* 🔥🐞**Page Optimize** Hotfix for CSS/JS minify/combine.
+* 🔥🐞**Page Optimize** Hotfix for CSS/JS minify/combine. (@jdelgadoesteban @martin_bailey)
 
 = 3.2.3.1 - Jun 18 2020 =
 * **API** New filter `litespeed_buffer_before` and `litespeed_buffer_after`. (#PR243 @joejordanbrown)
@@ -282,7 +333,7 @@ The vast majority of plugins and themes are compatible with LiteSpeed Cache. The
 * **GUI** Moved Use Primary Site Configuration to General menu. (@joshua)
 
 = 3.2 - May 27 2020 =
-* **Image Optimize** Major improvements in queue management, scalability, and speed. (@Lucas Rolff)
+* **Image Optimize** Major improvements in queue management, scalability, and speed. (@LucasRolff)
 * **Cloud** Implemented a series of communication enhancements. (@Lucas Rolff)
 * **Crawler** Enhanced PHP 5.3 compatibility. (@JTS-FIN #230)
 * **Page Optimize** Appended image template in wpDiscuz script into default lazyload image exclude list. (@philipfaster @szmigieldesign)
