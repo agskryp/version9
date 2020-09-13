@@ -40,6 +40,7 @@
         
         &:last-of-type {
           margin-right: -112px;
+          margin-left: 22px;
 
           @media all and ( min-width: $screen-xs ) {
             margin-left: 33px;
