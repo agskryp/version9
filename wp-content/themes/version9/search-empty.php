@@ -17,7 +17,7 @@
 
       <p>Use the navigation menu to start at something more general,</p>
 
-      <p>Or, use the search form below and try your luck again.</p>
+      <p>Or, use the search form and try again.</p>
 
       <?php require get_template_directory() . '/partials/searchform.php';  ?>
     </div>
