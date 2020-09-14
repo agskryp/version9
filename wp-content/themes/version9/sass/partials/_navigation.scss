@@ -53,6 +53,11 @@
     position: absolute;
     right: 0;
     width: 260px;
+    top: 106px;
+    @media all and ( min-width: $screen-xxs ) {
+      top: auto;
+    }
+
     @media all and ( min-width: $screen-md ) {
       position: relative;
       width: auto;
