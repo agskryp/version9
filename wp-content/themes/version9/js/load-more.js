@@ -1,13 +1,14 @@
 ( function ($) {
-  function load_more_func( e, el, item ) {
+  function load_more_function( e, el, item ) {
     e.preventDefault();
   
     // disable load more button for accidental double clicks
     el.prop( 'disabled', true );
   
-    var button = el,
-        buttonText = el.text(),
-        max_page = el.attr( 'max-pages' ),
+    var container    = document.getElementById( 'loadMoreButtonContainer' ),
+        button       = el,
+        buttonText   = el.text(),
+        max_page     = el.attr( 'max-pages' ),
         current_page = el.attr( 'current-page' ),
         data = {
           'action': el.attr( 'action' ),
@@ -17,12 +18,7 @@
           'page': current_page,
         };
 
-        // need to target elements this way.  Try using
-        // ClassName or querySelector
-        var container = document.getElementById( 'loadMore' );
-
-  
-    $.ajax( {
+    $.ajax( { // jQuery
       url: '/wp-admin/admin-ajax.php',
       data: data,
       type: 'POST',
@@ -54,14 +50,14 @@
     } );
   }
   
-  $( '.load-more-blog-posts' ).click( function(e) {
-    load_more_func( e, $( this ), $( '.excerpt-list-container' ) );
+  document.querySelector( '.load-more-blog-posts' ).addEventListener( 'click', function(e) {
+    load_more_function( e, $( this ), $( '.excerpt-list-container' ) ); // jQuery
   } );
 } )( jQuery );
   
 // Vanilla JS click event
-// document.getElementById("okButton")
-//         .addEventListener("click", function() {
+// document.getElementById("okButton").addEventListener("click", function() {
+// document.querySelector("load-more-blog-posts").addEventListener("click", function() {
 //   document.getElementById("welcome").hidden = true;
 //   document.getElementById("awesome").hidden = false;
 // }, false);
