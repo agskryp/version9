@@ -14,7 +14,7 @@
         y_cord        = e.pageY,
         scrollOptions = {
           left: x_cord,
-          top: y_cord,
+          top: y_cord - 50,
           behavior: 'auto'
         },
         
