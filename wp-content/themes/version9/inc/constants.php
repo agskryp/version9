@@ -7,4 +7,4 @@ define( 'AG_PORTFOLIO', '/portfolio' );
 define( 'AG_posts_per_page' , 6 );
 
 // Version
-define( 'AG_VERSION',   '9.5.1' );
+define( 'AG_VERSION',   '9.5.2' );
