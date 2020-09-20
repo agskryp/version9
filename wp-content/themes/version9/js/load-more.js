@@ -1,15 +1,23 @@
-( function ($) {
+( function($) {
   function load_more_function( e, el, item ) {
     e.preventDefault();
   
     // disable load more button for accidental double clicks
     el.prop( 'disabled', true );
   
-    var container    = document.getElementById( 'loadMoreButtonContainer' ),
-        button       = el,
-        buttonText   = el.text(),
-        max_page     = el.attr( 'max-pages' ),
-        current_page = el.attr( 'current-page' ),
+    var container     = document.getElementById( 'loadMoreButtonContainer' ),
+        button        = el,
+        buttonText    = el.text(),
+        max_page      = el.attr( 'max-pages' ),
+        current_page  = el.attr( 'current-page' ),
+        x_cord        = e.pageX,
+        y_cord        = e.pageY,
+        scrollOptions = {
+          left: x_cord,
+          top: y_cord,
+          behavior: 'auto'
+        },
+        
         data = {
           'action': el.attr( 'action' ),
           'posts_per_page': el.attr( 'posts-per-page' ),
@@ -27,7 +35,7 @@
         button.text( 'Loading...' );
       },
       
-      success: function( html ) {
+      success: function( html ) {        
         el.prop( 'disabled', false );
   
         button.text( buttonText );
@@ -46,6 +54,10 @@
         else {
           container.style.display = 'none'; // if no data
         }
+      
+        window.scrollTo( scrollOptions );
+
+        return false;
       }
     } );
   }
